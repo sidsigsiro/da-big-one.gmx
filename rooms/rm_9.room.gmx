@@ -146,7 +146,7 @@
     <instance objName="obj_node8" x="644" y="656" name="inst_6D2A5757" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_node9" x="508" y="944" name="inst_2C7FDCCD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_node10" x="824" y="900" name="inst_6D515284" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_enemy" x="700" y="652" name="inst_8BFFADDB" locked="0" code="squad = ALPHA &#xA;//patrol nodes&#xA;nexttar = obj_node8&#xA;tar1 = obj_node8&#xA;tar2 = obj_node9&#xA;tar3 = obj_node10&#xA;&#xA;&#xA;caunexttar = obj_nodeA&#xA;cautar0 = obj_nodeA&#xA;cautar0_default = obj_nodeA&#xA;caunexttar_default = obj_nodeA&#xA;&#xA;class = PISTOL&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy" x="700" y="652" name="inst_8BFFADDB" locked="0" code="squad = ALPHA &#xA;//patrol nodes&#xA;nexttar = obj_node8&#xA;tar1 = obj_node8&#xA;tar2 = obj_node9&#xA;tar3 = obj_node10&#xA;&#xA;&#xA;caunexttar = obj_nodeA&#xA;cautar0 = obj_nodeA&#xA;cautar0_default = obj_nodeA&#xA;caunexttar_default = obj_nodeA&#xA;&#xA;class = PISTOL" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="208" y="1992" name="inst_7EF163C6" locked="0" code="" scaleX="1" scaleY="40" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="228" y="1408" name="inst_7F2867C4" locked="0" code="" scaleX="12" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="132" y="1316" name="inst_E2616135" locked="0" code="" scaleX="1" scaleY="12" colour="4294967295" rotation="0"/>

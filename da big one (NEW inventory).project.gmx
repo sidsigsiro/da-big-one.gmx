@@ -714,6 +714,7 @@
       <object>objects\obj_bridge</object>
       <object>objects\obj_water_pipe</object>
       <object>objects\obj_water</object>
+      <object>objects\obj_evil_water</object>
       <object>objects\obj_button</object>
       <object>objects\obj_button_adv</object>
       <object>objects\obj_door</object>
@@ -910,6 +911,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_setup</room>
+    <room>rooms\room21</room>
     <room>rooms\rm_9</room>
     <room>rooms\rm_8</room>
     <room>rooms\room20</room>

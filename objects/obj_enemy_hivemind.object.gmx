@@ -239,7 +239,9 @@ if instance_exists(obj_enemy) {
           <argument>
             <kind>1</kind>
             <string>///draw alarm[0] on player
-draw_text(obj_player.x - 7, obj_player.y + 7, string(alarm[0]))
+if instance_exists(obj_player) {
+    draw_text(obj_player.x - 7, obj_player.y + 7, string(alarm[0]))
+}
 </string>
           </argument>
         </arguments>

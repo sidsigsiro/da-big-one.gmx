@@ -23,48 +23,51 @@ if mouse_wheel_down() {
 }
 
 //spawn ice
-if place_meeting(obj_cursor.x, obj_cursor.y, obj_water) {
+if place_meeting(obj_cursor.x, obj_cursor.y, obj_water) or place_meeting(obj_cursor.x, obj_cursor.y, obj_evil_water) {
     if temp = COOL {
         if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock, true, true) {
-            if crouch = true {
-                if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_crouch, true, true) {
-                    if stam > 0 {
-                        stam -= 0.5
-                        instance_create(obj_cursor.x + random_range(-1, 1), obj_cursor.y + random_range(-1, 1), obj_ice)
-                    }
-                }
-            } else if crouch = false {
+            if (crouch = false or !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_crouch, true, true)) {
                 if stam > 0 {
                     stam -= 0.5
-                    instance_create(obj_cursor.x + random_range(-1, 1), obj_cursor.y + random_range(-1, 1), obj_ice)
+                    water_touch = instance_place(obj_cursor.x, obj_cursor.y, obj_water)
+                    evil_water_touch = instance_place(obj_cursor.x, obj_cursor.y, obj_evil_water)
+                    if water_touch {
+                        with(water_touch) { 
+                            ice = instance_change(obj_ice,true)
+                        }
+                    }
+                    if evil_water_touch {
+                        with(evil_water_touch) { 
+                            ice = instance_change(obj_ice,true)
+                            ice.evil = true
+                        }
+                    }
                 }
             }
         }
     }
 }
 
+
 //melt ice
 var icetar = instance_place(obj_cursor.x, obj_cursor.y, obj_ice)
 if position_meeting(obj_cursor.x, obj_cursor.y, obj_ice) {
     if temp = HEAT {
         if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock, true, true) {
-            if crouch = true {
-                if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_crouch, true, true) {
+                if (crouch = false or !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_crouch, true, true)) {
+                    show_debug_message("gooby")
                     if stam > 0 {
                         stam -= 1
                         with(icetar) {
-                            instance_destroy();
-                        }
+                            if evil = false {
+                                instance_change(obj_water,true)
+                            } else if evil = true {
+                            show_debug_message("gooby")
+                                instance_change(obj_evil_water, true)
+                            }
+                        } 
                     }
                 }
-            } else if crouch = false {
-                if stam > 0 {
-                    stam -= 1
-                    with(icetar) {
-                        instance_destroy();
-                    }
-                }
-            }
         }
     }
 }

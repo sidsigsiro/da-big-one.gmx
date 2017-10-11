@@ -246,9 +246,19 @@ if place_meeting(x, y, obj_ice) {
 ///slowed down by water
 if place_meeting(x, y, obj_water) {
     if !place_meeting(x, y, obj_ice) {
-        waterspd = (-0.3)
+        if crouch = true {
+            waterspd = (-0.3)
+        } if crouch = false{
+            waterspd = (-1)
+        }
     } else waterspd = 0
 } else waterspd = 0
+
+if place_meeting(x, y, obj_evil_water) {
+    if !place_meeting(x, y, obj_ice) {
+        room_restart();
+    }
+}
 
 ///hit by arrow
 var enemy_arrow = place_meeting(x, y, obj_arrow_enemy)

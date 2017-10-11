@@ -33,7 +33,9 @@ if instance_place(x, y, obj_enemy) {
     with(other) {
         enstate = scr_enemy_frozen
     }
-}       
+}    
+
+evil = false   
 </string>
           </argument>
         </arguments>

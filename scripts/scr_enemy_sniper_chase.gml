@@ -5,7 +5,7 @@ var moveto
 var attack_range
 
 if class = RIFLE {
-    attack_range = 370
+    attack_range = 64 //TEMPORARY
 } else if class = PISTOL {
     attack_range = 100
 }

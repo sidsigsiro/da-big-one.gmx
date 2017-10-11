@@ -161,18 +161,20 @@ if bp &lt; 0 {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var x1 = obj_player.x - 74
-var y1 = obj_player.y - 50
-var x2 = obj_player.x - 16
-var y2 = obj_player.y + 25
-var ix = x1 + (i * 40)
-var iy = y1 - 40
+            <string>if instance_exists(obj_player) {
+    var x1 = obj_player.x - 74
+    var y1 = obj_player.y - 50
+    var x2 = obj_player.x - 16
+    var y2 = obj_player.y + 25
+    var ix = x1 + (i * 40)
+    var iy = y1 - 40
 
-if obj_inventory.active = true {
-    for (i = 0; i &lt; maxitems; i += 1) {
-        draw_sprite(spr_inv_border, 0, x1 + (i * 30), y1)
-        button[i].x = x1 + (i * 30)
-        button[i].y = y1
+    if obj_inventory.active = true {
+        for (i = 0; i &lt; maxitems; i += 1) {
+            draw_sprite(spr_inv_border, 0, x1 + (i * 30), y1)
+            button[i].x = x1 + (i * 30)
+            button[i].y = y1
+        }
     }
 }
 </string>
