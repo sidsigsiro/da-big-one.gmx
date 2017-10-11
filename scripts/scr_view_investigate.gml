@@ -1,6 +1,6 @@
 ///scr_view_investigate
 if look_ahead = false {
-    focus_dir = point_direction(x, y, nexttar.x, nexttar.y);
+    focus_dir = point_direction(x, y, investar.x, investar.y);
 } else {
     focus_dir = point_direction(x, y, x + lengthdir_x(64, direction), y + lengthdir_y(64, direction))
 }
