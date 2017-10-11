@@ -1,0 +1,58 @@
+///scr_wall_hug_state_west
+//hug wall
+scr_hug_wall();
+//limit movement
+scr_move_controls_vert();
+if (left_key) {
+    phy_position_x -= spd
+    state = scr_move_state
+}
+if curfloor = 1 {
+if !place_meeting(phy_position_x + 1, phy_position_y, obj_block_floor1_side) {
+    if !place_meeting(phy_position_x + 1, phy_position_y, obj_climb_side) {
+        state = scr_move_state
+        }
+    }
+}
+if curfloor = 2 {
+if !place_meeting(phy_position_x + 1, phy_position_y, obj_block_floor2_side) {
+    if !place_meeting(phy_position_x + 1, phy_position_y, obj_climb_side) {
+        state = scr_move_state
+        }
+    }
+}
+
+if curfloor = 1 {
+    if (right_key) and vault_key {
+        if place_meeting(phy_position_x + 2, phy_position_y, obj_vault_floor1_side) {
+            phy_position_x += 20
+        }
+    }
+}
+
+if curfloor = 2 or (curfloor = 1 and raised = true)  {
+    if (right_key) and vault_key {
+        if place_meeting(phy_position_x + 2, phy_position_y, obj_vault_floor2_side) {
+            phy_position_x += 20
+        }
+    }
+}
+
+if (right_key) and vault_key {
+    if place_meeting(phy_position_x + 2, phy_position_y, obj_climb_side) {
+        phy_position_x += 20
+    }
+}
+
+if (right_key) and vault_key {
+    if place_meeting(phy_position_x + 2, phy_position_y, obj_dblock_side) {
+        phy_position_x += 20
+    }
+}
+
+//equip scope
+if scope_key and scope = false {
+    if curfloor != 1 {
+        scope = true
+    }
+}
