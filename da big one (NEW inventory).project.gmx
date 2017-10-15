@@ -242,7 +242,6 @@
       </sprites>
     </sprites>
     <sprite>sprites\sprite198</sprite>
-    <sprite>sprites\sprite203</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_grid</background>
