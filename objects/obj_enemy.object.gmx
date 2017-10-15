@@ -212,7 +212,7 @@ glr_light_destroy(my_light)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///convo alarm
+            <string>///convo alarm/reset path
 </string>
           </argument>
         </arguments>
@@ -856,6 +856,16 @@ if place_meeting(x, y, obj_water) {
         waterspd = (-0.2)
     } else waterspd = (0)
 } else waterspd = (0)
+
+//killed by evil water
+if place_meeting(x, y, obj_evil_water) {
+    if alarm[8] = -1 {
+        alarm[8] = 5
+    }
+    if alarm[8] = 0 {
+        instance_destroy();
+    }
+}
 
 //classspd
 if class = PISTOL {

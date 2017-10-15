@@ -28,18 +28,18 @@ if place_meeting(obj_cursor.x, obj_cursor.y, obj_water) or place_meeting(obj_cur
         if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock, true, true) {
             if (crouch = false or !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_crouch, true, true)) {
                 if stam > 0 {
-                    stam -= 0.5
-                    water_touch = instance_place(obj_cursor.x, obj_cursor.y, obj_water)
-                    evil_water_touch = instance_place(obj_cursor.x, obj_cursor.y, obj_evil_water)
+                    stam -= 1
+                    var water_touch = instance_place(obj_cursor.x, obj_cursor.y, obj_water)
+                    var evil_water_touch = instance_place(obj_cursor.x, obj_cursor.y, obj_evil_water)
                     if water_touch {
                         with(water_touch) { 
-                            ice = instance_change(obj_ice,true)
+                            instance_change(obj_ice,true)
                         }
                     }
                     if evil_water_touch {
-                        with(evil_water_touch) { 
-                            ice = instance_change(obj_ice,true)
-                            ice.evil = true
+                        with(evil_water_touch) {
+                            mp_grid_clear_rectangle(global.grid_floor1, x - 20, y - 20, x + 19, y + 20)
+                            instance_change(obj_evil_ice,true)
                         }
                     }
                 }
@@ -50,24 +50,28 @@ if place_meeting(obj_cursor.x, obj_cursor.y, obj_water) or place_meeting(obj_cur
 
 
 //melt ice
-var icetar = instance_place(obj_cursor.x, obj_cursor.y, obj_ice)
-if position_meeting(obj_cursor.x, obj_cursor.y, obj_ice) {
+if position_meeting(obj_cursor.x, obj_cursor.y, obj_ice) or position_meeting(obj_cursor.x, obj_cursor.y, obj_evil_ice) {
     if temp = HEAT {
         if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock, true, true) {
-                if (crouch = false or !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_crouch, true, true)) {
-                    show_debug_message("gooby")
-                    if stam > 0 {
-                        stam -= 1
+            if (crouch = false or !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_crouch, true, true)) {
+                if stam > 0 {
+                    stam -= 1
+                    var icetar = instance_place(obj_cursor.x, obj_cursor.y, obj_ice)
+                    var evil_icetar = instance_place(obj_cursor.x, obj_cursor.y, obj_evil_ice)
+                    if icetar {
                         with(icetar) {
-                            if evil = false {
-                                instance_change(obj_water,true)
-                            } else if evil = true {
-                            show_debug_message("gooby")
-                                instance_change(obj_evil_water, true)
-                            }
-                        } 
+                            instance_change(obj_water,true)
+                        }
+                    }
+                    if evil_icetar {
+                        with(evil_icetar) {
+                            mp_grid_add_rectangle(global.grid_floor1, x - 20, y - 20, x + 19, y + 20)
+                            instance_change(obj_evil_water, true)
+                            
+                        }
                     }
                 }
+            }
         }
     }
 }

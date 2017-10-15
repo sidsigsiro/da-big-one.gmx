@@ -175,6 +175,8 @@
     <sprite>sprites\spr_viewcone</sprite>
     <sprite>sprites\spr_viewnode</sprite>
     <sprite>sprites\spr_water</sprite>
+    <sprite>sprites\spr_evil_water</sprite>
+    <sprite>sprites\spr_water_path</sprite>
     <sprite>sprites\spr_water_pipe</sprite>
     <sprite>sprites\spr_wind_grab</sprite>
     <sprites name="Glare demo">
@@ -715,6 +717,7 @@
       <object>objects\obj_water_pipe</object>
       <object>objects\obj_water</object>
       <object>objects\obj_evil_water</object>
+      <object>objects\obj_evil_water_path</object>
       <object>objects\obj_button</object>
       <object>objects\obj_button_adv</object>
       <object>objects\obj_door</object>
@@ -767,6 +770,7 @@
       <object>objects\obj_wind_mine</object>
       <object>objects\obj_flare2</object>
       <object>objects\obj_ice</object>
+      <object>objects\obj_evil_ice</object>
       <objects name="INVENTORY">
         <object>objects\obj_inventory</object>
         <object>objects\obj_invbutton</object>
@@ -912,9 +916,9 @@
   <rooms name="rooms">
     <room>rooms\rm_setup</room>
     <room>rooms\room21</room>
+    <room>rooms\room22</room>
     <room>rooms\rm_9</room>
     <room>rooms\rm_8</room>
-    <room>rooms\room20</room>
     <room>rooms\rm_8_noen</room>
     <room>rooms\rm_</room>
     <room>rooms\rm_2</room>
