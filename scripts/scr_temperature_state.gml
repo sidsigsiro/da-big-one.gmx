@@ -77,34 +77,38 @@ if position_meeting(obj_cursor.x, obj_cursor.y, obj_ice) or position_meeting(obj
 }
 
 //heat barrel
-var barreltar = instance_place(obj_cursor.x, obj_cursor.y, obj_barrel);
+var barreltar = instance_place(obj_cursor.x, obj_cursor.y, obj_barrel); 
 if place_meeting(obj_cursor.x, obj_cursor.y - 8, barreltar) {
-    if stam > 0 {
-        if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock, true, true) {
-            if crouch = true {
-                if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_crouch, true, true) {
-                    if temp = HEAT {
-                        stam -= 1
-                        with(barreltar) {
-                            temp += 3
+    if barreltar != noone { 
+        if barreltar.image_index = 1 {
+            if stam > 0 {
+                if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock, true, true) {
+                    if crouch = true {
+                        if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_crouch, true, true) {
+                            if temp = HEAT {
+                                stam -= 1
+                                with(barreltar) {
+                                    temp += 3
+                                }
+                            } else if temp = COOL {
+                                stam -= 1
+                                with(barreltar) {
+                                    temp -= 2
+                                }
+                            }
                         }
-                    } else if temp = COOL {
-                        stam -= 1
-                        with(barreltar) {
-                            temp -= 2
+                    } else if crouch = false {
+                        if temp = HEAT {
+                            stam -= 1
+                            with(barreltar) {
+                                temp += 3
+                            }
+                        } else if temp = COOL {
+                            stam -= 1
+                            with(barreltar) {
+                                temp -= 2
+                            }
                         }
-                    }
-                }
-            } else if crouch = false {
-                if temp = HEAT {
-                    stam -= 1
-                    with(barreltar) {
-                        temp += 3
-                    }
-                } else if temp = COOL {
-                    stam -= 1
-                    with(barreltar) {
-                        temp -= 2
                     }
                 }
             }

@@ -44,6 +44,9 @@ curfloor = 1
 floorval = 0
 image_speed = 0
 image_index = 0
+
+dist = 200
+
 </string>
           </argument>
         </arguments>
@@ -170,6 +173,7 @@ if curfloor = 1 {
 }
 depth = -y + floorval
 
+/*
 if image_index = 1 {
     if outofbp = false {
         if alarm[1] = -1 {
@@ -177,9 +181,21 @@ if image_index = 1 {
         }
     }
 }
-if alarm[1] = 0 {
-    outofbp = true
+*/
+
+dist_this_frame = point_distance(
+    phy_position_xprevious,
+    phy_position_yprevious,
+    phy_position_x,
+    phy_position_y)
+
+if image_index = 1 {  
+    dist -= dist_this_frame
+    if (dist &gt; 0 and dist_this_frame &gt; 0) {
+        instance_create(x, y, obj_blackpowder)
+    }
 }
+
 
 if alarm[1] &gt; 0 {
     instance_create(x, y, obj_blackpowder)
