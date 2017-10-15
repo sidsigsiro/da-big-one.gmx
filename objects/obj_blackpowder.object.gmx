@@ -66,10 +66,10 @@ depth = -y + floorval
           <argument>
             <kind>1</kind>
             <string>//Ignite nearby blackpowders
-/*
 image_index = 1
 var nearest_powder = instance_nearest(x, y, obj_blackpowder)
-if (nearest_powder != noone and nearest_powder.curfloor == curfloor) {
+show_debug_message(nearest_powder)
+if (nearest_powder != noone /*and nearest_powder.curfloor == curfloor*/) {
     //if place_meeting(x, y, nearest_powder) {
         with(nearest_powder) {
             if (lit == false) {
@@ -79,9 +79,9 @@ if (nearest_powder != noone and nearest_powder.curfloor == curfloor) {
         }
     //}
 }
-*/
-//
 
+
+/*
 for (var i = 0; i &lt; 4; i++) {
     var xx = x + lengthdir_x(spread_range, i * 90);
     var yy = y + lengthdir_y(spread_range, i * 90);
@@ -104,6 +104,7 @@ for (var i = 0; i &lt; 4; i++) {
         }
     }
 }
+*/
 
 //Burn self out
 instance_destroy();

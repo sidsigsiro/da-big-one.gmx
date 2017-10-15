@@ -761,6 +761,7 @@
       <object>objects\obj_arrow_dropped</object>
       <object>objects\obj_arrow_enemy</object>
       <object>objects\obj_blackpowder</object>
+      <object>objects\obj_lit_powder</object>
       <object>objects\obj_coin</object>
       <object>objects\obj_cube</object>
       <object>objects\obj_dblock_side</object>
