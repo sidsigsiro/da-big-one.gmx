@@ -27,7 +27,6 @@
             <kind>1</kind>
             <string>///wingus mingus
 spread_range = 4; //TODO: change back to 2 //How far around to ignite other blackpowders
-lit = false;
 image_speed = 0;
 image_index = 0;
 curfloor = obj_player.curfloor
@@ -42,72 +41,6 @@ if curfloor = 2 {
 
 //check depth
 depth = -y + floorval
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//Ignite nearby blackpowders
-image_index = 1
-var nearest_powder = instance_nearest(x, y, obj_blackpowder)
-show_debug_message(nearest_powder)
-if (nearest_powder != noone /*and nearest_powder.curfloor == curfloor*/) {
-    //if place_meeting(x, y, nearest_powder) {
-        with(nearest_powder) {
-            if (lit == false) {
-                lit = true
-                alarm[0] = room_speed/20
-            }
-        }
-    //}
-}
-
-
-/*
-for (var i = 0; i &lt; 4; i++) {
-    var xx = x + lengthdir_x(spread_range, i * 90);
-    var yy = y + lengthdir_y(spread_range, i * 90);
-    var nearby_blackpowder = instance_place(xx, yy, obj_blackpowder);
-    var nearby_barrel = instance_place(xx, yy, obj_barrel);
-    if (nearby_blackpowder != noone) and nearby_blackpowder.curfloor == curfloor {
-        with (nearby_blackpowder) {
-            if (lit == false) {
-                lit = true;
-                alarm[0] = room_speed/20
-            }
-        }
-    }
-        if (nearby_barrel != noone) {
-        with (nearby_barrel) {
-            if (lit == false) {
-                lit = true;
-                alarm[0] = 1
-            }
-        }
-    }
-}
-*/
-
-//Burn self out
-instance_destroy();
 
 </string>
           </argument>
@@ -137,41 +70,13 @@ var touching_explosion = place_meeting(x, y, obj_explosion);
 
 if instance_exists(obj_spark) {
     if obj_spark.curfloor == self.curfloor {
-        if (touching_spark) &amp;&amp; (lit == false) {
-            lit = true
-            //lit = true;
-            //alarm[0] = room_speed/20 //Wait one second before spreading and burning out
+        if touching_spark {
+            instance_change(obj_lit_powder, true)
         }
     }
 }
-if instance_exists(obj_explosion) {
-    if (touching_explosion) &amp;&amp; (lit == false) {
-        lit = true
-    }
-}
-
-if lit = true {
-    image_index = 1
-    if alarm[0] = -1 {
-        alarm[0] = room_speed
-    }
-}
-
-/*if lit = true {
-    image_index = 1
-    var nearest_powder = instance_nearest(x, y, obj_blackpowder)
-    if place_meeting(x, y, nearest_powder) {
-        with(nearest_powder) {
-            lit = true
-        }
-    }
-    instance_destroy();
-}
-
-*/
-//Changing subimage while lit
-if (lit) &amp;&amp; (image_index == 0) {
-    image_index = 1;
+if (instance_exists(obj_explosion) and touching_explosion) {
+    instance_change(obj_lit_powder, true)
 }
 </string>
           </argument>

@@ -172,10 +172,7 @@ if place_meeting(obj_cursor.x, obj_cursor.y, obj_blackpowder) {
             } else if crouch = false {
                 if stam > 0 {
                     with(bptar) {
-                        lit = true
-                        if alarm[0] = -1 {
-                            alarm[0] = room_speed/20
-                        }
+                        instance_change(obj_lit_powder, true)
                     }
                 }
                 stam -= 1
