@@ -1,4 +1,8 @@
 ///scr_enemy_search_phase2
+if cautar = noone {
+    cautar = cautar0
+}
+
 
 with(obj_enemy_captain) {
     enstate = scr_enemy_patrol

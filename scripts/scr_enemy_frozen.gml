@@ -7,7 +7,11 @@ if alarm[6] = -1 {
     alarm[6] = room_speed*10
 }
 
+temp = -50
+
 if alarm[6] = 0 {
+    temp = 0
     sus = 100
+    obj_enemy_hivemind.alarm[0] = -1
     enstate = scr_enemy_patrol
 }

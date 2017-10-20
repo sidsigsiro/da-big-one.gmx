@@ -192,7 +192,7 @@ if alarm[0] &gt; 0 {
 
 //after enemy looses track of you, delete old ghost if there is any and create new ghost on players last known position
 if instance_exists(obj_enemy) {
-    if obj_enemy.enstate = scr_enemy_sniper_chase or scr_enemy_chase_path{
+    if obj_enemy.enstate = scr_enemy_sniper_chase or scr_enemy_chase_path {
         if alarm[0] = 0 {
             if instance_exists(obj_player_ghost) {
                 with (obj_player_ghost) {

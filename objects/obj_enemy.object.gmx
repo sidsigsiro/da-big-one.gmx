@@ -532,6 +532,9 @@ if enstate = scr_enemy_patrol or enstate = scr_enemy_wait {
             }
         }
     }
+} else if enstate = scr_enemy_frozen {
+    my_focus.survey = false
+    my_focus.state = noone
 }
 
 
@@ -584,46 +587,48 @@ scr_get_face();
 //hear noise
 if enstate != scr_enemy_dead {
     if enstate != scr_enemy_sniper_chase {
-        if place_meeting(x, y, obj_noise_med) {
-            noise_distract = instance_place(x, y, obj_noise_med)
-            sus += 40
-            investar = noise_distract.my_distract
-            alarm[10] = room_speed*2
-            enstate = scr_enemy_investigate
-        }
-        if place_meeting(x, y, obj_noise_arrow) {
-            alarm[10] = room_speed*2
-            sus += 200
-        }
-        if place_meeting(x, y, obj_noise_large_high) {
-            alarm[10] = room_speed*2
-            noise_distract = instance_place(x, y, obj_noise_large_high)
-            investar = noise_distract.my_distract
-            enstate = scr_enemy_investigate
-        }
-        if place_meeting(x, y, obj_noise_cube) {
-            alarm[10] = room_speed*2
-            sus += 40
-            cube_distract = place_meeting(x, y, obj_noise_cube)
-            investar = cube_distract.my_distract
-            enstate = scr_enemy_investigate_cube
-        }
-        if place_meeting(x, y, obj_noise_foot_step) or place_meeting(x, y, obj_noise_small) {
-            if instance_exists(obj_node_distraction) {
-                with (obj_node_distraction) {
-                    instance_destroy();
-                }
-            }
-            if place_meeting(x, y, obj_noise_foot_step) {
-                noise_distract = instance_create(obj_player.x, obj_player.y, obj_node_distraction)
-            } else if place_meeting(x, y, obj_noise_small) {
-                noise_distract = instance_create(obj_noise_small.x, obj_noise_small.y, obj_node_distraction)
-            }
-            investar = noise_distract
-            if enstate != scr_enemy_investigate {
+        if enstate != scr_enemy_frozen {
+            if place_meeting(x, y, obj_noise_med) {
+                noise_distract = instance_place(x, y, obj_noise_med)
                 sus += 40
-                enstate = scr_enemy_investigate
+                investar = noise_distract.my_distract
                 alarm[10] = room_speed*2
+                enstate = scr_enemy_investigate
+            }
+            if place_meeting(x, y, obj_noise_arrow) {
+                alarm[10] = room_speed*2
+                sus += 200
+            }
+            if place_meeting(x, y, obj_noise_large_high) {
+                alarm[10] = room_speed*2
+                noise_distract = instance_place(x, y, obj_noise_large_high)
+                investar = noise_distract.my_distract
+                enstate = scr_enemy_investigate
+            }
+            if place_meeting(x, y, obj_noise_cube) {
+                alarm[10] = room_speed*2
+                sus += 40
+                cube_distract = place_meeting(x, y, obj_noise_cube)
+                investar = cube_distract.my_distract
+                enstate = scr_enemy_investigate_cube
+            }
+            if place_meeting(x, y, obj_noise_foot_step) or place_meeting(x, y, obj_noise_small) {
+                if instance_exists(obj_node_distraction) {
+                    with (obj_node_distraction) {
+                        instance_destroy();
+                    }
+                }
+                if place_meeting(x, y, obj_noise_foot_step) {
+                    noise_distract = instance_create(obj_player.x, obj_player.y, obj_node_distraction)
+                } else if place_meeting(x, y, obj_noise_small) {
+                    noise_distract = instance_create(obj_noise_small.x, obj_noise_small.y, obj_node_distraction)
+                }
+                investar = noise_distract
+                if enstate != scr_enemy_investigate {
+                    sus += 40
+                    enstate = scr_enemy_investigate
+                    alarm[10] = room_speed*2
+                }
             }
         }
     }
@@ -837,6 +842,10 @@ if place_meeting(x, y, obj_splash) {
 
 if temp = -50 {
     enstate = scr_enemy_frozen
+}
+
+if temp &lt; -50 {
+    temp = -50
 }
 
 //stop checking if enemy is dead

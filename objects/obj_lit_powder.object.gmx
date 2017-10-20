@@ -56,11 +56,11 @@ alarm[0] = room_speed/20
 var nearest_powder = instance_nearest(x, y, obj_blackpowder)
 show_debug_message(nearest_powder)
 if (nearest_powder != noone /*and nearest_powder.curfloor == curfloor*/) {
-    //if place_meeting(x, y, nearest_powder) {
+    if place_meeting(x, y, nearest_powder) {
         with(nearest_powder) {
             instance_change(obj_lit_powder, true)
         }
-    //}
+    }
 }
 
 //Burn self out

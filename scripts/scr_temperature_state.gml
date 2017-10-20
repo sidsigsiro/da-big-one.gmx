@@ -4,22 +4,13 @@ if temp_key_pressed {
     state = scr_move_state
 }
 
-if mouse_wheel_up() {
-    if temp = NEUTRAL {
-        temp = HEAT
-    }
-    if temp = COOL {
-        temp = NEUTRAL
-    }
+
+if mouse_check_button(mb_left) {
+    temp = HEAT
 }
 
-if mouse_wheel_down() {
-    if temp = NEUTRAL {
-        temp = COOL
-    }
-    if temp = HEAT {
-        temp = NEUTRAL
-    }
+if mouse_check_button(mb_right) {
+    temp = COOL
 }
 
 //spawn ice

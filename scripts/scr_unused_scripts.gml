@@ -374,3 +374,30 @@ if item_get_right {
         }
     }
 }
+
+//freeze enemy
+var enemytar = instance_place(obj_cursor.x, obj_cursor.y, obj_enemy)
+if position_meeting(obj_cursor.x, obj_cursor.y, obj_enemy) {
+    if stam > 0 {
+        if temp = COOL {
+            if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock, true, true) {
+                if crouch = true {
+                    if !collision_line(x, y, enemytar.x, enemytar.y, obj_viewblock_crouch, true, true) {
+                        stam -= 1
+                        with(enemytar) {
+                            if wet = true {
+                                temp -= 1
+                            }
+                        }
+                    }
+                } else if crouch = false {
+                    stam -= 1
+                    with(enemytar) {
+                        temp -= 1
+                    }
+                }
+            }
+        }
+    }
+}
+
