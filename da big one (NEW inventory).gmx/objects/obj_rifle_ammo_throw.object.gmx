@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_pickup_any</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///create object
+event_inherited();
 temp = 0
 spd = 40
 direction = point_direction(phy_position_x, phy_position_y, mouse_x, mouse_y)
@@ -85,43 +86,68 @@ temp = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>decelerate_x = phy_speed_x/(point_distance(phy_position_x, phy_position_y, stop_x, stop_y))
-decelerate_y = phy_speed_y/(point_distance(phy_position_x, phy_position_y, stop_x, stop_y))
-
-if point_distance(spawn_x, spawn_y, phy_position_x, phy_position_y) &gt; 363 {
-    phy_speed_x = 0 
-    phy_speed_y = 0
-}
-
-if phy_position_x &gt; (stop_x - 5) and phy_position_x &lt; (stop_x + 5) {
-    phy_speed_x = 0
-}
-if phy_position_y &gt; (stop_y - 5) and phy_position_y &lt; (stop_y + 5) {
-    phy_speed_y = 0
+            <string>///step
+if pushed = false {
+    decelerate_x = phy_speed_x/(point_distance(phy_position_x, phy_position_y, stop_x, stop_y))
+    decelerate_y = phy_speed_y/(point_distance(phy_position_x, phy_position_y, stop_x, stop_y))
+    
+    if point_distance(spawn_x, spawn_y, phy_position_x, phy_position_y) &gt; 363 {
+        phy_speed_x = 0 
+        phy_speed_y = 0
+    }
+    
+    if phy_position_x &gt; (stop_x - 5) and phy_position_x &lt; (stop_x + 5) {
+        phy_speed_x = 0
+    }
+    if phy_position_y &gt; (stop_y - 5) and phy_position_y &lt; (stop_y + 5) {
+        phy_speed_y = 0
+    }
+    
+    if (phy_speed_x) != 0 {
+        phy_speed_x -= (decelerate_x)
+    }
+    if (phy_speed_y) != 0 {
+        phy_speed_y -= (decelerate_y)
+    }
+    
+    rotspd = phy_speed_x + phy_speed_y
+    phy_rotation += rotspd
+    
+    if alarm[0] = -1 {
+        if phy_speed_x = 0 and phy_speed_y = 0 {
+            if stopped = false {
+                phy_fixed_rotation = true;
+                phy_active = false
+                instance_create(x, y, obj_noise_small)
+            }
+            stopped = true
+        }
+    }
+} else if pushed = true {
+    ///scr_item_push
+    if !place_meeting(x, y, obj_ice) {
+    len -= 0.05
+    } else if place_meeting(x, y, obj_ice) {
+    len -= 0.02
+    }
+    
+    if place_meeting(x, y, obj_wall) {
+        dir -= 180
+    }
+    
+    hspd = lengthdir_x(len, dir);
+    vspd = lengthdir_y(len, dir);
+    
+    phy_position_x += hspd
+    phy_position_y += vspd
+    
+    if len &lt;= 0 {
+        pushed = false
+    }
 }
 
 depth = -y;
 
-if (phy_speed_x) != 0 {
-    phy_speed_x -= (decelerate_x)
-}
-if (phy_speed_y) != 0 {
-    phy_speed_y -= (decelerate_y)
-}
-
-rotspd = phy_speed_x + phy_speed_y
-phy_rotation += rotspd
-
-if alarm[0] = -1 {
-    if phy_speed_x = 0 and phy_speed_y = 0 {
-        if stopped = false {
-            phy_fixed_rotation = true;
-            phy_active = false
-            instance_create(x, y, obj_noise_small)
-        }
-        stopped = true
-    }
-}
 if temp = room_speed {
     instance_create(x, y, obj_caunode1)
     if instance_exists(obj_player_ghost) {
@@ -139,7 +165,7 @@ if temp = room_speed {
     }
     instance_destroy();
 }
-    
+
 </string>
           </argument>
         </arguments>
@@ -158,7 +184,7 @@ if temp = room_speed {
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>16,20</point>
+    <point>16,16</point>
     <point>8,16</point>
   </PhysicsShapePoints>
 </object>

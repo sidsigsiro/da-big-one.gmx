@@ -1,17 +1,15 @@
 ///scr_wind_state
 
 if wind_key_released {
-    if det_timer < room_speed/2 {
-        if numb_of_mines = 2 {
-            with(mine2) {
-                instance_destroy()
-            }
-            numb_of_mines = 1
-        } else if numb_of_mines = 1 {
+    if det_timer < room_speed/10 { 
+        if (mine1) != noone {
             with(mine1) {
                 instance_destroy()
             }
-            numb_of_mines = 0
+            if numb_of_mines = 2 {
+                mine1 = mine2
+            }
+            numb_of_mines -= 1            
         }
     }
     det_timer = 0

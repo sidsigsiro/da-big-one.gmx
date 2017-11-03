@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///create
+pushed = false
 temp = 0
 depth = -99
 spd = 0
@@ -82,7 +83,10 @@ if armed = true {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if temp &lt; 0 {
+            <string>//step
+event_inherited();
+
+if temp &lt; 0 {
     temp = 0
 }
 

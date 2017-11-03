@@ -5,10 +5,12 @@ if !collision_line(x, y, investar.x, investar.y, obj_viewblock, false, false) {
 } else {
     look_ahead = true
 }
+if instance_exists(my_focus) {
+    my_focus.state = scr_view_investigate
+    my_focus.investar = investar
+    my_focus.survey = true
+}
 
-my_focus.state = scr_view_investigate
-my_focus.investar = investar
-my_focus.survey = true
 
 if alarm[10] > -1 {
     alarm[0] = -1

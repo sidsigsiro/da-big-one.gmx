@@ -10,7 +10,7 @@ if temp_key_pressed {
 
 ///whistle/birdcall?
 if birdcall_key {
-    instance_create(x, y, obj_noise_foot_step)
+    instance_create(x, y, obj_noise_large)
 }
 
 //set item key
@@ -431,8 +431,12 @@ if obj_inventory.active = true {
 if moving = true {
     if crouch_key {
         if crouch = false {
-            alarm[1] = room_speed/5
-            state = scr_dash_state
+            if alarm[1] = -1 {
+                dash_start_speed = spd*5
+                len = dash_start_speed
+                time = 0
+                state = scr_dash_state
+            }
         } else {
             crouch = false
         }

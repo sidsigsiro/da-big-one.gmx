@@ -110,6 +110,10 @@ instance_destroy();
         }
     }
 }
+if place_meeting(x, y, obj_wind) {
+    instance_change(obj_blackpowder, true)
+    
+}
 </string>
           </argument>
         </arguments>

@@ -115,6 +115,10 @@ if place_meeting(x, y, obj_water) or place_meeting(x, y, obj_evil_water) {
         }
     }
 }
+
+if place_meeting(x, y, obj_wind) {
+    alarm[0] = -1
+}
 </string>
           </argument>
         </arguments>

@@ -2,22 +2,33 @@
 scr_get_input();
 scr_get_face();
 
+var enemytar = instance_place(x, y, obj_enemy)
+if enemytar {
+    with(enemytar) {
+        enstate = scr_enemy_frozen
+        alarm[6] = room_speed*2.5
+    }
+}
+
 dashtimer = room_speed*3
 
-if alarm[1] = 0 {
-    if on_ice = true {
+if len <= 0.01 {
+    alarm[1] = room_speed
+    if on_ice {
         state = scr_ice_slide_state
-    }
-    if on_ice = false {
+    } else {
         state = scr_move_state
     }
 }
 
 if place_meeting(x, y, obj_ice) {
+    alarm[1] = room_speed*2
     state = scr_ice_slide_state
 }
+time += 1/room_speed
+len = log10(-time + 1)/3 + dash_start_speed
 
-len = spd*5
+show_debug_message("len = "+string(len))
 
 //Get the hspd and vspd
 hspd = lengthdir_x(len, dir);

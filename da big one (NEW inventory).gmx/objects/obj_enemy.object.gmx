@@ -35,6 +35,9 @@ player_in_sight = false
 if instance_exists(obj_glare_controller) {
     my_light = glr_light_create(spr_glr_light_mask_4, 0, x, y, c_white, 1);
 }
+//create rifle
+my_rifle = instance_create(x, y + 5, obj_enemy_rifle)
+my_rifle.owner = self
 playerseen = 0
 look_ahead = false
 arrowtimer = 0
@@ -688,9 +691,11 @@ if sus &gt; 0 {
 
 //get ded
 if hp = 0 {
+    instance_destroy();
     dead = true
 }
 if dead = true {
+    
     enstate = scr_enemy_dead
     if squad = ALPHA {
         if search = ALPHA {

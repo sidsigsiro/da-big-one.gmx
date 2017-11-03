@@ -37,6 +37,7 @@
       </sprites>
     </sprites>
     <sprite>sprites\_________________</sprite>
+    <sprite>sprites\spr_wind</sprite>
     <sprite>sprites\spr_snail</sprite>
     <sprite>sprites\spr_shadow_small</sprite>
     <sprite>sprites\spr_grass</sprite>
@@ -147,6 +148,7 @@
     <sprite>sprites\spr_nodeC</sprite>
     <sprite>sprites\spr_nodeD</sprite>
     <sprite>sprites\spr_noise_med</sprite>
+    <sprite>sprites\spr_noise_large</sprite>
     <sprite>sprites\spr_noise_med_high</sprite>
     <sprite>sprites\spr_noise_large_high</sprite>
     <sprite>sprites\spr_noise_med_low</sprite>
@@ -244,6 +246,8 @@
     </sprites>
     <sprite>sprites\sprite198</sprite>
     <sprite>sprites\spr_wall_snail</sprite>
+    <sprite>sprites\spr_door_next</sprite>
+    <sprite>sprites\spr_rifle</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_grid</background>
@@ -576,6 +580,7 @@
     <script>scripts\scr_enemy_look.gml</script>
     <script>scripts\scr_item_pickup_spawn.gml</script>
     <script>scripts\scr_wind_state.gml</script>
+    <script>scripts\scr_item_push.gml</script>
   </scripts>
   <shaders name="shaders">
     <shaders name="Glare">
@@ -733,6 +738,8 @@
       <object>objects\obj_tree</object>
       <object>objects\obj_grass</object>
       <object>objects\obj_grass_burnt</object>
+      <object>objects\obj_door_next</object>
+      <object>objects\obj_door_prev</object>
       <objects name="BLOCKS">
         <object>objects\obj_block_floor1_side</object>
         <object>objects\obj_block_floor1_top</object>
@@ -756,9 +763,8 @@
       <object>objects\obj_pickup_firebomb</object>
       <object>objects\obj_pickup_flare</object>
       <object>objects\obj_pickup_bottle</object>
-      <object>objects\obj_pickup_wind_mine</object>
-      <object>objects\obj_firebomb</object>
       <object>objects\obj_pickup_bow</object>
+      <object>objects\obj_firebomb</object>
       <object>objects\obj_firebomb_target</object>
       <object>objects\obj_rifle_ammo_throw</object>
       <object>objects\obj_flare</object>
@@ -775,6 +781,7 @@
       <object>objects\obj_cube_small</object>
       <object>objects\obj_wind_mine</object>
       <object>objects\obj_wind_tar</object>
+      <object>objects\obj_wind</object>
       <object>objects\obj_flare2</object>
       <object>objects\obj_ice</object>
       <object>objects\obj_evil_ice</object>
@@ -824,6 +831,7 @@
         <object>objects\obj_noise_arrow</object>
         <object>objects\obj_noise_cube</object>
         <object>objects\obj_noise_foot_step</object>
+        <object>objects\obj_noise_large</object>
         <object>objects\obj_noise_small</object>
         <object>objects\obj_noise_med</object>
         <object>objects\obj_noise_large_high</object>
@@ -834,6 +842,7 @@
     <objects name="PEOPLE">
       <object>objects\obj_player</object>
       <object>objects\obj_enemy</object>
+      <object>objects\obj_enemy_rifle</object>
       <object>objects\obj_enemy_captain</object>
       <object>objects\obj_enemy_focus</object>
       <object>objects\obj_enemy_hivemind</object>
@@ -919,12 +928,12 @@
         </objects>
       </objects>
     </objects>
-    <object>objects\object231</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_setup</room>
-    <room>rooms\rm_9</room>
     <room>rooms\room22</room>
+    <room>rooms\rm_9</room>
+    <room>rooms\room23</room>
     <room>rooms\room21</room>
     <room>rooms\rm_8</room>
     <room>rooms\rm_8_noen</room>
