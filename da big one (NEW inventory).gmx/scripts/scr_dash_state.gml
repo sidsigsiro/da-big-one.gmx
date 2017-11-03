@@ -12,8 +12,8 @@ if enemytar {
 
 dashtimer = room_speed*3
 
-if len <= 0.01 {
-    alarm[1] = room_speed
+if len <= 0 {
+    alarm[1] = room_speed/3
     if on_ice {
         state = scr_ice_slide_state
     } else {
@@ -25,8 +25,9 @@ if place_meeting(x, y, obj_ice) {
     alarm[1] = room_speed*2
     state = scr_ice_slide_state
 }
-time += 1/room_speed
-len = log10(-time + 1)/3 + dash_start_speed
+
+time += 1
+len = ease_out_quad(time, dash_start_speed, -dash_start_speed, room_speed/2.5); 
 
 show_debug_message("len = "+string(len))
 
