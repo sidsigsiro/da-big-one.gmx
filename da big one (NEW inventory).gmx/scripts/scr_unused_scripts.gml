@@ -414,3 +414,18 @@ if position_meeting(obj_cursor.x, obj_cursor.y, obj_enemy) {
     }
 }
 
+//pickpocket collision circle
+if pocketitem = true {
+    if collision_circle(x, y, 20, obj_player, false, true) {
+        if enstate != scr_enemy_sniper_chase and enstate != scr_enemy_dead {
+            if use_key_pressed {
+                pocketitem = false
+                instance_destroy();
+                with(obj_player) {
+                    stam += 60
+                    hp -= 1
+                }
+            }
+        }
+    }
+}

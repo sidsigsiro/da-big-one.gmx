@@ -349,6 +349,11 @@ if crouch = true {
 
 spd = 1.5 + (waterspd) + (crouchspd)
 
+///stamina stuff
+if point_distance(x, y, obj_enemy.x, obj_enemy.y) &lt; 120 {
+    stam += 1
+}
+
 if stam &gt; 200 {
     stam = 200
 }
