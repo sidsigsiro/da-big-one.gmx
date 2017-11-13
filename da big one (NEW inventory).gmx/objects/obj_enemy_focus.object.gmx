@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0
+            <string>owner = noone
+image_speed = 0
 lookahead = false
 nexttar = noone
 move = true

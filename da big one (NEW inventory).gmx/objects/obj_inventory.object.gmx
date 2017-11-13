@@ -67,6 +67,14 @@ item_left = -1
 globalvar item_right;
 item_right = -1
 
+globalvar item_quick1, item_quick2, item_quick3, item_quick4, item_quick5, item_quick6;
+item_quick1 = -1
+item_quick2 = -1
+item_quick3 = -1
+item_quick4 = -1
+item_quick5 = -1
+item_quick6 = -1
+
 scr_item_pickup(4)
 scr_item_pickup(8)
 </string>

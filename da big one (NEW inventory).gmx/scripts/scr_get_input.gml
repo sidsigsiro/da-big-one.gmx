@@ -33,7 +33,15 @@ bow_key_released = noone
 bottle_key = noone
 bottle_key_pressed = noone
 bottle_key_released = noone
+//quick select
+quick1_key_held = keyboard_check(ord('1'));
+quick2_key_held = keyboard_check(ord('2'));
+quick3_key_held = keyboard_check(ord('3'));
+quick4_key_held = keyboard_check(ord('4'));
+quick5_key_held = keyboard_check(ord('5'));
+quick6_key_held = keyboard_check(ord('6'));
 
+die_key = keyboard_check(ord('K'))
 
 cam_lock_key = noone
 //item keys

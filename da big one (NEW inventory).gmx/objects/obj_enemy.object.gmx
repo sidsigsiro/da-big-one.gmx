@@ -38,17 +38,21 @@ if instance_exists(obj_glare_controller) {
 //create rifle
 my_rifle = instance_create(x, y + 5, obj_enemy_rifle)
 my_rifle.owner = self
+my_distract = noone
+wait_time = room_speed*4
 playerseen = 0
 look_ahead = false
 arrowtimer = 0
 temp = 0
 wet = false
 item_dropped = false
+//focus
 my_focus = instance_create(x, y, obj_enemy_focus)
+my_focus.owner = self
 move_next_view = 0
 view_focus = noone
 search_complete = false
-pocketitem = true
+stam = 100
 numboflines = 0
 chatting = false
 sustoken = 1
@@ -289,7 +293,6 @@ if enstate != scr_enemy_frozen {
           <argument>
             <kind>1</kind>
             <string>///decrease sus (suspicion)
-sus -= 1
 </string>
           </argument>
         </arguments>
@@ -411,6 +414,32 @@ if look_ahead = true {
     my_focus.look_ahead = false
 }
 
+//hear noise
+if enstate != scr_enemy_dead {
+    if enstate != scr_enemy_sniper_chase {
+        if enstate != scr_enemy_frozen {
+            var my_noise = instance_place(x, y, obj_noise_all)
+            if my_noise {
+                investar_x = my_noise.x
+                investar_y = my_noise.y
+                alarm[10] = room_speed*2
+                enstate = scr_enemy_investigate
+            }
+            if place_meeting(x, y, obj_noise_arrow) {
+                sus = true
+            }
+            if place_meeting(x, y, obj_noise_large_high) {
+                sus = true
+            }
+            if place_meeting(x, y, obj_noise_cube) {
+                sus = true
+            }
+            
+        }
+    }
+}
+
+//set focus state
 if enstate = scr_enemy_search_phase2 or enstate = scr_enemy_search_phase2_wait {
     if wait = false {
         my_focus.move = true
@@ -427,18 +456,22 @@ if enstate = scr_enemy_patrol or enstate = scr_enemy_wait {
                 focus_dir = point_direction(my_focus.x, my_focus.y, x + lengthdir_x(64, direction), y + lengthdir_y(64, direction))
             }
             // Get the length
-            if point_distance(x, y, my_focus.x, my_focus.y) &lt; 60 {
-                focus_len = point_distance(x, y, nexttar.x, nexttar.y)/120;
-            } else {
-            if point_distance(my_focus.x, my_focus.y, nexttar.x, nexttar.y) &gt; 24 {
-                focus_len = point_distance(x, y, nexttar.x, nexttar.y)/30;
-            } else {
-                if look_ahead = false {
-                    focus_len = 0
+            if enstate = scr_enemy_patrol {
+                if point_distance(x, y, my_focus.x, my_focus.y) &lt; 60 {
+                    focus_len = point_distance(x, y, nexttar.x, nexttar.y)/120;
                 } else {
-                    focus_len = 7
+                if point_distance(my_focus.x, my_focus.y, nexttar.x, nexttar.y) &gt; 24 {
+                    focus_len = point_distance(x, y, nexttar.x, nexttar.y)/30;
+                } else {
+                    if look_ahead = false {
+                        focus_len = 0
+                    } else {
+                        focus_len = 7
+                    }
                 }
             }
+        } else {
+            focus_len = 1
         }
             //Get the hspd and vspd
             focus_hspd = lengthdir_x(focus_len, focus_dir);
@@ -571,56 +604,6 @@ glr_light_set_rotation(my_light, dir)
 
 scr_get_face();
 
-//hear noise
-if enstate != scr_enemy_dead {
-    if enstate != scr_enemy_sniper_chase {
-        if enstate != scr_enemy_frozen {
-            if place_meeting(x, y, obj_noise_med) {
-                noise_distract = instance_place(x, y, obj_noise_med)
-                sus += 40
-                investar = noise_distract.my_distract
-                alarm[10] = room_speed*2
-                enstate = scr_enemy_investigate
-            }
-            if place_meeting(x, y, obj_noise_arrow) {
-                alarm[10] = room_speed*2
-                sus += 200
-            }
-            if place_meeting(x, y, obj_noise_large_high) {
-                alarm[10] = room_speed*2
-                noise_distract = instance_place(x, y, obj_noise_large_high)
-                investar = noise_distract.my_distract
-                enstate = scr_enemy_investigate
-            }
-            if place_meeting(x, y, obj_noise_cube) {
-                alarm[10] = room_speed*2
-                sus += 40
-                cube_distract = place_meeting(x, y, obj_noise_cube)
-                investar = cube_distract.my_distract
-                enstate = scr_enemy_investigate_cube
-            }
-            if place_meeting(x, y, obj_noise_foot_step) or place_meeting(x, y, obj_noise_small) {
-                if instance_exists(obj_node_distraction) {
-                    with (obj_node_distraction) {
-                        instance_destroy();
-                    }
-                }
-                if place_meeting(x, y, obj_noise_foot_step) {
-                    noise_distract = instance_create(obj_player.x, obj_player.y, obj_node_distraction)
-                } else if place_meeting(x, y, obj_noise_small) {
-                    noise_distract = instance_create(obj_noise_small.x, obj_noise_small.y, obj_node_distraction)
-                }
-                investar = noise_distract
-                if enstate != scr_enemy_investigate {
-                    sus += 40
-                    enstate = scr_enemy_investigate
-                    alarm[10] = room_speed*2
-                }
-            }
-        }
-    }
-}
-
 //check for floor
 if place_meeting(x, y, obj_floor_2) {
     encurfloor = 2
@@ -646,31 +629,9 @@ switch(face) {
         break;
 }
 
-//change to search phase 2 if sus is too high
-if sus &gt; 100 {
-    sus = 100
-}
-
-if sus &gt; 98 {
-        with(obj_enemy) {
-                if enstate != scr_enemy_sniper_chase {
-                    if enstate != scr_enemy_frozen {
-                        enstate = scr_enemy_search_phase2
-                    }
-                }
-        }
-}
-
 //set numboflines to zero if not chatting
 if enstate != scr_enemy_chat {
     numboflines = 0
-}
-
-//decrease sus (suspicion)
-if sus &gt; 0 {
-    if alarm[5] &lt; 1 {
-        alarm[5] = room_speed
-    }
 }
 
 //get ded
@@ -739,37 +700,19 @@ var x2c = x + lengthdir_x(view_y1 + 150, dir + 37);
 var y2c = y + lengthdir_y(view_y2 + 150, dir + 37);
 
 //sight
-var inst = obj_player
 if enstate != scr_enemy_dead {
     if enstate != scr_enemy_frozen {
-        if point_in_triangle(inst.x, inst.y, x, y, x1c, y1c, x2c, y2c) {
+        if point_in_triangle(obj_player.x, obj_player.y, x, y, x1c, y1c, x2c, y2c) {
             if (encurfloor = obj_player.curfloor) or (encurfloor = 2 and obj_player.curfloor = 1) {
-                if obj_player.crouch = false {
-                    if !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock, false, false) {
-                        if instance_exists(inst) {
-                            player_in_sight = true
+                if !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock, false, false) {
+                    if (obj_player.crouch = false or !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock_crouch, true, true)) {
+                        player_in_sight = true
+                        playerseen += 1
+                        if point_in_triangle(obj_player.x, obj_player.y, x, y, x1b, y1b, x2b, y2b) {
                             playerseen += 1
-                            if point_in_triangle(inst.x, inst.y, x, y, x1b, y1b, x2b, y2b) {
-                                playerseen += 1
-                                if point_in_triangle(inst.x, inst.y, x, y, x1, y1, x2, y2) {
+                            if point_in_triangle(obj_player.x, obj_player.y, x, y, x1, y1, x2, y2) {
+                                if !collision_line(x, y, obj_player.x, obj_player.y, obj_grass, true, true) {
                                     playerseen = 120
-                                }
-                            }
-                        }
-                    }
-                } 
-                if obj_player.crouch = true {
-                    if !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock_crouch, false, false) {
-                        if !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock, false, false) {
-                            player_in_sight = true
-                            playerseen += 1
-                            var inst = obj_player
-                            if instance_exists(inst) {
-                                if point_in_triangle(inst.x, inst.y, x, y, x1b, y1b, x2b, y2b) {
-                                    playerseen += 1
-                                    if point_in_triangle(inst.x, inst.y, x, y, x1, y1, x2, y2) {
-                                        playerseen = 120
-                                    }
                                 }
                             }
                         }
@@ -870,6 +813,21 @@ if class = PISTOL {
     classspd = 0.3
 } else if class = RIFLE {
     classspd = 0
+}
+
+//stamina stuff
+///stamina stuff
+if collision_circle(x, y, 20, obj_player, false, true) {
+    if !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock, false, false) {
+        if (obj_player.crouch = false or !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_crouch, true, true)) {
+            if stam &gt; 0 {
+                stam -= 0.5
+                with(obj_player) {
+                    stam += 0.5
+                }
+            }
+        }
+    }
 }
 
 //calculate total speed

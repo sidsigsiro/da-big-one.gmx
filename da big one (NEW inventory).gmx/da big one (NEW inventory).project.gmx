@@ -148,8 +148,8 @@
     <sprite>sprites\spr_nodeB</sprite>
     <sprite>sprites\spr_nodeC</sprite>
     <sprite>sprites\spr_nodeD</sprite>
+    <sprite>sprites\spr_noise_foot_step</sprite>
     <sprite>sprites\spr_noise_med</sprite>
-    <sprite>sprites\spr_noise_large</sprite>
     <sprite>sprites\spr_noise_med_high</sprite>
     <sprite>sprites\spr_noise_large_high</sprite>
     <sprite>sprites\spr_noise_med_low</sprite>
@@ -615,6 +615,7 @@
       <script>scripts\ease_out_quint.gml</script>
       <script>scripts\ease_out_sine.gml</script>
     </scripts>
+    <script>scripts\script259.gml</script>
   </scripts>
   <shaders name="shaders">
     <shaders name="Glare">
@@ -760,6 +761,7 @@
       <object>objects\obj_water_pipe</object>
       <object>objects\obj_water</object>
       <object>objects\obj_evil_water</object>
+      <object>objects\obj_water_puddle</object>
       <object>objects\obj_evil_water_path</object>
       <object>objects\obj_button</object>
       <object>objects\obj_button_adv</object>
@@ -862,6 +864,7 @@
       </objects>
       <object>objects\obj_hitbox</object>
       <objects name="NOISE">
+        <object>objects\obj_noise_all</object>
         <object>objects\obj_noise_arrow</object>
         <object>objects\obj_noise_cube</object>
         <object>objects\obj_noise_foot_step</object>
@@ -965,10 +968,11 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_setup</room>
-    <room>rooms\room22</room>
+    <room>rooms\room24</room>
     <room>rooms\rm_9</room>
-    <room>rooms\room23</room>
     <room>rooms\room21</room>
+    <room>rooms\room22</room>
+    <room>rooms\room23</room>
     <room>rooms\rm_8</room>
     <room>rooms\rm_8_noen</room>
     <room>rooms\rm_</room>

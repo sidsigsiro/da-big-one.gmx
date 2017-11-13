@@ -48,6 +48,7 @@ if on_ice = true {
 } else if on_ice = false {
     if (xaxis == 0 and yaxis == 0) {
         len = 0;
+        image_speed = 0.15
         } else {
         if len < spd {
             len += 0.1
@@ -56,6 +57,7 @@ if on_ice = true {
             len = spd
         }
         scr_get_face();
+        image_speed = 0.15
     }
 }
 
@@ -68,7 +70,7 @@ phy_position_x += hspd;
 phy_position_y += vspd;
 
 //control sprite
-image_index = 0
+//image_index = 0
 
 switch(face) {
     case RIGHT:

@@ -67,6 +67,7 @@ if instance_exists(obj_glare_controller) {
           <argument>
             <kind>1</kind>
             <string>glr_mesh_destroy(mesh);
+mp_grid_clear_rectangle(global.grid_floor1, x - 8, y - 8, x + 8, y + 8)
 </string>
           </argument>
         </arguments>

@@ -222,10 +222,12 @@ if place_meeting(x, y, obj_explosion) {
     instance_destroy();
 }
 
-if collision_circle(x, y, 20, obj_player, true, false) {
-    if use_key {
-        image_index = 1
-        lit = false
+if obj_player.state = scr_move_state {
+    if collision_circle(x, y, 20, obj_player, true, false) {
+        if use_key {
+            image_index = 1
+            lit = false
+        }
     }
 }
 
