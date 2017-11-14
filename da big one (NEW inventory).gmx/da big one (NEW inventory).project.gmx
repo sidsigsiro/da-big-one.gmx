@@ -615,7 +615,7 @@
       <script>scripts\ease_out_quint.gml</script>
       <script>scripts\ease_out_sine.gml</script>
     </scripts>
-    <script>scripts\script259.gml</script>
+    <script>scripts\scr_invisible.gml</script>
   </scripts>
   <shaders name="shaders">
     <shaders name="Glare">
@@ -994,7 +994,6 @@
       <room>rooms\room_glr_shadowsprites</room>
       <room>rooms\room_glr_isometric</room>
     </rooms>
-    <room>rooms\room25</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
