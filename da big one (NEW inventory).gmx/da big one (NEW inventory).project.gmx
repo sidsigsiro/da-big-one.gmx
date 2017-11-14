@@ -994,6 +994,7 @@
       <room>rooms\room_glr_shadowsprites</room>
       <room>rooms\room_glr_isometric</room>
     </rooms>
+    <room>rooms\room25</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

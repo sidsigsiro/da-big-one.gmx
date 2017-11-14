@@ -38,8 +38,8 @@ if instance_exists(obj_glare_controller) {
 //create rifle
 my_rifle = instance_create(x, y + 5, obj_enemy_rifle)
 my_rifle.owner = self
-my_distract = noone
-wait_time = room_speed*4
+my_distract = noone //object guard is distracted by
+wait_time = room_speed*4 //frames waited at patrol points
 playerseen = 0
 look_ahead = false
 arrowtimer = 0
@@ -92,28 +92,14 @@ class = noone
 wait = false
 squad = ALPHA
 search = ALPHA
+
 //patrol nodes
-nexttar = noone
-tar1 = noone
-tar2 = noone
-tar3 = noone
-tar4 = noone
-tar5 = noone
-tar6 = noone
-tar7 = noone
-tar8 = noone
-tar9 = noone
-tar10 = noone
-tar11 = noone
-tar12 = noone
-tar13 = noone
-tar14 = noone
-tar15 = noone
-tar16 = noone
-tar17 = noone
-tar18 = noone
-tar19 = noone
-tar20 = noone
+tar_num = 1
+
+for(var i = 1; i &lt;= 20; i++) {
+    tars[i] = noone
+}
+
 //alert nodes
 cautar = noone
 cautar0 = noone
@@ -121,7 +107,7 @@ caunexttar = noone
 cautar = noone
 cautar0_default = noone
 caunexttar_default = noone
-focus_nexttar = nexttar
+focus_nexttar = tars[tar_num]
 //class bonus
 classspd = 0
 </string>
@@ -451,17 +437,17 @@ if enstate = scr_enemy_patrol or enstate = scr_enemy_wait {
             my_focus.survey = false
             //get direction
             if look_ahead = false {
-                focus_dir = point_direction(my_focus.x, my_focus.y, nexttar.x, nexttar.y);
+                focus_dir = point_direction(my_focus.x, my_focus.y, tars[tar_num].x, tars[tar_num].y);
             } else if look_ahead = true {
                 focus_dir = point_direction(my_focus.x, my_focus.y, x + lengthdir_x(64, direction), y + lengthdir_y(64, direction))
             }
             // Get the length
             if enstate = scr_enemy_patrol {
                 if point_distance(x, y, my_focus.x, my_focus.y) &lt; 60 {
-                    focus_len = point_distance(x, y, nexttar.x, nexttar.y)/120;
+                    focus_len = point_distance(x, y, tars[tar_num].x, tars[tar_num].y)/120;
                 } else {
-                if point_distance(my_focus.x, my_focus.y, nexttar.x, nexttar.y) &gt; 24 {
-                    focus_len = point_distance(x, y, nexttar.x, nexttar.y)/30;
+                if point_distance(my_focus.x, my_focus.y, tars[tar_num].x, tars[tar_num].y) &gt; 24 {
+                    focus_len = point_distance(x, y, tars[tar_num].x, tars[tar_num].y)/30;
                 } else {
                     if look_ahead = false {
                         focus_len = 0
@@ -477,8 +463,8 @@ if enstate = scr_enemy_patrol or enstate = scr_enemy_wait {
             focus_hspd = lengthdir_x(focus_len, focus_dir);
             focus_vspd = lengthdir_y(focus_len, focus_dir);
             // Move
-            if !place_meeting(x, y, nexttar) {
-                if point_distance(my_focus.x, my_focus.y, nexttar.x, nexttar.y) &gt; 3 {
+            if !place_meeting(x, y, tars[tar_num]) {
+                if point_distance(my_focus.x, my_focus.y, tars[tar_num].x, tars[tar_num].y) &gt; 3 {
                     my_focus.x += focus_hspd;
                     my_focus.y += focus_vspd;
                 }
@@ -489,7 +475,7 @@ if enstate = scr_enemy_patrol or enstate = scr_enemy_wait {
         
     }
     if wait = true {
-        if place_meeting(x, y, nexttar) {
+        if place_meeting(x, y, tars[tar_num]) {
             my_focus.survey = true
             if (my_focus.state != scr_view_patrol) and (my_focus.state != scr_view_wait) {
                 my_focus.state = scr_view_patrol
@@ -497,19 +483,19 @@ if enstate = scr_enemy_patrol or enstate = scr_enemy_wait {
         } else {
             my_focus.survey = false
             //get direction
-            focus_dir = point_direction(my_focus.x, my_focus.y, nexttar.x, nexttar.y);
+            focus_dir = point_direction(my_focus.x, my_focus.y, tars[tar_num].x, tars[tar_num].y);
             // Get the length
             if point_distance(x, y, my_focus.x, my_focus.y) &lt; 60 {
-            focus_len = point_distance(x, y, nexttar.x, nexttar.y)/100;
+            focus_len = point_distance(x, y, tars[tar_num].x, tars[tar_num].y)/100;
         } else {
-            focus_len = point_distance(x, y, nexttar.x, nexttar.y)/30;
+            focus_len = point_distance(x, y, tars[tar_num].x, tars[tar_num].y)/30;
         }
                 
             //Get the hspd and vspd
             focus_hspd = lengthdir_x(focus_len, focus_dir);
             focus_vspd = lengthdir_y(focus_len, focus_dir);
             // Move
-            if point_distance(my_focus.x, my_focus.y, nexttar.x, nexttar.y) &gt; 3 {
+            if point_distance(my_focus.x, my_focus.y, tars[tar_num].x, tars[tar_num].y) &gt; 3 {
                 my_focus.x += focus_hspd;
                 my_focus.y += focus_vspd;
             }

@@ -329,7 +329,7 @@
     <instance objName="obj_block_floor1_top" x="502" y="591" name="inst_CD8D2DC8" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block_floor1_top" x="576" y="591" name="inst_3F2FAB49" locked="0" code="curfloor = 2&#xA;&#xA;" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_enemy_sniper" x="635" y="621" name="inst_751C8D65" locked="0" code="curfloor = 2&#xA;wait = true&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_enemy_sniper" x="333" y="613" name="inst_24AC7B95" locked="0" code="curfloor = 2&#xA;wait = true&#xA;nexttar = obj_node2&#xA;tar1 = obj_node2" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_sniper" x="333" y="613" name="inst_24AC7B95" locked="0" code="curfloor = 2&#xA;wait = true&#xA;tar1 = obj_node2" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>
