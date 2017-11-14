@@ -301,7 +301,7 @@
     <instance objName="obj_node8" x="336" y="144" name="inst_5966ED1E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_node9" x="175" y="280" name="inst_847FFBEE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_node11" x="190" y="464" name="inst_A62C0147" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_node13" x="448" y="96" name="inst_C0F30FA2" locked="0" code="tar1 = obj_node8&#xA;tar2 = obj_node15&#xA;tar3 = obj_node9&#xA;tar4 = obj_node11&#xA;tar5 = obj_node3 &#xA;tar6 = obj_node12&#xA;tar7 = obj_node8&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_node13" x="448" y="96" name="inst_C0F30FA2" locked="0" code="tars[1] = obj_node8&#xA;tars[2] = obj_node15&#xA;tars[3] = obj_node9&#xA;tars[4] = obj_node11&#xA;tars[5] = obj_node3 &#xA;tars[6] = obj_node12&#xA;tars[7] = obj_node8&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_node14" x="584" y="112" name="inst_170E4766" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_node15" x="248" y="112" name="inst_23133C6A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_node12" x="328" y="320" name="inst_A81F1F7A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

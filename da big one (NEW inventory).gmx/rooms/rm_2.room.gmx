@@ -301,9 +301,9 @@
     <instance objName="obj_node8" x="336" y="144" name="inst_5966ED1E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_node9" x="175" y="280" name="inst_847FFBEE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_node11" x="190" y="464" name="inst_A62C0147" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_enemy" x="336" y="168" name="inst_7764DCC8" locked="0" code="tar1 = obj_node8&#xA;tar2 = obj_node15&#xA;tar3 = obj_node9&#xA;tar4 = obj_node11&#xA;tar5 = obj_node3 &#xA;tar6 = obj_node12&#xA;tar7 = obj_node8&#xA;caunexttar = obj_caunode3" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy" x="336" y="168" name="inst_7764DCC8" locked="0" code="tars[1] = obj_node8&#xA;tars[2] = obj_node15&#xA;tars[3] = obj_node9&#xA;tars[4] = obj_node11&#xA;tars[5] = obj_node3 &#xA;tars[6] = obj_node12&#xA;tars[7] = obj_node8&#xA;caunexttar = obj_caunode3" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_enemy" x="208" y="112" name="inst_59B6C04E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_node13" x="448" y="96" name="inst_C0F30FA2" locked="0" code="tar1 = obj_node8&#xA;tar2 = obj_node15&#xA;tar3 = obj_node9&#xA;tar4 = obj_node11&#xA;tar5 = obj_node3 &#xA;tar6 = obj_node12&#xA;tar7 = obj_node8&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_node13" x="448" y="96" name="inst_C0F30FA2" locked="0" code="tars[1] = obj_node8&#xA;tars[2] = obj_node15&#xA;tars[3] = obj_node9&#xA;tars[4] = obj_node11&#xA;tars[5] = obj_node3 &#xA;tars[6] = obj_node12&#xA;tars[7] = obj_node8&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_node14" x="584" y="112" name="inst_170E4766" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_node15" x="248" y="112" name="inst_23133C6A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_node12" x="328" y="320" name="inst_A81F1F7A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -362,7 +362,7 @@
     <instance objName="obj_floor_2" x="456" y="360" name="inst_6702491C" locked="0" code="" scaleX="1.20000004768372" scaleY="3.40000009536743" colour="4294967295" rotation="0"/>
     <instance objName="obj_climb_top_floor2" x="457" y="304" name="inst_CBBB0A6B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_climb_side_floor2" x="436" y="360" name="inst_35D74558" locked="0" code="" scaleX="1" scaleY="1.79999995231628" colour="4294967295" rotation="0"/>
-    <instance objName="obj_enemy_sniper" x="471" y="361" name="inst_728DD4EE" locked="0" code="wait = true&#xA;tar1 = obj_node16&#xA;caunexttar = obj_caunode10" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_sniper" x="471" y="361" name="inst_728DD4EE" locked="0" code="wait = true&#xA;tars[1] = obj_node16&#xA;caunexttar = obj_caunode10" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water" x="122" y="719" name="inst_1089EF9B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_enemy_captain" x="501" y="276" name="inst_890DC10C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
