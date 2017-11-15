@@ -1,22 +1,25 @@
-///scr_enemy_investigate
+ ///scr_enemy_investigate
 
-if !collision_line(x, y, investar.x, investar.y, obj_viewblock, false, false) {
+if !collision_line(x, y, investar_x, investar_y, obj_viewblock, false, false) {
     look_ahead = false
 } else {
     look_ahead = true
 }
+if instance_exists(my_focus) {
+    my_focus.state = scr_view_investigate
+    my_focus.investar_x = investar_x
+    my_focus.investar_y = investar_y
+    my_focus.survey = true
+}
 
-my_focus.state = scr_view_investigate
-my_focus.investar = investar
-my_focus.survey = true
 
 if alarm[10] > -1 {
     alarm[0] = -1
 }
 if alarm[10] = -1 {
-    if instance_exists(investar) {
-        if point_distance(x, y, investar.x, investar.y) > 22 {
-            if(mp_grid_path(global.grid_floor1, path, x, y, investar.x, investar.y , true)) {
+    if investar_x != noone and investar_y != noone {
+        if point_distance(x, y, investar_x, investar_y) > 22 {
+            if(mp_grid_path(global.grid_floor1, path, x, y, investar_x, investar_y , true)) {
                 path_start(path, spd, path_action_stop, false);
             }
         } else {
@@ -37,7 +40,7 @@ if alarm[10] = -1 {
                     enstate = scr_enemy_chat
                 }
             }
-            if point_distance(x, y, investar.x, investar.y) < 14 {
+            if point_distance(x, y, investar_x, investar_y) < 14 {
                 if(mp_grid_path(global.grid_floor1, path, x, y, x, y , true)) {
                     path_start(path, spd, path_action_stop, false);
                 }
@@ -54,7 +57,14 @@ if alarm[10] = -1 {
 }
 
 if alarm[0] = 0 {
-    enstate = scr_enemy_patrol
+    if sus = false {
+        sus = true
+        enstate = scr_enemy_patrol
+    } else {
+        with(obj_enemy) {
+            enstate = scr_enemy_search_phase2
+        }
+    }
 }
 
 //set chatter c

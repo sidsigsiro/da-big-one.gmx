@@ -7,11 +7,15 @@ if alarm[6] = -1 {
     alarm[6] = room_speed*10
 }
 
+playerseen = false
+
 temp = -50
 
 if alarm[6] = 0 {
     temp = 0
-    sus = 100
+    if !instance_exists(obj_player_ghost) {
+        sus = 100
+    }
     obj_enemy_hivemind.alarm[0] = -1
-    enstate = scr_enemy_patrol
+    enstate = scr_enemy_search_phase2
 }

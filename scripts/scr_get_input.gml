@@ -19,7 +19,10 @@ dblock_key_held = keyboard_check(ord('Q'))
 dblock_key_released = keyboard_check_released(ord('Q'))
 temp_key = keyboard_check(ord('F'))
 temp_key_pressed = keyboard_check_pressed(ord('F'))
-temp_key_released = keyboard_check_released(ord('Q'))
+temp_key_released = keyboard_check_released(ord('F'))
+wind_key = keyboard_check(vk_shift)
+wind_key_pressed = keyboard_check_pressed(vk_shift)
+wind_key_released = keyboard_check_released(vk_shift)
 scope_key = keyboard_check_pressed(ord('B'))
 flint_key = keyboard_check_pressed(ord('P'))
 distract_key = keyboard_check_pressed(ord('J'))
@@ -30,7 +33,15 @@ bow_key_released = noone
 bottle_key = noone
 bottle_key_pressed = noone
 bottle_key_released = noone
+//quick select
+quick1_key_held = keyboard_check(ord('1'));
+quick2_key_held = keyboard_check(ord('2'));
+quick3_key_held = keyboard_check(ord('3'));
+quick4_key_held = keyboard_check(ord('4'));
+quick5_key_held = keyboard_check(ord('5'));
+quick6_key_held = keyboard_check(ord('6'));
 
+die_key = keyboard_check(ord('K'))
 
 cam_lock_key = noone
 //item keys
@@ -43,9 +54,6 @@ item2_key_released = mouse_check_button_released(mb_right)
 item3_key_held = mouse_check_button(mb_middle)
 item3_key_pressed = mouse_check_button_pressed(mb_middle)
 item3_key_released = mouse_check_button_released(mb_middle)
-item4_key_held = keyboard_check(vk_shift)
-item4_key_pressed = keyboard_check_pressed(vk_shift)
-item4_key_released = keyboard_check_released(vk_shift)
 
 // Get the axis
 xaxis = (right_key - left_key);

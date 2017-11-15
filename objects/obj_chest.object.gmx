@@ -105,7 +105,7 @@ if alarm[0] = 0 {
         my_item1 = instance_create(x, y, item1)
         my_item1.x1 = x1
         my_item1.y1 = y1
-        my_item.from_chest = true
+        my_item1.from_chest = true
         with(my_item1) {
             spd = 8
         }
@@ -114,7 +114,7 @@ if alarm[0] = 0 {
         my_item2 = instance_create(x, y, item2)
         my_item2.x1 = x2
         my_item2.y1 = y1
-        my_item.from_chest = true
+        my_item2.from_chest = true
         with(my_item2) {
             spd = 8
         }
@@ -123,7 +123,7 @@ if alarm[0] = 0 {
         my_item3 = instance_create(x, y, item3)
         my_item3.x1 = x3
         my_item3.y1 = y1
-        my_item.from_chest = true
+        my_item3.from_chest = true
         with(my_item3) {
             spd = 8
         }

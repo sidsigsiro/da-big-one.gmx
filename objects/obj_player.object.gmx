@@ -28,7 +28,8 @@
             <string>///create player
 ///NOTE: USE RANDOMIZE(); OTHER WISE ALL RANDOM NUMBERS WILL BE THE SAME EVERYTIME YOU LOAD THE GAME
 
-
+numb_of_mines = 0
+det_timer = 0
 barreltar = noone
 dblock_charge = 0
 temp = NEUTRAL
@@ -232,7 +233,7 @@ if !instance_exists(obj_cursor) {
     instance_create(mouse_x, mouse_y, obj_cursor)
 }
 
-if hp = 0 {
+if hp &lt;= 0 {
     room_restart()
 }
 
@@ -264,6 +265,14 @@ if place_meeting(x, y, obj_evil_water) {
 var enemy_arrow = place_meeting(x, y, obj_arrow_enemy)
 if enemy_arrow {
     hp -= 1
+}
+
+//hit by grass fire
+var grasstar = instance_place(x, y, obj_grass)
+if grasstar {
+    if grasstar.image_index = 1 {
+        hp -= 1
+    }
 }
 
 //use perception
@@ -348,8 +357,12 @@ if crouch = true {
 
 spd = 1.5 + (waterspd) + (crouchspd)
 
+//stam stuff
 if stam &gt; 200 {
     stam = 200
+}
+if stam &lt; 0 {
+    stam = 0
 }
 </string>
           </argument>

@@ -6,6 +6,7 @@
   <datafiles number="853" name="datafiles"/>
   <NewExtensions>
     <extension index="0">extensions\Glare Engine - 2D illumination</extension>
+    <extension index="1">extensions\Easing and Tweening</extension>
   </NewExtensions>
   <sounds name="sound"/>
   <sprites name="sprites">
@@ -37,6 +38,8 @@
       </sprites>
     </sprites>
     <sprite>sprites\_________________</sprite>
+    <sprite>sprites\spr_wind</sprite>
+    <sprite>sprites\spr_snail</sprite>
     <sprite>sprites\spr_shadow_small</sprite>
     <sprite>sprites\spr_grass</sprite>
     <sprite>sprites\spr_items</sprite>
@@ -145,6 +148,7 @@
     <sprite>sprites\spr_nodeB</sprite>
     <sprite>sprites\spr_nodeC</sprite>
     <sprite>sprites\spr_nodeD</sprite>
+    <sprite>sprites\spr_noise_foot_step</sprite>
     <sprite>sprites\spr_noise_med</sprite>
     <sprite>sprites\spr_noise_med_high</sprite>
     <sprite>sprites\spr_noise_large_high</sprite>
@@ -242,6 +246,9 @@
       </sprites>
     </sprites>
     <sprite>sprites\sprite198</sprite>
+    <sprite>sprites\spr_wall_snail</sprite>
+    <sprite>sprites\spr_door_next</sprite>
+    <sprite>sprites\spr_rifle</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_grid</background>
@@ -267,6 +274,7 @@
         <background>background\bg_fd_example_world_foreground_2</background>
       </backgrounds>
     </backgrounds>
+    <background>background\background18</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\path_glr_0</path>
@@ -572,6 +580,42 @@
     </scripts>
     <script>scripts\scr_enemy_look.gml</script>
     <script>scripts\scr_item_pickup_spawn.gml</script>
+    <script>scripts\scr_wind_state.gml</script>
+    <script>scripts\scr_item_push.gml</script>
+    <scripts name="Easing">
+      <script>scripts\ease_in_back.gml</script>
+      <script>scripts\ease_in_bounce.gml</script>
+      <script>scripts\ease_in_circ.gml</script>
+      <script>scripts\ease_in_cubic.gml</script>
+      <script>scripts\ease_in_elastic.gml</script>
+      <script>scripts\ease_in_expo.gml</script>
+      <script>scripts\ease_in_quad.gml</script>
+      <script>scripts\ease_in_quart.gml</script>
+      <script>scripts\ease_in_quint.gml</script>
+      <script>scripts\ease_in_sine.gml</script>
+      <script>scripts\ease_inout_back.gml</script>
+      <script>scripts\ease_inout_bounce.gml</script>
+      <script>scripts\ease_inout_circ.gml</script>
+      <script>scripts\ease_inout_cubic.gml</script>
+      <script>scripts\ease_inout_elastic.gml</script>
+      <script>scripts\ease_inout_expo.gml</script>
+      <script>scripts\ease_inout_quad.gml</script>
+      <script>scripts\ease_inout_quart.gml</script>
+      <script>scripts\ease_inout_quint.gml</script>
+      <script>scripts\ease_inout_sine.gml</script>
+      <script>scripts\ease_linear.gml</script>
+      <script>scripts\ease_out_back.gml</script>
+      <script>scripts\ease_out_bounce.gml</script>
+      <script>scripts\ease_out_circ.gml</script>
+      <script>scripts\ease_out_cubic.gml</script>
+      <script>scripts\ease_out_elastic.gml</script>
+      <script>scripts\ease_out_expo.gml</script>
+      <script>scripts\ease_out_quad.gml</script>
+      <script>scripts\ease_out_quart.gml</script>
+      <script>scripts\ease_out_quint.gml</script>
+      <script>scripts\ease_out_sine.gml</script>
+    </scripts>
+    <script>scripts\scr_invisible.gml</script>
   </scripts>
   <shaders name="shaders">
     <shaders name="Glare">
@@ -711,11 +755,13 @@
     </objects>
     <objects name="STRUCTURES">
       <object>objects\obj_wall</object>
+      <object>objects\obj_wall_snail</object>
       <object>objects\obj_barrel</object>
       <object>objects\obj_bridge</object>
       <object>objects\obj_water_pipe</object>
       <object>objects\obj_water</object>
       <object>objects\obj_evil_water</object>
+      <object>objects\obj_water_puddle</object>
       <object>objects\obj_evil_water_path</object>
       <object>objects\obj_button</object>
       <object>objects\obj_button_adv</object>
@@ -728,6 +774,8 @@
       <object>objects\obj_tree</object>
       <object>objects\obj_grass</object>
       <object>objects\obj_grass_burnt</object>
+      <object>objects\obj_door_next</object>
+      <object>objects\obj_door_prev</object>
       <objects name="BLOCKS">
         <object>objects\obj_block_floor1_side</object>
         <object>objects\obj_block_floor1_top</object>
@@ -746,13 +794,13 @@
     </objects>
     <objects name="ITEMS AND POWERS">
       <object>objects\obj_chest</object>
+      <object>objects\obj_snail</object>
       <object>objects\obj_pickup_any</object>
       <object>objects\obj_pickup_firebomb</object>
       <object>objects\obj_pickup_flare</object>
       <object>objects\obj_pickup_bottle</object>
-      <object>objects\obj_pickup_wind_mine</object>
-      <object>objects\obj_firebomb</object>
       <object>objects\obj_pickup_bow</object>
+      <object>objects\obj_firebomb</object>
       <object>objects\obj_firebomb_target</object>
       <object>objects\obj_rifle_ammo_throw</object>
       <object>objects\obj_flare</object>
@@ -768,6 +816,8 @@
       <object>objects\obj_dblock_top</object>
       <object>objects\obj_cube_small</object>
       <object>objects\obj_wind_mine</object>
+      <object>objects\obj_wind_tar</object>
+      <object>objects\obj_wind</object>
       <object>objects\obj_flare2</object>
       <object>objects\obj_ice</object>
       <object>objects\obj_evil_ice</object>
@@ -814,9 +864,11 @@
       </objects>
       <object>objects\obj_hitbox</object>
       <objects name="NOISE">
+        <object>objects\obj_noise_all</object>
         <object>objects\obj_noise_arrow</object>
         <object>objects\obj_noise_cube</object>
         <object>objects\obj_noise_foot_step</object>
+        <object>objects\obj_noise_large</object>
         <object>objects\obj_noise_small</object>
         <object>objects\obj_noise_med</object>
         <object>objects\obj_noise_large_high</object>
@@ -827,6 +879,7 @@
     <objects name="PEOPLE">
       <object>objects\obj_player</object>
       <object>objects\obj_enemy</object>
+      <object>objects\obj_enemy_rifle</object>
       <object>objects\obj_enemy_captain</object>
       <object>objects\obj_enemy_focus</object>
       <object>objects\obj_enemy_hivemind</object>
@@ -915,9 +968,11 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_setup</room>
+    <room>rooms\rm_9</room>
+    <room>rooms\room24</room>
     <room>rooms\room21</room>
     <room>rooms\room22</room>
-    <room>rooms\rm_9</room>
+    <room>rooms\room23</room>
     <room>rooms\rm_8</room>
     <room>rooms\rm_8_noen</room>
     <room>rooms\rm_</room>

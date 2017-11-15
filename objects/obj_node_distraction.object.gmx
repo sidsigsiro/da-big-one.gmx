@@ -2,7 +2,7 @@
 <object>
   <spriteName>spr_node_distraction</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -32,6 +32,8 @@ if place_meeting(x, y, obj_floor_2) {
     curfloor = 1
 }
 depth = -99
+
+sus = 0
 </string>
           </argument>
         </arguments>

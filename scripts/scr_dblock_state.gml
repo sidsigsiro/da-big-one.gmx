@@ -52,19 +52,24 @@ if dblock_key_released {
     if phy_active = true {
         if dblock_charge = room_speed {
             curfloor = 2
-            if instance_exists(obj_cube) {
+            if stam >= 50 {
+                if instance_exists(obj_cube) {
+                    with(obj_cube) {
+                        mp_grid_clear_cell(global.grid_floor1, floor(x/8), floor(y/8))
+                        instance_destroy()
+                    }
+                }     
+                instance_create(x, y, obj_cube)
                 with(obj_cube) {
-                    mp_grid_clear_cell(global.grid_floor1, floor(x/8), floor(y/8))
-                    instance_destroy()
+                    mp_grid_add_cell(global.grid_floor1, floor(x/8), floor(y/8))
                 }
-            }     
-            instance_create(x, y, obj_cube)
-            with(obj_cube) {
-                mp_grid_add_cell(global.grid_floor1, floor(x/8), floor(y/8))
+                phy_active = false
+                ymax = 0
+                stam -= 50
+            } else {
+                state = scr_move_state
+                phy_active = true
             }
-            phy_active = false
-            ymax = 0
-            stam -= 50
         } else {
         state = scr_move_state
         phy_active = true

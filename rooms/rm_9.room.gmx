@@ -3,8 +3,8 @@
   <caption></caption>
   <width>2000</width>
   <height>2000</height>
-  <vsnap>16</vsnap>
-  <hsnap>16</hsnap>
+  <vsnap>8</vsnap>
+  <hsnap>8</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
@@ -58,15 +58,15 @@
     <instance objName="obj_wall" x="3968" y="32" name="inst_E0F90421" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="3968" y="96" name="inst_DBCE451D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="3904" y="32" name="inst_170BD000" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player" x="1008" y="1888" name="inst_00F3245C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_enemy" x="372" y="1520" name="inst_A5BACFD2" locked="0" code="squad = ALPHA &#xA;//patrol nodes&#xA;nexttar = obj_node4&#xA;tar1 = obj_node4&#xA;tar2 = obj_node1&#xA;tar3 = obj_node2&#xA;tar4 = obj_node3 &#xA;&#xA;&#xA;caunexttar = obj_nodeA&#xA;cautar0 = obj_nodeA&#xA;cautar0_default = obj_nodeA&#xA;caunexttar_default = obj_nodeA&#xA;&#xA;class = PISTOL" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_node1" x="312" y="1656" name="inst_7FA596FA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player" x="1056" y="1880" name="inst_00F3245C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy" x="372" y="1520" name="inst_A5BACFD2" locked="0" code="squad = ALPHA &#xA;//patrol nodes&#xA;tars[1] = obj_node4&#xA;tars[2] = obj_node1&#xA;tars[3] = obj_node2&#xA;tars[4] = obj_node3 &#xA;&#xA;&#xA;caunexttar = obj_nodeA&#xA;cautar0 = obj_nodeA&#xA;cautar0_default = obj_nodeA&#xA;caunexttar_default = obj_nodeA&#xA;&#xA;class = RIFLE" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_node1" x="331" y="1657" name="inst_7FA596FA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_node2" x="524" y="1836" name="inst_823FE985" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_node3" x="364" y="1892" name="inst_1C063145" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_node4" x="364" y="1472" name="inst_7D81005E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_caunode1" x="452" y="1608" name="inst_75BAC76E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_caunode1" x="468" y="1836" name="inst_2FD65807" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_caunode1" x="312" y="1744" name="inst_FF0B0C2C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_caunode1" x="304" y="1776" name="inst_FF0B0C2C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_caunode1" x="336" y="1516" name="inst_C33524FE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_nodeA" x="392" y="1764" name="inst_07BEA439" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_climb_side_floor2" x="308" y="1368" name="inst_A135E4F2" locked="0" code="" scaleX="0.5" scaleY="1.02380955219269" colour="4294967295" rotation="0"/>
@@ -74,10 +74,10 @@
     <instance objName="obj_stairs" x="320" y="1080" name="inst_9FC780E9" locked="0" code="" scaleX="1.10000002384186" scaleY="0.219999998807907" colour="4294967295" rotation="90"/>
     <instance objName="obj_climb_side_floor2" x="308" y="1224" name="inst_2A807C05" locked="0" code="" scaleX="0.5" scaleY="1.02380955219269" colour="4294967295" rotation="0"/>
     <instance objName="obj_climb_side_floor2" x="308" y="1168" name="inst_DF623409" locked="0" code="" scaleX="0.5" scaleY="1.02380955219269" colour="4294967295" rotation="0"/>
-    <instance objName="obj_enemy" x="268" y="1212" name="inst_C951A1C4" locked="0" code="wait = true&#xA;squad = ALPHA&#xA;//patrol nodes&#xA;nexttar = obj_node5&#xA;tar1 = obj_node5&#xA; &#xA;&#xA;caunexttar = obj_nodeB&#xA;cautar0 = obj_nodeB&#xA;cautar0_default = obj_nodeB&#xA;caunexttar_default = obj_nodeB&#xA;&#xA;//focustar&#xA;with (my_focus) {&#xA;    nexttar = obj_viewnode1&#xA;    tar1 = obj_viewnode1&#xA;    tar2 = obj_viewnode2&#xA;    tar3 = obj_viewnode3&#xA;}&#xA;&#xA;class = RIFLE" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy" x="268" y="1212" name="inst_C951A1C4" locked="0" code="wait = true&#xA;squad = ALPHA&#xA;//patrol nodes&#xA;tars[1] = obj_node5&#xA; &#xA;&#xA;caunexttar = obj_nodeB&#xA;cautar0 = obj_nodeB&#xA;cautar0_default = obj_nodeB&#xA;caunexttar_default = obj_nodeB&#xA;&#xA;//focustar&#xA;with (my_focus) {&#xA;    tars[1] = obj_viewnode1&#xA;    tars[2] = obj_viewnode2&#xA;    tars[3] = obj_viewnode3&#xA;}&#xA;&#xA;class = RIFLE" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_node5" x="264" y="1248" name="inst_BD845575" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_nodeB" x="264" y="1288" name="inst_A65941BA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_viewnode1" x="352" y="1168" name="inst_926CFAA2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_viewnode1" x="378" y="1101" name="inst_926CFAA2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_viewnode2" x="372" y="1264" name="inst_429E170B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_viewnode3" x="360" y="1376" name="inst_54B1A217" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_viewnode3" x="368" y="1656" name="inst_A6B8F583" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -136,9 +136,9 @@
     <instance objName="obj_viewnode4" x="488" y="804" name="inst_A7BFBA63" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_viewnode5" x="504" y="900" name="inst_33B1A3A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_viewnode6" x="568" y="980" name="inst_C04F54A9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_enemy" x="616" y="812" name="inst_25B8AB63" locked="0" code="wait = true&#xA;squad = ALPHA&#xA;//patrol nodes&#xA;nexttar = obj_node6&#xA;tar1 = obj_node6&#xA; &#xA;&#xA;caunexttar = obj_nodeB&#xA;cautar0 = obj_nodeB&#xA;cautar0_default = obj_nodeB&#xA;caunexttar_default = obj_nodeB&#xA;&#xA;//focustar&#xA;with (my_focus) {&#xA;    nexttar = obj_viewnode4&#xA;    tar1 = obj_viewnode4&#xA;    tar2 = obj_viewnode5&#xA;    tar3 = obj_viewnode6&#xA;}&#xA;&#xA;class = RIFLE" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_chest" x="84" y="1068" name="inst_C6EB0273" locked="0" code="item1 = obj_pickup_flare" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_enemy" x="712" y="784" name="inst_6FC3352E" locked="0" code="wait = true&#xA;squad = ALPHA&#xA;//patrol nodes&#xA;nexttar = obj_node7&#xA;tar1 = obj_node7&#xA; &#xA;&#xA;caunexttar = obj_nodeB&#xA;cautar0 = obj_nodeB&#xA;cautar0_default = obj_nodeB&#xA;caunexttar_default = obj_nodeB&#xA;&#xA;//focustar&#xA;with (my_focus) {&#xA;    nexttar = obj_viewnode7&#xA;    tar1 = obj_viewnode7&#xA;    tar2 = obj_viewnode8&#xA;    tar3 = obj_viewnode9&#xA;}&#xA;&#xA;class = RIFLE&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy" x="616" y="812" name="inst_25B8AB63" locked="0" code="wait = true&#xA;squad = ALPHA&#xA;//patrol nodes&#xA;tars[1] = obj_node6&#xA; &#xA;&#xA;caunexttar = obj_nodeB&#xA;cautar0 = obj_nodeB&#xA;cautar0_default = obj_nodeB&#xA;caunexttar_default = obj_nodeB&#xA;&#xA;//focustar&#xA;with (my_focus) {&#xA;    tars[1] = obj_viewnode4&#xA;    tars[2] = obj_viewnode5&#xA;    tars[3] = obj_viewnode6&#xA;}&#xA;&#xA;class = RIFLE" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_chest" x="552" y="1568" name="inst_C6EB0273" locked="0" code="item1 = obj_pickup_flare&#xA;item2 = obj_pickup_bow&#xA;item3 = obj_pickup_bow&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy" x="712" y="784" name="inst_6FC3352E" locked="0" code="wait = true&#xA;squad = ALPHA&#xA;//patrol nodes&#xA;tars[1] = obj_node7&#xA; &#xA;&#xA;caunexttar = obj_nodeB&#xA;cautar0 = obj_nodeB&#xA;cautar0_default = obj_nodeB&#xA;caunexttar_default = obj_nodeB&#xA;&#xA;//focustar&#xA;with (my_focus) {&#xA;    tars[1] = obj_viewnode7&#xA;    tars[2] = obj_viewnode8&#xA;    tars[3] = obj_viewnode9&#xA;}&#xA;&#xA;class = RIFLE&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_node7" x="736" y="780" name="inst_0D147F65" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_viewnode7" x="792" y="688" name="inst_2F80F538" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_viewnode8" x="848" y="760" name="inst_067462D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -146,7 +146,7 @@
     <instance objName="obj_node8" x="644" y="656" name="inst_6D2A5757" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_node9" x="508" y="944" name="inst_2C7FDCCD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_node10" x="824" y="900" name="inst_6D515284" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_enemy" x="700" y="652" name="inst_8BFFADDB" locked="0" code="squad = ALPHA &#xA;//patrol nodes&#xA;nexttar = obj_node8&#xA;tar1 = obj_node8&#xA;tar2 = obj_node9&#xA;tar3 = obj_node10&#xA;&#xA;&#xA;caunexttar = obj_nodeA&#xA;cautar0 = obj_nodeA&#xA;cautar0_default = obj_nodeA&#xA;caunexttar_default = obj_nodeA&#xA;&#xA;class = PISTOL" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy" x="700" y="652" name="inst_8BFFADDB" locked="0" code="squad = ALPHA &#xA;//patrol nodes&#xA;tars[1] = obj_node8&#xA;tars[2] = obj_node9&#xA;tars[3] = obj_node10&#xA;&#xA;&#xA;caunexttar = obj_nodeA&#xA;cautar0 = obj_nodeA&#xA;cautar0_default = obj_nodeA&#xA;caunexttar_default = obj_nodeA&#xA;&#xA;class = PISTOL" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="208" y="1992" name="inst_7EF163C6" locked="0" code="" scaleX="1" scaleY="40" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="228" y="1408" name="inst_7F2867C4" locked="0" code="" scaleX="12" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="132" y="1316" name="inst_E2616135" locked="0" code="" scaleX="1" scaleY="12" colour="4294967295" rotation="0"/>
@@ -196,8 +196,8 @@
     <instance objName="obj_wall" x="316" y="1020" name="inst_86A5CA78" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="32" y="1380" name="inst_BB6001AF" locked="0" code="item1 = obj_pickup_firebomb&#xA;item2 = obj_pickup_flare&#xA;" scaleX="1" scaleY="20" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="32" y="1232" name="inst_DD1626B9" locked="0" code="" scaleX="1" scaleY="12" colour="4294967295" rotation="0"/>
-    <instance objName="obj_floor_2" x="100" y="1164" name="inst_38DE1525" locked="0" code="" scaleX="1.875" scaleY="3.90000009536743" colour="4294967295" rotation="0"/>
-    <instance objName="obj_enemy" x="84" y="1156" name="inst_2438D5BC" locked="0" code="wait = true&#xA;squad = ALPHA&#xA;//patrol nodes&#xA;nexttar = obj_node11&#xA;tar1 = obj_node11&#xA;&#xA;caunexttar = obj_nodeB&#xA;cautar0 = obj_nodeB&#xA;cautar0_default = obj_nodeB&#xA;caunexttar_default = obj_nodeB&#xA;&#xA;//focustar&#xA;with (my_focus) {&#xA;    nexttar = obj_viewnode10&#xA;    tar1 = obj_viewnode10&#xA;    tar2 = obj_viewnode11&#xA;}&#xA;&#xA;class = RIFLE" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_floor_2" x="92" y="1156" name="inst_38DE1525" locked="0" code="" scaleX="1.875" scaleY="3.90000009536743" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy" x="88" y="1171" name="inst_2438D5BC" locked="0" code="wait = true&#xA;squad = ALPHA&#xA;//patrol nodes&#xA;tars[1] = obj_node11&#xA;&#xA;caunexttar = obj_nodeB&#xA;cautar0 = obj_nodeB&#xA;cautar0_default = obj_nodeB&#xA;caunexttar_default = obj_nodeB&#xA;&#xA;//focustar&#xA;with (my_focus) {&#xA;    tars[1] = obj_viewnode10&#xA;    tars[2] = obj_viewnode11&#xA;}&#xA;&#xA;class = RIFLE" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stairs" x="84" y="1320" name="inst_8143E129" locked="0" code="" scaleX="1.10000002384186" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_viewnode11" x="176" y="1212" name="inst_27E84003" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_viewnode10" x="84" y="1444" name="inst_8F7345DE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -225,8 +225,6 @@
     <instance objName="obj_climb_top_floor2" x="740" y="736" name="inst_FCFD01D0" locked="0" code="" scaleX="0.452380955219269" scaleY="0.349999994039536" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="846" y="1794" name="inst_74A33864" locked="0" code="" scaleX="1" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="obj_tunnel" x="672" y="1800" name="inst_C9C96A60" locked="0" code="" scaleX="2" scaleY="1.29999995231628" colour="4294967295" rotation="0"/>
-    <instance objName="obj_pickup_bow" x="774" y="1782" name="inst_676FF0CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_pickup_bow" x="804" y="1808" name="inst_CA822C69" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1416" y="1944" name="inst_65276A7A" locked="0" code="" scaleX="70" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stairs" x="892" y="1896" name="inst_6D9C40F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="obj_wall" x="894" y="1850" name="inst_197A25F3" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
@@ -300,33 +298,28 @@
     <instance objName="obj_wall" x="1368" y="1284" name="inst_FD7955C3" locked="0" code="" scaleX="1" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1432" y="1340" name="inst_7B0DB5CA" locked="0" code="" scaleX="1" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1432" y="1220" name="inst_3554380A" locked="0" code="" scaleX="1" scaleY="6" colour="4294967295" rotation="0"/>
-    <instance objName="obj_enemy" x="1400" y="1352" name="inst_063CDB6A" locked="0" code="wait = true&#xA;squad = ALPHA&#xA;//patrol nodes&#xA;nexttar = obj_node12&#xA;tar1 = obj_node12&#xA; &#xA;&#xA;caunexttar = obj_nodeB&#xA;cautar0 = obj_nodeB&#xA;cautar0_default = obj_nodeB&#xA;caunexttar_default = obj_nodeB&#xA; &#xA;//focustar&#xA;with (my_focus) {&#xA;    nexttar = obj_viewnode12&#xA;    tar1 = obj_viewnode12&#xA;    tar2 = obj_viewnode13&#xA;}&#xA;&#xA;class = RIFLE" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy" x="1400" y="1352" name="inst_063CDB6A" locked="0" code="wait = true&#xA;squad = ALPHA&#xA;//patrol nodes&#xA;tars[1] = obj_node12&#xA; &#xA;&#xA;caunexttar = obj_nodeB&#xA;cautar0 = obj_nodeB&#xA;cautar0_default = obj_nodeB&#xA;caunexttar_default = obj_nodeB&#xA; &#xA;//focustar&#xA;with (my_focus) {&#xA;    tars[1] = obj_viewnode12&#xA;    tars[2] = obj_viewnode13&#xA;}&#xA;&#xA;class = RIFLE" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_node12" x="1400" y="1400" name="inst_8EBDAB32" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_viewnode12" x="1368" y="1476" name="inst_FBC8E628" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_viewnode13" x="1436" y="1476" name="inst_6E649B80" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_viewnode12" x="1440" y="1440" name="inst_FBC8E628" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_viewnode13" x="1360" y="1440" name="inst_6E649B80" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="1076" y="1796" name="inst_617FADBE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_grass" x="1088" y="1812" name="inst_45582EE4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_grass" x="1104" y="1796" name="inst_A6BF6A61" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_grass" x="1108" y="1820" name="inst_95EE3AA3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_grass" x="1072" y="1824" name="inst_38059CB6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_grass" x="1100" y="1836" name="inst_48101FE6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_grass" x="1128" y="1832" name="inst_E2E2AC96" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_grass" x="1132" y="1804" name="inst_97A14757" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_grass" x="1072" y="1688" name="inst_45582EE4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_grass" x="1104" y="1688" name="inst_A6BF6A61" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_grass" x="1168" y="1688" name="inst_95EE3AA3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_grass" x="1040" y="1688" name="inst_38059CB6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_grass" x="1136" y="1688" name="inst_48101FE6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_grass" x="1200" y="1688" name="inst_E2E2AC96" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_grass" x="1296" y="1688" name="inst_97A14757" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="1072" y="1844" name="inst_4BD75874" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="1064" y="1812" name="inst_F7C2C410" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_grass" x="1140" y="1824" name="inst_17EAE26D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_grass" x="1104" y="1848" name="inst_3F9DAF3B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_grass" x="1232" y="1688" name="inst_17EAE26D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_grass" x="1264" y="1688" name="inst_3F9DAF3B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tree" x="208" y="1552" name="inst_9647A851" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_tree" x="508" y="1908" name="inst_F13F1739" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_grass" x="312" y="1696" name="inst_FED272DD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_grass" x="288" y="1696" name="inst_0F7947EA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_grass" x="288" y="1708" name="inst_55550170" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_grass" x="336" y="1684" name="inst_CF68A110" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tree" x="512" y="1904" name="inst_F13F1739" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="440" y="1924" name="inst_4A46B8F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="424" y="1928" name="inst_7AF98CF3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="456" y="1916" name="inst_06F387F8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="264" y="1704" name="inst_7295A426" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_grass" x="308" y="1680" name="inst_C28CE1E4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="128" y="1480" name="inst_D17D1E6B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="128" y="1456" name="inst_16107544" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="304" y="1536" name="inst_E640EED0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -352,6 +345,27 @@
     <instance objName="obj_water" x="1568" y="544" name="inst_6A2E9829" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water" x="1504" y="544" name="inst_8BC17E23" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_chest" x="1392" y="448" name="inst_D94B7F00" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy" x="223" y="1071" name="inst_5AD2BBE1" locked="0" code="squad = ALPHA&#xA;wait = true&#xA;//patrol nodes&#xA;tars[1] = obj_node13&#xA;&#xA;&#xA;//focustar&#xA;with (my_focus) {&#xA;    tars[1] = obj_viewnode1&#xA;}&#xA;&#xA;caunexttar = obj_nodeB&#xA;cautar0 = obj_nodeB&#xA;cautar0_default = obj_nodeB&#xA;caunexttar_default = obj_nodeB&#xA;&#xA;class = RIFLE&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_node13" x="277" y="1078" name="inst_26EAB77B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_snail" x="180" y="1646" name="inst_19516387" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_coin" x="80" y="1068" name="inst_1FF2CB88" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_coin" x="511" y="1219" name="inst_7CD94F63" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_coin" x="208" y="702" name="inst_64F2E6BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_coin" x="511" y="658" name="inst_78E825F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_barrel" x="102" y="1066" name="inst_D6334351" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall" x="552" y="1648" name="inst_9ADF374C" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall" x="552" y="1528" name="inst_95A9D161" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_barrel" x="568" y="1704" name="inst_9E569B06" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_pickup_bow" x="984" y="1904" name="inst_55744F43" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_pickup_bow" x="1008" y="1872" name="inst_5F690E83" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water" x="1232" y="1888" name="inst_C6D31A4B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water" x="1248" y="1888" name="inst_E35AE0C6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water" x="1264" y="1888" name="inst_EB269CDF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water" x="1312" y="1888" name="inst_13DC861C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water" x="1328" y="1888" name="inst_EE10F2F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water" x="1296" y="1888" name="inst_50222D78" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy" x="1400" y="1544" name="inst_7A3BECC7" locked="0" code="wait = true&#xA;squad = ALPHA&#xA;//patrol nodes&#xA;tars[1] = obj_node14&#xA; &#xA;&#xA;caunexttar = obj_nodeB&#xA;cautar0 = obj_nodeB&#xA;cautar0_default = obj_nodeB&#xA;caunexttar_default = obj_nodeB&#xA; &#xA;//focustar&#xA;with (my_focus) {&#xA;    tars[1] = obj_viewnode12&#xA;    tars[2] = obj_viewnode13&#xA;}&#xA;&#xA;class = RIFLE&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_node14" x="1400" y="1480" name="inst_45C43D73" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="forest_floor" x="352" y="1984" w="16" h="16" xo="64" yo="32" id="10002968" name="inst_1F97F44C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -685,9 +699,6 @@
     <tile bgName="forest_floor" x="432" y="1840" w="16" h="16" xo="32" yo="16" id="10003443" name="inst_38F3306E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="forest_floor" x="432" y="1824" w="16" h="16" xo="32" yo="16" id="10003444" name="inst_EB54C9C5" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="forest_floor" x="432" y="1808" w="16" h="16" xo="32" yo="16" id="10003445" name="inst_5A87B633" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="forest_floor" x="432" y="1792" w="16" h="16" xo="32" yo="16" id="10003460" name="inst_53F421A8" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="forest_floor" x="432" y="1776" w="16" h="16" xo="32" yo="16" id="10003461" name="inst_8C677A64" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="forest_floor" x="432" y="1760" w="16" h="16" xo="32" yo="16" id="10003462" name="inst_2B9B80F9" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="forest_floor" x="432" y="1744" w="16" h="16" xo="32" yo="16" id="10003463" name="inst_0CCF5B97" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="forest_floor" x="432" y="1728" w="16" h="16" xo="32" yo="16" id="10003464" name="inst_A32DBBCA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="forest_floor" x="432" y="1712" w="16" h="16" xo="32" yo="16" id="10003465" name="inst_E2B6BBD3" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -792,7 +803,6 @@
     <tile bgName="forest_floor" x="448" y="1840" w="16" h="16" xo="112" yo="32" id="10003573" name="inst_B7983530" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="forest_floor" x="448" y="1824" w="16" h="16" xo="112" yo="32" id="10003574" name="inst_CCAD600E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="forest_floor" x="448" y="1808" w="16" h="16" xo="112" yo="32" id="10003575" name="inst_CCE0620B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="forest_floor" x="448" y="1776" w="16" h="16" xo="112" yo="32" id="10003577" name="inst_AB7C1D4D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="forest_floor" x="448" y="1760" w="16" h="16" xo="112" yo="32" id="10003578" name="inst_F15BBDAF" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="forest_floor" x="448" y="1728" w="16" h="16" xo="112" yo="32" id="10003580" name="inst_ABA6A674" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="forest_floor" x="448" y="1712" w="16" h="16" xo="112" yo="32" id="10003581" name="inst_F87DAB0F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -1720,8 +1730,6 @@
     <tile bgName="forest_floor" x="544" y="1808" w="16" h="16" xo="112" yo="32" id="10005575" name="inst_26A74271" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="forest_floor" x="528" y="1808" w="16" h="16" xo="112" yo="32" id="10005576" name="inst_0B53CA6A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="forest_floor" x="528" y="1792" w="16" h="16" xo="0" yo="16" id="10005623" name="inst_A8DBB054" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="forest_floor" x="512" y="1792" w="16" h="16" xo="32" yo="16" id="10005624" name="inst_5102C170" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="forest_floor" x="448" y="1792" w="16" h="16" xo="64" yo="16" id="10005632" name="inst_D3001509" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="forest_floor" x="752" y="1760" w="16" h="16" xo="64" yo="32" id="10005649" name="inst_B71164E4" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="forest_floor" x="768" y="1760" w="16" h="16" xo="64" yo="32" id="10005650" name="inst_2279438F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="forest_floor" x="800" y="1760" w="16" h="16" xo="64" yo="32" id="10005652" name="inst_FE29C2A5" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -1767,9 +1775,6 @@
     <tile bgName="forest_floor" x="528" y="1776" w="16" h="16" xo="112" yo="32" id="10005723" name="inst_518F4B9B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="forest_floor" x="512" y="1776" w="16" h="16" xo="112" yo="32" id="10005724" name="inst_17C13ABF" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="forest_floor" x="496" y="1808" w="16" h="16" xo="112" yo="32" id="10005763" name="inst_7660C84F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="forest_floor" x="464" y="1792" w="16" h="16" xo="64" yo="32" id="10005764" name="inst_20AB00A0" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="forest_floor" x="480" y="1792" w="16" h="16" xo="64" yo="32" id="10005765" name="inst_12F750BB" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="forest_floor" x="496" y="1792" w="16" h="16" xo="64" yo="32" id="10005766" name="inst_E2D14F52" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="forest_floor" x="544" y="1792" w="16" h="16" xo="64" yo="32" id="10005767" name="inst_A047C5AC" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="forest_floor" x="592" y="1792" w="16" h="16" xo="64" yo="32" id="10005770" name="inst_D0BA525A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="forest_floor" x="608" y="1792" w="16" h="16" xo="64" yo="32" id="10005771" name="inst_89A09F40" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -1796,6 +1801,116 @@
     <tile bgName="forest_floor" x="656" y="1792" w="16" h="16" xo="64" yo="32" id="10005801" name="inst_F2AB5BE3" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="forest_floor" x="672" y="1792" w="16" h="16" xo="64" yo="32" id="10005802" name="inst_21ED2F77" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="forest_floor" x="464" y="1760" w="16" h="16" xo="96" yo="32" id="10005804" name="inst_BCC2C798" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="448" y="1776" w="16" h="16" xo="16" yo="0" id="10005806" name="inst_9956A74A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="448" y="1792" w="16" h="16" xo="16" yo="32" id="10005807" name="inst_5DAD8CF5" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="440" y="1760" w="16" h="16" xo="32" yo="0" id="10005808" name="inst_7F228885" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1120" y="1648" w="16" h="16" xo="48" yo="32" id="10005920" name="inst_498009ED" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1136" y="1648" w="16" h="16" xo="48" yo="32" id="10005921" name="inst_5AE85BA8" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1104" y="1616" w="16" h="16" xo="48" yo="32" id="10005922" name="inst_0CF4A3BA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1136" y="1632" w="16" h="16" xo="48" yo="32" id="10005923" name="inst_2A22BBB0" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1088" y="1632" w="16" h="16" xo="48" yo="32" id="10005926" name="inst_C190AEFC" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1072" y="1648" w="16" h="16" xo="48" yo="32" id="10005927" name="inst_80AE26B2" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1072" y="1584" w="16" h="16" xo="48" yo="32" id="10005947" name="inst_8E92D5A9" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1088" y="1584" w="16" h="16" xo="48" yo="32" id="10005948" name="inst_B37F86EC" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1104" y="1584" w="16" h="16" xo="48" yo="32" id="10005949" name="inst_A84A2E14" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1120" y="1584" w="16" h="16" xo="48" yo="32" id="10005950" name="inst_12A31181" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1136" y="1584" w="16" h="16" xo="48" yo="32" id="10005951" name="inst_8C232FA6" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1152" y="1584" w="16" h="16" xo="48" yo="32" id="10005952" name="inst_C8797EA3" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1168" y="1584" w="16" h="16" xo="48" yo="32" id="10005953" name="inst_D5B90CFE" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1168" y="1600" w="16" h="16" xo="48" yo="32" id="10005954" name="inst_AD83DEFD" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1168" y="1616" w="16" h="16" xo="48" yo="32" id="10005955" name="inst_693BB9F3" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1168" y="1632" w="16" h="16" xo="48" yo="32" id="10005956" name="inst_246EEC21" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1168" y="1648" w="16" h="16" xo="48" yo="32" id="10005957" name="inst_19C0F7D6" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1168" y="1680" w="16" h="16" xo="48" yo="32" id="10005959" name="inst_59E2CC92" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1152" y="1632" w="16" h="16" xo="48" yo="32" id="10005965" name="inst_D832E617" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1152" y="1616" w="16" h="16" xo="48" yo="32" id="10005966" name="inst_AD26E551" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1152" y="1600" w="16" h="16" xo="48" yo="32" id="10005969" name="inst_163E89EB" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1136" y="1600" w="16" h="16" xo="48" yo="32" id="10005970" name="inst_084E770E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1104" y="1600" w="16" h="16" xo="48" yo="32" id="10005971" name="inst_15E3E217" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1088" y="1600" w="16" h="16" xo="48" yo="32" id="10005972" name="inst_268C5CAE" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1056" y="1584" w="16" h="16" xo="48" yo="32" id="10005975" name="inst_F6CD1D75" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1040" y="1584" w="16" h="16" xo="48" yo="32" id="10005976" name="inst_A9AFD711" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1040" y="1600" w="16" h="16" xo="48" yo="32" id="10005977" name="inst_C74D543C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1040" y="1616" w="16" h="16" xo="48" yo="32" id="10005978" name="inst_42074FC8" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1040" y="1632" w="16" h="16" xo="48" yo="32" id="10005979" name="inst_374073E1" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1040" y="1648" w="16" h="16" xo="48" yo="32" id="10005980" name="inst_662ECF05" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1040" y="1680" w="16" h="16" xo="48" yo="32" id="10005982" name="inst_06BC89D7" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1040" y="1696" w="16" h="16" xo="48" yo="32" id="10005983" name="inst_8061BF6D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1056" y="1696" w="16" h="16" xo="48" yo="32" id="10005984" name="inst_2C6F645D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1072" y="1696" w="16" h="16" xo="48" yo="32" id="10005985" name="inst_67AC5B35" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1088" y="1696" w="16" h="16" xo="48" yo="32" id="10005986" name="inst_5E52C3FB" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1104" y="1696" w="16" h="16" xo="48" yo="32" id="10005987" name="inst_426AD429" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1120" y="1696" w="16" h="16" xo="48" yo="32" id="10005988" name="inst_81AD2FDC" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1136" y="1696" w="16" h="16" xo="48" yo="32" id="10005989" name="inst_5E042D87" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1072" y="1664" w="16" h="16" xo="48" yo="32" id="10005994" name="inst_85BBC4EC" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1040" y="1664" w="16" h="16" xo="48" yo="32" id="10005996" name="inst_70E3D45E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1056" y="1664" w="16" h="16" xo="48" yo="32" id="10005997" name="inst_A94B0755" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1056" y="1680" w="16" h="16" xo="48" yo="32" id="10005998" name="inst_1DE5C252" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1088" y="1680" w="16" h="16" xo="48" yo="32" id="10006000" name="inst_1C79B814" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1104" y="1680" w="16" h="16" xo="48" yo="32" id="10006001" name="inst_553C28A0" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1136" y="1664" w="16" h="16" xo="48" yo="32" id="10006004" name="inst_B95E160B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1120" y="1664" w="16" h="16" xo="48" yo="32" id="10006005" name="inst_04C922BF" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1104" y="1664" w="16" h="16" xo="48" yo="32" id="10006006" name="inst_822EC2FB" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1088" y="1664" w="16" h="16" xo="48" yo="32" id="10006007" name="inst_9E9A65D6" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1104" y="1648" w="16" h="16" xo="48" yo="32" id="10006009" name="inst_2646FD7D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1088" y="1648" w="16" h="16" xo="48" yo="32" id="10006010" name="inst_AECAF268" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1072" y="1632" w="16" h="16" xo="48" yo="32" id="10006011" name="inst_547FEE5B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1056" y="1648" w="16" h="16" xo="48" yo="32" id="10006012" name="inst_C22D6F46" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1056" y="1632" w="16" h="16" xo="48" yo="32" id="10006013" name="inst_0D87E7FC" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1056" y="1616" w="16" h="16" xo="48" yo="32" id="10006014" name="inst_2B7C585E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1104" y="1632" w="16" h="16" xo="48" yo="32" id="10006017" name="inst_DCB4686B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1120" y="1632" w="16" h="16" xo="48" yo="32" id="10006018" name="inst_B92ACB86" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1120" y="1616" w="16" h="16" xo="48" yo="32" id="10006019" name="inst_BB25BD6F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1120" y="1600" w="16" h="16" xo="48" yo="32" id="10006020" name="inst_FF1086CC" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1056" y="1600" w="16" h="16" xo="64" yo="32" id="10006021" name="inst_7CE14646" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1072" y="1600" w="16" h="16" xo="64" yo="32" id="10006022" name="inst_E74492B2" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1072" y="1616" w="16" h="16" xo="64" yo="32" id="10006023" name="inst_B40C6B8A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1088" y="1616" w="16" h="16" xo="64" yo="32" id="10006024" name="inst_FA560ECB" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1136" y="1616" w="16" h="16" xo="64" yo="32" id="10006025" name="inst_CAAC8E48" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1072" y="1680" w="16" h="16" xo="64" yo="32" id="10006026" name="inst_1813C60F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1152" y="1664" w="16" h="16" xo="64" yo="32" id="10006028" name="inst_336FD313" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1168" y="1664" w="16" h="16" xo="64" yo="32" id="10006029" name="inst_C9888695" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1120" y="1680" w="16" h="16" xo="64" yo="32" id="10006030" name="inst_C544FB17" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1152" y="1696" w="16" h="16" xo="112" yo="16" id="10006031" name="inst_CE1F8039" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1136" y="1680" w="16" h="16" xo="64" yo="32" id="10006036" name="inst_7A63A1F8" depth="1000000" locked="0" colour="4294967295" scaleX="0.5" scaleY="0.5"/>
+    <tile bgName="forest_floor" x="1148" y="1680" w="16" h="16" xo="64" yo="32" id="10006037" name="inst_6FFAF566" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1136" y="1688" w="16" h="16" xo="64" yo="32" id="10006038" name="inst_61533729" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1144" y="1680" w="16" h="16" xo="64" yo="32" id="10006039" name="inst_34E34498" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1164" y="1680" w="16" h="16" xo="64" yo="32" id="10006040" name="inst_1E04944A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1152" y="1648" w="16" h="16" xo="64" yo="32" id="10006041" name="inst_9EAB463C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1168" y="1708" w="16" h="16" xo="112" yo="32" id="10006042" name="inst_65FD62D7" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1168" y="1696" w="16" h="16" xo="112" yo="32" id="10006043" name="inst_6BC841BA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1184" y="1696" w="16" h="16" xo="112" yo="32" id="10006044" name="inst_4B952CCF" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="1304" y="1596" w="16" h="16" xo="112" yo="32" id="10006045" name="inst_86CEC0C6" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="464" y="1792" w="16" h="16" xo="64" yo="32" id="10006046" name="inst_65BE70B4" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="480" y="1792" w="16" h="16" xo="64" yo="32" id="10006047" name="inst_607A1E77" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="496" y="1792" w="16" h="16" xo="64" yo="32" id="10006048" name="inst_1DC0BF4A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="512" y="1792" w="16" h="16" xo="64" yo="32" id="10006049" name="inst_41351FB5" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="720" y="1648" w="16" h="16" xo="64" yo="16" id="10006050" name="inst_8CAD3884" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="720" y="1664" w="16" h="16" xo="32" yo="32" id="10006051" name="inst_11CDB7AE" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="720" y="1552" w="16" h="16" xo="96" yo="32" id="10006052" name="inst_34000F7F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="768" y="1568" w="16" h="16" xo="96" yo="32" id="10006054" name="inst_3912BEF1" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="752" y="1568" w="16" h="16" xo="96" yo="32" id="10006055" name="inst_A75BB0CF" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="720" y="1568" w="16" h="16" xo="96" yo="32" id="10006057" name="inst_4FB9B554" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="768" y="1552" w="16" h="16" xo="96" yo="32" id="10006063" name="inst_B664BD67" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="752" y="1552" w="16" h="16" xo="96" yo="32" id="10006064" name="inst_94CCFB87" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="736" y="1552" w="16" h="16" xo="96" yo="32" id="10006065" name="inst_A5F037B8" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="736" y="1568" w="16" h="16" xo="96" yo="32" id="10006066" name="inst_456C9ED6" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="736" y="1584" w="16" h="16" xo="96" yo="32" id="10006067" name="inst_0CA08886" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="720" y="1584" w="16" h="16" xo="96" yo="32" id="10006068" name="inst_CA85BB62" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="704" y="1568" w="16" h="16" xo="96" yo="32" id="10006069" name="inst_DE2AA273" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="704" y="1488" w="16" h="16" xo="128" yo="16" id="10006070" name="inst_5885954D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="720" y="1472" w="16" h="16" xo="128" yo="16" id="10006071" name="inst_6BD6AA92" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="800" y="1648" w="16" h="16" xo="96" yo="16" id="10006073" name="inst_3E590458" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="788" y="1644" w="16" h="16" xo="96" yo="16" id="10006074" name="inst_B4B7E8D7" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="784" y="1636" w="16" h="16" xo="96" yo="16" id="10006075" name="inst_42346BD5" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="776" y="1637" w="16" h="16" xo="96" yo="16" id="10006076" name="inst_87425A3F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="775" y="1628" w="16" h="16" xo="96" yo="16" id="10006077" name="inst_566ECDA4" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="791" y="1626" w="16" h="16" xo="96" yo="16" id="10006078" name="inst_7393CE68" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="781" y="1622" w="16" h="16" xo="96" yo="16" id="10006079" name="inst_16DCCD8E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="773" y="1625" w="16" h="16" xo="96" yo="16" id="10006080" name="inst_7AC32EC6" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="forest_floor" x="767" y="1637" w="16" h="16" xo="96" yo="16" id="10006081" name="inst_71B357E6" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_grass_test" x="699" y="1644" w="25" h="25" xo="25" yo="50" id="10006082" name="inst_25320A65" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>-1</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>

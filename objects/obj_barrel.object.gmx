@@ -73,19 +73,19 @@ dist = 200
 instance_create(x, y, obj_node_distraction)
 instance_create(x, y, obj_explosion)
 instance_create(x, y, obj_caunode1)
-                if instance_exists(obj_player_ghost) {
-                    with(obj_player_ghost) {
-                        instance_destroy()
-                    }
-                }
-                instance_create(x, y, obj_player_ghost)
-                with(obj_enemy) {
-                    if (enstate = scr_enemy_patrol or enstate = scr_enemy_wait) or (enstate = scr_enemy_search_phase2 or enstate = scr_enemy_investigate) {
-                        obj_enemy.enstate = scr_enemy_investigate
-                        obj_enemy.investar = obj_player_ghost
-                        obj_enemy.alarm[10] = room_speed*2
-                    }
-                }
+if instance_exists(obj_player_ghost) {
+    with(obj_player_ghost) {
+        instance_destroy()
+    }
+}
+instance_create(x, y, obj_player_ghost)
+with(obj_enemy) {
+    if (enstate = scr_enemy_patrol or enstate = scr_enemy_wait) or (enstate = scr_enemy_search_phase2 or enstate = scr_enemy_investigate) {
+        obj_enemy.enstate = scr_enemy_investigate
+        obj_enemy.investar = obj_player_ghost
+        obj_enemy.alarm[10] = room_speed*2
+    }
+}
 instance_create(x, y, obj_caunode1)
 </string>
           </argument>
@@ -202,14 +202,13 @@ if alarm[1] &gt; 0 {
 }
 
 //Lighting black powder with spark
-var touching_spark = place_meeting(x, y, obj_spark);
-if image_index = 1 {
-    if (touching_spark) &amp;&amp; (lit == false) {
+var touching_powder = place_meeting(x, y, obj_lit_powder);
+if touching_powder {
+    if image_index = 1 {
         lit = true;
         alarm[0] = room_speed/20 //Wait one second before spreading and burning out
     }
 }
-
 ///check state
 script_execute(state)
 
@@ -223,10 +222,12 @@ if place_meeting(x, y, obj_explosion) {
     instance_destroy();
 }
 
-if collision_circle(x, y, 20, obj_player, true, false) {
-    if use_key {
-        image_index = 1
-        lit = false
+if obj_player.state = scr_move_state {
+    if collision_circle(x, y, 20, obj_player, true, false) {
+        if use_key {
+            image_index = 1
+            lit = false
+        }
     }
 }
 

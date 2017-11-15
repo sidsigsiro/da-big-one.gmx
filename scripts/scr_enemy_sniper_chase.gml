@@ -5,7 +5,7 @@ var moveto
 var attack_range
 
 if class = RIFLE {
-    attack_range = 64 //TEMPORARY
+    attack_range = 200 //TEMPORARY
 } else if class = PISTOL {
     attack_range = 100
 }
@@ -30,20 +30,29 @@ if attacking = true {
     path_end()
     //shoot arrow
     if arrowtimer != room_speed {
+        image_blend = c_yellow
         arrowtimer += 1
     }
     if arrowtimer = room_speed {
-        instance_create(x + lengthdir_x(12, point_direction(x, y, obj_player.x, obj_player.y)),y + lengthdir_y(12, point_direction(x, y, obj_player.x, obj_player.y)), obj_arrow_enemy)
-        arrowtimer = 0
+        if !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock, true, true) {
+            if obj_player.crouch = false or !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock_crouch, true, true)  { {
+                    my_rifle.image_index = 1
+                }
+                obj_player.hp -= 1
+                arrowtimer = 0
+            }
+        }
+    } else {
+        my_rifle.image_index = 0
     }
     if alarm[0] > 0 {
-        image_index = 1
+    image_index = 1
     }
     if alarm[0] = 0 {
-        image_index = 0
-        attacking = false
-    } 
-} else if attacking = false {
+    image_index = 0
+    attacking = false
+    }
+} else {
     arrowtimer = 0
     scr_enemy_chase_path()
 }

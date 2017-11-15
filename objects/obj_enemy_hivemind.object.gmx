@@ -201,7 +201,9 @@ if instance_exists(obj_enemy) {
             }
             instance_create(obj_player.phy_position_x, obj_player.phy_position_y, obj_player_ghost)
             with (obj_enemy) {
-                enstate = scr_enemy_search_phase1
+                if enstate != scr_enemy_frozen {
+                    enstate = scr_enemy_search_phase1
+                }
             }
         }
     }
@@ -240,7 +242,7 @@ if instance_exists(obj_enemy) {
             <kind>1</kind>
             <string>///draw alarm[0] on player
 if instance_exists(obj_player) {
-    draw_text(obj_player.x - 7, obj_player.y + 7, string(alarm[0]))
+    draw_text(obj_player.x - 16, obj_player.y + 16, string(alarm[0]))
 }
 </string>
           </argument>

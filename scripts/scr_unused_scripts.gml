@@ -2,6 +2,34 @@ if enstate != scr_enemy_dead {
     draw_triangle_colour(x, y, x1, y1, x2, y2, c_black, c_black, c_black, true)
 }
 
+//change to search phase 2 if sus is too high (obj_enemy_step event)
+if sus > 100 {
+    sus = 100
+}
+
+if sus > 98 {
+        with(obj_enemy) {
+                if enstate != scr_enemy_sniper_chase {
+                    if enstate != scr_enemy_frozen {
+                        enstate = scr_enemy_search_phase2
+                    }
+                }
+        }
+}
+
+item4_key_held = keyboard_check(vk_shift)
+item4_key_pressed = keyboard_check_pressed(vk_shift)
+item4_key_released = keyboard_check_released(vk_shift)
+
+//Lighting black powder with spark (BARREL OBJECT)
+var touching_spark = place_meeting(x, y, obj_spark);
+if image_index = 1 {
+    if (touching_spark) && (lit == false) {
+        lit = true;
+        alarm[0] = room_speed/20 //Wait one second before spreading and burning out
+    }
+}
+
 ///plant wind mine
 if obj_inventory_slot_right.item = WINDMINE {
     if item2_key_pressed {
@@ -401,3 +429,18 @@ if position_meeting(obj_cursor.x, obj_cursor.y, obj_enemy) {
     }
 }
 
+//pickpocket collision circle ( in enemy object step event)
+if pocketitem = true {
+    if collision_circle(x, y, 20, obj_player, false, true) {
+        if enstate != scr_enemy_sniper_chase and enstate != scr_enemy_dead {
+            if use_key_pressed {
+                pocketitem = false
+                instance_destroy();
+                with(obj_player) {
+                    stam += 60
+                    hp -= 1
+                }
+            }
+        }
+    }
+}

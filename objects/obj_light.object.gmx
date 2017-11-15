@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>my_light = glr_light_create(spr_glr_light_mask_point_2, 0, x, y, c_white, 1);
+            <string>my_light = glr_light_create(spr_glr_light_mask_point, 0, x, y, c_white, 1);
+
+//invis light: my_light = glr_light_create(spr_glr_light_mask_point, 0, x, y, c_white, 1);
 </string>
           </argument>
         </arguments>

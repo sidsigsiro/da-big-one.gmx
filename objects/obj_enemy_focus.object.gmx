@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0
+            <string>owner = noone
+image_speed = 0
 lookahead = false
-nexttar = noone
+tar_num = 1
 move = true
 depth = -20
 survey = false
@@ -37,27 +38,11 @@ squad_number = 0
 
 //focustar
 waittar = noone
-nexttar = noone
-tar1 = noone
-tar2 = noone
-tar3 = noone
-tar4 = noone
-tar5 = noone
-tar6 = noone
-tar7 = noone
-tar8 = noone
-tar9 = noone
-tar10 = noone
-tar11 = noone
-tar12 = noone
-tar13 = noone
-tar14 = noone
-tar15 = noone
-tar16 = noone
-tar17 = noone
-tar18 = noone
-tar19 = noone
-tar20 = noone
+tar_num = 1
+
+for(var i = 1; i &lt;= 20; i++) {
+    tars[i] = noone
+}
 </string>
           </argument>
         </arguments>

@@ -13,6 +13,10 @@ if mouse_check_button(mb_right) {
     temp = COOL
 }
 
+if !mouse_check_button(mb_left) and !mouse_check_button(mb_right) {
+    temp = NEUTRAL
+}
+
 //spawn ice
 if place_meeting(obj_cursor.x, obj_cursor.y, obj_water) or place_meeting(obj_cursor.x, obj_cursor.y, obj_evil_water) {
     if temp = COOL {
@@ -74,21 +78,7 @@ if place_meeting(obj_cursor.x, obj_cursor.y - 8, barreltar) {
         if barreltar.image_index = 1 {
             if stam > 0 {
                 if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock, true, true) {
-                    if crouch = true {
-                        if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_crouch, true, true) {
-                            if temp = HEAT {
-                                stam -= 1
-                                with(barreltar) {
-                                    temp += 3
-                                }
-                            } else if temp = COOL {
-                                stam -= 1
-                                with(barreltar) {
-                                    temp -= 2
-                                }
-                            }
-                        }
-                    } else if crouch = false {
+                    if (crouch = false or !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_crouch, true, true)) {
                         if temp = HEAT {
                             stam -= 1
                             with(barreltar) {
@@ -112,21 +102,7 @@ var ammotar = instance_place(obj_cursor.x, obj_cursor.y, obj_rifle_ammo_throw);
 if place_meeting(obj_cursor.x, obj_cursor.y - 8, ammotar) {
     if stam > 0 {
         if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock, true, true) {
-            if crouch = true {
-                if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_crouch, true, true) {
-                    if temp = HEAT {
-                        stam -= 1
-                        with(ammotar) {
-                            temp += 3
-                        }
-                    } else if temp = COOL {
-                        stam -= 1
-                        with(ammotar) {
-                            temp -= 2
-                        }
-                    }
-                }
-            } else if crouch = false {
+            if (crouch = false or !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_crouch, true, true)) {
                 if temp = HEAT {
                     stam -= 1
                     with(ammotar) {
@@ -148,25 +124,13 @@ var bptar = instance_place(obj_cursor.x, obj_cursor.y, obj_blackpowder)
 if place_meeting(obj_cursor.x, obj_cursor.y, obj_blackpowder) {
     if temp = HEAT {
         if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock, true, true) {
-            if crouch = true {
-                if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_crouch, true, true) {
-                    if stam > 0 {
-                        with(bptar) {
-                            lit = true
-                            if alarm[0] = -1 {
-                                alarm[0] = room_speed/20
-                            }
-                        }
-                    }
-                    stam -= 1
-                }
-            } else if crouch = false {
+            if (crouch = false or !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_crouch, true, true)) {
                 if stam > 0 {
                     with(bptar) {
                         instance_change(obj_lit_powder, true)
                     }
+                    stam -= 1
                 }
-                stam -= 1
             }
         }
     }
@@ -178,17 +142,10 @@ if place_meeting(obj_cursor.x, obj_cursor.y, obj_pickup_firebomb) {
     if stam > 0 {
         if temp = HEAT {
             if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock, true, true) {
-                if crouch = true {
-                    if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_crouch, true, true) {
-                        stam -= 1
-                        with(firebombtar) {
-                            temp += 3
-                        }
-                    }
-                } else if crouch = false {
-                stam -= 1
-                with(firebombtar) {
-                    temp += 3
+                if (crouch = false or !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_crouch, true, true)) {
+                    stam -= 1
+                    with(firebombtar) {
+                        temp += 3
                     }
                 }
             }
@@ -204,19 +161,12 @@ if position_meeting(obj_cursor.x, obj_cursor.y, obj_enemy) {
     if stam > 0 {
         if temp = COOL {
             if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock, true, true) {
-                if crouch = true {
-                    if !collision_line(x, y, enemytar.x, enemytar.y, obj_viewblock_crouch, true, true) {
-                        stam -= 1
-                        with(enemytar) {
-                            if wet = true {
-                                temp -= 1
-                            }
-                        }
-                    }
-                } else if crouch = false {
+                if (crouch = false or !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_crouch, true, true)) {
                     stam -= 1
                     with(enemytar) {
-                        temp -= 1
+                        if wet = true {
+                            temp -= 1
+                        }
                     }
                 }
             }

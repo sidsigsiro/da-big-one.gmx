@@ -26,8 +26,36 @@
           <argument>
             <kind>1</kind>
             <string>///set alarm to be able to freeze enemy
-freezer = true
-alarm[0] = room_speed
+var enemy_tar = instance_place(x, y, obj_enemy)
+if enemy_tar {
+    with(enemy_tar) {
+        temp = -50
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///melting alarm
+instance_change(obj_water, true)
 </string>
           </argument>
         </arguments>
@@ -73,14 +101,9 @@ alarm[0] = room_speed
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if alarm[0] &gt; 0 {
-    var enemytar = instance_place(x, y, obj_enemy)
-    if enemytar {
-        with(enemytar) {
-            if enstate != scr_enemy_frozen {
-                temp = -50
-            }
-        }
+            <string>if place_meeting(x, y, obj_lit_powder) {
+    if alarm[1] = -1 {
+        alarm[1] = room_speed
     }
 }
 </string>
