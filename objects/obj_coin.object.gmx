@@ -50,6 +50,7 @@
             <kind>1</kind>
             <string>if place_meeting(x, y, obj_player) {
     obj_player.coins += 1
+    instance_create(x, y, obj_noise_large)
     instance_destroy()
 }
 </string>

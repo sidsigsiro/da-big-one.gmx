@@ -3,8 +3,8 @@
   <caption></caption>
   <width>1000</width>
   <height>1000</height>
-  <vsnap>4</vsnap>
-  <hsnap>4</hsnap>
+  <vsnap>16</vsnap>
+  <hsnap>16</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
@@ -59,7 +59,7 @@
     <instance objName="obj_wall" x="3968" y="96" name="inst_DBCE451D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="3904" y="32" name="inst_170BD000" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_light" x="-32" y="656" name="inst_91D02737" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player" x="500" y="520" name="inst_B6B45679" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player" x="292" y="892" name="inst_B6B45679" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="992" y="992" name="inst_955C3F98" locked="0" code="" scaleX="133" scaleY="1.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="0" y="496" name="inst_FBBCDE5D" locked="0" code="" scaleX="1" scaleY="70" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="992" y="528" name="inst_E178792C" locked="0" code="" scaleX="1" scaleY="70" colour="4294967295" rotation="0"/>
@@ -321,7 +321,7 @@
     <instance objName="obj_grass" x="504" y="848" name="inst_AF43ABA5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="488" y="896" name="inst_F10AEA82" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="520" y="904" name="inst_0FEAACAD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_tree" x="556" y="836" name="inst_8DC60180" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tree" x="784" y="840" name="inst_8DC60180" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="456" y="872" name="inst_55B09858" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="456" y="896" name="inst_5D54E453" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="488" y="912" name="inst_D088DDF8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -366,23 +366,57 @@
     <instance objName="obj_caunode1" x="640" y="528" name="inst_0C7580DE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_caunode1" x="476" y="352" name="inst_9AFC29D2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_nodeA" x="540" y="416" name="inst_9C67945D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_floor_2" x="936" y="468" name="inst_FDB6090D" locked="0" code="" scaleX="1.5" scaleY="5.1875" colour="4294967295" rotation="0"/>
+    <instance objName="obj_climb_side_floor2" x="892" y="464" name="inst_6A2A1B32" locked="0" code="" scaleX="0.5" scaleY="4" colour="4294967295" rotation="0"/>
+    <instance objName="obj_stairs" x="936" y="280" name="inst_8261756A" locked="0" code="" scaleX="1.25" scaleY="0.262499988079071" colour="4294967295" rotation="180"/>
+    <instance objName="obj_stairs" x="936" y="656" name="inst_7C2326E4" locked="0" code="" scaleX="1.25" scaleY="0.262499988079071" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy" x="944" y="456" name="inst_2D1485A5" locked="0" code="wait = true&#xA;squad = ALPHA&#xA;//patrol nodes&#xA;tars[1] = obj_node7&#xA; &#xA;&#xA;caunexttar = obj_nodeB&#xA;cautar0 = obj_nodeB&#xA;cautar0_default = obj_nodeB&#xA;caunexttar_default = obj_nodeB&#xA;&#xA;//focustar&#xA;with (my_focus) {&#xA;    tars[1] = obj_viewnode4&#xA;    tars[2] = obj_viewnode5&#xA;    tars[3] = obj_viewnode6&#xA;}&#xA;&#xA;class = RIFLE&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_node7" x="924" y="468" name="inst_913A320D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_viewnode4" x="824" y="324" name="inst_BA9813CB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_viewnode5" x="804" y="456" name="inst_81D5B897" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_viewnode6" x="816" y="604" name="inst_58AAC672" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_crate" x="344" y="88" name="inst_C36D3637" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_crate" x="344" y="104" name="inst_9C5E029D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_crate" x="344" y="120" name="inst_58D69BA4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_crate" x="344" y="136" name="inst_BA21242C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_crate" x="360" y="136" name="inst_01830F9D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_crate" x="376" y="136" name="inst_EDC7B44F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_crate" x="432" y="204" name="inst_08B71E95" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_crate" x="432" y="220" name="inst_03AED25C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_crate" x="432" y="256" name="inst_D38ED822" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_crate" x="692" y="264" name="inst_50DE6B0A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_crate" x="692" y="248" name="inst_D5E01C5D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_crate" x="708" y="248" name="inst_E3AC58C6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_crate" x="724" y="248" name="inst_A2C5D09D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_crate" x="724" y="232" name="inst_E5832075" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_crate" x="496" y="264" name="inst_DB158625" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_crate" x="508" y="264" name="inst_292F7640" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_crate" x="520" y="264" name="inst_1C7D15A7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_crate" x="528" y="264" name="inst_D0A8A46D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_climb_top_floor1" x="508" y="264" name="inst_2F5FC22A" locked="0" code="" scaleX="0.535714268684387" scaleY="0.699999988079071" colour="4294967295" rotation="0"/>
+    <instance objName="obj_climb_side_floor1" x="432" y="212" name="inst_048220D0" locked="0" code="" scaleX="0.699999988079071" scaleY="0.357142865657806" colour="4294967295" rotation="0"/>
+    <instance objName="obj_climb_side_floor1" x="432" y="256" name="inst_4D1285E3" locked="0" code="" scaleX="0.699999988079071" scaleY="0.16666667163372" colour="4294967295" rotation="0"/>
+    <instance objName="obj_climb_side_floor1" x="344" y="104" name="inst_0C74602F" locked="0" code="" scaleX="0.699999988079071" scaleY="0.550000011920929" colour="4294967295" rotation="0"/>
+    <instance objName="obj_climb_top_floor1" x="368" y="136" name="inst_D757BFBB" locked="0" code="" scaleX="0.404761910438538" scaleY="0.699999988079071" colour="4294967295" rotation="0"/>
+    <instance objName="obj_climb_top_floor1" x="704" y="248" name="inst_A2C1F8C8" locked="0" code="" scaleX="0.156626507639885" scaleY="0.649999976158142" colour="4294967295" rotation="0"/>
+    <instance objName="obj_crate" x="676" y="264" name="inst_DF2394A7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_climb_side_floor1" x="724" y="232" name="inst_230D63D4" locked="0" code="" scaleX="0.699999988079071" scaleY="0.16666667163372" colour="4294967295" rotation="0"/>
     <instance objName="obj_nodeC" x="144" y="376" name="inst_E5556B3F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_nodeD" x="760" y="456" name="inst_53807041" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_caunode1" x="808" y="488" name="inst_0843B41D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy" x="508" y="108" name="inst_4EA0844D" locked="0" code="wait = false&#xA;squad = ALPHA&#xA;//patrol nodes&#xA;tars[1] = obj_node8&#xA;tars[2] = obj_node9&#xA;tars[3] = obj_node10&#xA;tars[4] = obj_node11&#xA;tars[5] = obj_node12&#xA; &#xA;&#xA;caunexttar = obj_nodeA&#xA;cautar0 = obj_nodeA&#xA;cautar0_default = obj_nodeA&#xA;caunexttar_default = obj_nodeA&#xA;&#xA;//focustar&#xA;with (my_focus) {&#xA;    tars[1] = obj_viewnode1&#xA;}&#xA;&#xA;class = RIFLE&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_node8" x="356" y="196" name="inst_F3E6BA42" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_node9" x="640" y="172" name="inst_581CEE5B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_node10" x="764" y="408" name="inst_62C162DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_node11" x="560" y="652" name="inst_476BD2BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_node12" x="208" y="408" name="inst_AF9248D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_caunode1" x="176" y="540" name="inst_D8323D37" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_caunode1" x="480" y="172" name="inst_B2BC10B0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall" x="488" y="264" name="inst_3C8E07AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall" x="500" y="264" name="inst_34006280" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall" x="488" y="264" name="inst_27944A7C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall" x="508" y="264" name="inst_EAEA793C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall" x="516" y="264" name="inst_406B225C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall" x="528" y="264" name="inst_E5AD877A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall" x="536" y="264" name="inst_FC32798B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_snail" x="180" y="924" name="inst_5D3808CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_pickup_bow" x="232" y="904" name="inst_50389995" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_pickup_bow" x="228" y="868" name="inst_A2C50CA4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_coin" x="460" y="528" name="inst_3DD4B4A6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_pickup_flare" x="212" y="948" name="inst_8C4EFE37" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_snail" x="408" y="236" name="inst_230BE137" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_crate" x="592" y="256" name="inst_AF783182" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_crate" x="592" y="240" name="inst_5C6C54D7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_crate" x="592" y="224" name="inst_6C7FEDF1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_crate" x="396" y="136" name="inst_32EEC68B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="" x="208" y="1216" w="16" h="16" xo="0" yo="0" id="10005805" name="inst_A7B092B2" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

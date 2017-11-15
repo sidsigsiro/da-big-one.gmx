@@ -529,31 +529,6 @@ if enstate = scr_enemy_patrol or enstate = scr_enemy_wait {
     }
 } else if enstate = scr_enemy_investigate {
     my_focus.investar = investar
-    ///scr_view_investigate
-    //get direction
-    if investar != noone {
-        investar = obj_node_distraction {
-            if instance_exists(investar) {
-                if look_ahead = false {
-                    focus_dir = point_direction(my_focus.x, my_focus.y, investar.x, investar.y);
-                } else if look_ahead = true {
-                    focus_dir = point_direction(my_focus.x, my_focus.y, x + lengthdir_x(64, direction), y + lengthdir_y(64, direction))
-                }
-                //Get the length
-                if look_ahead = false {
-                    focus_len = point_distance(my_focus.x, my_focus.y, investar.x, investar.y)/30;
-                } else {
-                    focus_len = 7
-                }
-                //Get the hspd and vspd
-                focus_hspd = lengthdir_x(focus_len, focus_dir);
-                focus_vspd = lengthdir_y(focus_len, focus_dir);
-                //Move
-                my_focus.x += focus_hspd;
-                my_focus.y += focus_vspd;
-            }
-        }
-    }
 } else if enstate = scr_enemy_frozen {
     my_focus.survey = false
     my_focus.state = noone
