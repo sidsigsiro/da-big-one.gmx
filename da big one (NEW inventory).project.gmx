@@ -157,9 +157,11 @@
     <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_player_ghost</sprite>
     <sprite>sprites\spr_player_down</sprite>
-    <sprite>sprites\spr_player_left</sprite>
-    <sprite>sprites\spr_player_right</sprite>
     <sprite>sprites\spr_player_up</sprite>
+    <sprite>sprites\spr_player_right</sprite>
+    <sprite>sprites\spr_player_left</sprite>
+    <sprite>sprites\spr_player_left_idle</sprite>
+    <sprite>sprites\spr_player_right_idle</sprite>
     <sprite>sprites\spr_sec_a</sprite>
     <sprite>sprites\spr_sec_b</sprite>
     <sprite>sprites\spr_select_ring</sprite>
@@ -249,6 +251,7 @@
     <sprite>sprites\spr_wall_snail</sprite>
     <sprite>sprites\spr_door_next</sprite>
     <sprite>sprites\spr_rifle</sprite>
+    <sprite>sprites\sprite211</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_grid</background>
@@ -275,6 +278,7 @@
       </backgrounds>
     </backgrounds>
     <background>background\background18</background>
+    <background>background\bg_lavender</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\path_glr_0</path>
@@ -965,6 +969,7 @@
         </objects>
       </objects>
     </objects>
+    <object>objects\object240</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_setup</room>
