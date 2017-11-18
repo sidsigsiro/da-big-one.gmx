@@ -456,7 +456,14 @@ if stam &lt; 0 {
           <argument>
             <kind>1</kind>
             <string>///draw sprite
-draw_self();
+
+// if sprite is not on grass tile
+if tile_layer_find(1000000, x, y) == -1 {
+    draw_self()
+} else {
+    // only draw top, bottom is submerged in grass
+    draw_sprite_part(sprite_index, image_index, 0, 0, sprite_width, sprite_height/2, x - sprite_xoffset, y - sprite_yoffset)
+}
 
 if crouch = true {
     image_blend = c_black
