@@ -146,7 +146,7 @@ if state != scr_temperature_state and state != scr_dblock_state {
 if instance_exists(obj_arrow) {
             if enstate != scr_enemy_sniper_chase {  
                 if !collision_line(x, y, obj_arrow.x, obj_arrow.y, obj_viewblock, false, false) {
-                    if (encurfloor = obj_arrow.curfloor) or (encurfloor = 2 and obj_arrow.height = 0) {
+                    if (curfloor = obj_arrow.curfloor) or (curfloor = 2 and obj_arrow.height = 0) {
                         if obj_arrow.crouch = true {
                             if !collision_line(x, y, obj_arrow.x, obj_arrow.y, obj_viewblock_crouch, false, false) {
                                 if point_in_triangle(obj_arrow.x, obj_arrow.y, x, y, x1, y1, x2, y2) {
@@ -180,7 +180,7 @@ if instance_exists(obj_arrow) {
         if instance_exists(obj_arrow_dropped) {
             if enstate != scr_enemy_sniper_chase {
                 if !collision_line(x, y, obj_arrow_dropped.x, obj_arrow_dropped.y, obj_viewblock, false, false) {
-                    if (encurfloor = obj_arrow_dropped.curfloor) or (encurfloor = 2 and obj_arrow_dropped.height = 0) {
+                    if (curfloor = obj_arrow_dropped.curfloor) or (curfloor = 2 and obj_arrow_dropped.height = 0) {
                         if obj_arrow_dropped.crouch = true {
                             if !collision_line(x, y, obj_arrow_dropped.x, obj_arrow_dropped.y, obj_viewblock_crouch, false, false) {
                                 if point_in_triangle(obj_arrow_dropped.x, obj_arrow_dropped.y, x, y, x1, y1, x2, y2) {
