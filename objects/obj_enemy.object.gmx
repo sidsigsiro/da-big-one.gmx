@@ -665,7 +665,7 @@ if enstate != scr_enemy_dead {
     if enstate != scr_enemy_frozen {
         if point_in_triangle(obj_player.x, obj_player.y, x, y, x1c, y1c, x2c, y2c) {
             // if player height is less than 24 pixels above enemy height
-            if obj_player.height < height + 24 {
+            if obj_player.height&lt;height + 24 {
                 if !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock, false, false) {
                     if (obj_player.crouch = false or !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock_crouch, true, true)) {
                         player_in_sight = true
@@ -745,7 +745,7 @@ if temp &lt; -50 {
 //stop checking if enemy is dead
 script_execute(enstate)
 
-if height >= 24 {
+if height &gt;= 24 {
     floorval = (-200)
 } else {
     floorval = 0

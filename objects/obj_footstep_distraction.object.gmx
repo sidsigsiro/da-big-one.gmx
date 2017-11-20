@@ -32,7 +32,7 @@ floorval = 0
 if place_meeting(x, y,obj_stairs) {
     height = 32
 }
-if place_meeting(x, y, obj_bridge) and obj_player.height >= 24 {
+if place_meeting(x, y, obj_bridge) and obj_player.height &gt;= 24 {
     height = 32
 }
 if place_meeting(x, y, obj_floor_2) {

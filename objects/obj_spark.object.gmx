@@ -30,10 +30,10 @@ alarm[0] = 3
 height = obj_player.height
 floorval = 0
 
-if height >= 24 {
+if height &gt;= 24 {
     floorval = (-200)
 }
-if height < 24 {
+if height&lt;24 {
     floorval = 0
 }
 depth = -y + floorval

@@ -333,7 +333,7 @@ if enstate != scr_enemy_dead {
     if enstate != scr_enemy_frozen {
         // if player is less than 24 pixels higher than enemy
         if instance_exists(obj_player) {
-            if obj_player.height < height + 24 {
+            if obj_player.height&lt;height + 24 {
                 if !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock, false, false) //if view is not blocked by regular block
                 or (obj_player.crouch = true and !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock_crouch, false, false)) { // or player is crouching and view is not blocked by crouchblock
                     if point_in_triangle(obj_player.x, obj_player.y, x, y, x1, y1, x2, y2) {
@@ -399,7 +399,7 @@ if place_meeting(x, y, obj_splash) {
 //stop checking if enemy is dead
 script_execute(enstate)
 
-if height >= 24 {
+if height &gt;= 24 {
     floorval = (-200)
 } else {
     floorval = 0

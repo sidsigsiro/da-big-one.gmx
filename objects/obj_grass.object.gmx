@@ -36,7 +36,7 @@ height = obj_player.height
 obj_inventory.bp -= 1
 
 ///adjust depth
-if height >= 24 {
+if height &gt;= 24 {
     floorval = (-200)
 } else {
     floorval = 0

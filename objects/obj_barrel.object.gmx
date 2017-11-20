@@ -302,7 +302,7 @@ draw_text(x + 16, y, string(temp));
 
 draw_circle(x, y, 20, true)
 
-if height < 24 {
+if height &gt; 24 {
     image_blend = c_aqua
 }
 </string>

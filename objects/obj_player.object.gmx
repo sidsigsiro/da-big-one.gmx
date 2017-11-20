@@ -328,10 +328,10 @@ if !place_meeting(x, y, obj_floor_dblock) {
     raisedval = 0
 }
 //control depth
-if height >= 24 {
+if height &gt;= 24 {
     floorval = (-200)
 }
-if height < 24 {
+if height&lt;24 {
     floorval = 0
 }
 depth = -y + (floorval + raisedval)
@@ -464,7 +464,7 @@ if crouch = true {
     image_blend = c_white
 }
 
-if height >= 24 {
+if height &gt;= 24 {
     image_blend = c_aqua
 } else {
     image_blend = c_white

@@ -76,7 +76,7 @@ if place_meeting(x, y, obj_floor_2) {
 }
 
 //collide with walls
-if height < 24 {
+if height&lt;24 {
     if place_meeting(phy_position_x, phy_position_y - 3, obj_block_floor1_top){
         phy_position_y += 3
     }
@@ -90,7 +90,7 @@ if height < 24 {
         phy_position_x -= 3
     }
 }
-if height >= 24 {
+if height &gt;= 24 {
     if place_meeting(phy_position_x, phy_position_y - 3, obj_block_floor2_top){
         phy_position_y += 3
     }
