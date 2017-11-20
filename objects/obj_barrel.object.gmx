@@ -32,14 +32,15 @@ outofbp = false
 lit = true;
 ///create box
 used = false
-curfloor = 1
+height = 0
 floorval = 0
 image_speed = 0
 image_index = 0
 state = noone
 dist = 200
+able_to_fall = true
 falling = false
-max_fall = 0
+height = 0
 </string>
           </argument>
         </arguments>
@@ -179,8 +180,6 @@ if pushed = true {
     scr_item_push();
 }
 
-depth = -y + floorval
-
 /*
 if image_index = 1 {
     if outofbp = false {
@@ -302,6 +301,10 @@ if temp &gt; 0 {
 draw_text(x + 16, y, string(temp));
 
 draw_circle(x, y, 20, true)
+
+if height < 24 {
+    image_blend = c_aqua
+}
 </string>
           </argument>
         </arguments>

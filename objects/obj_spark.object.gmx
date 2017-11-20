@@ -30,10 +30,10 @@ alarm[0] = 3
 curfloor = obj_player.curfloor
 floorval = 0
 
-if curfloor = 2 {
+if height >= 24 {
     floorval = (-200)
 }
-if curfloor = 1 {
+if height < 24 {
     floorval = 0
 }
 depth = -y + floorval

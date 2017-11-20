@@ -9,27 +9,23 @@ if (place_meeting(x, y, obj_wall) or place_meeting(x, y, obj_barrel)) or place_m
     dir -= 180
 }
 
-if (place_meeting(x, y, obj_climb_side_floor2)) or place_meeting(x, y, obj_climb_top_floor2) {
-    if curfloor = 1 {
-        dir -= 180
-    }
-    if curfloor = 2 {
-        falling = true
-    }
-}
-
-if curfloor = 1 {
+if able_to_fall = false {
     if (place_meeting(x, y, obj_climb_side_floor2)) or place_meeting(x, y, obj_climb_top_floor2) {
+        if height < 24 {
             dir -= 180
+        }
+        if height >= 24 {
+            able_to_fall = true
+        }
     }
 }
 
-if falling = true {
-    y += 3
-    max_fall += 3
-    if max_fall = 6 {
-        falling = false
-        max_fall = 0
+if able_to_fall = true {
+    height = 0 {
+        if height < 0 {
+            y += 3
+            height += 32
+        }
     }
 }
 

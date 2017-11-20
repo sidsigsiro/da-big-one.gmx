@@ -27,9 +27,9 @@
             <kind>1</kind>
             <string>///create noise
 if place_meeting(x, y, obj_floor_2) {
-    curfloor = 2
+    height = 32
 } else {
-    curfloor = 1
+    height = 0
 }
 depth = -99
 </string>

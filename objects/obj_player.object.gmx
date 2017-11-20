@@ -46,7 +46,7 @@ moving = false
 onpowder = false
 crouch = false
 floorval = 0
-curfloor = 1
+height = 0
 depth = -y
 hp = 2;
 basespd = 2;
@@ -312,9 +312,9 @@ if keyboard_check(ord('T')) {
 }
 //check for floor
 if place_meeting(x, y, obj_floor_2) {
-    curfloor = 2
+    height = 32
 } else if !place_meeting(x, y, obj_floor_2) {
-    curfloor = 1
+    height = 0
 }
 //check if raised
 var raisedval
@@ -328,10 +328,10 @@ if !place_meeting(x, y, obj_floor_dblock) {
     raisedval = 0
 }
 //control depth
-if curfloor = 2 {
+if height >= 24 {
     floorval = (-200)
 }
-if curfloor = 1 {
+if height < 24 {
     floorval = 0
 }
 depth = -y + (floorval + raisedval)
@@ -464,7 +464,7 @@ if crouch = true {
     image_blend = c_white
 }
 
-if curfloor = 2 {
+if height >= 24 {
     image_blend = c_aqua
 } else {
     image_blend = c_white

@@ -332,7 +332,7 @@ if enstate != scr_enemy_dead {
 if enstate != scr_enemy_dead {
     if enstate != scr_enemy_frozen {
         if obj_player.crouch = false   {
-            if (encurfloor = obj_player.curfloor) or (encurfloor = 2 and obj_player.curfloor = 1) {
+            if (encurfloor = obj_player.curfloor) or (encurfloor = 2 and obj_player.height = 0) {
                 if !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock, false, false) {
                     var inst = obj_player
                     if instance_exists(inst) {
@@ -356,7 +356,7 @@ if enstate != scr_enemy_dead {
         }
         if obj_player.crouch = true {
             if !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock_crouch, false, false) {
-                if (encurfloor = obj_player.curfloor) or (encurfloor = 2 and obj_player.curfloor = 1){
+                if (encurfloor = obj_player.curfloor) or (encurfloor = 2 and obj_player.height = 0){
                     if !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock, false, false) {
                     var inst = instance_nearest(x, y, obj_player);
                     if instance_exists(inst) {
@@ -382,7 +382,7 @@ if enstate != scr_enemy_dead {
         if instance_exists(obj_arrow) {
             if enstate != scr_enemy_chase {  
                 if !collision_line(x, y, obj_arrow.x, obj_arrow.y, obj_viewblock, false, false) {
-                    if (curfloor = obj_arrow.curfloor) or (curfloor = 2 and obj_arrow.curfloor = 1) {
+                    if (curfloor = obj_arrow.curfloor) or (height = 32 and obj_arrow.height = 0) {
                         if obj_arrow.crouch = true {
                             if !collision_line(x, y, obj_arrow.x, obj_arrow.y, obj_viewblock_crouch, false, false) {
                                 if point_in_triangle(obj_arrow.x, obj_arrow.y, x, y, x1, y1, x2, y2) {

@@ -30,7 +30,7 @@ spd = 0
 dir = 0
 hspd = lengthdir_x(spd, dir);
 vspd = lengthdir_y(spd, dir);
-curfloor = 1
+height = 0
 floorval = 0
 </string>
           </argument>
@@ -70,13 +70,13 @@ vspd = lengthdir_y(spd, dir);
 
 //check for floor
 if place_meeting(x, y, obj_floor_2) {
-    curfloor = 2
+    height = 32
 } else if !place_meeting(x, y, obj_floor_2) {
-    curfloor = 1
+    height = 0
 }
 
 //collide with walls
-if curfloor = 1 {
+if height < 24 {
     if place_meeting(phy_position_x, phy_position_y - 3, obj_block_floor1_top){
         phy_position_y += 3
     }
@@ -90,7 +90,7 @@ if curfloor = 1 {
         phy_position_x -= 3
     }
 }
-if curfloor = 2 {
+if height >= 24 {
     if place_meeting(phy_position_x, phy_position_y - 3, obj_block_floor2_top){
         phy_position_y += 3
     }

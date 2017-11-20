@@ -50,12 +50,12 @@
             <kind>1</kind>
             <string>if place_meeting(x, y, obj_wind_grab) {
     with (obj_wind_grab) {
-        curfloor = 2
+        height = 32
     }
 }
 if place_meeting(x, y, obj_crate) {
     with (obj_crate) {
-        curfloor = 2
+        height = 32
     }
 }
 

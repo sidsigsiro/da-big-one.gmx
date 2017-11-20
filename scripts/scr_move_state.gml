@@ -510,7 +510,7 @@ if (yaxis < 0) and vault_key {
 }
 
 //climb dirtblock
-if curfloor = 1 {
+if height < 24 {
     if (yaxis > 0) and vault_key {
         if place_meeting(phy_position_x, phy_position_y + 1, obj_dblock_top) {
             phy_position_y += 40
@@ -538,7 +538,7 @@ if curfloor = 1 {
 }
 
 //vault down from floor2 to floor1
-if curfloor = 2 {
+if height >= 24 {
     if (yaxis > 0) and vault_key {
         if place_meeting(phy_position_x, phy_position_y + 4, obj_climb_top_floor2) {
             phy_position_y += 40

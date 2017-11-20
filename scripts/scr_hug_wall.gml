@@ -2,7 +2,7 @@
 scr_get_input();
 
 //stop at block floor 1
-if curfloor = 1{
+if height < 24{
     if place_meeting(phy_position_x + 2, phy_position_y, obj_block_floor1_side) and (right_key) {
         state = scr_wall_hug_state_west
     }
@@ -17,7 +17,7 @@ if curfloor = 1{
     }
 }
 //stop at block floor 2
-if curfloor = 2 or (curfloor = 1 and raised = true) {
+if height >= 24 or (height = 0 and raised = true) {
     if place_meeting(phy_position_x + 2, phy_position_y, obj_block_floor2_side) and (right_key) {
         state = scr_wall_hug_state_west
     }

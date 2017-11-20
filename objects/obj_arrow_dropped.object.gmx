@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///create object
 crouch = true
-curfloor = 1
+height = 0
 instance_create(x + lengthdir_x(40,image_angle), y + lengthdir_y(40,image_angle), obj_noise_arrow)
 instance_create(x + lengthdir_x(40,image_angle), y + lengthdir_y(40,image_angle), obj_caunode1)
 </string>

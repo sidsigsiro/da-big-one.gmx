@@ -26,17 +26,17 @@
           <argument>
             <kind>1</kind>
             <string>///create noise
-curfloor = 1
+height = 0
 floorval = 0
 
 if place_meeting(x, y,obj_stairs) {
-    curfloor = 2
+    height = 32
 }
-if place_meeting(x, y, obj_bridge) and obj_player.curfloor = 2 {
-    curfloor = 2
+if place_meeting(x, y, obj_bridge) and obj_player.height = 32 {
+    height = 32
 }
 if place_meeting(x, y, obj_floor_2) {
-    curfloor = 2
+    height = 32
 }
 
 depth = -99

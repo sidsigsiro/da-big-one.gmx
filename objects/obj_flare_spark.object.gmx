@@ -29,9 +29,9 @@
 depth = -100
 alarm[0] = 3  
 if place_meeting(x, y, obj_floor_2) {
-    curfloor = 2
+    height = 32
 } else {
-    curfloor = 1
+    height = 0
 }
 floorval = 0
 </string>
@@ -83,10 +83,10 @@ floorval = 0
     instance_destroy()
 }
 
-if curfloor = 2 {
+if height >= 24 {
     floorval = (-200)
 }
-if curfloor = 1 {
+if height < 24 {
     floorval = 0
 }
 depth = -y + floorval

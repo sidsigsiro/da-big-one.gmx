@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///create noise
 instance_create(x, y, obj_noise_cube)
-curfloor = 1
+height = 0
 floorval = 0
 depth = -99
 </string>

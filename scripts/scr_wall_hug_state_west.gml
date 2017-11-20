@@ -7,14 +7,14 @@ if (left_key) {
     phy_position_x -= spd
     state = scr_move_state
 }
-if curfloor = 1 {
+if height < 24 {
 if !place_meeting(phy_position_x + 1, phy_position_y, obj_block_floor1_side) {
     if !place_meeting(phy_position_x + 1, phy_position_y, obj_climb_side) {
         state = scr_move_state
         }
     }
 }
-if curfloor = 2 {
+if height >= 24 {
 if !place_meeting(phy_position_x + 1, phy_position_y, obj_block_floor2_side) {
     if !place_meeting(phy_position_x + 1, phy_position_y, obj_climb_side) {
         state = scr_move_state
@@ -22,7 +22,7 @@ if !place_meeting(phy_position_x + 1, phy_position_y, obj_block_floor2_side) {
     }
 }
 
-if curfloor = 1 {
+if height < 24 {
     if (right_key) and vault_key {
         if place_meeting(phy_position_x + 2, phy_position_y, obj_vault_floor1_side) {
             phy_position_x += 20
@@ -30,7 +30,7 @@ if curfloor = 1 {
     }
 }
 
-if curfloor = 2 or (curfloor = 1 and raised = true)  {
+if height >= 24 or (height = 0 and raised = true)  {
     if (right_key) and vault_key {
         if place_meeting(phy_position_x + 2, phy_position_y, obj_vault_floor2_side) {
             phy_position_x += 20

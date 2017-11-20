@@ -50,7 +50,7 @@ depth = -99
           <argument>
             <kind>1</kind>
             <string>///turn off physics if player is on second floor
-if obj_player.curfloor = 2 {
+if obj_player.height = 32 {
     phy_active = false
 } else {
     phy_active = true

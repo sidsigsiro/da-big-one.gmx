@@ -2,7 +2,7 @@
 scr_get_input();
 
 if place_meeting(x, y, obj_cube) {
-    curfloor = 2
+    height = 32
 }
 
 if alarm[1] = -1 {
@@ -29,7 +29,7 @@ if vault_key {
 }
 
 if alarm[1] > -1 {
-    curfloor = 2
+    height = 32
     if sprite_index = spr_player_up {
         phy_position_y -= 12
         phy_position_y += 10
@@ -51,7 +51,7 @@ if alarm[1] > -1 {
 if dblock_key_released {
     if phy_active = true {
         if dblock_charge = room_speed {
-            curfloor = 2
+            height = 32
             if stam >= 50 {
                 if instance_exists(obj_cube) {
                     with(obj_cube) {

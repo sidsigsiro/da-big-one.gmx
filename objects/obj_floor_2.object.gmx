@@ -53,28 +53,28 @@ depth = ((-y) - 100)
 
 if place_meeting(x, y, obj_player) {
     with (obj_player) {
-        curfloor = 2
+        height = 32
     }
 }    
 if place_meeting(x, y, obj_wind_grab) {
     with (obj_wind_grab) {
-        curfloor = 2
+        height = 32
     }
 }  
 if place_meeting(x, y, obj_crate) {
     with (obj_crate) {
-        curfloor = 2
+        height = 32
     }
 }  
 if place_meeting(x, y, obj_enemy) {
     with (obj_enemy) {
-        curfloor = 2
+        height = 32
     }
 }    
 
 if place_meeting(x, y, obj_enemy_sniper) {
     with (obj_enemy) {
-        curfloor = 2
+        height = 32
     }
 }    
 </string>

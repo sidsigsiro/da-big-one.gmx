@@ -327,9 +327,9 @@
     <instance objName="obj_node2" x="399" y="579" name="inst_9686762C" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="270"/>
     <instance objName="obj_block_floor1_top" x="383" y="591" name="inst_53D79C2F" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block_floor1_top" x="502" y="591" name="inst_CD8D2DC8" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_block_floor1_top" x="576" y="591" name="inst_3F2FAB49" locked="0" code="curfloor = 2&#xA;&#xA;" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_enemy_sniper" x="635" y="621" name="inst_751C8D65" locked="0" code="curfloor = 2&#xA;wait = true&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_enemy_sniper" x="333" y="613" name="inst_24AC7B95" locked="0" code="curfloor = 2&#xA;wait = true&#xA;tars[1] = obj_node2" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_block_floor1_top" x="576" y="591" name="inst_3F2FAB49" locked="0" code="height = 32&#xA;&#xA;" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_sniper" x="635" y="621" name="inst_751C8D65" locked="0" code="height = 32&#xA;wait = true&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_sniper" x="333" y="613" name="inst_24AC7B95" locked="0" code="height = 32&#xA;wait = true&#xA;tars[1] = obj_node2" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>
