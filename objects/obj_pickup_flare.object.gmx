@@ -33,6 +33,7 @@ depth = -99
 spd = 0
 x1 = 0
 y1 = 0
+len = 0
 dir = 0
 armed = true
 from_chest = false

@@ -25,6 +25,10 @@ if place_meeting(obj_cursor.x, obj_cursor.y, obj_water) or place_meeting(obj_cur
                 if stam > 0 {
                     stam -= 1
                     var water_touch = instance_place(obj_cursor.x, obj_cursor.y, obj_water)
+                    var water_touch_up = instance_place(obj_cursor.x, obj_cursor.y, obj_water)
+                    var water_touch_down = instance_place(obj_cursor.x, obj_cursor.y, obj_water)
+                    var water_touch_left = instance_place(obj_cursor.x, obj_cursor.y, obj_water)
+                    var water_touch_right = instance_place(obj_cursor.x, obj_cursor.y, obj_water)
                     var evil_water_touch = instance_place(obj_cursor.x, obj_cursor.y, obj_evil_water)
                     if water_touch {
                         with(water_touch) { 

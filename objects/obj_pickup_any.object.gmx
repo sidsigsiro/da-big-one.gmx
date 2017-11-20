@@ -48,8 +48,27 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if pushed = true {
+            <string>scr_set_floor();
+
+if pushed = true {
     scr_item_push();
+}
+if place_meeting(x, y, obj_water) {
+    len = 0.5
+    var watertar = instance_place(x, y, obj_water)
+    if watertar {
+        dir = watertar.dir
+    }
+    
+    hspd = lengthdir_x(len, dir);
+    vspd = lengthdir_y(len, dir);
+    
+    x += hspd
+    y += vspd
+    
+    if len &lt;= 0 {
+        pushed = false
+    }
 }
 </string>
           </argument>

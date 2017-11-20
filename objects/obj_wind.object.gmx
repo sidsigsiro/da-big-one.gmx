@@ -100,6 +100,15 @@ if itemtar {
         len = 4
         dir = itemdir
         pushed = true
+   }
+}
+
+var barreltar = instance_place(x, y, obj_barrel)
+if barreltar {
+    with(barreltar) {
+        len = 3
+        dir = itemdir
+        pushed = true
     }
 }
 </string>

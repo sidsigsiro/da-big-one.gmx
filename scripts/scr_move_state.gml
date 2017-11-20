@@ -425,8 +425,12 @@ if scr_item_check(6) {
         
 //spawn dblock
 dblock_charge = 0
-if dblock_key {
-    state = scr_dblock_state
+if !place_meeting(x, y, obj_water) {
+    if !place_meeting(x, y, obj_ice) {
+        if dblock_key {
+            state = scr_dblock_state
+        }
+    }
 }
 
 //switch to inventory state
