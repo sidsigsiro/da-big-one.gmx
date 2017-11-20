@@ -32,7 +32,7 @@ spread_range = 24; //How far around to ignite other blackpowders
 lit = false;
 image_speed = 0;
 image_index = 0;
-curfloor = obj_player.curfloor
+height = obj_player.height
 obj_inventory.bp -= 1
 
 ///adjust depth
@@ -94,7 +94,7 @@ for (var i = 0; i &lt; 4; i++) {
     var xx = x + lengthdir_x(spread_range, i * 90);
     var yy = y + lengthdir_y(spread_range, i * 90);
     var nearby_grass = instance_place(xx, yy, obj_grass);
-    if (nearby_grass != noone) and nearby_grass.curfloor == curfloor {
+    if (nearby_grass != noone) and nearby_grass.height == height {
         with (nearby_grass) {
             if (lit == false) {
                 lit = true;
@@ -152,7 +152,7 @@ if place_meeting(x, y, obj_cursor) {
 var touching_spark = place_meeting(x, y, obj_spark);
 var touching_explosion = place_meeting(x, y, obj_explosion);
 if instance_exists(obj_spark) {
-    if obj_spark.curfloor == self.curfloor {
+    if obj_spark.height == self.height {
         if (touching_spark) &amp;&amp; (lit == false) {
             if image_index = 0 {
                 lit = true;

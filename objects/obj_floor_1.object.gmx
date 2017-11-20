@@ -66,13 +66,13 @@ if place_meeting(x, y, obj_crate) {
 }   
 if place_meeting(x, y, obj_enemy) {
     with (other) {
-        curfloor = 1
+        height = 0
     }
 }
 
 if place_meeting(x, y, obj_enemy_sniper) {
     with (other) {
-        curfloor = 1
+        height = 0
     }
 }      
 </string>

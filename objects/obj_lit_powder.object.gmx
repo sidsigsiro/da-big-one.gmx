@@ -56,7 +56,7 @@ alarm[0] = room_speed/40
             <string>//Ignite nearby blackpowders
 var nearest_powder = instance_nearest(x, y, obj_blackpowder)
 show_debug_message(nearest_powder)
-if (nearest_powder != noone /*and nearest_powder.curfloor == curfloor*/) {
+if (nearest_powder != noone /*and nearest_powder.height == height*/) {
     if place_meeting(x, y, nearest_powder) {
         with(nearest_powder) {
             instance_change(obj_lit_powder, true)
@@ -69,7 +69,7 @@ for (var i = 0; i &lt; 4; i++) {
     var xx = x + lengthdir_x(spread_range, i * 90);
     var yy = y + lengthdir_y(spread_range, i * 90);
     var nearby_grass = instance_place(xx, yy, obj_grass);
-    if (nearby_grass != noone) and nearby_grass.curfloor == curfloor {
+    if (nearby_grass != noone) and nearby_grass.height == height {
         with (nearby_grass) {
             if (lit == false) {
                 lit = true;

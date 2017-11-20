@@ -37,7 +37,7 @@ if obj_player.moving = true {
 
 crouch = obj_player.crouch
 
-curfloor = obj_player.curfloor
+height = obj_player.height
 
 var tx, ty
 if !gamepad_is_connected(0) {
@@ -83,7 +83,7 @@ image_angle = point_direction(x, y, tx + xmod, ty + ymod)
     arrow_dropped = instance_create(x, y, obj_arrow_dropped)
     arrow_dropped.image_angle = image_angle
     arrow_dropped.crouch = crouch
-    arrow_dropped.curfloor = curfloor
+    arrow_dropped.height = height
 }
 </string>
           </argument>

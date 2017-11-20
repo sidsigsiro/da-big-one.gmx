@@ -69,7 +69,7 @@ hp = 2
 lookat = direction
 noiseheard = noone
 enstate = scr_enemy_patrol
-curfloor = 1
+height = 0
 floorval = 0
 path = path_add();
 //view cone coordinates
@@ -567,9 +567,9 @@ scr_get_face();
 
 //check for floor
 if place_meeting(x, y, obj_floor_2) {
-    curfloor = 2
+    height = 32
 } else if !place_meeting(x, y, obj_floor_2) {
-    curfloor = 1
+    height = 0
 }
 
 switch(face) {
@@ -664,7 +664,8 @@ var y2c = y + lengthdir_y(view_y2 + 150, dir + 37);
 if enstate != scr_enemy_dead {
     if enstate != scr_enemy_frozen {
         if point_in_triangle(obj_player.x, obj_player.y, x, y, x1c, y1c, x2c, y2c) {
-            if (curfloor = obj_player.curfloor) or (curfloor = 2 and obj_player.height = 0) {
+            // if player height is less than 24 pixels above enemy height
+            if obj_player.height < height + 24 {
                 if !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock, false, false) {
                     if (obj_player.crouch = false or !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock_crouch, true, true)) {
                         player_in_sight = true
@@ -744,10 +745,9 @@ if temp &lt; -50 {
 //stop checking if enemy is dead
 script_execute(enstate)
 
-if curfloor = 2 {
+if height >= 24 {
     floorval = (-200)
-}
-if curfloor = 1 {
+} else {
     floorval = 0
 }
 depth = -y + floorval

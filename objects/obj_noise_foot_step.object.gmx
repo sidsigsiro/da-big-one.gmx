@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///set alarm
 alarm[0] = 1
-curfloor = obj_player.curfloor
+height = obj_player.height
 </string>
           </argument>
         </arguments>

@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///crat
 alarm[0] = 3  
-curfloor = obj_player.curfloor
+height = obj_player.height
 floorval = 0
 
 if height >= 24 {

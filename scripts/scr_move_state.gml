@@ -613,7 +613,7 @@ if (yaxis < 0) and vault_key {
 
 //equip scope
 if scope_key {
-    if curfloor != 1 {
+    if height >= 32 {
         state = scr_scope_state
     }
 }

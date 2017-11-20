@@ -51,7 +51,7 @@ if (up_key) and vault_key {
 
 //equip scope
 if scope_key and scope = false {
-    if curfloor != 1 {
+    if height != 1 {
         scope = true
     }
 }

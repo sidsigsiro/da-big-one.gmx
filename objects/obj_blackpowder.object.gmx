@@ -29,7 +29,7 @@
 spread_range = 4; //TODO: change back to 2 //How far around to ignite other blackpowders
 image_speed = 0;
 image_index = 0;
-curfloor = obj_player.curfloor
+height = obj_player.height
 obj_inventory.bp -= 1
 
 ///adjust depth
@@ -92,7 +92,7 @@ var touching_spark = place_meeting(x, y, obj_spark);
 var touching_explosion = place_meeting(x, y, obj_explosion);
 
 if instance_exists(obj_spark) {
-    if obj_spark.curfloor == self.curfloor {
+    if obj_spark.height == self.height {
         if touching_spark {
             instance_change(obj_lit_powder, true)
         }
