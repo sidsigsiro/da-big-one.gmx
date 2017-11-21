@@ -123,7 +123,7 @@
     <instance objName="obj_climb_top_floor2" x="588" y="896" name="inst_CF200750" locked="0" code="" scaleX="0.452380955219269" scaleY="0.349999994039536" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="616" y="892" name="inst_746609C8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_floor_2" x="592" y="864" name="inst_2E0E6A1A" locked="0" code="" scaleX="0.5625" scaleY="1.0625" colour="4294967295" rotation="0"/>
-    <instance objName="obj_floor_2" x="592" y="808" name="inst_0447B6D4" locked="0" code="" scaleX="0.53125" scaleY="0.77999997138977" colour="4294967295" rotation="0"/>
+    <instance objName="obj_floor_2" x="592" y="808" name="inst_0447B6D4" locked="0" code="" scaleX="0.53125" scaleY="0.779999971389771" colour="4294967295" rotation="0"/>
     <instance objName="obj_floor_2" x="628" y="852" name="inst_DCE75621" locked="0" code="" scaleX="0.703125" scaleY="0.96875" colour="4294967295" rotation="0"/>
     <instance objName="obj_floor_2" x="620" y="796" name="inst_6833AE8F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_floor_2" x="676" y="832" name="inst_BC83F51C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

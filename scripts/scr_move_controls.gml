@@ -70,24 +70,25 @@ phy_position_x += hspd;
 phy_position_y += vspd;
 
 //control sprite
-//image_index = 0
-
-switch(face) {
-    case RIGHT:
-        sprite_index = spr_player_right
-        break;
-    
-    case LEFT:
-        sprite_index = spr_player_left
-        break;
-        
-    case DOWN:
-        sprite_index = spr_player_down
-        break;
-        
-    case UP:
-        sprite_index = spr_player_up
-        break;
+if xaxis > 0 { //walking right
+    sprite_index = spr_player_right
+} else if xaxis < 0 { //walking left
+    sprite_index = spr_player_left
+} else {
+    switch(face) {
+        case RIGHT:
+            sprite_index = spr_player_right_idle
+            break
+        case LEFT:
+            sprite_index = spr_player_left_idle
+            break
+        case DOWN:
+            sprite_index = spr_player_down
+            break
+        case UP:
+            sprite_index = spr_player_up
+            break
+    }
 }
 
 if distract_key {
