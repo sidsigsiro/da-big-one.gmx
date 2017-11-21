@@ -277,6 +277,7 @@
       </backgrounds>
     </backgrounds>
     <background>background\background18</background>
+    <background>background\lavender</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\path_glr_0</path>
@@ -980,8 +981,8 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_setup</room>
-    <room>rooms\room26</room>
     <room>rooms\room24</room>
+    <room>rooms\room26</room>
     <room>rooms\room25</room>
     <room>rooms\rm_9</room>
     <room>rooms\room21</room>
