@@ -5,27 +5,26 @@ if !place_meeting(x, y, obj_ice) {
     len -= 0.02
 }
 
-if (place_meeting(x, y, obj_wall) or place_meeting(x, y, obj_barrel)) or place_meeting(x, y, obj_crate) {
+
+var touching_floor_2 = place_meeting(x, y, obj_floor_2)
+
+//bounce off wall
+if place_meeting(x, y, obj_wall) or place_meeting(x, y, obj_barrel) or place_meeting(x, y, obj_crate) or (height < 30 and touching_floor_2 = true) {
     dir -= 180
 }
 
-if able_to_fall = false {
-    if (place_meeting(x, y, obj_climb_side_floor2)) or place_meeting(x, y, obj_climb_top_floor2) {
-        if height < 24 {
-            dir -= 180
-        }
-        if height >= 24 {
-            able_to_fall = true
-        }
-    }
-}
+show_debug_message(string(able_to_fall) + ", " + string(height))
 
-if able_to_fall = true {
-    height = 0 {
-        if height < 0 {
-            y += 3
-            height += 32
-        }
+// falling code
+if (height > 0 and !touching_floor_2) {
+    velocity += 0.25 //acceleration
+    y += velocity
+    height -= velocity
+    if height < 0 {
+        // snap to ground
+        y += height
+        height = 0
+        velocity = 0
     }
 }
 

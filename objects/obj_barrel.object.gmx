@@ -26,21 +26,23 @@
           <argument>
             <kind>1</kind>
             <string>///wingus mingus
+
+scr_set_floor();
+
 pushed = false
 temp = 0
 outofbp = false
 lit = true;
 ///create box
 used = false
-height = 0
-floorval = 0
 image_speed = 0
 image_index = 0
 state = noone
 dist = 200
 able_to_fall = true
 falling = false
-height = 0
+
+velocity = 0 //falling velocity
 </string>
           </argument>
         </arguments>
@@ -174,8 +176,6 @@ instance_create(x, y, obj_caunode1)
             <string>///get input
 scr_get_input()
 
-scr_set_floor();
-
 if pushed = true {
     scr_item_push();
 }
@@ -302,7 +302,7 @@ draw_text(x + 16, y, string(temp));
 
 draw_circle(x, y, 20, true)
 
-if height &gt; 24 {
+if height &lt; 24 {
     image_blend = c_aqua
 }
 </string>
