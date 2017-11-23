@@ -27,7 +27,11 @@
             <kind>1</kind>
             <string>zdepth = y;
 
-depth = (-y)
+//set height
+scr_set_floor();
+
+//set_depth
+scr_set_depth();
 
 mesh = glr_mesh_create(x, y, false)
 

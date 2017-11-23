@@ -7,6 +7,7 @@
   <NewExtensions>
     <extension index="0">extensions\Glare Engine - 2D illumination</extension>
     <extension index="1">extensions\Easing and Tweening</extension>
+    <extension index="2">extensions\Bloom shader</extension>
   </NewExtensions>
   <sounds name="sound"/>
   <sprites name="sprites">
@@ -38,6 +39,17 @@
       </sprites>
     </sprites>
     <sprite>sprites\_________________</sprite>
+    <sprite>sprites\spr_grass_top_left</sprite>
+    <sprite>sprites\spr_grass_left_alpha_mask</sprite>
+    <sprite>sprites\spr_grass_mid_alpha_mask</sprite>
+    <sprite>sprites\spr_grass_top_mid</sprite>
+    <sprite>sprites\spr_grass_top_right</sprite>
+    <sprite>sprites\spr_grass_mid_left</sprite>
+    <sprite>sprites\spr_grass_mid</sprite>
+    <sprite>sprites\spr_grass_mid_right</sprite>
+    <sprite>sprites\spr_grass_bot_left</sprite>
+    <sprite>sprites\spr_grass_bot_mid</sprite>
+    <sprite>sprites\spr_grass_bot_right</sprite>
     <sprite>sprites\spr_wind</sprite>
     <sprite>sprites\spr_snail</sprite>
     <sprite>sprites\spr_shadow_small</sprite>
@@ -277,7 +289,7 @@
       </backgrounds>
     </backgrounds>
     <background>background\background18</background>
-    <background>background\lavender</background>
+    <background>background\background0</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\path_glr_0</path>
@@ -621,6 +633,8 @@
     <script>scripts\scr_invisible.gml</script>
     <script>scripts\scr_set_floor.gml</script>
     <script>scripts\scr_item_fall.gml</script>
+    <script>scripts\scr_set_depth.gml</script>
+    <script>scripts\scr_create_masked_sprite.gml</script>
   </scripts>
   <shaders name="shaders">
     <shaders name="Glare">
@@ -669,6 +683,7 @@
         <shader type="GLSLES">shaders\glr_shader_gamma_mobile.shader</shader>
       </shaders>
     </shaders>
+    <shader type="GLSLES">shaders\shdr_bloom.shader</shader>
   </shaders>
   <fonts name="fonts">
     <font>fonts\fnt</font>
@@ -782,6 +797,18 @@
       <object>objects\obj_tunnel</object>
       <object>objects\obj_tree</object>
       <object>objects\obj_grass</object>
+      <object>objects\obj_grass_left</object>
+      <object>objects\obj_grass_mid</object>
+      <object>objects\obj_grass_right</object>
+      <object>objects\obj_grass_top_left</object>
+      <object>objects\obj_grass_top_mid</object>
+      <object>objects\obj_grass_top_right</object>
+      <object>objects\obj_grass_mid_left</object>
+      <object>objects\obj_grass_mid_mid</object>
+      <object>objects\obj_grass_mid_right</object>
+      <object>objects\obj_grass_bot_left</object>
+      <object>objects\obj_grass_bot_mid</object>
+      <object>objects\obj_grass_bot_right</object>
       <object>objects\obj_grass_burnt</object>
       <object>objects\obj_door_next</object>
       <object>objects\obj_door_prev</object>
@@ -978,11 +1005,13 @@
         </objects>
       </objects>
     </objects>
+    <object>objects\object0</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_setup</room>
-    <room>rooms\room26</room>
     <room>rooms\room24</room>
+    <room>rooms\room26</room>
+    <room>rooms\room0</room>
     <room>rooms\room25</room>
     <room>rooms\rm_9</room>
     <room>rooms\room21</room>

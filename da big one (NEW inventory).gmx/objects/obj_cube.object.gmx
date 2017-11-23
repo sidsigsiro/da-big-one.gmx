@@ -32,7 +32,11 @@
     height = 0
     floorval = 0
 }
-depth = -y + floorval
+//set height
+scr_set_floor();
+
+//set_depth
+scr_set_depth();
 ///top
 if instance_exists(obj_floor_dblock) {
     with (obj_cube_distraction) {

@@ -27,7 +27,11 @@
             <kind>1</kind>
             <string>///create bridge
 floorval = -200
-depth = -y + (floorval)
+//set height
+scr_set_floor();
+
+//set_depth
+scr_set_depth();
 </string>
           </argument>
         </arguments>

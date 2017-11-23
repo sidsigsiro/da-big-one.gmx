@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>depth = -99
 puddle = false
+scr_set_floor();
 </string>
           </argument>
         </arguments>

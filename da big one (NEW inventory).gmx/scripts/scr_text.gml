@@ -7,7 +7,6 @@ with (txt) {
     text = argument0;
     spd = argument1;
     font = fnt;
-    
     text_length = string_length(text);
     font_size = font_get_size(font)
     

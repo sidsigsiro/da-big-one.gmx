@@ -146,7 +146,11 @@ if pushed = false {
     }
 }
 
-depth = -y;
+//set height
+scr_set_floor();
+
+//set_depth
+scr_set_depth();
 
 if temp = room_speed {
     instance_create(x, y, obj_caunode1)

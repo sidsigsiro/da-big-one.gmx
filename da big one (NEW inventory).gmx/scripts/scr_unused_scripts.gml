@@ -2,6 +2,12 @@ if enstate != scr_enemy_dead {
     draw_triangle_colour(x, y, x1, y1, x2, y2, c_black, c_black, c_black, true)
 }
 
+///obj_player step event
+if !place_meeting(x, y, obj_floor_dblock) {
+    raised = false
+    raisedval = 0
+}
+
 //change to search phase 2 if sus is too high (obj_enemy_step event)
 if sus > 100 {
     sus = 100

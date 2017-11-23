@@ -26,7 +26,11 @@
           <argument>
             <kind>1</kind>
             <string>///create wall
-depth = (-y)
+//set height
+scr_set_floor();
+
+//set_depth
+scr_set_depth();
 if instance_exists(obj_glare_controller) {
 mesh = glr_mesh_create(x, y, false)
 

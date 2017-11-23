@@ -5,7 +5,6 @@ if !place_meeting(x, y, obj_ice) {
     len -= 0.02
 }
 
-
 var touching_floor_2 = place_meeting(x, y, obj_floor_2)
 
 //bounce off wall

@@ -27,7 +27,11 @@
             <kind>1</kind>
             <string>pushed = false
 from_chest = false
-able_to_fall = false
+able_to_fall = true
+falling = false
+scr_set_floor();
+
+velocity = 0 //falling velocity
 
 </string>
           </argument>
@@ -51,9 +55,7 @@ able_to_fall = false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_set_floor();
-
-if pushed = true {
+            <string>if pushed = true {
     scr_item_push();
 }
 if place_meeting(x, y, obj_water) {

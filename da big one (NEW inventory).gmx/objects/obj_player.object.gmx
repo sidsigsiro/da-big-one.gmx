@@ -48,7 +48,7 @@ crouch = false
 floorval = 0
 height = 0
 depth = -y
-hp = 2;
+hp = 99999;
 basespd = 2;
 spd = 2;
 hspd = 0;
@@ -71,6 +71,9 @@ face = RIGHT
 moving = false
 instance_create(x, y, obj_cursor)
 jumptarget = 0
+
+// used in draw
+masked_sprite = noone
 </string>
           </argument>
         </arguments>
@@ -310,31 +313,16 @@ if crouch = false {
 if keyboard_check(ord('T')) {
     room_restart();
 }
-//check for floor
-if place_meeting(x, y, obj_floor_2) {
-    height = 32
-} else if !place_meeting(x, y, obj_floor_2) {
-    height = 0
-}
-//check if raised
-var raisedval
+//set height
+scr_set_floor();
+
+//set_depth
+scr_set_depth();
+
 if place_meeting(x, y, obj_floor_dblock) {
     raised = true
     raisedval = -50
 }
-
-if !place_meeting(x, y, obj_floor_dblock) {
-    raised = false
-    raisedval = 0
-}
-//control depth
-if height &gt;= 24 {
-    floorval = (-200)
-}
-if height&lt;24 {
-    floorval = 0
-}
-depth = -y + (floorval + raisedval)
 
 script_execute(state)
 
@@ -364,29 +352,6 @@ if stam &gt; 200 {
 if stam &lt; 0 {
     stam = 0
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_block_top">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///collide with object
 </string>
           </argument>
         </arguments>
@@ -455,15 +420,31 @@ if stam &lt; 0 {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///draw sprite
+            <string>///check for grass
+var grass = instance_place(x, y, obj_grass)
+
+if grass != noone {
+    //delete previous masked_sprite
+    if(masked_sprite != noone) {
+        sprite_delete(masked_sprite)
+    }
+    
+    //y = player's waist, x = grass.x
+    masked_sprite = scr_create_masked_sprite(image_index, spr_grass_left_alpha_mask, grass.x - x + 32, sprite_height - 16)
+    draw_sprite(masked_sprite, 0, x, y)
+} else {
+    //draw sprite
+    draw_self();
+}
+
 
 // if sprite is not on grass tile
-if tile_layer_find(100, x, y) == -1 {
-    draw_self()
-} else {
+//if tile_layer_find(100, x, y) == -1 {
+    //draw_self()
+//} else {
     // only draw top, bottom is submerged in grass
-    draw_sprite_part(sprite_index, image_index, 0, 0, sprite_width, sprite_height/2, x - sprite_xoffset, y - sprite_yoffset)
-}
+    //draw_sprite_part(sprite_index, image_index, 0, 0, sprite_width, sprite_height/2, x - sprite_xoffset, y - sprite_yoffset)
+//}
 
 if crouch = true {
     image_blend = c_black
@@ -507,9 +488,9 @@ draw_text(x - 32, y - 25, string(y))
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>22,31</point>
-    <point>42,31</point>
-    <point>42,62</point>
-    <point>22,62</point>
+    <point>24,32</point>
+    <point>38,32</point>
+    <point>38,60</point>
+    <point>24,60</point>
   </PhysicsShapePoints>
 </object>

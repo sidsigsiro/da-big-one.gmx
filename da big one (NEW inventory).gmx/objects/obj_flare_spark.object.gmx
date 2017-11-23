@@ -89,7 +89,11 @@ if height &gt;= 24 {
 if height&lt;24 {
     floorval = 0
 }
-depth = -y + floorval
+//set height
+scr_set_floor();
+
+//set_depth
+scr_set_depth();
 </string>
           </argument>
         </arguments>
