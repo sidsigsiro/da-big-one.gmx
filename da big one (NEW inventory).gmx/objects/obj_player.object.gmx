@@ -429,8 +429,14 @@ if grass != noone {
         sprite_delete(masked_sprite)
     }
     
-    //y = player's waist, x = grass.x
-    masked_sprite = scr_create_masked_sprite(image_index, spr_grass_left_alpha_mask, grass.x - x + 32, sprite_height - 16)
+    if object_is_ancestor(obj_grass_left, grass) {
+        masked_sprite = scr_create_masked_sprite(image_index, spr_grass_left_alpha_mask, grass.x - x + 32, sprite_height - 16)
+    } else if object_is_ancestor(obj_grass_right, grass) {
+        masked_sprite = scr_create_masked_sprite(image_index, spr_grass_right_alpha_mask, grass.x - x - 64, sprite_height - 16)
+    } else {
+       masked_sprite = scr_create_masked_sprite(image_index, spr_grass_mid_alpha_mask, grass.x - x + 32, sprite_height - 16)
+    }
+    
     draw_sprite(masked_sprite, 0, x, y)
 } else {
     //draw sprite

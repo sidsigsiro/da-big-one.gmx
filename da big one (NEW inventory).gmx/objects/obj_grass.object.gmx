@@ -46,7 +46,7 @@ if height &gt;= 24 {
 scr_set_floor();
 
 //set_depth
-scr_set_depth();
+depth = 100000
 </string>
           </argument>
         </arguments>
