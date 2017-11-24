@@ -685,6 +685,7 @@
       </shaders>
     </shaders>
     <shader type="GLSLES">shaders\shdr_bloom.shader</shader>
+    <shader type="GLSLES">shaders\shdr_grass.shader</shader>
   </shaders>
   <fonts name="fonts">
     <font>fonts\fnt</font>
@@ -798,9 +799,6 @@
       <object>objects\obj_tunnel</object>
       <object>objects\obj_tree</object>
       <object>objects\obj_grass</object>
-      <object>objects\obj_grass_left</object>
-      <object>objects\obj_grass_mid</object>
-      <object>objects\obj_grass_right</object>
       <object>objects\obj_grass_top_left</object>
       <object>objects\obj_grass_top_mid</object>
       <object>objects\obj_grass_top_right</object>
@@ -1007,6 +1005,7 @@
       </objects>
     </objects>
     <object>objects\object0</object>
+    <object>objects\obj_surface_debugger</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_setup</room>
