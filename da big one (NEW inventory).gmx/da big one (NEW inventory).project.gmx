@@ -1006,7 +1006,9 @@
         </objects>
       </objects>
     </objects>
-    <object>objects\object0</object>
+    <objects name="Bloom">
+      <object>objects\object0</object>
+    </objects>
     <object>objects\obj_surface_debugger</object>
   </objects>
   <rooms name="rooms">

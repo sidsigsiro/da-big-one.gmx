@@ -86,10 +86,10 @@ if obj_player.state != scr_scope_state {
       move_snap(1, 1);
       }
       
-view_wview = 960
-view_hview = 540
+//view_wview = 960
+//view_hview = 540
 
-window_set_size(1920, 1080)
+//window_set_size(1920, 1080)
 </string>
           </argument>
         </arguments>
