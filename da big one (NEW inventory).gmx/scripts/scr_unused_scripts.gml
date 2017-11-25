@@ -450,3 +450,31 @@ if pocketitem = true {
         }
     }
 }
+
+// cycle through array of blend modes
+// 0 = bm_zero ( 0, 0, 0, 0)
+// 1 = bm_one 	(1, 1, 1, 1)
+// 2 = bm_src_color 	(Rs, Gs, Bs, As)
+// 3 = bm_inv_src_color 	(1-Rs, 1-Gs, 1-Bs, 1-As)
+// 4 = bm_src_alpha 	(As, As, As, As)
+// 5 = bm_inv_src_alpha 	(1-As, 1-As, 1-As, 1-As)
+// 6 = bm_dest_alpha 	(Ad, Ad, Ad, Ad)
+// 7 = bm_inv_dest_alpha 	(1-Ad, 1-Ad, 1-Ad, 1-Ad)
+// 8 = bm_dest_color (Rd, Gd, Bd, Ad)
+// 9 = bm_inv_dest_color 	(1-Rd, 1-Gd, 1-Bd, 1-Ad)
+// 10 = bm_src_alpha_sat (f, f, f, 1) where f = min(As, 1-Ad)
+i1 = 0
+i2 = 0
+
+draw_set_blend_mode_ext(i1, i2)
+
+if keyboard_check_pressed(vk_space) {
+    i1++
+    if i1 > 10 {
+        i1 = 0
+        i2++
+    }
+}
+if keyboard_check_pressed(vk_enter) {
+    show_debug_message(string(i1) + ", " + string(i2))
+}

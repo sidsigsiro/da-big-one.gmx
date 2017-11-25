@@ -28,6 +28,10 @@
             <string>///create player
 ///NOTE: USE RANDOMIZE(); OTHER WISE ALL RANDOM NUMBERS WILL BE THE SAME EVERYTIME YOU LOAD THE GAME
 
+//delete these
+i1 = 1
+i2 = 1
+
 numb_of_mines = 0
 det_timer = 0
 barreltar = noone
@@ -73,9 +77,8 @@ instance_create(x, y, obj_cursor)
 jumptarget = 0
 
 // used in draw
-surface = noone
-mask = noone
-copy = noone
+player_surf = noone
+mask_surf = noone
 </string>
           </argument>
         </arguments>
@@ -423,54 +426,59 @@ if stam &lt; 0 {
           <argument>
             <kind>1</kind>
             <string>// ---------- BEGIN INTENSE DRAWING ----------
-if !surface_exists(surface) {
-    surface = surface_create(sprite_width, sprite_height)
+
+if !surface_exists(mask_surf) {
+    mask_surf = surface_create(sprite_width, sprite_height)
+} 
+if !surface_exists(player_surf) {
+    player_surf = surface_create(sprite_width, sprite_height)
 }
 
-// all drawing will occur on this surface until surface_reset_target()
-surface_set_target(surface)
+// all drawing will occur on mask_surf until surface_reset_target()
+surface_set_target(mask_surf)
+
+//fill with transparent
+draw_clear_alpha(c_white, 0)
+
+//calculate mask y based on distacne from grass
+var mask_y = -16;
+var grass = instance_place(x, y, obj_grass_bottom)
+if grass != noone {
+    mask_y = max((y - grass.y)*2 + 24, -16)
+}
+
+// draw mask, snap x to nearest 32, set y to approximately player's waist
+draw_sprite(spr_grass_mid_alpha_mask, 0, 48 - x mod 32, sprite_height + mask_y)
+
+// this blend mode gets the intersection of opaque pixels
+draw_set_blend_mode_ext(bm_zero, bm_src_color)
 
 // copy sprite-sized area of global.grass_surface
 // (grass has already been drawn all-white into global.grass_surface by a shader)
-surface_copy_part(surface, 0, 0, global.grass_surface, x - sprite_xoffset, y - sprite_yoffset, sprite_width, sprite_height)
+draw_surface_part(global.grass_surface, x - sprite_xoffset, y - sprite_yoffset, sprite_width, sprite_height, 0, 0);
 
-// this blend combo only draws over opaque pixels
-draw_set_blend_mode_ext(bm_dest_alpha, bm_zero)
 
-// TODO
-//var grass = instance_place(x, y, obj_grass)
-//if grass != noone {
-        
-//}
-
-// draw mask, snap x to nearest 32, set y to player waist
-draw_sprite(spr_grass_mid_alpha_mask, 0, 48 - x mod 32, sprite_height - 16)
-
-// this blend combo turns transparent pixels white
-draw_set_blend_mode_ext(bm_inv_dest_alpha, bm_one)
-// fill sprite
-draw_rectangle(0, 0, sprite_width, sprite_height, false)
-
-draw_set_blend_mode(bm_normal)
-
-// convert surface to sprite
-mask = sprite_create_from_surface(surface, 0, 0, sprite_width, sprite_height, false, false, sprite_xoffset, sprite_yoffset)
-
-// make a copy of the player sprite
-draw_clear_alpha(c_white, 0) //transparent
-draw_sprite(sprite_index, image_index, sprite_xoffset, sprite_yoffset)
-copy = sprite_create_from_surface(surface, 0, 0, sprite_width, sprite_height, false, false, sprite_xoffset, sprite_yoffset)
-
-// apply mask to copy
-sprite_set_alpha_from_sprite(copy, mask)
-
-// stop drawing on surface
+// switch to drawing on player_surf
 surface_reset_target()
+surface_set_target(player_surf)
 
-// draw copy to screen
-draw_sprite(copy, 0, x, y)
+//fill with transparent
+draw_clear_alpha(c_white, 0)
 
+// draw player
+draw_set_blend_mode(bm_normal)
+draw_sprite(sprite_index, image_index, sprite_xoffset, sprite_yoffset)
 
+// this blend mode cuts holes out of the dest surface
+draw_set_blend_mode_ext(bm_zero, bm_inv_src_alpha)
+
+// apply mask to player
+draw_surface(mask_surf, 0, 0);
+
+// draw player to screen
+surface_reset_target()
+draw_set_blend_mode(bm_normal)
+draw_surface(player_surf, x - sprite_xoffset, y - sprite_yoffset)
     
 // ---------- END INTENSE DRAWING ----------
 

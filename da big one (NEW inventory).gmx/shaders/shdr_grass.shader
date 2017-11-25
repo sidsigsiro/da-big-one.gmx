@@ -17,10 +17,8 @@ void main()
 }
 
 //######################_==_YOYO_SHADER_MARKER_==_######################@~
-
-
 //
-// All white fragment shader
+// single colour fragment shader
 //
 varying vec2 v_vTexcoord;
 

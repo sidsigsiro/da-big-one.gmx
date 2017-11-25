@@ -39,10 +39,11 @@
       </sprites>
     </sprites>
     <sprite>sprites\_________________</sprite>
-    <sprite>sprites\spr_grass_top_left</sprite>
     <sprite>sprites\spr_grass_left_alpha_mask</sprite>
     <sprite>sprites\spr_grass_right_alpha_mask</sprite>
     <sprite>sprites\spr_grass_mid_alpha_mask</sprite>
+    <sprite>sprites\mask_test</sprite>
+    <sprite>sprites\spr_grass_top_left</sprite>
     <sprite>sprites\spr_grass_top_mid</sprite>
     <sprite>sprites\spr_grass_top_right</sprite>
     <sprite>sprites\spr_grass_mid_left</sprite>
@@ -799,6 +800,7 @@
       <object>objects\obj_tunnel</object>
       <object>objects\obj_tree</object>
       <object>objects\obj_grass</object>
+      <object>objects\obj_grass_bottom</object>
       <object>objects\obj_grass_top_left</object>
       <object>objects\obj_grass_top_mid</object>
       <object>objects\obj_grass_top_right</object>
