@@ -62,7 +62,7 @@ for(var i=1; i&lt;=room_last; i++)
 {
   if(room_exists(i))
   {
-    room_set_view(i,0,true,0,0,ideal_width,ideal_height,0,0,ideal_width,ideal_height,0,0,1,1,obj_view);
+    room_set_view(i,0,true,0,0,ideal_width,ideal_height,0,0,ideal_width,ideal_height,0,0,0,0,-1);
     room_set_view_enabled(i,true);
   }
 }

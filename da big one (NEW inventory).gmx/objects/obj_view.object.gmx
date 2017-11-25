@@ -53,6 +53,7 @@ if (instance_exists(obj_player)) {
           <argument>
             <kind>1</kind>
             <string>/// Move 10% towards the player
+
 if obj_player.state != scr_scope_state {
     var xto, yto;
     var rstick_x, lstick_y;
@@ -67,29 +68,23 @@ if obj_player.state != scr_scope_state {
         yto = obj_player.y + lengthdir_y(min(192, distance_to_point(obj_cursor.x, obj_cursor.y)), direction)
     }
     //how far the camera lags behind (/10 is 10% behind?)
+    
     x += (xto - x)/10;
     y += (yto - y)/10;
-        
-    //how far the camera lags behind the cursor
-    view_xview = -(view_wview/10) + x;
-    view_yview = -(view_hview/10) + y;
-
-    view_xview = clamp(view_xview, 0, room_width - view_xview);
-    view_yview = clamp(view_yview, 0, room_height - view_yview);
 } else {
     x += (obj_cursor.x - x) / 20;
     y += (obj_cursor.y - y) / 20;
 }
 
-   if !place_snapped(1, 1)
-      {
-      move_snap(1, 1);
-      }
-      
-//view_wview = 960
-//view_hview = 540
+//if !place_snapped(1, 1) {
+//    move_snap(1, 1);
+//}
 
-//window_set_size(1920, 1080)
+view_xview = x - view_wview/2
+view_yview = y - view_hview/2
+
+view_xview = clamp(view_xview, 0, room_width - view_wview);
+view_yview = clamp(view_yview, 0, room_height - view_hview);
 </string>
           </argument>
         </arguments>
