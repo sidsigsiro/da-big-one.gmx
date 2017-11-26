@@ -16,64 +16,71 @@ if birdcall_key {
 //set item key
 //set bow key
 if item_left = 2 {
-    bow_key_held = item1_key_held
-    bow_key_pressed = item1_key_pressed
-    bow_key_released = item1_key_released
-} else if item_right = 2 {
-    bow_key_held = item2_key_held
-    bow_key_pressed = item2_key_pressed
-    bow_key_released = item2_key_released
+    bow_key1_held = item1_key_held
+    bow_key1_pressed = item1_key_pressed
+    bow_key1_released = item1_key_released
+    bow_key2_held = item2_key_held
+    bow_key2_pressed = item2_key_pressed
+    bow_key2_released = item2_key_released
 } else {
-    bow_key_held = noone
-    bow_key_pressed = noone
-    bow_key_released = noone
+    bow_key1_held = noone
+    bow_key1_pressed = noone
+    bow_key1_released = noone
+    bow_key2_held = noone
+    bow_key2_pressed = noone
+    bow_key2_released = noone
 }
 
 //set bottle key
 var any_bottle_left = (item_left > 3 and item_left < 10)
-var any_bottle_right = (item_right > 3 and item_right < 10)
  
 if any_bottle_left {
-    bottle_key_held = item1_key_held
-    bottle_key_pressed = item1_key_pressed
-    bottle_key_released = item1_key_released
-} else if any_bottle_right {
-    bottle_key_held = item2_key_held
-    bottle_key_pressed = item2_key_pressed
-    bottle_key_released = item2_key_released
+    bottle_key1_held = item1_key_held
+    bottle_key1_pressed = item1_key_pressed
+    bottle_key1_released = item1_key_released
+    bottle_key2_held = item2_key_held
+    bottle_key2_pressed = item2_key_pressed
+    bottle_key2_released = item2_key_released
 } else {
-    bottle_key_held = noone
-    bottle_key_pressed = noone
-    bottle_key_released = noone
+    bottle_key1_held = noone
+    bottle_key1_pressed = noone
+    bottle_key1_released = noone
+    bottle_key2_held = noone
+    bottle_key2_pressed = noone
+    bottle_key2_released = noone
 }
 //set flare key
 if item_left = 7 {
-    flare_key_held = item1_key_held
-    flare_key_pressed = item1_key_pressed
-    flare_key_released = item1_key_released
-} else if item_right = 7 {
-    flare_key_held = item2_key_held
-    flare_key_pressed = item2_key_pressed
-    flare_key_released = item2_key_released
+    flare_key1_held = item1_key_held
+    flare_key1_pressed = item1_key_pressed
+    flare_key1_released = item1_key_released
+    flare_key2_held = item2_key_held
+    flare_key2_pressed = item2_key_pressed
+    flare_key2_released = item2_key_released
 } else {
-    flare_key_held = noone
-    flare_key_pressed = noone
-    flare_key_released = noone
+    flare_key1_held = noone
+    flare_key1_pressed = noone
+    flare_key1_released = noone
+    flare_key2_held = noone
+    flare_key2_pressed = noone
+    flare_key2_released = noone
 }
 
 //set detonator key
 if item_left = 8 {
-    det_key_held = item1_key_held
-    det_key_pressed = item1_key_pressed
-    det_key_released = item1_key_released
-} else if item_right = 8 {
-    det_key_held = item2_key_held
-    det_key_pressed = item2_key_pressed
-    det_key_released = item2_key_released
+    det_key1_held = item1_key_held
+    det_key1_pressed = item1_key_pressed
+    det_key1_released = item1_key_released
+    det_key2_held = item2_key_held
+    det_key2_pressed = item2_key_pressed
+    det_key2_released = item2_key_released
 } else {
-    det_key_held = noone
-    det_key_pressed = noone
-    det_key_released = noone
+    det_key1_held = noone
+    det_key1_pressed = noone
+    det_key1_released = noone
+    det_key2_held = noone
+    det_key2_pressed = noone
+    det_key2_released = noone
 }
 
 //set firebomb key
@@ -81,10 +88,7 @@ if item_left = 9 {
     firebomb_key_held = item1_key_held
     firebomb_key_pressed = item1_key_pressed
     firebomb_key_released = item1_key_released
-} else if item_right = 9 {
-    firebomb_key_held = item2_key_held
-    firebomb_key_pressed = item2_key_pressed
-    firebomb_key_released = item2_key_released
+    
 } else {
     firebomb_key_held = noone
     firebomb_key_pressed = noone
@@ -93,32 +97,36 @@ if item_left = 9 {
 
 //set rifle ammo key
 if item_left = 3 {
-    rifle_ammo_key_held = item1_key_held
-    rifle_ammo_key_pressed = item1_key_pressed
-    rifle_ammo_key_released = item1_key_released
-} else if item_right = 3 {
-    rifle_ammo_key_held = item2_key_held
-    rifle_ammo_key_pressed = item2_key_pressed
-    rifle_ammo_key_released = item2_key_released
+    rifle_ammo_key1_held = item1_key_held
+    rifle_ammo_key1_pressed = item1_key_pressed
+    rifle_ammo_key1_released = item1_key_released
+    rifle_ammo_key2_held = item2_key_held
+    rifle_ammo_key2_pressed = item2_key_pressed
+    rifle_ammo_key2_released = item2_key_released
 } else {
-    rifle_ammo_key_held = noone
-    rifle_ammo_key_pressed = noone
-    rifle_ammo_key_released = noone
+    rifle_ammo_key1_held = noone
+    rifle_ammo_key1_pressed = noone
+    rifle_ammo_key1_released = noone
+    rifle_ammo_key2_held = noone
+    rifle_ammo_key2_pressed = noone
+    rifle_ammo_key2_released = noone
 }
 
 //set snail key
 if item_left = 10 {
-    snail_key_held = item1_key_held
-    snail_key_pressed = item1_key_pressed
-    snail_key_released = item1_key_released
-} else if item_right = 10 {
-    snail_key_held = item2_key_held
-    snail_key_pressed = item2_key_pressed
-    snail_key_released = item2_key_released
+    snail_key1_held = item1_key_held
+    snail_key1_pressed = item1_key_pressed
+    snail_key1_released = item1_key_released
+    snail_key2_held = item2_key_held
+    snail_key2_pressed = item2_key_pressed
+    snail_key2_released = item2_key_released
 } else {
-    snail_key_held = noone
-    snail_key_pressed = noone
-    snail_key_released = noone
+    snail_key1_held = noone
+    snail_key1_pressed = noone
+    snail_key1_released = noone
+    snail_key2_held = noone
+    snail_key2_pressed = noone
+    snail_key2_released = noone
 }
 if face = DOWN {
     var itemx1 = x
@@ -133,6 +141,7 @@ if face = DOWN {
     var itemx1 = x
     var itemy1 = y - 30
 }
+
 //shoot arrow
 itemtouch = instance_place(x, y, obj_pickup_bow)
 if itemtouch {
@@ -150,7 +159,7 @@ if itemtouch {
 }
 
 
-if bow_key_released {
+if bow_key1_released {
     if obj_inventory.rifle_ammo > 0 {
         if arrowtimer = room_speed*2 {
             instance_create(x, y, obj_arrow)
@@ -166,7 +175,7 @@ if bow_key_released {
 
 
 
-if bow_key_held {
+if bow_key1_held {
     if obj_inventory.rifle_ammo > 0 {
         if arrowtimer != room_speed*2 {
             arrowtimer += 1
@@ -206,7 +215,7 @@ if itemtouch {
 
 //set off flare
 if scr_item_check(8) {
-    if det_key_pressed {
+    if det_key1_pressed {
         if instance_exists(obj_flare) {
             with(obj_flare) {
                 instance_change(obj_flash, true)
@@ -217,7 +226,7 @@ if scr_item_check(8) {
 
 ///plant flare
 if scr_item_check(7) {
-    if flare_key_pressed {
+    if flare_key1_pressed {
         if obj_inventory.flare_ammo > 0 {
             instance_create(x, y, obj_flare)
             obj_inventory.flare_ammo -= 1
@@ -241,7 +250,7 @@ if itemtouch {
 }
 
 //plant snail
-if snail_key_pressed {
+if snail_key1_pressed {
     my_snail = instance_create(x, y+29, obj_snail) {
         with(my_snail) {
             wild = false
@@ -309,7 +318,7 @@ if firebomb_key_held {
 
 ///throw rifle ammo
 if scr_item_check(3) {
-    if rifle_ammo_key_pressed {
+    if rifle_ammo_key1_pressed {
         ammo_throw = instance_create(x, y, obj_rifle_ammo_throw)
         with(ammo_throw) {
             ammo = true
@@ -344,7 +353,7 @@ if flint_key {
 }
 //fill bottle
 ///CURRENTLY FILLS BOTTLE AND USES BOTTLE AT THE SAME TIME. SHOULD WORK ONCE YOU ADD BOTTLE FILL ANIMATION
-if bottle_key_released {
+if bottle_key1_released {
     var water_touch = instance_place(x, y, obj_water)
     if water_touch {
         if water_touch.puddle = false {
@@ -400,7 +409,7 @@ if bottle_key_released {
 
 //drop black powder
 if obj_inventory.bp > 0 {
-    if bottle_key_held {
+    if bottle_key1_held {
         obj_inventory.bp -= 0.1
         instance_create(phy_position_x, phy_position_y, obj_blackpowder)
     }
@@ -408,7 +417,7 @@ if obj_inventory.bp > 0 {
 
 //drop water
 if scr_item_check(6) {
-    if bottle_key_pressed {
+    if bottle_key1_pressed {
         instance_create(x, y, obj_water_puddle)
         instance_create(x ,y - 16, obj_water_puddle)
         instance_create(x ,y + 16, obj_water_puddle)
@@ -619,63 +628,45 @@ if scope_key {
 }
 
 //equip quick select item
-if quick1_key_held {
-    if item1_key_pressed {
+if quick1 {
+    if item_left = item_quick1 {
+        item_left = -1
+    } else {
         item_left = item_quick1
     }
 }
-if quick1_key_held {
-    if item2_key_pressed {
-        item_right = item_quick1
-    }
-}
-if quick2_key_held {
-    if item1_key_pressed {
+if quick2 {
+    if item_left = item_quick2 {
+        item_left = -1
+    } else {
         item_left = item_quick2
     }
 }
-if quick2_key_held {
-    if item2_key_pressed {
-        item_right = item_quick2
-    }
-}
-if quick3_key_held {
-    if item1_key_pressed {
+if quick3 {
+    if item_left = item_quick3 {
+        item_left = -1
+    } else {
         item_left = item_quick3
     }
 }
-if quick3_key_held {
-    if item2_key_pressed {
-        item_right = item_quick3
-    }
-}
-if quick4_key_held {
-    if item1_key_pressed {
+if quick4 {
+    if item_left = item_quick4 {
+        item_left = -1
+    } else {
         item_left = item_quick4
     }
 }
-if quick4_key_held {
-    if item2_key_pressed {
-        item_right = item_quick4
-    }
-}
-if quick5_key_held {
-    if item1_key_pressed {
+if quick5 {
+    if item_left = item_quick5 {
+        item_left = -1
+    } else {
         item_left = item_quick5
     }
 }
-if quick5_key_held {
-    if item2_key_pressed {
-        item_right = item_quick5
-    }
-}
-if quick6_key_held {
-    if item1_key_pressed {
+if quick6 {
+    if item_left = item_quick6 {
+        item_left = -1
+    } else {
         item_left = item_quick6
-    }
-}
-if quick6_key_held {
-    if item2_key_pressed {
-        item_right = item_quick6
     }
 }

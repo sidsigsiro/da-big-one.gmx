@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>//set depth
 depth = (obj_player.y*-1)-201
+quick_button_set = false
 </string>
           </argument>
         </arguments>
@@ -54,7 +55,6 @@ var item = global.inventory[slot];
 var click = keyboard_check_pressed(ord('E'));
 var equip1 = mouse_check_button_pressed(mb_left);
 var equip2 = mouse_check_button_pressed(mb_right);
-var kool_key = keyboard_check(ord('K'))
 
 var quick1 = keyboard_check_pressed(ord('1'));
 var quick2 = keyboard_check_pressed(ord('2'));

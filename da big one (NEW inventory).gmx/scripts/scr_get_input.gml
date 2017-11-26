@@ -34,12 +34,12 @@ bottle_key = noone
 bottle_key_pressed = noone
 bottle_key_released = noone
 //quick select
-quick1_key_held = keyboard_check(ord('1'));
-quick2_key_held = keyboard_check(ord('2'));
-quick3_key_held = keyboard_check(ord('3'));
-quick4_key_held = keyboard_check(ord('4'));
-quick5_key_held = keyboard_check(ord('5'));
-quick6_key_held = keyboard_check(ord('6'));
+quick1 = keyboard_check_pressed(ord('1'));
+quick2 = keyboard_check_pressed(ord('2'));
+quick3 = keyboard_check_pressed(ord('3'));
+quick4 = keyboard_check_pressed(ord('4'));
+quick5 = keyboard_check_pressed(ord('5'));
+quick6 = keyboard_check_pressed(ord('6'));
 
 die_key = keyboard_check(ord('K'))
 
