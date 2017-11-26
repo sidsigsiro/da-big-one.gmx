@@ -192,6 +192,26 @@ if position_meeting(obj_cursor.x, obj_cursor.y, obj_enemy) {
     }
 }
 
+var doortar = instance_place(obj_cursor.x, obj_cursor.y, obj_door)
+if doortar {
+    if stam > 0 {
+        if temp = COOL {
+            if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock, true, true) {
+                if (crouch = false or !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_crouch, true, true)) {
+                    if (height > 24 or !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_floor2, true, true)) {
+                        with(doortar) {
+                            if wet = true {
+                                temp -= 1
+                                obj_player.stam -= 1
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 if temp = 60 {
     instance_destroy()
 }

@@ -931,7 +931,7 @@
     <instance objName="obj_viewnode6" x="240" y="284" name="inst_BEE74D17" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_crate" x="508" y="148" name="inst_004E7648" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_climb_top_floor1" x="508" y="148" name="inst_4B6F37EF" locked="0" code="" scaleX="0.5" scaleY="0.699999988079071" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player" x="428" y="320" name="inst_2198D2E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player" x="760" y="48" name="inst_2198D2E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_coin" x="88" y="220" name="inst_2DC93A83" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_chest" x="396" y="364" name="inst_3E418D15" locked="0" code="item2 = obj_coin&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="808" y="336" name="inst_E31B04C9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -947,6 +947,8 @@
     <instance objName="obj_node5" x="504" y="360" name="inst_9D6B29A9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_enemy" x="452" y="96" name="inst_14A371A7" locked="0" code="wait = false&#xA;squad = ALPHA&#xA;//patrol nodes&#xA;tars[1] = obj_node3&#xA;tars[2] = obj_node4&#xA;tars[3] = obj_node5&#xA; &#xA;&#xA;caunexttar = obj_nodeC&#xA;cautar0 = obj_nodeC&#xA;cautar0_default = obj_nodeC&#xA;caunexttar_default = obj_nodeC&#xA;&#xA;//focustar&#xA;with (my_focus) {&#xA;    tars[1] = obj_viewnode2&#xA;    tars[2] = obj_viewnode3 &#xA;    tars[3] = obj_viewnode1&#xA;}&#xA;&#xA;class = RIFLE&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_barrel" x="620" y="328" name="inst_DFA78B2E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_door" x="664" y="40" name="inst_98A191F0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_grass" x="744" y="28" name="inst_24A899F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="" x="208" y="1216" w="16" h="16" xo="0" yo="0" id="10005805" name="inst_A7B092B2" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
