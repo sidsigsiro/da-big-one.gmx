@@ -8,6 +8,29 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///show equipped item
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -81,19 +104,6 @@ if obj_inventory.active = true {
                 item_left = -1
             } else {
                 item_left = item
-            }
-            if item_right = item {
-                item_right = -1
-            }
-        }
-        if (equip2) {
-            if item_right = item {
-                item_right = -1
-            } else {
-                item_right = item
-            }
-            if item_left = item {
-                item_left = -1
             }
         }
         //set quick select
@@ -253,9 +263,6 @@ if obj_inventory.active = true {
     if (item_left = item) and (item_left != -1) {
         draw_sprite(spr_inv_border_equip, 0, x, y)
     }
-    if (item_right = item) and (item_right != -1) {
-        draw_sprite(spr_inv_border_equip, 1, x, y)
-    }
     if (item != -1) {
         draw_sprite(spr_items, item, x, y);
         if (item = 3) {
@@ -271,9 +278,18 @@ if obj_inventory.active = true {
             draw_text(x -15, y - 15, string((obj_inventory.firebomb_ammo) ));
         }
     }
+} else {
+    ///LAST THING WORKED ON
+    if quick1 or quick2 or quick3 or quick4 or quick5 or quick6 {
+        alarm[0] = room_speed
+    }
+    if alarm[0] &gt; 0 {
+        draw_sprite(spr_inv_border, 0, obj_player.x + 60, obj_player.y)
+        if item_left != -1 {
+            draw_sprite(spr_items, item_left, obj_player.x + 60, obj_player.y)
+        }
+    }
 }
-    
-
 
 </string>
           </argument>
