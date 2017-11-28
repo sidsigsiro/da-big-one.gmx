@@ -252,6 +252,8 @@ if temp &gt; 0 {
     temp -= 1
 }
 
+scr_item_fall();
+
 //float on water
 if place_meeting(x, y, obj_water) {
     len = 0.5

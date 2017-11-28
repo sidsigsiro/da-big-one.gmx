@@ -687,6 +687,7 @@
     </shaders>
     <shader type="GLSLES">shaders\shdr_bloom.shader</shader>
     <shader type="GLSLES">shaders\shdr_grass.shader</shader>
+    <shader type="GLSLES">shaders\shdr_watercolour.shader</shader>
   </shaders>
   <fonts name="fonts">
     <font>fonts\fnt</font>

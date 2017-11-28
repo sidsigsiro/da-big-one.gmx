@@ -33,16 +33,17 @@ bow_key_released = noone
 bottle_key = noone
 bottle_key_pressed = noone
 bottle_key_released = noone
-//quick select
-quick1 = keyboard_check_pressed(ord('1'));
-quick2 = keyboard_check_pressed(ord('2'));
-quick3 = keyboard_check_pressed(ord('3'));
-quick4 = keyboard_check_pressed(ord('4'));
-quick5 = keyboard_check_pressed(ord('5'));
-quick6 = keyboard_check_pressed(ord('6'));
-quick7 = keyboard_check_pressed(ord('7'));
-quick8 = keyboard_check_pressed(ord('8'));
-quick9 = keyboard_check_pressed(ord('9'));
+
+hot_key1 = keyboard_check_pressed(ord('1'));
+hot_key2 = keyboard_check_pressed(ord('2' ));
+hot_key3 = keyboard_check_pressed(ord('3'));
+hot_key4 = keyboard_check_pressed(ord('4'));
+hot_key5 = keyboard_check_pressed(ord('5'));
+hot_key6 = keyboard_check_pressed(ord('6'));
+hot_key7 = keyboard_check_pressed(ord('7'));
+hot_key8 = keyboard_check_pressed(ord('8'));
+hot_key9 = keyboard_check_pressed(ord('9'));
+
 
 die_key = keyboard_check(ord('K'))
 

@@ -43,6 +43,9 @@ firebomb_ammo = 0;
 8 = flare trigger
 9 = firebomb
 10 = snail
+11 = temp
+12 = wind
+13 = dirt
 */
 
 globalvar maxitems; //total item slots

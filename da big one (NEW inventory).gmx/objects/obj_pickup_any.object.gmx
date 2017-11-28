@@ -32,7 +32,6 @@ falling = false
 scr_set_floor();
 
 velocity = 0 //falling velocity
-
 </string>
           </argument>
         </arguments>
@@ -75,6 +74,8 @@ if place_meeting(x, y, obj_water) {
         pushed = false
     }
 } 
+
+scr_item_fall();
 </string>
           </argument>
         </arguments>

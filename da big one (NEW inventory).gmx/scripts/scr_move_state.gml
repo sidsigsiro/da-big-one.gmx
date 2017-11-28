@@ -3,6 +3,38 @@ scr_get_input();
 //get move controls
 scr_move_controls();
 
+if hot_key1 {
+    if item_left != global.inventory[0] {
+        item_left = global.inventory[0]
+    } else {
+        item_left = -1
+    }
+}
+if hot_key2 {
+    item_left = global.inventory[1]
+}
+if hot_key3 {
+    item_left = global.inventory[2]
+}
+if hot_key4 {
+    item_left = global.inventory[3]
+}
+if hot_key5 {
+    item_left = global.inventory[4]
+}
+if hot_key6 {
+    item_left = global.inventory[5]
+}
+if hot_key7 {
+    item_left = global.inventory[6]
+}
+if hot_key8 {
+    item_left = global.inventory[7]
+}
+if hot_key9 {
+    item_left = global.inventory[8]
+}
+
 //switch to temperature state
 if temp_key_pressed {
     state = scr_temperature_state
@@ -628,6 +660,7 @@ if scope_key {
 }
 
 //equip quick select item
+/*
 if quick1 {
     if item_left = item_quick1 {
         item_left = -1
@@ -691,3 +724,4 @@ if quick9 {
         item_left = item_quick9
     }
 }
+*/

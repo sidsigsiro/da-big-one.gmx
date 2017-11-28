@@ -820,7 +820,9 @@ if spd &lt; 0 {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>shader_set(shdr_watercolour);
+draw_self();
+shader_reset();
 
 ///view cone
 var x1 = x + lengthdir_x(view_x1, dir - 30);

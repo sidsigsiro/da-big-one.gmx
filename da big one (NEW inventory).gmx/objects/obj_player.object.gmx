@@ -66,6 +66,9 @@ dir = 0;
 attacked = false;
 image_speed = 1
 state = scr_move_state;
+able_to_fall = true
+
+velocity = 0 //falling velocity
 
 ymax = 50
 
@@ -303,14 +306,10 @@ if xaxis = 0 and yaxis = 0 {
 }
 
 //make footstep sounds
-if crouch = false {
-    if moving = true {
-        if alarm[2] = -1 {
-            alarm[2] = room_speed/6
-            if alarm[2] = room_speed/6 {
-            instance_create(x, y, obj_noise_foot_step)
-            }
-        }
+if crouch = false and moving = true and alarm[2] = -1 {
+    alarm[2] = room_speed/6
+    if alarm[2] = room_speed/6 {
+        instance_create(x, y, obj_noise_foot_step)
     }
 }
 
@@ -318,8 +317,30 @@ if crouch = false {
 if keyboard_check(ord('T')) {
     room_restart();
 }
+//fall
+///scr_item_fall
+
+show_debug_message(string(able_to_fall) + ", " + string(height))
+
+// falling code
+if !place_meeting(x, y, obj_floor_2) {
+    if (height &gt; 0 and !place_meeting(x, y, obj_wall)) {
+        velocity += 0.25 //acceleration
+        phy_position_y += velocity
+        height -= velocity
+        if height &lt; 0 {
+            // snap to ground
+            phy_position_y += height
+            height = 0
+            velocity = 0
+        }
+    }
+}
+
 //set height
-scr_set_floor();
+if velocity = 0 {
+    scr_set_floor();
+}
 
 //set_depth
 scr_set_depth();
@@ -478,7 +499,9 @@ draw_surface(mask_surf, 0, 0);
 // draw player to screen
 surface_reset_target()
 draw_set_blend_mode(bm_normal)
+shader_set(shdr_watercolour);
 draw_surface(player_surf, x - sprite_xoffset, y - sprite_yoffset)
+shader_reset();
     
 // ---------- END INTENSE DRAWING ----------
 
