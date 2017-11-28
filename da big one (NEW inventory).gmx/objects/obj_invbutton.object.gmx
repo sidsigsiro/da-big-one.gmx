@@ -79,12 +79,7 @@ var click = keyboard_check_pressed(ord('E'));
 var equip1 = mouse_check_button_pressed(mb_left);
 var equip2 = mouse_check_button_pressed(mb_right);
 
-var quick1 = keyboard_check_pressed(ord('1'));
-var quick2 = keyboard_check_pressed(ord('2'));
-var quick3 = keyboard_check_pressed(ord('3'));
-var quick4 = keyboard_check_pressed(ord('4'));
-var quick5 = keyboard_check_pressed(ord('5'));
-var quick6 = keyboard_check_pressed(ord('6'));
+
 
 if obj_inventory.active = true {
     if (abs(mouse_x - x) &lt; 16) and (abs(mouse_y - y) &lt; 16) { //within 16 pixels of button
@@ -106,7 +101,28 @@ if obj_inventory.active = true {
                 item_left = item
             }
         }
+        var quick_button 
+        quick_button = noone
         //set quick select
+        if quick1 {
+            quick_button = 1
+        } else if quick2 {
+            quick_button = 2
+        } else if quick3 {
+            quick_button = 3
+        } else if quick4 {
+            quick_button = 4
+        } else if quick5 {
+            quick_button = 5
+        } else if quick6 {
+            quick_button = 6
+        } else if quick7 {
+            quick_button = 7
+        } else if quick8 {
+            quick_button = 8
+        } else if quick9 {
+            quick_button = 9
+        }
         if (quick1) {
             if item_quick1 = item {
                 item_quick1 = -1
@@ -128,6 +144,15 @@ if obj_inventory.active = true {
             if item_quick6 = item {
                 item_quick6 = -1
             }
+            if item_quick7 = item {
+                item_quick7 = -1
+            }
+            if item_quick8 = item {
+                item_quick8 = -1
+            }
+            if item_quick9 = item {
+                item_quick9 = -1
+            }
         }
         if (quick2) {
             if item_quick2 = item {
@@ -136,7 +161,7 @@ if obj_inventory.active = true {
                 item_quick2 = item
             }
             if item_quick1 = item {
-                item_quick2 = -1
+                item_quick1 = -1
             }
             if item_quick3 = item {
                 item_quick3 = -1
@@ -149,6 +174,15 @@ if obj_inventory.active = true {
             }
             if item_quick6 = item {
                 item_quick6 = -1
+            }
+            if item_quick7 = item {
+                item_quick7 = -1
+            }
+            if item_quick8 = item {
+                item_quick8 = -1
+            }
+            if item_quick9 = item {
+                item_quick9 = -1
             }
         }
         if (quick3) {
@@ -161,7 +195,7 @@ if obj_inventory.active = true {
                 item_quick2 = -1
             }
             if item_quick1 = item {
-                item_quick3 = -1
+                item_quick1 = -1
             }
             if item_quick4 = item {
                 item_quick4 = -1
@@ -171,6 +205,15 @@ if obj_inventory.active = true {
             }
             if item_quick6 = item {
                 item_quick6 = -1
+            }
+            if item_quick7 = item {
+                item_quick7 = -1
+            }
+            if item_quick8 = item {
+                item_quick8 = -1
+            }
+            if item_quick9 = item {
+                item_quick9 = -1
             }
         }
         if (quick4) {
@@ -186,13 +229,22 @@ if obj_inventory.active = true {
                 item_quick3 = -1
             }
             if item_quick1 = item {
-                item_quick4 = -1
+                item_quick1 = -1
             }
             if item_quick5 = item {
                 item_quick5 = -1
             }
             if item_quick6 = item {
                 item_quick6 = -1
+            }
+            if item_quick7 = item {
+                item_quick7 = -1
+            }
+            if item_quick8 = item {
+                item_quick8 = -1
+            }
+            if item_quick9 = item {
+                item_quick9 = -1
             }
         }
         if (quick5) {
@@ -211,10 +263,19 @@ if obj_inventory.active = true {
                 item_quick4 = -1
             }
             if item_quick1 = item {
-                item_quick5 = -1
+                item_quick1 = -1
             }
             if item_quick6 = item {
                 item_quick6 = -1
+            }
+            if item_quick7 = item {
+                item_quick7 = -1
+            }
+            if item_quick8 = item {
+                item_quick8 = -1
+            }
+            if item_quick9 = item {
+                item_quick9 = -1
             }
         }
         if (quick6) {
@@ -236,7 +297,111 @@ if obj_inventory.active = true {
                 item_quick5 = -1
             }
             if item_quick1 = item {
+                item_quick1 = -1
+            }
+            if item_quick7 = item {
+                item_quick7 = -1
+            }
+            if item_quick8 = item {
+                item_quick8 = -1
+            }
+            if item_quick9 = item {
+                item_quick9 = -1
+            }
+            
+        }
+        if (quick7) {
+            if item_quick7 = item {
+                item_quick7 = -1
+            } else {
+                item_quick7 = item
+            }
+            if item_quick2 = item {
+                item_quick2 = -1
+            }
+            if item_quick3 = item {
+                item_quick3 = -1
+            }
+            if item_quick4 = item {
+                item_quick4 = -1
+            }
+            if item_quick5 = item {
+                item_quick5 = -1
+            }
+            if item_quick6 = item {
                 item_quick6 = -1
+            }
+            if item_quick1 = item {
+                item_quick1 = -1
+            }
+            if item_quick8 = item {
+                item_quick8 = -1
+            }
+            if item_quick9 = item {
+                item_quick9 = -1
+            }
+            
+        }
+        if (quick8) {
+            if item_quick8 = item {
+                item_quick8 = -1
+            } else {
+                item_quick8 = item
+            }
+            if item_quick2 = item {
+                item_quick2 = -1
+            }
+            if item_quick3 = item {
+                item_quick3 = -1
+            }
+            if item_quick4 = item {
+                item_quick4 = -1
+            }
+            if item_quick5 = item {
+                item_quick5 = -1
+            }
+            if item_quick6 = item {
+                item_quick6 = -1
+            }
+            if item_quick7 = item {
+                item_quick7 = -1
+            }
+            if item_quick1 = item {
+                item_quick1 = -1
+            }
+            if item_quick9 = item {
+                item_quick9 = -1
+            }
+        }
+        if (quick9) {
+            if item_quick9 = item {
+                item_quick9 = -1
+            } else {
+                item_quick9 = item
+            }
+            if item_quick2 = item {
+                item_quick2 = -1
+            }
+            if item_quick3 = item {
+                item_quick3 = -1
+            }
+            if item_quick4 = item {
+                item_quick4 = -1
+            }
+            if item_quick5 = item {
+                item_quick5 = -1
+            }
+            if item_quick6 = item {
+                item_quick6 = -1
+            }
+            if item_quick7 = item {
+                item_quick7 = -1
+            }
+            if item_quick8 = item {
+                item_quick8 = -1
+            }
+            if item_quick1 = item {
+                item_quick1 = -1
             }
         }
     }
@@ -259,6 +424,15 @@ if obj_inventory.active = true {
     if (item_quick6 = item) and (item_quick6 != -1) {
         draw_sprite(spr_inv_border_equip, 7, x, y)
     }
+    if (item_quick7 = item) and (item_quick7 != -1) {
+        draw_sprite(spr_inv_border_equip, 8, x, y)
+    }
+    if (item_quick8 = item) and (item_quick8 != -1) {
+        draw_sprite(spr_inv_border_equip, 9, x, y)
+    }
+    if (item_quick9 = item) and (item_quick9 != -1) {
+        draw_sprite(spr_inv_border_equip, 10, x, y)
+    }
     //equip 
     if (item_left = item) and (item_left != -1) {
         draw_sprite(spr_inv_border_equip, 0, x, y)
@@ -280,7 +454,7 @@ if obj_inventory.active = true {
     }
 } else {
     ///LAST THING WORKED ON
-    if quick1 or quick2 or quick3 or quick4 or quick5 or quick6 {
+    if quick1 or quick2 or quick3 or quick4 or quick5 or quick6 or quick7 or quick8 or quick9 {
         alarm[0] = room_speed
     }
     if alarm[0] &gt; 0 {

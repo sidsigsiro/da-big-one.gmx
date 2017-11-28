@@ -670,3 +670,24 @@ if quick6 {
         item_left = item_quick6
     }
 }
+if quick7 {
+    if item_left = item_quick7 {
+        item_left = -1
+    } else {
+        item_left = item_quick7
+    }
+}
+if quick8 {
+    if item_left = item_quick8 {
+        item_left = -1
+    } else {
+        item_left = item_quick8
+    }
+}
+if quick9 {
+    if item_left = item_quick9 {
+        item_left = -1
+    } else {
+        item_left = item_quick9
+    }
+}

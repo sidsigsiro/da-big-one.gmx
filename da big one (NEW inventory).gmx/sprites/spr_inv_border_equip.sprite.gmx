@@ -28,5 +28,8 @@
     <frame index="5">images\spr_inv_border_equip_5.png</frame>
     <frame index="6">images\spr_inv_border_equip_6.png</frame>
     <frame index="7">images\spr_inv_border_equip_7.png</frame>
+    <frame index="8">images\spr_inv_border_equip_8.png</frame>
+    <frame index="9">images\spr_inv_border_equip_9.png</frame>
+    <frame index="10">images\spr_inv_border_equip_10.png</frame>
   </frames>
 </sprite>

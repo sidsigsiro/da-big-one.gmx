@@ -46,7 +46,7 @@ firebomb_ammo = 0;
 */
 
 globalvar maxitems; //total item slots
-maxitems = 6;
+maxitems = 9;
 
 globalvar maxequip;
 maxequip = 2;
@@ -67,16 +67,22 @@ item_left = -1
 globalvar item_right;
 item_right = -1
 
-globalvar item_quick1, item_quick2, item_quick3, item_quick4, item_quick5, item_quick6;
+globalvar item_quick1, item_quick2, item_quick3, item_quick4, item_quick5, item_quick6, item_quick7, item_quick8, item_quick9;
 item_quick1 = -1
 item_quick2 = -1
 item_quick3 = -1
 item_quick4 = -1
 item_quick5 = -1
 item_quick6 = -1
+item_quick7 = -1
+item_quick8 = -1
+item_quick9 = -1
 
 scr_item_pickup(4)
 scr_item_pickup(8)
+scr_item_pickup(11)
+scr_item_pickup(12)
+scr_item_pickup(13)
 </string>
           </argument>
         </arguments>
@@ -183,9 +189,15 @@ if instance_exists(obj_player) {
 
     if obj_inventory.active = true {
         for (i = 0; i &lt; maxitems; i += 1) {
-            draw_sprite(spr_inv_border, 0, x1 + (i * 30), y1)
-            button[i].x = x1 + (i * 30)
-            button[i].y = y1
+            if i &lt; 6 {
+                draw_sprite(spr_inv_border, 0, x1 + (i * 30), y1)
+                button[i].x = x1 + (i * 30)
+                button[i].y = y1
+            } else {
+                draw_sprite(spr_inv_border, 0, x1 + ((i - 6) * 30), y1 - 30)
+                button[i].x = x1 + ((i - 6) * 30)
+                button[i].y = y1 - 30
+            }
         }
     }
 }

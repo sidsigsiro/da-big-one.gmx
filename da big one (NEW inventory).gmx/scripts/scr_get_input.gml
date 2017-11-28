@@ -40,6 +40,9 @@ quick3 = keyboard_check_pressed(ord('3'));
 quick4 = keyboard_check_pressed(ord('4'));
 quick5 = keyboard_check_pressed(ord('5'));
 quick6 = keyboard_check_pressed(ord('6'));
+quick7 = keyboard_check_pressed(ord('7'));
+quick8 = keyboard_check_pressed(ord('8'));
+quick9 = keyboard_check_pressed(ord('9'));
 
 die_key = keyboard_check(ord('K'))
 
