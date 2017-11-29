@@ -3,37 +3,7 @@ scr_get_input();
 //get move controls
 scr_move_controls();
 
-if hot_key1 {
-    if item_left != global.inventory[0] {
-        item_left = global.inventory[0]
-    } else {
-        item_left = -1
-    }
-}
-if hot_key2 {
-    item_left = global.inventory[1]
-}
-if hot_key3 {
-    item_left = global.inventory[2]
-}
-if hot_key4 {
-    item_left = global.inventory[3]
-}
-if hot_key5 {
-    item_left = global.inventory[4]
-}
-if hot_key6 {
-    item_left = global.inventory[5]
-}
-if hot_key7 {
-    item_left = global.inventory[6]
-}
-if hot_key8 {
-    item_left = global.inventory[7]
-}
-if hot_key9 {
-    item_left = global.inventory[8]
-}
+item_left = obj_inventory.equiped_item;
 
 //switch to temperature state
 if temp_key_pressed {
@@ -394,7 +364,7 @@ if bottle_key1_released {
                     scr_item_drop(4)
                     scr_item_pickup(6)
                     with (obj_invbutton) {
-                        var item = global.inventory[slot];
+                        var item = obj_inventory.boxes[slot].item;
                         if item = 6 {
                             item_left = item
                         }
@@ -404,7 +374,7 @@ if bottle_key1_released {
                     scr_item_drop(4)
                     scr_item_pickup(6)
                     with (obj_invbutton) {
-                        var item = global.inventory[slot];
+                        var item = obj_inventory.boces[slot].item;
                         if item = 6 {
                             item_right = item
                         }
@@ -418,7 +388,7 @@ if bottle_key1_released {
             scr_item_drop(4)
             scr_item_pickup(5)
             with (obj_invbutton) {
-                var item = global.inventory[slot];
+                var item = obj_inventory.boxes[slot].item;
                 if item = 5 {
                     item_left = item
                     obj_inventory.bp = 200
@@ -429,7 +399,7 @@ if bottle_key1_released {
             scr_item_drop(4)
             scr_item_pickup(5)
             with (obj_invbutton) {
-                var item = global.inventory[slot];
+                var item = obj_inventory.boxes[slot].item;
                 if item = 5 {
                     item_right = item
                     obj_inventory.bp = 200

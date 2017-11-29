@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-100000</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,13 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>active = false;
-bp = 0;
-rifle_ammo = 0;
-flare_ammo = 0;
-bottle_item = -1;
-firebomb_ammo = 0;
-/*
+            <string>/*
 0 = gold key
 1 = silver key
 2 = rifle
@@ -48,39 +42,20 @@ firebomb_ammo = 0;
 13 = dirt
 */
 
-globalvar maxitems; //total item slots
-maxitems = 9;
+active = false;
+max_items = 9; //total item slots
+bp = 0 // black powder
+equiped_item = -1
 
-globalvar maxequip;
-maxequip = 2;
-
-for (i = 0; i &lt; maxitems; i += 1) {
-    global.inventory[i] = -1;
-    button[i] = instance_create(0,0,obj_invbutton)
-    button[i].slot = i;
+/// Create persistant boxes
+for (var i = 0; i &lt; max_items; i++) {
+    boxes[i] = instance_create(0, 0, obj_invbutton)
+    boxes[i].item = -1
 }
 
-globalvar item_mouse;
-item_mouse = (-1);
-instance_create(0,0,obj_inventory_item_mouse);
+mouse_item = -1
 
-globalvar item_left;
-item_left = -1
-
-globalvar item_right;
-item_right = -1
-
-globalvar item_quick1, item_quick2, item_quick3, item_quick4, item_quick5, item_quick6, item_quick7, item_quick8, item_quick9;
-item_quick1 = -1
-item_quick2 = -1
-item_quick3 = -1
-item_quick4 = -1
-item_quick5 = -1
-item_quick6 = -1
-item_quick7 = -1
-item_quick8 = -1
-item_quick9 = -1
-
+// fill with items
 scr_item_pickup(4)
 scr_item_pickup(8)
 scr_item_pickup(11)
@@ -108,55 +83,43 @@ scr_item_pickup(13)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_get_input();
-//set depth
-depth = (obj_player.y*-1)-200
-
-if rifle_ammo &lt; 2 {
-    if scr_item_check(3) = true {
-        scr_item_drop(3)
-    }
+            <string>if (keyboard_check_pressed(vk_tab)) {
+    active = !active //toggle active
 }
 
-//check bp
-if scr_item_check(5) {
-    if bp = 0 {
-        scr_item_drop(5)
-        scr_item_pickup(4)
-    }
-}
-
-//check flare ammo
-if scr_item_check(7) {
-    if flare_ammo = 0 {
-        scr_item_drop(7)
-    }
-}
-
-if inv_key {
-    if active = true {
-        if item_mouse != -1 {
-        scr_item_pickup(item_mouse)
-        item_mouse = -1
-    }
-        active = false
-    } else {
-        active = true
-    }
-}
 if active = true {
-    prevstate = obj_player.state
-    obj_player.state = scr_inventory_state
-}
-x = obj_player.x
-y = obj_player.y
+    var boxes_per_row = 5
+    var box_width = sprite_get_width(spr_inv_border)
+    var box_height = sprite_get_height(spr_inv_border)
+    
+    // x and y are the upper left corner of the inventory
+    x = obj_player.x - (box_width*boxes_per_row)/2
+    y = obj_player.y - sprite_get_yoffset(spr_player) - box_height*ceil(max_items/boxes_per_row)
+    
+    //place boxes in rows
+    for (var i = 0; i &lt; max_items; i++) {
+        boxes[i].x = x + box_width*(i mod boxes_per_row)
+        boxes[i].y = y + box_height*floor(i/boxes_per_row)
+    }
+    
+    // on click, swap box item and mouse item
+    if mouse_check_button_pressed(mb_left) {
+        var box = instance_position(mouse_x, mouse_y, obj_invbutton)
+        
+        if box != noone {
+            show_debug_message("clicked")
+            var swap = mouse_item;
+            mouse_item = box.item
+            box.item = swap
+        }
+    }
 
-if keyboard_check_pressed(ord('L')) {
-    scr_item_pickup(random_range(0, 3))
-}
-
-if bp &lt; 0 {
-    bp = 0
+   // equip item by num key press
+   for (var i = 1; i &lt;= 9; i++) {
+      if keyboard_check_pressed(ord('0') + i) {
+            equiped_item = boxes[i-1].item
+      }
+   }
 }
 </string>
           </argument>
@@ -180,29 +143,9 @@ if bp &lt; 0 {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_get_input();
-
-if instance_exists(obj_player) {
-    var x1 = obj_player.x - 74
-    var y1 = obj_player.y - 50
-    var x2 = obj_player.x - 16
-    var y2 = obj_player.y + 25
-    var ix = x1 + (i * 40)
-    var iy = y1 - 40
-
-    if obj_inventory.active = true {
-        for (i = 0; i &lt; maxitems; i += 1) {
-            if i &lt; 6 {
-                draw_sprite(spr_inv_border, 0, x1 + (i * 30), y1)
-                button[i].x = x1 + (i * 30)
-                button[i].y = y1
-            } else {
-                draw_sprite(spr_inv_border, 0, x1 + ((i - 6) * 30), y1 - 30)
-                button[i].x = x1 + ((i - 6) * 30)
-                button[i].y = y1 - 30
-            }
-        }
-    }
+            <string>/// draw mouse item
+if active = true and mouse_item != -1 {
+    draw_sprite(spr_items, mouse_item, mouse_x, mouse_y)
 }
 </string>
           </argument>

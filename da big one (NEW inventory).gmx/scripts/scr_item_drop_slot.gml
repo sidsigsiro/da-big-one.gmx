@@ -1,7 +1,7 @@
 ///scr_item_drop_slot(slot);
 
-if (global.inventory[argument0] != -1) {
-    global.inventory[argument0] = -1;
-    return(true)
+if (obj_inventory.boxes[argument0].item != -1) {
+    obj_inventory.boxes[argument0].item = -1;
+    return true
 }
-return(false);
+return false

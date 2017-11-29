@@ -1,8 +1,8 @@
-///scr_item_pickup
-for (i = 0; i < maxitems; i += 1) {
-    if (global.inventory[i] == -1) { //if slot "i" is empty
-        global.inventory[i] = argument0;
-        return(true);
+///scr_item_pickup(item)
+for (i = 0; i < obj_inventory.max_items; i++) {
+    if (obj_inventory.boxes[i].item == -1) { //if slot "i" is empty
+        obj_inventory.boxes[i].item = argument0;
+        return true
     }
 }
-return(false);
+return false

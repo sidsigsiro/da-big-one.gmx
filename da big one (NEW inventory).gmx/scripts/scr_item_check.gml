@@ -1,8 +1,7 @@
-///scr_item_check
-
-for (i = 0; i < maxitems; i += 1) {
-    if (global.inventory[i] == argument0) { //if slot "i" has item argument0
-        return(true);
+///scr_item_check(item)
+for (i = 0; i < obj_inventory.max_items; i++) {
+    if (obj_inventory.boxes[i].item == argument0) { //if slot "i" has item argument0
+        return true
     }
 }
-return(false);
+return false
