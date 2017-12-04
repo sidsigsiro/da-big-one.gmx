@@ -1,6 +1,6 @@
 ///scr_item_fall
 
-show_debug_message(string(able_to_fall) + ", " + string(height))
+//show_debug_message(string(able_to_fall) + ", " + string(height))
 
 // falling code
 if !place_meeting(x, y, obj_floor_2) {

@@ -29,8 +29,6 @@ if place_meeting(x, y, obj_ice) {
 time += 1
 len = ease_out_quad(time, dash_start_speed, -dash_start_speed, room_speed/2.5); 
 
-show_debug_message("len = "+string(len))
-
 //Get the hspd and vspd
 hspd = lengthdir_x(len, dir);
 vspd = lengthdir_y(len, dir);
