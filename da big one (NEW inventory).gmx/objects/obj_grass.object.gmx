@@ -236,9 +236,13 @@ if temp &gt; room_speed {
             <kind>1</kind>
             <string>draw_self()
 
-if !surface_exists(global.grass_surface) {
-    global.grass_surface = surface_create(surface_get_width(application_surface), surface_get_height(application_surface))
-    draw_clear_alpha(c_white, 0)
+var width = surface_get_width(application_surface)
+var height = surface_get_height(application_surface)
+
+if !surface_exists(global.grass_surface)
+        or surface_get_width(global.grass_surface) != width
+        or surface_get_height(global.grass_surface) != height {
+    global.grass_surface = surface_create(width, height)
 }
 
 //prep 2nd draw pass
