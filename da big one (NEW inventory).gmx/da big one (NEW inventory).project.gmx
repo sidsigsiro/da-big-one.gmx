@@ -266,6 +266,7 @@
     <sprite>sprites\spr_wall_snail</sprite>
     <sprite>sprites\spr_door_next</sprite>
     <sprite>sprites\spr_rifle</sprite>
+    <sprite>sprites\spr_turret</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_grid</background>
@@ -638,6 +639,8 @@
     <script>scripts\scr_item_fall.gml</script>
     <script>scripts\scr_set_depth.gml</script>
     <script>scripts\scr_create_masked_sprite.gml</script>
+    <script>scripts\scr_turret_patrol.gml</script>
+    <script>scripts\scr_turret_alert.gml</script>
   </scripts>
   <shaders name="shaders">
     <shaders name="Glare">
@@ -1012,6 +1015,7 @@
       <object>objects\object0</object>
     </objects>
     <object>objects\obj_surface_debugger</object>
+    <object>objects\obj_turret</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_setup</room>
