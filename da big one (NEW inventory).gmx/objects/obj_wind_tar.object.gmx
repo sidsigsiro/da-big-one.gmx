@@ -73,16 +73,10 @@ depth = obj_cursor.depth - 1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = obj_cursor.x
-y = obj_cursor.y
+            <string>scr_get_input();
 
-if obj_player.state != scr_wind_state {
-    instance_destroy()
-} else if obj_player.state = scr_wind_state {
-    if mouse_check_button_pressed(mb_right) {
-        image_angle -= 90
-    }
-}
+x = obj_cursor.x
+y = obj_cursor.y
 
 if image_angle = (-360) {
     image_angle = 0

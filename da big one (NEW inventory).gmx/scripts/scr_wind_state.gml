@@ -1,24 +1,25 @@
 ///scr_wind_state
 
-if wind_key_released {
-    if det_timer < room_speed/10 { 
-        if (mine1) != noone {
-            with(mine1) {
-                instance_destroy()
-            }
-            if numb_of_mines = 2 {
-                mine1 = mine2
-            }
-            numb_of_mines -= 1            
+if wind_key2_pressed and !wind_key1_held {
+    if (mine1) != noone {
+        with(mine1) {
+            instance_destroy()
         }
+        if numb_of_mines = 2 {
+            mine1 = mine2
+        }
+        numb_of_mines -= 1
     }
-    det_timer = 0
-    state = scr_move_state
 }
 
-det_timer += 1
+if wind_key1_held {
+    if wind_key2_pressed {
+        obj_wind_tar.image_angle -= 90
+    }
+}
 
-if mouse_check_button_pressed(mb_left) {
+
+if wind_key1_released {
     if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock, true, true) {
         if (crouch = false or !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_crouch, true, true)) {
             if (height > 24 or !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_floor2, true, true)) {
@@ -34,6 +35,3 @@ if mouse_check_button_pressed(mb_left) {
     }
 }
 
-if !instance_exists(obj_wind_tar) {
-    instance_create(obj_cursor.x, obj_cursor.y, obj_wind_tar)
-}

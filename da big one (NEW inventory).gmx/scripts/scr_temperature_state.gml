@@ -1,19 +1,14 @@
 ///scr_temperature_state
-if temp_key_pressed {
-    temp = NEUTRAL
-    state = scr_move_state
-}
 
-
-if mouse_check_button(mb_left) {
+if temp_key1 {
     temp = HEAT
 }
 
-if mouse_check_button(mb_right) {
+if temp_key2 {
     temp = COOL
 }
 
-if !mouse_check_button(mb_left) and !mouse_check_button(mb_right) {
+if !temp_key1 and !temp_key2 {
     temp = NEUTRAL
 }
 
@@ -171,19 +166,25 @@ if place_meeting(obj_cursor.x, obj_cursor.y, obj_pickup_firebomb) {
 //heat grass
 //check obj_grass step event
 
-//freeze enemy
+
+//freeze/enemy
 var enemytar = instance_place(obj_cursor.x, obj_cursor.y, obj_enemy)
 if position_meeting(obj_cursor.x, obj_cursor.y, obj_enemy) {
     if stam > 0 {
-        if temp = COOL {
-            if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock, true, true) {
-                if (crouch = false or !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_crouch, true, true)) {
-                    if (height > 24 or !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_floor2, true, true)) {
+        if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock, true, true) {
+            if (crouch = false or !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_crouch, true, true)) {
+                if (height > 24 or !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_floor2, true, true)) {
+                    if temp = COOL {
                         stam -= 1
                         with(enemytar) {
                             if wet = true {
-                                temp -= 1
+                                temp -= 2
                             }
+                        }
+                    } if temp = HEAT {
+                        stam -= 1
+                        with(enemytar) {
+                            temp += 2
                         }
                     }
                 }
@@ -192,6 +193,7 @@ if position_meeting(obj_cursor.x, obj_cursor.y, obj_enemy) {
     }
 }
 
+//freeze door
 var doortar = instance_place(obj_cursor.x, obj_cursor.y, obj_door)
 if doortar {
     if stam > 0 {

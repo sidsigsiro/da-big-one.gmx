@@ -931,7 +931,7 @@
     <instance objName="obj_viewnode6" x="240" y="284" name="inst_BEE74D17" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_crate" x="508" y="148" name="inst_004E7648" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_climb_top_floor1" x="508" y="148" name="inst_4B6F37EF" locked="0" code="" scaleX="0.5" scaleY="0.699999988079071" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player" x="556" y="340" name="inst_2198D2E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player" x="600" y="676" name="inst_2198D2E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_coin" x="88" y="220" name="inst_2DC93A83" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_chest" x="396" y="364" name="inst_3E418D15" locked="0" code="item2 = obj_coin&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="808" y="336" name="inst_E31B04C9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

@@ -742,6 +742,27 @@ if temp &lt; -50 {
     temp = -50
 }
 
+if temp = 50 {
+    instance_create(x, y, obj_caunode1)
+    instance_create(x, y, obj_noise_large_high)
+    investar_x = x
+    investar_y = y
+    enstate = scr_enemy_investigate
+    sus = true
+}
+
+if temp &gt; 50 {
+    temp = 50
+}
+
+if temp &lt; 0 {
+    temp += 1
+}
+
+if temp &gt; 0 {
+    temp -= 1
+}
+
 //stop checking if enemy is dead
 script_execute(enstate)
 

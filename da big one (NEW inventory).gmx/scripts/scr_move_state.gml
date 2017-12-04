@@ -35,11 +35,6 @@ if hot_key9 {
     item_left = global.inventory[8]
 }
 
-//switch to temperature state
-if temp_key_pressed {
-    state = scr_temperature_state
-}
-
 ///whistle/birdcall?
 if birdcall_key {
     instance_create(x, y, obj_noise_med)
@@ -61,6 +56,66 @@ if item_left = 2 {
     bow_key2_held = noone
     bow_key2_pressed = noone
     bow_key2_released = noone
+}
+
+//set bow key
+if item_left = 13 {
+    dblock_key1_held = item1_key_held
+    dblock_key1_pressed = item1_key_pressed
+    dblock_key1_released = item1_key_released
+    dblock_key2_held = item2_key_held
+    dblock_key2_pressed = item2_key_pressed
+    dblock_key2_released = item2_key_released
+} else {
+    dblock_key1_held = noone
+    dblock_key1_pressed = noone
+    dblock_key1_released = noone
+    dblock_key2_held = noone
+    dblock_key2_pressed = noone
+    dblock_key2_released = noone
+}
+
+if item_left = 12 {
+    wind_key1_held = item1_key_held
+    wind_key1_pressed = item1_key_pressed
+    wind_key1_released = item1_key_released
+    wind_key2_held = item2_key_held
+    wind_key2_pressed = item2_key_pressed
+    wind_key2_released = item2_key_released
+    scr_wind_state();
+    if !instance_exists(obj_wind_tar) {
+    instance_create(obj_cursor.x, obj_cursor.y, obj_wind_tar)
+    }
+} else {
+    wind_key1_held = noone
+    wind_key1_pressed = noone
+    wind_key1_released = noone
+    wind_key2_held = noone
+    wind_key2_pressed = noone
+    wind_key2_released = noone
+    if instance_exists(obj_wind_tar) {
+        with(obj_wind_tar) {
+            instance_destroy();
+        }
+    }
+}
+
+//set bow key
+if item_left = 11 {
+    temp_key1 = item1_key_held
+    temp_key1_pressed = item1_key_pressed
+    temp_key1_released = item1_key_released
+    temp_key2 = item2_key_held
+    temp_key2_pressed = item1_key_pressed
+    temp_key2_released = item1_key_released
+    scr_temperature_state();
+} else {
+    temp_key1_held = noone
+    temp_key1_pressed = noone
+    temp_key1_released = noone
+    temp_key2_held = noone
+    temp_key2_pressed = noone
+    temp_key2_released = noone
 }
 
 //set bottle key
@@ -464,15 +519,39 @@ if scr_item_check(6) {
     }
 }
         
-//spawn dblock
-dblock_charge = 0
+//charge dblock
 if !place_meeting(x, y, obj_water) {
     if !place_meeting(x, y, obj_ice) {
-        if dblock_key {
-            state = scr_dblock_state
+        if dblock_key1_held {
+            if dblock_charge < room_speed {
+                dblock_charge += 1
+            }
         }
+    } if dblock_key1_released {
+        if stam >= 50 {
+            if dblock_charge = room_speed {
+                if instance_exists(obj_cube) {
+                    with(obj_cube) {
+                        mp_grid_clear_cell(global.grid_floor1, floor(x/8), floor(y/8))
+                        instance_destroy()
+                    }
+                }
+                instance_create(x, y, obj_cube)
+                with(obj_cube) {
+                    mp_grid_add_cell(global.grid_floor1, floor(x/8), floor(y/8))
+                }
+                phy_active = false
+                stam -= 50
+                height += 32
+                repeat(5) {
+                    phy_position_y -= 10
+                }
+            }
+        }
+        dblock_charge = 0
     }
 }
+        
 
 //switch to inventory state
 if obj_inventory.active = true {

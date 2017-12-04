@@ -125,6 +125,7 @@
     <sprite>sprites\spr_flash</sprite>
     <sprite>sprites\spr_floor_1</sprite>
     <sprite>sprites\spr_floor_2</sprite>
+    <sprite>sprites\spr_floor2_dblock</sprite>
     <sprite>sprites\spr_hitbox</sprite>
     <sprite>sprites\spr_ice</sprite>
     <sprite>sprites\spr_inventory_border</sprite>
@@ -893,7 +894,7 @@
       <object>objects\obj_view</object>
       <object>objects\obj_floor_1</object>
       <object>objects\obj_floor_2</object>
-      <object>objects\obj_floor_dblock</object>
+      <object>objects\obj_floor2_dblock</object>
       <object>objects\obj_cursor</object>
       <objects name="lights">
         <object>objects\obj_glare_controller</object>
@@ -1014,8 +1015,8 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_setup</room>
-    <room>rooms\room26</room>
     <room>rooms\room24</room>
+    <room>rooms\room26</room>
     <room>rooms\room0</room>
     <room>rooms\room25</room>
     <room>rooms\rm_9</room>

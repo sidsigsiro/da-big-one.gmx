@@ -37,23 +37,14 @@ scr_set_floor();
 
 //set_depth
 scr_set_depth();
-///top
-if instance_exists(obj_floor_dblock) {
-    with (obj_cube_distraction) {
+
+if instance_exists(obj_floor2_dblock) {
+    with(obj_floor2_dblock) {
         instance_destroy();
     }
 }
-temp = true
+instance_create(x + 1, y - 24, obj_floor2_dblock)
 
-if temp = false {
-instance_create(x, y + 11, obj_dblock_top)
-instance_create(x, y - 31, obj_dblock_top)
-instance_create(x + 20, y - 10, obj_dblock_side)
-instance_create(x - 21, y - 10, obj_dblock_side)
-instance_create(x, y, obj_cube_distraction)
-instance_create(x, y, obj_grid_cube)
-instance_create(x ,y - 9, obj_floor_dblock)
-}
 </string>
           </argument>
         </arguments>
@@ -129,9 +120,9 @@ with obj_dblock_side {
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>0,40</point>
+    <point>1,40</point>
     <point>24,40</point>
-    <point>24,52</point>
-    <point>0,52</point>
+    <point>24,59</point>
+    <point>1,59</point>
   </PhysicsShapePoints>
 </object>

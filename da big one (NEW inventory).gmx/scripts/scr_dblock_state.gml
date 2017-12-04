@@ -1,6 +1,8 @@
 ///scr_dblock_state
 scr_get_input();
 
+instance_destroy();
+
 if place_meeting(x, y, obj_cube) {
     height = 32
 }
@@ -48,7 +50,7 @@ if alarm[1] > -1 {
     }
 }
 
-if dblock_key_released {
+if dblock_key1_released {
     if phy_active = true {
         if dblock_charge = room_speed {
             height = 32

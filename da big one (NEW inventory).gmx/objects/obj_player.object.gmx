@@ -323,7 +323,7 @@ if keyboard_check(ord('T')) {
 show_debug_message(string(able_to_fall) + ", " + string(height))
 
 // falling code
-if !place_meeting(x, y, obj_floor_2) {
+if !place_meeting(x, y, obj_floor_2) and !place_meeting(x, y, obj_floor2_dblock) {
     if (height &gt; 0 and !place_meeting(x, y, obj_wall)) {
         velocity += 0.25 //acceleration
         phy_position_y += velocity
@@ -345,7 +345,7 @@ if velocity = 0 {
 //set_depth
 scr_set_depth();
 
-if place_meeting(x, y, obj_floor_dblock) {
+if place_meeting(x, y, obj_floor2_dblock) {
     raised = true
     raisedval = -50
 }

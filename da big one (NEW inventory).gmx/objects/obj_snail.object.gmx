@@ -31,6 +31,7 @@ wild = true
 len = 1
 bp = 100
 pushed = false
+height = 0
 switch(face) {
     case RIGHT:
     dir = 0
@@ -95,7 +96,9 @@ check_position_y = y
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if pushed = false {
+            <string>scr_set_floor();
+
+if pushed = false {
     if wild = true {
         maxspd = 0.5
         alarmspd = room_speed
