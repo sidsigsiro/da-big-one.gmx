@@ -167,7 +167,7 @@ if place_meeting(obj_cursor.x, obj_cursor.y, obj_pickup_firebomb) {
 //check obj_grass step event
 
 
-//freeze/enemy
+//freeze/heat enemy
 var enemytar = instance_place(obj_cursor.x, obj_cursor.y, obj_enemy)
 if position_meeting(obj_cursor.x, obj_cursor.y, obj_enemy) {
     if stam > 0 {
@@ -184,6 +184,32 @@ if position_meeting(obj_cursor.x, obj_cursor.y, obj_enemy) {
                     } if temp = HEAT {
                         stam -= 1
                         with(enemytar) {
+                            temp += 2
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//freeze/heat turret
+var turrettar = instance_place(obj_cursor.x, obj_cursor.y, obj_turret)
+if position_meeting(obj_cursor.x, obj_cursor.y, obj_turret) {
+    if stam > 0 {
+        if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock, true, true) {
+            if (crouch = false or !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_crouch, true, true)) {
+                if (height > 24 or !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_floor2, true, true)) {
+                    if temp = COOL {
+                        stam -= 1
+                        with(turrettar) {
+                            if wet = true {
+                                temp -= 2
+                            }
+                        }
+                    } if temp = HEAT {
+                        stam -= 1
+                        with(turrettar) {
                             temp += 2
                         }
                     }

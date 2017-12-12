@@ -111,6 +111,20 @@ if barreltar {
         pushed = true
     }
 }
+
+var turrettar = instance_place(x, y, obj_turret)
+if turrettar {
+    with(turrettar) {
+        len = 2
+        dir = itemdir
+        pushed = true
+    }
+    with(turrettar.my_focus) {
+        len = 2
+        dir = itemdir
+        pushed = true
+    }
+}
 </string>
           </argument>
         </arguments>

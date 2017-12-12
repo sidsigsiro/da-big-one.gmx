@@ -66,6 +66,29 @@ scr_item_pickup(13)
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///show equipped item
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -113,14 +136,19 @@ if active = true {
             box.item = swap
         }
     }
-
-   // equip item by num key press
-   for (var i = 1; i &lt;= 9; i++) {
-      if keyboard_check_pressed(ord('0') + i) {
-            equiped_item = boxes[i-1].item
-      }
-   }
 }
+
+// equip item by num key press
+for (var i = 1; i &lt;= 9; i++) {
+   if keyboard_check_pressed(ord('0') + i) {
+    if equiped_item != boxes[i-1].item {
+         equiped_item = boxes[i-1].item
+    } else {
+        equiped_item = -1
+    }
+    alarm[0] = room_speed*2
+   }
+}   
 </string>
           </argument>
         </arguments>
@@ -146,6 +174,13 @@ if active = true {
             <string>/// draw mouse item
 if active = true and mouse_item != -1 {
     draw_sprite(spr_items, mouse_item, mouse_x, mouse_y)
+}
+
+if alarm[0] &gt; 0 {
+    draw_sprite(spr_inv_border, 0, obj_player.x + 32, obj_player.y)
+    if equiped_item != -1 {
+        draw_sprite(spr_items, equiped_item, obj_player.x + 32, obj_player.y)
+    }
 }
 </string>
           </argument>

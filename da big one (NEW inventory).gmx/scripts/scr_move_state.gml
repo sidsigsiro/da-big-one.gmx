@@ -70,7 +70,7 @@ if item_left = 12 {
     }
 }
 
-//set bow key
+//set temp key
 if item_left = 11 {
     temp_key1 = item1_key_held
     temp_key1_pressed = item1_key_pressed
@@ -418,22 +418,7 @@ if bottle_key1_released {
                 if item_left = 4 {
                     scr_item_drop(4)
                     scr_item_pickup(6)
-                    with (obj_invbutton) {
-                        var item = obj_inventory.boxes[slot].item;
-                        if item = 6 {
-                            item_left = item
-                        }
-                    }
-                } 
-                if item_right = 4 {
-                    scr_item_drop(4)
-                    scr_item_pickup(6)
-                    with (obj_invbutton) {
-                        var item = obj_inventory.boces[slot].item;
-                        if item = 6 {
-                            item_right = item
-                        }
-                    }
+                    item_left = 6
                 }
             }
         }

@@ -267,6 +267,7 @@
     <sprite>sprites\spr_door_next</sprite>
     <sprite>sprites\spr_rifle</sprite>
     <sprite>sprites\spr_turret</sprite>
+    <sprite>sprites\spr_campfire</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_grid</background>
@@ -641,6 +642,8 @@
     <script>scripts\scr_create_masked_sprite.gml</script>
     <script>scripts\scr_turret_patrol.gml</script>
     <script>scripts\scr_turret_alert.gml</script>
+    <script>scripts\scr_get_wet.gml</script>
+    <script>scripts\scr_turret_frozen.gml</script>
   </scripts>
   <shaders name="shaders">
     <shaders name="Glare">
@@ -780,6 +783,9 @@
       <object>objects\obj_nodeB</object>
       <object>objects\obj_nodeC</object>
       <object>objects\obj_nodeD</object>
+      <objects name="TURRET NODES">
+        <object>objects\obj_turret_node</object>
+      </objects>
     </objects>
     <objects name="STRUCTURES">
       <object>objects\obj_wall</object>
@@ -1016,11 +1022,12 @@
     </objects>
     <object>objects\obj_surface_debugger</object>
     <object>objects\obj_turret</object>
+    <object>objects\obj_campfire</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_setup</room>
-    <room>rooms\room24</room>
     <room>rooms\room26</room>
+    <room>rooms\room24</room>
     <room>rooms\room0</room>
     <room>rooms\room25</room>
     <room>rooms\rm_9</room>

@@ -725,14 +725,7 @@ if place_meeting(x, y, obj_flash) {
 }
 
 //frozen and water
-if place_meeting(x, y, obj_water) {
-    wet = true
-} else {
-    wet = false
-}
-if place_meeting(x, y, obj_splash) {
-    wet = true
-}
+scr_get_wet();
 
 if temp = -50 {
     enstate = scr_enemy_frozen

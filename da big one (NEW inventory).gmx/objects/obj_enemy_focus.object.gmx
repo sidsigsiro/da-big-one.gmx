@@ -35,6 +35,7 @@ survey = false
 state = scr_view_patrol
 investtar = noone
 squad_number = 0
+pushed = false
 
 //focustar
 waittar = noone
@@ -88,7 +89,13 @@ for(var i = 1; i &lt;= 20; i++) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if survey = true {
+            <string>scr_set_floor();
+
+if pushed = true {
+    state = scr_item_push
+}
+
+if survey = true {
     script_execute(state)
 }
 </string>

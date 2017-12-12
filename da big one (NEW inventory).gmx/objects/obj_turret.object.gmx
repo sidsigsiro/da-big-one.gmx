@@ -29,15 +29,55 @@
 if instance_exists(obj_glare_controller) {
     my_light = glr_light_create(spr_glr_light_mask_4, 0, x, y, c_white, 1);
 }
+image_speed = 0
+laser_length = 300
 view_x1 = 170
 view_x2 = 170
 view_y1 = 170
 view_y2 = 170
 my_focus = instance_create(x, y, obj_enemy_focus)
-player_seen = 0
-height = 0
+my_focus.owner = self
+height = 0 
 floor_val = 0
+playerseen = 0
+len = 0
+dir = 0
+pushed = false
 state = scr_turret_patrol
+viewdir = direction
+temp = 0
+wet = false
+tarplayer = false
+
+//my_node
+my_node1 = instance_create(x, y, obj_turret_node)
+my_node2 = instance_create(x, y, obj_turret_node)
+
+my_focus.tars[1] = my_node1
+my_focus.tars[2] = my_node2
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="6">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///frozen timer
 </string>
           </argument>
         </arguments>
@@ -85,42 +125,147 @@ state = scr_turret_patrol
             <kind>1</kind>
             <string>scr_set_floor();
 scr_set_depth();
+scr_get_wet();
+
+//why aint this work?!?!?!?!
+/*if ori = LEFT or ori = RIGHT {
+    var i;
+    for (i = (-5); i &gt; 10; i += 5) {
+        if collision_line(x, (y + i), x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
+            instance_destroy();
+        }
+    }
+}
+*/
+
+if collision_line(x, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
+    tarplayer = true
+}
+if ori = LEFT or ori = RIGHT {
+    if collision_line(x, y - 5, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
+        tarplayer = true
+    }
+    if collision_line(x, y - 10, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
+        tarplayer = true
+    }
+    if collision_line(x, y + 5, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
+        tarplayer = true
+    }
+    if collision_line(x, y + 10, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
+        tarplayer = true
+    }
+}
+if ori = UP or ori = DOWN {
+    if collision_line(x - 5, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
+        tarplayer = true
+    }
+    if collision_line(x - 10, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
+        tarplayer = true
+    }
+    if collision_line(x + 5, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
+        tarplayer = true
+    }
+    if collision_line(x + 10, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
+        tarplayer = true
+    }
+}
+//control temp
+if temp &lt; -50 {
+    temp = -50
+}
+if temp &gt; 50 {
+    temp = 50
+}
+
+if temp &gt;= 50 {
+    if tarplayer = true {
+        image_index = 1
+        obj_player.hp -= 1
+    }
+}
+
+if temp &lt;= (-50) {
+    my_focus.survey = false
+    state = scr_turret_frozen
+} else {
+    my_focus.survey = true
+}
+
+//set light position
+if instance_exists(obj_glare_controller) {
+glr_light_set_position(my_light, x, y);
+
+glr_light_set_rotation(my_light, viewdir)
+}
+
+if pushed = true {
+    scr_item_push()
+}
+
+if ori = UP {
+    node1_spawn_x = (x - 40)
+    node1_spawn_y = (y - 80)
+    node2_spawn_x = (x + 40)
+    node2_spawn_y = (y - 80)
+} else if ori = DOWN {
+    node1_spawn_x = (x + 40)
+    node1_spawn_y = (y + 80)
+    node2_spawn_x = (x - 40)
+    node2_spawn_y = (y + 80)
+} else if ori = LEFT {
+    node1_spawn_x = (x - 80)
+    node1_spawn_y = (y - 40)
+    node2_spawn_x = (x - 80)
+    node2_spawn_y = (y + 40)
+} else if ori = RIGHT {
+    node1_spawn_x = (x + 80)
+    node1_spawn_y = (y + 40)
+    node2_spawn_x = (x + 80)
+    node2_spawn_y = (y - 40)
+}
+
+my_node1.x = node1_spawn_x
+my_node1.y = node1_spawn_y
+my_node2.x = node2_spawn_x
+my_node2.y = node2_spawn_y
 
 ///view cone
-var x1 = x + lengthdir_x(view_x1, dir - 30);
-var y1 = y + lengthdir_y(view_x2, dir - 30);
-var x2 = x + lengthdir_x(view_y1, dir + 30);
-var y2 = y + lengthdir_y(view_y2, dir + 30);
-var x1b = x + lengthdir_x(view_x1 + 90, dir - 33);
-var y1b = y + lengthdir_y(view_x2 + 90, dir - 33);
-var x2b = x + lengthdir_x(view_y1 + 90, dir + 33);
-var y2b = y + lengthdir_y(view_y2 + 90, dir + 33);
-var x1c = x + lengthdir_x(view_x1 + 150, dir - 37);
-var y1c = y + lengthdir_y(view_x2 + 150, dir - 37);
-var x2c = x + lengthdir_x(view_y1 + 150, dir + 37);
-var y2c = y + lengthdir_y(view_y2 + 150, dir + 37);
+var x1 = x + lengthdir_x(view_x1, viewdir - 30);
+var y1 = y + lengthdir_y(view_x2, viewdir - 30);
+var x2 = x + lengthdir_x(view_y1, viewdir + 30);
+var y2 = y + lengthdir_y(view_y2, viewdir + 30);
+var x1b = x + lengthdir_x(view_x1 + 90, viewdir - 33);
+var y1b = y + lengthdir_y(view_x2 + 90, viewdir - 33);
+var x2b = x + lengthdir_x(view_y1 + 90, viewdir + 33);
+var y2b = y + lengthdir_y(view_y2 + 90, viewdir + 33);
+var x1c = x + lengthdir_x(view_x1 + 150, viewdir - 37);
+var y1c = y + lengthdir_y(view_x2 + 150, viewdir - 37);
+var x2c = x + lengthdir_x(view_y1 + 150, viewdir + 37);
+var y2c = y + lengthdir_y(view_y2 + 150, viewdir + 37);
 
 //sight
-if point_in_triangle(obj_player.x, obj_player.y, x, y, x1c, y1c, x2c, y2c) {
-    // if player height is less than 24 pixels above enemy height
-    if obj_player.height &lt; height + 24 {
-        if !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock, false, false) {
-            if (obj_player.crouch = false or !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock_crouch, true, true)) {
-                player_in_sight = true
-                playerseen += 1
-                if point_in_triangle(obj_player.x, obj_player.y, x, y, x1b, y1b, x2b, y2b) {
+if state != scr_enemy_frozen {
+    if point_in_triangle(obj_player.x, obj_player.y, x, y, x1c, y1c, x2c, y2c) {
+        // if player height is less than 24 pixels above enemy height
+        if obj_player.height &lt; height + 24 {
+            if !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock, false, false) {
+                if (obj_player.crouch = false or !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock_crouch, true, true)) {
+                    player_in_sight = true
                     playerseen += 1
-                    if point_in_triangle(obj_player.x, obj_player.y, x, y, x1, y1, x2, y2) {
-                        if !collision_line(x, y, obj_player.x, obj_player.y, obj_grass, true, true) {
-                            playerseen = 120
+                    if point_in_triangle(obj_player.x, obj_player.y, x, y, x1b, y1b, x2b, y2b) {
+                        playerseen += 1
+                        if point_in_triangle(obj_player.x, obj_player.y, x, y, x1, y1, x2, y2) {
+                            if !collision_line(x, y, obj_player.x, obj_player.y, obj_grass, true, true) {
+                                playerseen = 120
+                            }
                         }
                     }
                 }
             }
         }
+    } else {
+        player_in_sight = false
     }
-} else {
-    player_in_sight = false
 }
 //playerseen and player_in_sight
 
@@ -136,10 +281,76 @@ if playerseen &lt; 0 {
 }
 
 if player_in_sight = false {
-    player_seen -= .5
+    if playerseen &gt; 0 {
+        playerseen -= .5
+    }
 }
 
 script_execute(state)
+
+viewdir = point_direction(x, y, my_focus.x, my_focus.y)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
+
+if state = scr_enemy_frozen {
+    image_blend = c_aqua
+}
+
+if ori = UP or ori = DOWN {
+    draw_line(x, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir))
+    draw_line(x - 5, y, (x - 5) + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir))
+    draw_line(x - 10, y, (x - 10) + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir))
+    draw_line(x + 5, y, (x + 5) + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir))
+    draw_line(x + 10, y, (x + 10) + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir))
+}
+
+if ori = LEFT or ori = RIGHT {
+    draw_line(x, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir))
+    draw_line(x, y + 5, x + lengthdir_x(laser_length, viewdir), (y + 5) + lengthdir_y(laser_length, viewdir))
+    draw_line(x, y - 5, x + lengthdir_x(laser_length, viewdir), (y - 5) + lengthdir_y(laser_length, viewdir))
+    draw_line(x, y + 10, x + lengthdir_x(laser_length, viewdir), (y + 10) + lengthdir_y(laser_length, viewdir))
+    draw_line(x, y - 10, x + lengthdir_x(laser_length, viewdir), (y - 10) + lengthdir_y(laser_length, viewdir))
+}
+
+///view cone
+var x1 = x + lengthdir_x(view_x1, viewdir - 30);
+var y1 = y + lengthdir_y(view_x2, viewdir - 30);
+var x2 = x + lengthdir_x(view_y1, viewdir + 30);
+var y2 = y + lengthdir_y(view_y2, viewdir + 30);
+var x1b = x + lengthdir_x(view_x1 + 90, viewdir - 33);
+var y1b = y + lengthdir_y(view_x2 + 90, viewdir - 33);
+var x2b = x + lengthdir_x(view_y1 + 90, viewdir + 33);
+var y2b = y + lengthdir_y(view_y2 + 90, viewdir + 33);
+var x1c = x + lengthdir_x(view_x1 + 150, viewdir - 37);
+var y1c = y + lengthdir_y(view_x2 + 150, viewdir - 37);
+var x2c = x + lengthdir_x(view_y1 + 150, viewdir + 37);
+var y2c = y + lengthdir_y(view_y2 + 150, viewdir + 37);
+if debug_mode = true {
+    draw_triangle_colour(x, y, x1, y1, x2, y2, c_red, c_red, c_red, true)
+    draw_triangle_colour(x, y, x1b, y1b, x2b, y2b, c_yellow, c_yellow, c_yellow, true)
+    draw_triangle_colour(x, y, x1c, y1c, x2c, y2c, c_blue, c_blue, c_blue, true)
+}
 </string>
           </argument>
         </arguments>
