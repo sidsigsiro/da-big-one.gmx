@@ -28,17 +28,12 @@
             <string>///create player
 ///NOTE: USE RANDOMIZE(); OTHER WISE ALL RANDOM NUMBERS WILL BE THE SAME EVERYTIME YOU LOAD THE GAME
 
-//delete these
-i1 = 1
-i2 = 1
-
 numb_of_mines = 0
 det_timer = 0
 barreltar = noone
 dblock_charge = 0
 temp = NEUTRAL
 investar = obj_node_distraction
-raised = false
 phy_fixed_rotation = true
 on_ice = false
 sliding = false
@@ -52,7 +47,7 @@ crouch = false
 floorval = 0
 height = 0
 depth = -y
-hp = 1;
+hp = 999;
 basespd = 2;
 spd = 2;
 hspd = 0;
@@ -320,9 +315,33 @@ if keyboard_check(ord('T')) {
 //fall
 ///scr_item_fall
 
+// TODO: Move this code into obj_side_stairs
+// climb stairs (or collide)
+var stairs = instance_place(x, y, obj_side_stairs);
+if stairs != noone {
+    // stairs width is 160
+    // therefore (x - stairs.x) is between -80 and 80
+    
+    var step_height = (x - stairs.x)/stairs.sprite_width + 0.5; //number between 0 and 1
+    step_height *= 32 // number between 0 and 32
+    
+    // difference between current height and step height
+    var height_diff = step_height - height
+    
+    if height_diff &lt;= 4 {
+        // snap to step_height
+        y += height_diff
+        height = step_height
+    }
+}
+// TODO:
+// else if height_diff &gt; 4 or stairs == noone {
+    // collide with stairs physics object
+// }
+
 // falling code
 if !place_meeting(x, y, obj_floor_2) and !place_meeting(x, y, obj_floor2_dblock) {
-    if (height &gt; 0 and !place_meeting(x, y, obj_wall)) {
+    if (height &gt; 0) {
         velocity += 0.25 //acceleration
         phy_position_y += velocity
         height -= velocity
@@ -335,6 +354,11 @@ if !place_meeting(x, y, obj_floor_2) and !place_meeting(x, y, obj_floor2_dblock)
     }
 }
 
+if height &lt; 24 {
+    obj_floor_2.phy_active = true
+    obj_climb_floor2.phy_active = true
+}
+
 //set height
 if velocity = 0 {
     scr_set_floor();
@@ -342,11 +366,6 @@ if velocity = 0 {
 
 //set_depth
 scr_set_depth();
-
-if place_meeting(x, y, obj_floor2_dblock) {
-    raised = true
-    raisedval = -50
-}
 
 script_execute(state)
 
@@ -515,16 +534,13 @@ if height &gt;= 24 {
 
 draw_text(x + 32, y + 64, "FPS = " + string(fps_real));
 
-draw_text(x + 32, y - 64, "gun_charge = " + string(arrowtimer));
-
-draw_text(x + 32, y + 32, state)
 
 draw_text(x + 32, y + -32, string(stam))
 
-draw_text(obj_view.x - 200, obj_view.y - 200, string(hp))
-
 draw_text(x - 32, y - 16, string(x))
 draw_text(x - 32, y - 25, string(y))
+
+draw_text(x + 32, y - 64, "ehigh = " + string(height));
 </string>
           </argument>
         </arguments>

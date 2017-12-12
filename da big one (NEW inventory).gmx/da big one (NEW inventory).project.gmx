@@ -184,6 +184,8 @@
     <sprite>sprites\spr_spark</sprite>
     <sprite>sprites\spr_splash</sprite>
     <sprite>sprites\spr_stairs</sprite>
+    <sprite>sprites\spr_side_stairs</sprite>
+    <sprite>sprites\spr_side_stairs_mask</sprite>
     <sprite>sprites\spr_topofstair</sprite>
     <sprite>sprites\spr_tree</sprite>
     <sprite>sprites\spr_tree2</sprite>
@@ -808,6 +810,7 @@
       <object>objects\obj_roof</object>
       <object>objects\obj_sign</object>
       <object>objects\obj_stairs</object>
+      <object>objects\obj_side_stairs</object>
       <object>objects\obj_tunnel</object>
       <object>objects\obj_tree</object>
       <object>objects\obj_grass</object>
@@ -835,8 +838,7 @@
         <object>objects\obj_climb_top</object>
         <object>objects\obj_block_floor2_side</object>
         <object>objects\obj_block_floor2_top</object>
-        <object>objects\obj_climb_side_floor2</object>
-        <object>objects\obj_climb_top_floor2</object>
+        <object>objects\obj_climb_floor2</object>
         <object>objects\obj_botofstair</object>
       </objects>
     </objects>

@@ -358,8 +358,7 @@
     <instance objName="obj_wall" x="452" y="104" name="inst_77795D7A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="480" y="104" name="inst_A58E84B7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_floor_2" x="456" y="360" name="inst_6702491C" locked="0" code="" scaleX="1.10000002384186" scaleY="3.40000009536743" colour="4294967295" rotation="0"/>
-    <instance objName="obj_climb_top_floor2" x="457" y="308" name="inst_CBBB0A6B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_climb_side_floor2" x="436" y="364" name="inst_35D74558" locked="0" code="" scaleX="1" scaleY="1.79999995231628" colour="4294967295" rotation="0"/>
+    <instance objName="obj_climb_floor2" x="457" y="308" name="inst_CBBB0A6B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water" x="179" y="155" name="inst_F6E7EDED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water" x="180" y="188" name="inst_3678D53B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water" x="180" y="220" name="inst_315F5AE4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

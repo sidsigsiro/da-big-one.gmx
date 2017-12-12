@@ -120,9 +120,7 @@
     <instance objName="obj_wall" x="524" y="272" name="inst_E96DF335" locked="0" code="" scaleX="22" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="676" y="456" name="inst_F9C8F15F" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_floor_2" x="128" y="184" name="inst_2A6D26B4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_climb_side_floor2" x="160" y="184" name="inst_2A2BF90D" locked="0" code="" scaleX="0.5" scaleY="0.785714268684387" colour="4294967295" rotation="0"/>
-    <instance objName="obj_climb_side_floor2" x="96" y="184" name="inst_EFDAB109" locked="0" code="" scaleX="0.5" scaleY="0.785714268684387" colour="4294967295" rotation="0"/>
-    <instance objName="obj_climb_top_floor2" x="128" y="216" name="inst_953363D4" locked="0" code="" scaleX="0.785714268684387" scaleY="0.5" colour="4294967295" rotation="0"/>
+    <instance objName="obj_climb_floor2" x="128" y="216" name="inst_953363D4" locked="0" code="" scaleX="0.785714268684387" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_stairs" x="128" y="144" name="inst_2335F028" locked="0" code="" scaleX="0.899999976158142" scaleY="0.174999997019768" colour="4294967295" rotation="180"/>
     <instance objName="obj_node2" x="128" y="184" name="inst_1270EDEF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_viewnode2" x="56" y="600" name="inst_915DEA3C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

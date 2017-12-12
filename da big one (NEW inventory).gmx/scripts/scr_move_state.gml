@@ -28,7 +28,7 @@ if item_left = 2 {
     bow_key2_released = noone
 }
 
-//set bow key
+//set dblock key
 if item_left = 13 {
     dblock_key1_held = item1_key_held
     dblock_key1_pressed = item1_key_pressed
@@ -495,7 +495,12 @@ if !place_meeting(x, y, obj_water) {
                 with(obj_cube) {
                     mp_grid_add_cell(global.grid_floor1, floor(x/8), floor(y/8))
                 }
-                phy_active = false
+                with (obj_climb_floor2) {
+                    phy_active = false
+                }
+                with (obj_floor_2) {
+                    phy_active = false
+                }
                 stam -= 50
                 height += 32
                 repeat(5) {
@@ -612,57 +617,6 @@ if height < 24 {
     }
 }
 
-//vault down from floor2 to floor1
-if height >= 24 {
-    if (yaxis > 0) and vault_key {
-        if place_meeting(phy_position_x, phy_position_y + 4, obj_climb_top_floor2) {
-            phy_position_y += 40
-            instance_create(x, y, obj_noise_foot_step)
-        }
-    }
-    if (xaxis < 0) and vault_key {
-        if place_meeting(phy_position_x - 4, phy_position_y, obj_climb_side_floor2) {
-            phy_position_x -= 40
-            instance_create(x, y, obj_noise_foot_step)
-        }
-    }
-    if (xaxis > 0) and vault_key {
-        if place_meeting(phy_position_x + 4, phy_position_y, obj_climb_side_floor2) {
-            phy_position_x += 40
-            instance_create(x, y, obj_noise_foot_step)
-        }
-    }
-    if (yaxis < 0) and vault_key {
-        if place_meeting(phy_position_x, phy_position_y - 4, obj_climb_top_floor2) {
-            phy_position_y -= 40
-            instance_create(x, y, obj_noise_foot_step)
-        }
-    }
-}
-
-//climb up from dirt block to floor 2
-if raised = true {
-    if (yaxis > 0) and vault_key {
-        if place_meeting(phy_position_x, phy_position_y + 3, obj_climb_top_floor2) {
-            phy_position_y += 40
-        }
-    }
-    if (xaxis < 0) and vault_key {
-        if place_meeting(phy_position_x - 3, phy_position_y, obj_climb_side_floor2) {
-            phy_position_x -= 40
-        }
-    }
-    if (xaxis > 0) and vault_key {
-        if place_meeting(phy_position_x + 3, phy_position_y, obj_climb_side_floor2) {
-            phy_position_x += 40
-        }
-    }
-    if (yaxis < 0) and vault_key {
-        if place_meeting(phy_position_x, phy_position_y - 3, obj_climb_top_floor2) {
-            phy_position_y -= 40
-        }
-    }
-}
 
 //vault
 if (yaxis > 0) and vault_key {

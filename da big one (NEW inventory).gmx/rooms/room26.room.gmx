@@ -111,8 +111,7 @@
     <instance objName="obj_wall" x="1744" y="256" name="inst_B432690A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1760" y="256" name="inst_350CC60F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_floor_2" x="504" y="164" name="inst_D06AB283" locked="0" code="" scaleX="4.80000019073486" scaleY="7.25" colour="4294967295" rotation="0"/>
-    <instance objName="obj_climb_side_floor2" x="656" y="232" name="inst_AA02B6D0" locked="0" code="" scaleX="0.5" scaleY="4" colour="4294967295" rotation="0"/>
-    <instance objName="obj_climb_top_floor2" x="500" y="400" name="inst_CA269DFB" locked="0" code="" scaleX="4" scaleY="0.5" colour="4294967295" rotation="0"/>
+    <instance objName="obj_climb_floor2" x="500" y="400" name="inst_CA269DFB" locked="0" code="" scaleX="4" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_left" x="960" y="416" name="inst_0B1F1B8C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_left" x="944" y="416" name="inst_BC869E09" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_left" x="928" y="416" name="inst_825F61B1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -799,7 +798,6 @@
     <instance objName="obj_water_left" x="704" y="592" name="inst_B7F096E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_left" x="688" y="592" name="inst_CAFB153F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_left" x="672" y="592" name="inst_6969FC8A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_climb_side_floor2" x="344" y="192" name="inst_B7C0D359" locked="0" code="" scaleX="0.5" scaleY="5" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_down" x="832" y="432" name="inst_58BA2254" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_down" x="816" y="432" name="inst_CFB62D4A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_left" x="816" y="448" name="inst_76C8D95E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

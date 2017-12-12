@@ -255,9 +255,7 @@
     <instance objName="obj_stairs" x="892" y="568" name="inst_EF94DD54" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_floor_2" x="892" y="508" name="inst_46BE4F58" locked="0" code="" scaleX="1.125" scaleY="1.12999999523163" colour="4294967295" rotation="0"/>
     <instance objName="obj_bridge" x="892" y="508" name="inst_EBA43AB5" locked="0" code="" scaleX="1.04999995231628" scaleY="0.430000007152557" colour="4294967295" rotation="0"/>
-    <instance objName="obj_climb_top_floor2" x="892" y="492" name="inst_9DAD72C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_climb_side_floor2" x="908" y="508" name="inst_60732330" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_climb_side_floor2" x="876" y="508" name="inst_75D7455B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_climb_floor2" x="892" y="492" name="inst_9DAD72C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_barrel" x="804" y="472" name="inst_335BCDDE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>

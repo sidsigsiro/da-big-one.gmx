@@ -309,9 +309,7 @@
     <instance objName="obj_wall" x="512" y="456" name="inst_65DB5BEE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="520" y="456" name="inst_D188175B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_floor_2" x="128" y="184" name="inst_2A6D26B4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_climb_side_floor2" x="160" y="184" name="inst_2A2BF90D" locked="0" code="" scaleX="0.5" scaleY="0.785714268684387" colour="4294967295" rotation="0"/>
-    <instance objName="obj_climb_side_floor2" x="96" y="184" name="inst_EFDAB109" locked="0" code="" scaleX="0.5" scaleY="0.785714268684387" colour="4294967295" rotation="0"/>
-    <instance objName="obj_climb_top_floor2" x="128" y="216" name="inst_953363D4" locked="0" code="" scaleX="0.785714268684387" scaleY="0.5" colour="4294967295" rotation="0"/>
+    <instance objName="obj_climb_floor2" x="128" y="216" name="inst_953363D4" locked="0" code="" scaleX="0.785714268684387" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_stairs" x="128" y="144" name="inst_2335F028" locked="0" code="" scaleX="0.899999976158142" scaleY="0.174999997019768" colour="4294967295" rotation="180"/>
     <instance objName="obj_enemy" x="128" y="92" name="inst_7C94BC47" locked="0" code="wait = true&#xA;squad = ALPHA&#xA;//patrol nodes&#xA;tars[1] = obj_node2&#xA; &#xA;&#xA;caunexttar = obj_nodeC&#xA;cautar0 = obj_nodeC&#xA;cautar0_default = obj_nodeC&#xA;caunexttar_default = obj_nodeC&#xA;&#xA;//focustar&#xA;with (my_focus) {&#xA;    tars[1] = obj_viewnode2&#xA;    tars[2] = obj_viewnode3 &#xA;}&#xA;&#xA;class = RIFLE&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_node2" x="128" y="184" name="inst_1270EDEF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -367,7 +365,6 @@
     <instance objName="obj_caunode1" x="476" y="352" name="inst_9AFC29D2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_nodeA" x="540" y="416" name="inst_9C67945D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_floor_2" x="936" y="468" name="inst_FDB6090D" locked="0" code="" scaleX="1.5" scaleY="5.1875" colour="4294967295" rotation="0"/>
-    <instance objName="obj_climb_side_floor2" x="892" y="464" name="inst_6A2A1B32" locked="0" code="" scaleX="0.5" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="obj_stairs" x="936" y="280" name="inst_8261756A" locked="0" code="" scaleX="1.25" scaleY="0.262499988079071" colour="4294967295" rotation="180"/>
     <instance objName="obj_stairs" x="936" y="656" name="inst_7C2326E4" locked="0" code="" scaleX="1.25" scaleY="0.262499988079071" colour="4294967295" rotation="0"/>
     <instance objName="obj_enemy" x="944" y="456" name="inst_2D1485A5" locked="0" code="wait = true&#xA;squad = ALPHA&#xA;//patrol nodes&#xA;tars[1] = obj_node7&#xA; &#xA;&#xA;caunexttar = obj_nodeB&#xA;cautar0 = obj_nodeB&#xA;cautar0_default = obj_nodeB&#xA;caunexttar_default = obj_nodeB&#xA;&#xA;//focustar&#xA;with (my_focus) {&#xA;    tars[1] = obj_viewnode4&#xA;    tars[2] = obj_viewnode5&#xA;    tars[3] = obj_viewnode6&#xA;}&#xA;&#xA;class = RIFLE&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
