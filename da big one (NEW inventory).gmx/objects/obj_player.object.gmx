@@ -317,30 +317,37 @@ if keyboard_check(ord('T')) {
 
 // TODO: Move this code into obj_side_stairs
 // climb stairs (or collide)
+
 var stairs = instance_place(x, y, obj_side_stairs);
 if stairs != noone {
     // stairs width is 160
     // therefore (x - stairs.x) is between -80 and 80
     
     var step_height = (x - stairs.x)/stairs.sprite_width + 0.5; //number between 0 and 1
-    step_height *= 32 // number between 0 and 32
+    step_height *= 32 //number between 0 and 32
     
     // difference between current height and step height
     var height_diff = step_height - height
     
-    if height_diff &lt;= 4 {
-        // snap to step_height
+    if height_diff &lt;= 6 {
+        //snap to step_height
         y += height_diff
         height = step_height
+        with(obj_climb_floor1) {
+            phy_active = false
+        }
+    }
+} else if stairs == noone or height_diff &gt; 6 {
+    if velocity = 0 {
+        with(obj_climb_floor1) {
+            phy_active = true
+        }
     }
 }
-// TODO:
-// else if height_diff &gt; 4 or stairs == noone {
-    // collide with stairs physics object
-// }
+
 
 // falling code
-if !place_meeting(x, y, obj_floor_2) and !place_meeting(x, y, obj_floor2_dblock) {
+if !place_meeting(x, y, obj_floor_2) and !place_meeting(x, y, obj_floor2_dblock) and stairs = noone {
     if (height &gt; 0) {
         velocity += 0.25 //acceleration
         phy_position_y += velocity
@@ -360,7 +367,7 @@ if height &lt; 24 {
 }
 
 //set height
-if velocity = 0 {
+if velocity = 0 and stairs = noone {
     scr_set_floor();
 }
 

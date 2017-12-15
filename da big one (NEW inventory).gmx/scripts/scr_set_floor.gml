@@ -7,4 +7,8 @@ if place_meeting(x, y, obj_floor_2) or place_meeting(x, y, obj_floor2_dblock) {
     floorval = 0
 }
 
+if !place_meeting(x, y, obj_side_stairs) {
+    height = 0
+}
+
 depth = -y + floorval

@@ -241,8 +241,7 @@
     <instance objName="obj_wall" x="1400" y="1164" name="inst_02BB061A" locked="0" code="" scaleX="17.5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1280" y="1372" name="inst_85294AF0" locked="0" code="" scaleX="12" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1488" y="1372" name="inst_71E04436" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_climb_top_floor1" x="1220" y="1164" name="inst_6511F1BF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_climb_side_floor1" x="1548" y="1200" name="inst_51DE75D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_climb_floor1" x="1220" y="1164" name="inst_6511F1BF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1548" y="1300" name="inst_3FBD08E9" locked="0" code="" scaleX="1" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="obj_crate" x="1220" y="1164" name="inst_61054001" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_crate" x="1548" y="1196" name="inst_48E5A8D3" locked="0" code="" scaleX="1" scaleY="5" colour="4294967295" rotation="0"/>

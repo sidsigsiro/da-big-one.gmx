@@ -390,14 +390,10 @@
     <instance objName="obj_crate" x="508" y="264" name="inst_292F7640" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_crate" x="520" y="264" name="inst_1C7D15A7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_crate" x="528" y="264" name="inst_D0A8A46D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_climb_top_floor1" x="508" y="264" name="inst_2F5FC22A" locked="0" code="" scaleX="0.535714268684387" scaleY="0.699999988079071" colour="4294967295" rotation="0"/>
-    <instance objName="obj_climb_side_floor1" x="432" y="212" name="inst_048220D0" locked="0" code="" scaleX="0.699999988079071" scaleY="0.357142865657806" colour="4294967295" rotation="0"/>
-    <instance objName="obj_climb_side_floor1" x="432" y="256" name="inst_4D1285E3" locked="0" code="" scaleX="0.699999988079071" scaleY="0.16666667163372" colour="4294967295" rotation="0"/>
-    <instance objName="obj_climb_side_floor1" x="344" y="104" name="inst_0C74602F" locked="0" code="" scaleX="0.699999988079071" scaleY="0.550000011920929" colour="4294967295" rotation="0"/>
-    <instance objName="obj_climb_top_floor1" x="368" y="136" name="inst_D757BFBB" locked="0" code="" scaleX="0.404761910438538" scaleY="0.699999988079071" colour="4294967295" rotation="0"/>
-    <instance objName="obj_climb_top_floor1" x="704" y="248" name="inst_A2C1F8C8" locked="0" code="" scaleX="0.156626507639885" scaleY="0.649999976158142" colour="4294967295" rotation="0"/>
+    <instance objName="obj_climb_floor1" x="508" y="264" name="inst_2F5FC22A" locked="0" code="" scaleX="0.535714268684387" scaleY="0.699999988079071" colour="4294967295" rotation="0"/>
+    <instance objName="obj_climb_floor1" x="368" y="136" name="inst_D757BFBB" locked="0" code="" scaleX="0.404761910438538" scaleY="0.699999988079071" colour="4294967295" rotation="0"/>
+    <instance objName="obj_climb_floor1" x="704" y="248" name="inst_A2C1F8C8" locked="0" code="" scaleX="0.156626507639885" scaleY="0.649999976158142" colour="4294967295" rotation="0"/>
     <instance objName="obj_crate" x="676" y="264" name="inst_DF2394A7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_climb_side_floor1" x="724" y="232" name="inst_230D63D4" locked="0" code="" scaleX="0.699999988079071" scaleY="0.16666667163372" colour="4294967295" rotation="0"/>
     <instance objName="obj_nodeC" x="144" y="376" name="inst_E5556B3F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_nodeD" x="760" y="456" name="inst_53807041" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_caunode1" x="808" y="488" name="inst_0843B41D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

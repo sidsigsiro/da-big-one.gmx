@@ -830,8 +830,7 @@
       <objects name="BLOCKS">
         <object>objects\obj_block_floor1_side</object>
         <object>objects\obj_block_floor1_top</object>
-        <object>objects\obj_climb_side_floor1</object>
-        <object>objects\obj_climb_top_floor1</object>
+        <object>objects\obj_climb_floor1</object>
         <object>objects\obj_block_side</object>
         <object>objects\obj_block_top</object>
         <object>objects\obj_climb_side</object>
