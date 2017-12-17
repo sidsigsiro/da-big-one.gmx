@@ -28,6 +28,8 @@
             <string>///create stairs
 stair_top_x = x - 81
 stair_top_y = y - 13
+height = 0
+floorval = 0
 </string>
           </argument>
         </arguments>
@@ -50,7 +52,9 @@ stair_top_y = y - 13
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if place_meeting(x, y, obj_wind_grab) {
+            <string>scr_set_depth();
+
+if place_meeting(x, y, obj_wind_grab) {
     with (obj_wind_grab) {
         height = 32
     }
@@ -60,7 +64,29 @@ if place_meeting(x, y, obj_crate) {
         height = 32
     }
 }
-
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_player">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///yaes
 </string>
           </argument>
         </arguments>
@@ -79,9 +105,9 @@ if place_meeting(x, y, obj_crate) {
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>0,30</point>
-    <point>180,30</point>
+    <point>43,21</point>
+    <point>180,21</point>
     <point>180,60</point>
-    <point>0,60</point>
+    <point>43,60</point>
   </PhysicsShapePoints>
 </object>

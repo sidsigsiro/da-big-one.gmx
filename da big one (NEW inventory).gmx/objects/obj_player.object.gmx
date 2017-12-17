@@ -329,14 +329,28 @@ if stairs != noone {
     // difference between current height and step height
     var height_diff = step_height - height
     
+    
     if height_diff &lt;= 6 {
         //snap to step_height
         y += height_diff
-        height = step_height
+        height = (step_height)
+        /*
         with(obj_climb_floor1) {
             phy_active = false
         }
+        */
     }
+    
+    if height &gt;= 6 {
+        obj_side_stairs.phy_active = false
+    } else {
+        obj_side_stairs.phy_active = true
+    }
+    
+    if height &lt; 0 {
+        height = 0
+    }
+    
 } else if stairs == noone or height_diff &gt; 6 {
     if velocity = 0 {
         with(obj_climb_floor1) {
@@ -357,6 +371,9 @@ if !place_meeting(x, y, obj_floor_2) and !place_meeting(x, y, obj_floor2_dblock)
             phy_position_y += height
             height = 0
             velocity = 0
+            if instance_exists(obj_side_stairs) {
+                obj_side_stairs.phy_active = true
+            }
         }
     }
 }
@@ -372,7 +389,11 @@ if velocity = 0 and stairs = noone {
 }
 
 //set_depth
-scr_set_depth();
+if stairs = noone and height = 0 {
+    scr_set_depth();
+} else if stairs != noone and height &gt; 0 {
+    depth = stairs.depth - 1
+}
 
 script_execute(state)
 

@@ -11,4 +11,8 @@ if !place_meeting(x, y, obj_side_stairs) {
     height = 0
 }
 
+if height < 0 {
+    height = 0
+}
+
 depth = -y + floorval
