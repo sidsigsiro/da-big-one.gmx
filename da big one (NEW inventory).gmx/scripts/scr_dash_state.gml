@@ -5,8 +5,9 @@ scr_get_face();
 var enemytar = instance_place(x, y, obj_enemy)
 if enemytar {
     with(enemytar) {
+    ///ADD VARIABLE TO PLAY STUN, KNOCKDOWN OR FROZEN ANIMATION. LINK VARIABLE TO ALARM[6] AMOUNT
         enstate = scr_enemy_frozen
-        alarm[6] = room_speed*2.5
+        alarm[6] = room_speed
     }
 }
 

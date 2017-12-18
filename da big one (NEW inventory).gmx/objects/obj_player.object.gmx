@@ -47,7 +47,7 @@ crouch = false
 floorval = 0
 height = 0
 depth = -y
-hp = 999;
+hp = 1;
 basespd = 2;
 spd = 2;
 hspd = 0;
@@ -381,6 +381,9 @@ if !place_meeting(x, y, obj_floor_2) and !place_meeting(x, y, obj_floor2_dblock)
 if height &lt; 24 {
     obj_floor_2.phy_active = true
     obj_climb_floor2.phy_active = true
+} else {
+    obj_floor_2.phy_active = false
+    obj_climb_floor2.phy_active = false
 }
 
 //set height

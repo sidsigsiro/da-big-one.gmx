@@ -646,6 +646,7 @@
     <script>scripts\scr_turret_alert.gml</script>
     <script>scripts\scr_get_wet.gml</script>
     <script>scripts\scr_turret_frozen.gml</script>
+    <script>scripts\scr_enemy_stun.gml</script>
   </scripts>
   <shaders name="shaders">
     <shaders name="Glare">

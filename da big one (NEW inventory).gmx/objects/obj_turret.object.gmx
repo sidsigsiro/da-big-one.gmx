@@ -138,37 +138,35 @@ scr_get_wet();
 }
 */
 
+///turret range and spread
 if collision_line(x, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
     tarplayer = true
 }
-if ori = LEFT or ori = RIGHT {
-    if collision_line(x, y - 5, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
-        tarplayer = true
-    }
-    if collision_line(x, y - 10, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
-        tarplayer = true
-    }
-    if collision_line(x, y + 5, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
-        tarplayer = true
-    }
-    if collision_line(x, y + 10, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
-        tarplayer = true
-    }
+if collision_line(x, y - 5, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
+    tarplayer = true
 }
-if ori = UP or ori = DOWN {
-    if collision_line(x - 5, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
-        tarplayer = true
-    }
-    if collision_line(x - 10, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
-        tarplayer = true
-    }
-    if collision_line(x + 5, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
-        tarplayer = true
-    }
-    if collision_line(x + 10, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
-        tarplayer = true
-    }
+if collision_line(x, y - 10, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
+    tarplayer = true
 }
+if collision_line(x, y + 5, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
+    tarplayer = true
+}
+if collision_line(x, y + 10, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
+    tarplayer = true
+}
+if collision_line(x - 5, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
+    tarplayer = true
+}
+if collision_line(x - 10, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
+    tarplayer = true
+}
+if collision_line(x + 5, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
+    tarplayer = true
+}
+if collision_line(x + 10, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
+    tarplayer = true
+}
+
 //control temp
 if temp &lt; -50 {
     temp = -50
@@ -317,21 +315,17 @@ if state = scr_enemy_frozen {
     image_blend = c_aqua
 }
 
-if ori = UP or ori = DOWN {
-    draw_line(x, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir))
-    draw_line(x - 5, y, (x - 5) + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir))
-    draw_line(x - 10, y, (x - 10) + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir))
-    draw_line(x + 5, y, (x + 5) + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir))
-    draw_line(x + 10, y, (x + 10) + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir))
-}
 
-if ori = LEFT or ori = RIGHT {
-    draw_line(x, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir))
-    draw_line(x, y + 5, x + lengthdir_x(laser_length, viewdir), (y + 5) + lengthdir_y(laser_length, viewdir))
-    draw_line(x, y - 5, x + lengthdir_x(laser_length, viewdir), (y - 5) + lengthdir_y(laser_length, viewdir))
-    draw_line(x, y + 10, x + lengthdir_x(laser_length, viewdir), (y + 10) + lengthdir_y(laser_length, viewdir))
-    draw_line(x, y - 10, x + lengthdir_x(laser_length, viewdir), (y - 10) + lengthdir_y(laser_length, viewdir))
-}
+draw_line(x, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir))
+draw_line(x - 5, y, (x - 5) + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir))
+draw_line(x - 10, y, (x - 10) + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir))
+draw_line(x + 5, y, (x + 5) + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir))
+draw_line(x + 10, y, (x + 10) + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir))
+draw_line(x, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir))
+draw_line(x, y + 5, x + lengthdir_x(laser_length, viewdir), (y + 5) + lengthdir_y(laser_length, viewdir))
+draw_line(x, y - 5, x + lengthdir_x(laser_length, viewdir), (y - 5) + lengthdir_y(laser_length, viewdir))
+draw_line(x, y + 10, x + lengthdir_x(laser_length, viewdir), (y + 10) + lengthdir_y(laser_length, viewdir))
+draw_line(x, y - 10, x + lengthdir_x(laser_length, viewdir), (y - 10) + lengthdir_y(laser_length, viewdir))
 
 ///view cone
 var x1 = x + lengthdir_x(view_x1, viewdir - 30);

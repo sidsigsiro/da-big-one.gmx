@@ -866,7 +866,7 @@ if enstate != scr_enemy_dead {
 }
 draw_text(x - 16, y, string(sus))
 
-if enstate = scr_enemy_frozen {
+if enstate = scr_enemy_frozen or enstate = scr_enemy_stun {
     image_blend = c_aqua
     } else if wet = true {
         image_blend = c_blue
