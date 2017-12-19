@@ -47,7 +47,9 @@ state = scr_turret_patrol
 viewdir = direction
 temp = 0
 wet = false
+target = noone
 tarplayer = false
+tarenemy = noone
 
 //my_node
 my_node1 = instance_create(x, y, obj_turret_node)
@@ -138,34 +140,34 @@ scr_get_wet();
 }
 */
 
+
+
 ///turret range and spread
+//playertar
 if collision_line(x, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
     tarplayer = true
-}
-if collision_line(x, y - 5, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
+} else if collision_line(x, y - 5, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
     tarplayer = true
-}
-if collision_line(x, y - 10, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
+} else if collision_line(x, y - 10, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
     tarplayer = true
-}
-if collision_line(x, y + 5, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
+} else if collision_line(x, y + 5, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
     tarplayer = true
-}
-if collision_line(x, y + 10, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
+} else if collision_line(x, y + 10, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
     tarplayer = true
-}
-if collision_line(x - 5, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
+} else if collision_line(x - 5, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
     tarplayer = true
-}
-if collision_line(x - 10, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
+} else if collision_line(x - 10, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
     tarplayer = true
-}
-if collision_line(x + 5, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
+} else if collision_line(x + 5, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
     tarplayer = true
-}
-if collision_line(x + 10, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
+} else if collision_line(x + 10, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_player, true, true) {
     tarplayer = true
+} else {
+    tarplayer = false
 }
+
+//enemytar
+tarenemy = collision_line(x, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_enemy, true, true)
 
 //control temp
 if temp &lt; -50 {
@@ -176,9 +178,14 @@ if temp &gt; 50 {
 }
 
 if temp &gt;= 50 {
+    image_index = 1
     if tarplayer = true {
-        image_index = 1
-        obj_player.hp -= 1
+        if !collision_line(x ,y, obj_player.x, obj_player.y, obj_viewblock, true, true) {
+            obj_player.hp -= 1
+        }
+    }
+    with(tarenemy) {
+        instance_destroy();
     }
 }
 
@@ -315,17 +322,11 @@ if state = scr_enemy_frozen {
     image_blend = c_aqua
 }
 
+draw_text(x + 32, y, string(target))
+draw_text(x + 32, y - 16, string(temp))
+draw_text(x - 32, y, string(tarenemy))
 
 draw_line(x, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir))
-draw_line(x - 5, y, (x - 5) + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir))
-draw_line(x - 10, y, (x - 10) + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir))
-draw_line(x + 5, y, (x + 5) + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir))
-draw_line(x + 10, y, (x + 10) + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir))
-draw_line(x, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir))
-draw_line(x, y + 5, x + lengthdir_x(laser_length, viewdir), (y + 5) + lengthdir_y(laser_length, viewdir))
-draw_line(x, y - 5, x + lengthdir_x(laser_length, viewdir), (y - 5) + lengthdir_y(laser_length, viewdir))
-draw_line(x, y + 10, x + lengthdir_x(laser_length, viewdir), (y + 10) + lengthdir_y(laser_length, viewdir))
-draw_line(x, y - 10, x + lengthdir_x(laser_length, viewdir), (y - 10) + lengthdir_y(laser_length, viewdir))
 
 ///view cone
 var x1 = x + lengthdir_x(view_x1, viewdir - 30);
