@@ -3,7 +3,7 @@ scr_get_input();
 //get move controls
 scr_move_controls();
 
-item_left = obj_inventory.equiped_item;
+item_left = obj_inventory.equiped_item
 
 ///whistle/birdcall?
 if birdcall_key {
@@ -16,42 +16,27 @@ if item_left = 2 {
     bow_key1_held = item1_key_held
     bow_key1_pressed = item1_key_pressed
     bow_key1_released = item1_key_released
-    bow_key2_held = item2_key_held
-    bow_key2_pressed = item2_key_pressed
-    bow_key2_released = item2_key_released
 } else {
     bow_key1_held = noone
     bow_key1_pressed = noone
     bow_key1_released = noone
-    bow_key2_held = noone
-    bow_key2_pressed = noone
-    bow_key2_released = noone
 }
 
-//set dblock key
+// set dblock key
 if item_left = 13 {
     dblock_key1_held = item1_key_held
     dblock_key1_pressed = item1_key_pressed
     dblock_key1_released = item1_key_released
-    dblock_key2_held = item2_key_held
-    dblock_key2_pressed = item2_key_pressed
-    dblock_key2_released = item2_key_released
 } else {
     dblock_key1_held = noone
     dblock_key1_pressed = noone
     dblock_key1_released = noone
-    dblock_key2_held = noone
-    dblock_key2_pressed = noone
-    dblock_key2_released = noone
 }
 
 if item_left = 12 {
     wind_key1_held = item1_key_held
     wind_key1_pressed = item1_key_pressed
     wind_key1_released = item1_key_released
-    wind_key2_held = item2_key_held
-    wind_key2_pressed = item2_key_pressed
-    wind_key2_released = item2_key_released
     scr_wind_state();
     if !instance_exists(obj_wind_tar) {
     instance_create(obj_cursor.x, obj_cursor.y, obj_wind_tar)
@@ -60,9 +45,6 @@ if item_left = 12 {
     wind_key1_held = noone
     wind_key1_pressed = noone
     wind_key1_released = noone
-    wind_key2_held = noone
-    wind_key2_pressed = noone
-    wind_key2_released = noone
     if instance_exists(obj_wind_tar) {
         with(obj_wind_tar) {
             instance_destroy();
@@ -76,14 +58,14 @@ if item_left = 11 {
     temp_key1_pressed = item1_key_pressed
     temp_key1_released = item1_key_released
     temp_key2 = item2_key_held
-    temp_key2_pressed = item1_key_pressed
-    temp_key2_released = item1_key_released
+    temp_key2_pressed = item2_key_pressed
+    temp_key2_released = item2_key_released
     scr_temperature_state();
 } else {
-    temp_key1_held = noone
+    temp_key1 = noone
     temp_key1_pressed = noone
     temp_key1_released = noone
-    temp_key2_held = noone
+    temp_key2 = noone
     temp_key2_pressed = noone
     temp_key2_released = noone
 }
@@ -105,68 +87,6 @@ if any_bottle_left {
     bottle_key2_held = noone
     bottle_key2_pressed = noone
     bottle_key2_released = noone
-}
-//set flare key
-if item_left = 7 {
-    flare_key1_held = item1_key_held
-    flare_key1_pressed = item1_key_pressed
-    flare_key1_released = item1_key_released
-    flare_key2_held = item2_key_held
-    flare_key2_pressed = item2_key_pressed
-    flare_key2_released = item2_key_released
-} else {
-    flare_key1_held = noone
-    flare_key1_pressed = noone
-    flare_key1_released = noone
-    flare_key2_held = noone
-    flare_key2_pressed = noone
-    flare_key2_released = noone
-}
-
-//set detonator key
-if item_left = 8 {
-    det_key1_held = item1_key_held
-    det_key1_pressed = item1_key_pressed
-    det_key1_released = item1_key_released
-    det_key2_held = item2_key_held
-    det_key2_pressed = item2_key_pressed
-    det_key2_released = item2_key_released
-} else {
-    det_key1_held = noone
-    det_key1_pressed = noone
-    det_key1_released = noone
-    det_key2_held = noone
-    det_key2_pressed = noone
-    det_key2_released = noone
-}
-
-//set firebomb key
-if item_left = 9 {
-    firebomb_key_held = item1_key_held
-    firebomb_key_pressed = item1_key_pressed
-    firebomb_key_released = item1_key_released
-    
-} else {
-    firebomb_key_held = noone
-    firebomb_key_pressed = noone
-    firebomb_key_released = noone
-}
-
-//set rifle ammo key
-if item_left = 3 {
-    rifle_ammo_key1_held = item1_key_held
-    rifle_ammo_key1_pressed = item1_key_pressed
-    rifle_ammo_key1_released = item1_key_released
-    rifle_ammo_key2_held = item2_key_held
-    rifle_ammo_key2_pressed = item2_key_pressed
-    rifle_ammo_key2_released = item2_key_released
-} else {
-    rifle_ammo_key1_held = noone
-    rifle_ammo_key1_pressed = noone
-    rifle_ammo_key1_released = noone
-    rifle_ammo_key2_held = noone
-    rifle_ammo_key2_pressed = noone
-    rifle_ammo_key2_released = noone
 }
 
 //set snail key
@@ -199,97 +119,7 @@ if face = DOWN {
     var itemy1 = y - 30
 }
 
-//shoot arrow
-itemtouch = instance_place(x, y, obj_pickup_bow)
-if itemtouch {
-    if use_key_pressed {
-        if scr_item_check(2) = false {
-            scr_item_pickup(2)
-        } else if scr_item_check(3) = false {
-            scr_item_pickup(3)
-        }
-        obj_inventory.rifle_ammo += 1
-        with(itemtouch) {
-            instance_destroy()
-        }
-    }
-}
 
-
-if bow_key1_released {
-    if obj_inventory.rifle_ammo > 0 {
-        if arrowtimer = room_speed*2 {
-            instance_create(x, y, obj_arrow)
-            instance_create(x, y, obj_caunode1)
-            instance_create(x, y, obj_noise_large_high)
-            obj_inventory.rifle_ammo -= 1
-            arrowtimer = 0
-        } else {
-            arrowtimer = 0
-        }
-    }
-}
-
-
-
-if bow_key1_held {
-    if obj_inventory.rifle_ammo > 0 {
-        if arrowtimer != room_speed*2 {
-            arrowtimer += 1
-        }
-    }
-}
-
-//pickup rifle ammo
-itemtouch = instance_place(x, y, obj_rifle_ammo_throw)
-if itemtouch {
-    if use_key_pressed {
-        if scr_item_check(3) = false {
-            scr_item_pickup(3)
-        }
-        obj_inventory.rifle_ammo += 1
-        with(itemtouch) {
-            instance_destroy()
-        }
-    }
-} 
-
-//pickup flare
-itemtouch = instance_place(x, y, obj_pickup_flare)
-if itemtouch {
-    if use_key_pressed {
-        if scr_item_check(-1) = true {
-            if scr_item_check(7) = false {
-                scr_item_pickup(7)
-            }
-            obj_inventory.flare_ammo += 1
-        }
-        with(itemtouch) {
-            instance_destroy()
-        }
-    }
-}
-
-//set off flare
-if scr_item_check(8) {
-    if det_key1_pressed {
-        if instance_exists(obj_flare) {
-            with(obj_flare) {
-                instance_change(obj_flash, true)
-            }
-        }
-    }
-}
-
-///plant flare
-if scr_item_check(7) {
-    if flare_key1_pressed {
-        if obj_inventory.flare_ammo > 0 {
-            instance_create(x, y, obj_flare)
-            obj_inventory.flare_ammo -= 1
-        }
-    }
-}
 
 //pickup snail
 itemtouch = instance_place(x, y, obj_snail)
@@ -321,67 +151,6 @@ if snail_key1_pressed {
 //goto wind state
 if wind_key {
     state = scr_wind_state
-}
-
-///throw firebomb
-if scr_item_check(9) {
-    if obj_inventory.firebomb_ammo > 0 {
-        if arrowtimer = room_speed {
-            if firebomb_key_released {
-                instance_create(obj_player.x, obj_player.y, obj_firebomb)
-                instance_create(mouse_x, mouse_y, obj_firebomb_target)
-                obj_inventory.firebomb_ammo -= 1
-            }
-        }
-    }
-}
-
-//pickup firebomb
-itemtouch = instance_place(x, y, obj_pickup_firebomb)
-if itemtouch {
-    if use_key_pressed {
-        if scr_item_check(-1) = true {
-            if scr_item_check(9) = false {
-                scr_item_pickup(9)
-            }
-            obj_inventory.firebomb_ammo += 1
-        }
-        with(itemtouch) {
-            instance_destroy()
-        }
-    }
-}
-
-///throw firebomb
-if scr_item_check(9) {
-    if obj_inventory.firebomb_ammo > 0 {
-        if arrowtimer = room_speed {
-            if firebomb_key_released {
-                instance_create(obj_player.x, obj_player.y, obj_firebomb)
-                instance_create(mouse_x, mouse_y, obj_firebomb_target)
-                obj_inventory.firebomb_ammo -= 1
-            }
-        }
-    }
-}
-
-if firebomb_key_held {
-    if obj_inventory.firebomb_ammo > 0 {
-        if arrowtimer != room_speed {
-            arrowtimer += 1
-        }
-    }
-}
-
-///throw rifle ammo
-if scr_item_check(3) {
-    if rifle_ammo_key1_pressed {
-        ammo_throw = instance_create(x, y, obj_rifle_ammo_throw)
-        with(ammo_throw) {
-            ammo = true
-        }
-        obj_inventory.rifle_ammo -= 1
-    }
 }
 
 
@@ -646,70 +415,3 @@ if scope_key {
         state = scr_scope_state
     }
 }
-
-//equip quick select item
-/*
-if quick1 {
-    if item_left = item_quick1 {
-        item_left = -1
-    } else {
-        item_left = item_quick1
-    }
-}
-if quick2 {
-    if item_left = item_quick2 {
-        item_left = -1
-    } else {
-        item_left = item_quick2
-    }
-}
-if quick3 {
-    if item_left = item_quick3 {
-        item_left = -1
-    } else {
-        item_left = item_quick3
-    }
-}
-if quick4 {
-    if item_left = item_quick4 {
-        item_left = -1
-    } else {
-        item_left = item_quick4
-    }
-}
-if quick5 {
-    if item_left = item_quick5 {
-        item_left = -1
-    } else {
-        item_left = item_quick5
-    }
-}
-if quick6 {
-    if item_left = item_quick6 {
-        item_left = -1
-    } else {
-        item_left = item_quick6
-    }
-}
-if quick7 {
-    if item_left = item_quick7 {
-        item_left = -1
-    } else {
-        item_left = item_quick7
-    }
-}
-if quick8 {
-    if item_left = item_quick8 {
-        item_left = -1
-    } else {
-        item_left = item_quick8
-    }
-}
-if quick9 {
-    if item_left = item_quick9 {
-        item_left = -1
-    } else {
-        item_left = item_quick9
-    }
-}
-*/

@@ -38,106 +38,118 @@ with obj_cursor {
     firebomb = instance_place(obj_cursor.x, obj_cursor.y, obj_firebomb)
 }
 
-if water != noone or evil_water != noone or ice != noone or evil_ice != noone
-or black_powder != noone or barrel != noone or ammo != noone or enemy != noone
-or turret != noone or door != noone {
-    if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock, true, true) {
-        if crouch = false or !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_crouch, true, true) {
-            if (height > 24 or !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_floor2, true, true)) {
-                if stam > 0 {
-                    stam -= 1
+if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock, true, true) {
+    if crouch = false or !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_crouch, true, true) {
+        if (height > 24 or !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_floor2, true, true)) {
+            if stam > 0 {
+                
+                if temp = HEAT {
+                    // ice
+                    if ice != noone {
+                        stam -= 1
+                        with(ice) {
+                            instance_change(obj_water,true)
+                        }
+                    }
+                    if evil_ice != noone {
+                        stam -= 1
+                        with(evil_ice) {
+                            mp_grid_add_rectangle(global.grid_floor1, x - 20, y - 20, x + 19, y + 20)
+                            instance_change(obj_evil_water, true)
+                        }
+                    }
                     
-                    if temp = HEAT {
-                        // ice
-                        if ice != noone {
-                            with(ice) {
-                                instance_change(obj_water,true)
-                            }
-                        }
-                        if evil_ice != noone {
-                            with(evil_ice) {
-                                mp_grid_add_rectangle(global.grid_floor1, x - 20, y - 20, x + 19, y + 20)
-                                instance_change(obj_evil_water, true)
-                            }
-                        }
-                        
-                        // black powder
+                    // black powder
+                    if black_powder != noone {
+                        stam -= 1
                         with(black_powder) {
                             instance_change(obj_lit_powder, true)
                         }
-                        
-                        // fire bomb
-                        if firebomb != noone {
-                            firebomb.temp += 3
-                        }
                     }
                     
-                    if temp = COOL {
-                        //water
-                        if water != noone {
-                            with(water) { 
-                                instance_change(obj_ice,true)
-                            }
-                        }
-                        if evil_water != noone {
-                            with(evil_water) {
-                                mp_grid_clear_rectangle(global.grid_floor1, x - 20, y - 20, x + 19, y + 20)
-                                instance_change(obj_evil_ice,true)
-                            }
-                        }
-                        
-                        // door
-                        if door != noone {
-                            if door.wet = true {
-                                door.temp -= 1
-                            }
-                        }
+                    // fire bomb
+                    if firebomb != noone {
+                        stam -= 1
+                        firebomb.temp += 3
                     }
-                        
-                    // barrel
-                    if barrel != noone and barrel.image_index = 1 {
-                        if temp = HEAT {
-                            barrel.temp += 3
-                        } else if temp = COOL {
-                            barrel.temp -= 2
-                        }
-                    }
-                    
-                    // ammo
-                    if ammo != noone {
-                        if temp = HEAT {
-                            ammo.temp += 2
-                        }
-                        if temp = COOL {
-                            ammo.temp -= 2
-                        }
-                    }
-                    
-                    // enemy
-                    if enemy != noone {
-                        if temp = COOL {
-                            if enemy.wet = true {
-                                enemy.temp -= 2
-                            }
-                        } if temp = HEAT {
-                            enemy.temp += 2
-                        }
-                    }
-                    
-                    // turret
-                    if turret != noone {
-                        if temp = COOL {
-                            if turret.wet = true {
-                                turret.temp -= 2
-                            }
-                        } if temp = HEAT {
-                            turret.temp += 2
-                        }
-                    }
-                    
-                    //heat grass
-                    //check obj_grass step event
                 }
+                
+                if temp = COOL {
+                    //water
+                    if water != noone {
+                        stam -= 1
+                        with(water) { 
+                            instance_change(obj_ice,true)
+                        }
+                    }
+                    if evil_water != noone {
+                        stam -= 1
+                        with(evil_water) {
+                            mp_grid_clear_rectangle(global.grid_floor1, x - 20, y - 20, x + 19, y + 20)
+                            instance_change(obj_evil_ice,true)
+                        }
+                    }
+                    
+                    // door
+                    if door != noone {
+                        stam -= 1
+                        if door.wet = true {
+                            door.temp -= 1
+                        }
+                    }
+                }
+                    
+                // barrel
+                if barrel != noone and barrel.image_index = 1 {
+                    if temp = HEAT {
+                        stam -= 1
+                        barrel.temp += 3
+                    } else if temp = COOL {
+                        stam -= 1
+                        barrel.temp -= 2
+                    }
+                }
+                
+                // ammo
+                if ammo != noone {
+                    if temp = HEAT {
+                        stam -= 1
+                        ammo.temp += 2
+                    }
+                    if temp = COOL {
+                        stam -= 1
+                        ammo.temp -= 2
+                    }
+                }
+                
+                // enemy
+                if enemy != noone {
+                    if temp = COOL {
+                        if enemy.wet = true {
+                            stam -= 1
+                            enemy.temp -= 2
+                        }
+                    } if temp = HEAT {
+                        stam -= 1
+                        enemy.temp += 2
+                    }
+                }
+                
+                // turret
+                if turret != noone {
+                    if temp = COOL {
+                        if turret.wet = true {
+                            stam -= 1
+                            turret.temp -= 2
+                        }
+                    } if temp = HEAT {
+                        stam -= 1
+                        turret.temp += 2
+                    }
+                }
+                
+                //heat grass
+                //check obj_grass step event
             }
         }
     }
