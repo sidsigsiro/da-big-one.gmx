@@ -77,6 +77,10 @@ jumptarget = 0
 // used in draw
 player_surf = noone
 mask_surf = noone
+
+// stairs
+stairs = noone
+falling_off_stairs = false
 </string>
           </argument>
         </arguments>
@@ -318,81 +322,80 @@ if keyboard_check(ord('T')) {
 // TODO: Move this code into obj_side_stairs
 // climb stairs (or collide)
 
-var stairs = instance_place(x, y, obj_side_stairs);
-if stairs != noone {
+foot_pos = y + 26
+
+var prev_stairs = stairs
+stairs = instance_position(x, foot_pos, obj_side_stairs);
+
+if prev_stairs != noone and stairs = noone {
+    // if player is falling off north side of stairs
+    if foot_pos &lt; prev_stairs.y and height &gt; 0 {
+        falling_off_stairs = true
+        obj_side_stairs.phy_active = true // collide with stairs
+    }
+}
+
+if stairs != noone and falling_off_stairs = false {
     // stairs width is 160
     // therefore (x - stairs.x) is between -80 and 80
-    
     var step_height = (x - stairs.x)/stairs.sprite_width + 0.5; //number between 0 and 1
     step_height *= 32 //number between 0 and 32
     
     // difference between current height and step height
     var height_diff = step_height - height
     
-    
-    if height_diff &lt;= 6 {
-        //snap to step_height
-        y += height_diff
-        height = (step_height)
-        /*
-        with(obj_climb_floor1) {
-            phy_active = false
-        }
-        */
-    }
-    
-    if height &gt;= 6 {
+    show_debug_message(string(height_diff))
+    if height_diff &lt;= 3 {
         obj_side_stairs.phy_active = false
-    } else {
-        obj_side_stairs.phy_active = true
-    }
-    
-    if height &lt; 0 {
-        height = 0
-    }
-    
-} else if stairs == noone or height_diff &gt; 6 {
-    if velocity = 0 {
-        with(obj_climb_floor1) {
-            phy_active = true
+        
+        // snap to step_height
+        phy_position_y -= height_diff
+        height = step_height
+        
+        // prevent negatives
+        if height &lt; 0 {
+            height = 0
         }
     }
 }
 
 
 // falling code
-if !place_meeting(x, y, obj_floor_2) and !place_meeting(x, y, obj_floor2_dblock) and stairs = noone {
+if !place_meeting(x, y, obj_floor_2) and !place_meeting(x, y, obj_floor2_dblock)
+and (stairs = noone or falling_off_stairs) {
     if (height &gt; 0) {
         velocity += 0.25 //acceleration
         phy_position_y += velocity
         height -= velocity
-        if height &lt; 0 {
+        if height &lt;= 0 {
             // snap to ground
             phy_position_y += height
             height = 0
             velocity = 0
             if instance_exists(obj_side_stairs) {
+                falling_off_stairs = false
                 obj_side_stairs.phy_active = true
             }
         }
     }
 }
-
-if height &lt; 24 {
-    obj_floor_2.phy_active = true
-    obj_climb_floor2.phy_active = true
-} else {
-    obj_floor_2.phy_active = false
-    obj_climb_floor2.phy_active = false
+if instance_exists(obj_floor_2) {
+    if height &lt; 24 {
+        obj_floor_2.phy_active = true
+        obj_climb_floor2.phy_active = true
+    } else {
+        obj_floor_2.phy_active = false
+        obj_climb_floor2.phy_active = false
+    }
 }
 
-//set height
+// set height
 if velocity = 0 and stairs = noone {
     scr_set_floor();
 }
 
-//set_depth
-if stairs = noone and height = 0 {
+// set_depth
+if (stairs = noone and height = 0) or falling_off_stairs = true {
     scr_set_depth();
 } else if stairs != noone and height &gt; 0 {
     depth = stairs.depth - 1
@@ -495,60 +498,62 @@ if stam &lt; 0 {
           <argument>
             <kind>1</kind>
             <string>// ---------- BEGIN INTENSE DRAWING ----------
-
-if !surface_exists(mask_surf) {
-    mask_surf = surface_create(sprite_width, sprite_height)
-} 
-if !surface_exists(player_surf) {
-    player_surf = surface_create(sprite_width, sprite_height)
-}
-
-// all drawing will occur on mask_surf until surface_reset_target()
-surface_set_target(mask_surf)
-
-//fill with transparent
-draw_clear_alpha(c_white, 0)
-
-//calculate mask y based on distacne from grass
-var mask_y = -16;
-var grass = instance_place(x, y, obj_grass_bottom)
-if grass != noone {
-    mask_y = max((y - grass.y)*2 + 24, -16)
-}
-
-// draw mask, snap x to nearest 32, set y to approximately player's waist
-draw_sprite(spr_grass_mid_alpha_mask, 0, 48 - x mod 32, sprite_height + mask_y)
-
-// this blend mode gets the intersection of opaque pixels
-draw_set_blend_mode_ext(bm_zero, bm_src_color)
-
-// copy sprite-sized area of global.grass_surface
-// (grass has already been drawn all-white into global.grass_surface by a shader)
-draw_surface_part(global.grass_surface, x - sprite_xoffset, y - sprite_yoffset, sprite_width, sprite_height, 0, 0);
-
-
-// switch to drawing on player_surf
-surface_reset_target()
-surface_set_target(player_surf)
-
-//fill with transparent
-draw_clear_alpha(c_white, 0)
-
-// draw player
-draw_set_blend_mode(bm_normal)
-draw_sprite(sprite_index, image_index, sprite_xoffset, sprite_yoffset)
-
-// this blend mode cuts holes out of the dest surface
-draw_set_blend_mode_ext(bm_zero, bm_inv_src_alpha)
-
-// apply mask to player
-draw_surface(mask_surf, 0, 0);
-
-// draw player to screen
-surface_reset_target()
-draw_set_blend_mode(bm_normal)
-draw_surface(player_surf, x - sprite_xoffset, y - sprite_yoffset)
+if instance_exists(obj_grass) {
+    if !surface_exists(mask_surf) {
+        mask_surf = surface_create(sprite_width, sprite_height)
+    } 
+    if !surface_exists(player_surf) {
+        player_surf = surface_create(sprite_width, sprite_height)
+    }
     
+    // all drawing will occur on mask_surf until surface_reset_target()
+    surface_set_target(mask_surf)
+    
+    //fill with transparent
+    draw_clear_alpha(c_white, 0)
+    
+    //calculate mask y based on distacne from grass
+    var mask_y = -16;
+    var grass = instance_place(x, y, obj_grass_bottom)
+    if grass != noone {
+        mask_y = max((y - grass.y)*2 + 24, -16)
+    }
+    
+    // draw mask, snap x to nearest 32, set y to approximately player's waist
+    draw_sprite(spr_grass_mid_alpha_mask, 0, 48 - x mod 32, sprite_height + mask_y)
+    
+    // this blend mode gets the intersection of opaque pixels
+    draw_set_blend_mode_ext(bm_zero, bm_src_color)
+    
+    // copy sprite-sized area of global.grass_surface
+    // (grass has already been drawn all-white into global.grass_surface by a shader)
+    draw_surface_part(global.grass_surface, x - sprite_xoffset, y - sprite_yoffset, sprite_width, sprite_height, 0, 0);
+    
+    
+    // switch to drawing on player_surf
+    surface_reset_target()
+    surface_set_target(player_surf)
+    
+    //fill with transparent
+    draw_clear_alpha(c_white, 0)
+    
+    // draw player
+    draw_set_blend_mode(bm_normal)
+    draw_sprite(sprite_index, image_index, sprite_xoffset, sprite_yoffset)
+    
+    // this blend mode cuts holes out of the dest surface
+    draw_set_blend_mode_ext(bm_zero, bm_inv_src_alpha)
+    
+    // apply mask to player
+    draw_surface(mask_surf, 0, 0);
+    
+    // draw player to screen
+    surface_reset_target()
+    draw_set_blend_mode(bm_normal)
+    draw_surface(player_surf, x - sprite_xoffset, y - sprite_yoffset)
+} else {
+    draw_self();
+}    
 // ---------- END INTENSE DRAWING ----------
 
 if crouch = true {
@@ -568,10 +573,13 @@ draw_text(x + 32, y + 64, "FPS = " + string(fps_real));
 
 draw_text(x + 32, y + -32, string(stam))
 
-draw_text(x - 32, y - 16, string(x))
-draw_text(x - 32, y - 25, string(y))
+draw_text(x - 48, y - 48, "("+string(x)+", "+string(y)+")")
 
-draw_text(x + 32, y - 64, "ehigh = " + string(height));
+draw_text(x + 32, y - 64, "height: " + string(height));
+
+if falling_off_stairs = true {
+    draw_text(x, y - 64, "falling")
+}
 </string>
           </argument>
         </arguments>
@@ -590,9 +598,9 @@ draw_text(x + 32, y - 64, "ehigh = " + string(height));
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>24,32</point>
-    <point>38,32</point>
-    <point>38,60</point>
-    <point>24,60</point>
+    <point>22.5,51</point>
+    <point>42,51</point>
+    <point>42,59</point>
+    <point>22.5,59</point>
   </PhysicsShapePoints>
 </object>

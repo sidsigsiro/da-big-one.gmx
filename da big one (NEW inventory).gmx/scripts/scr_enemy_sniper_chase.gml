@@ -11,14 +11,14 @@ if class = RIFLE {
 }
 
 if obj_player.crouch = false {
-    if !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock, true, true) {
-        if point_distance(x, y, obj_player.phy_position_x, obj_player.phy_position_y) < attack_range {
+    if !collision_line(x, y, obj_player_hitbox.x, obj_player_hitbox.y, obj_viewblock, true, true) {
+        if point_distance(x, y, obj_player_hitbox.phy_position_x, obj_player_hitbox.phy_position_y) < attack_range {
             alarm[0] = room_speed
             attacking = true
     }
 }} else if obj_player.crouch = true {
-    if point_distance(x, y, obj_player.phy_position_x, obj_player.phy_position_y) < attack_range {
-        if !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock, true, true) and !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock_crouch, true, true) {
+    if point_distance(x, y, obj_player_hitbox.phy_position_x, obj_player_hitbox.phy_position_y) < attack_range {
+        if !collision_line(x, y, obj_player_hitbox.x, obj_player_hitbox.y, obj_viewblock, true, true) and !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock_crouch, true, true) {
             alarm[0] = room_speed
             attacking = true
         } else attacking = false
@@ -34,8 +34,8 @@ if attacking = true {
         arrowtimer += 1
     }
     if arrowtimer = room_speed {
-        if !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock, true, true) {
-            if obj_player.crouch = false or !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock_crouch, true, true)  { {
+        if !collision_line(x, y, obj_player_hitbox.x, obj_player_hitbox.y, obj_viewblock, true, true) {
+            if obj_player.crouch = false or !collision_line(x, y, obj_player_hitbox.x, obj_player_hitbox.y, obj_viewblock_crouch, true, true)  { {
                     my_rifle.image_index = 1
                 }
                 obj_player.hp -= 1

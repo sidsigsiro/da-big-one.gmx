@@ -42,6 +42,13 @@ glr_mesh_update(mesh);
 glr_shadowdepth_create(sprite_index, image_index, x, y, y, 1, 1, 0)
 
 glr_mesh_set_depth(mesh, zdepth);
+
+//create leaves
+/*
+repeat(15) {
+    instance_create(x + random_range(-120, 120), y + random_range(-120, 120), obj_leaf)
+}
+*/
 </string>
           </argument>
         </arguments>

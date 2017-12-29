@@ -77,16 +77,10 @@ if any_bottle_left {
     bottle_key1_held = item1_key_held
     bottle_key1_pressed = item1_key_pressed
     bottle_key1_released = item1_key_released
-    bottle_key2_held = item2_key_held
-    bottle_key2_pressed = item2_key_pressed
-    bottle_key2_released = item2_key_released
 } else {
     bottle_key1_held = noone
     bottle_key1_pressed = noone
     bottle_key1_released = noone
-    bottle_key2_held = noone
-    bottle_key2_pressed = noone
-    bottle_key2_released = noone
 }
 
 //set snail key
@@ -94,16 +88,10 @@ if item_left = 10 {
     snail_key1_held = item1_key_held
     snail_key1_pressed = item1_key_pressed
     snail_key1_released = item1_key_released
-    snail_key2_held = item2_key_held
-    snail_key2_pressed = item2_key_pressed
-    snail_key2_released = item2_key_released
 } else {
     snail_key1_held = noone
     snail_key1_pressed = noone
     snail_key1_released = noone
-    snail_key2_held = noone
-    snail_key2_pressed = noone
-    snail_key2_released = noone
 }
 if face = DOWN {
     var itemx1 = x

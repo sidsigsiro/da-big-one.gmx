@@ -172,6 +172,7 @@
     <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_player_ghost</sprite>
     <sprite>sprites\spr_player_down</sprite>
+    <sprite>sprites\spr_player_hitbox</sprite>
     <sprite>sprites\spr_player_up</sprite>
     <sprite>sprites\spr_player_right</sprite>
     <sprite>sprites\spr_player_right_idle</sprite>
@@ -270,6 +271,8 @@
     <sprite>sprites\spr_rifle</sprite>
     <sprite>sprites\spr_turret</sprite>
     <sprite>sprites\spr_campfire</sprite>
+    <sprite>sprites\sprite231</sprite>
+    <sprite>sprites\spr_leaf</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_grid</background>
@@ -297,6 +300,8 @@
     </backgrounds>
     <background>background\background18</background>
     <background>background\background0</background>
+    <background>background\bg_autumn_grass_dirt</background>
+    <background>background\bh_autumn_dirt_grass</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\path_glr_0</path>
@@ -1025,10 +1030,13 @@
     <object>objects\obj_surface_debugger</object>
     <object>objects\obj_turret</object>
     <object>objects\obj_campfire</object>
+    <object>objects\obj_leaf</object>
+    <object>objects\obj_player_hitbox</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_setup</room>
     <room>rooms\room26</room>
+    <room>rooms\room27</room>
     <room>rooms\room24</room>
     <room>rooms\room0</room>
     <room>rooms\room25</room>
