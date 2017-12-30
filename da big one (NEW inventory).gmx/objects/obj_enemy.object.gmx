@@ -29,6 +29,10 @@
 if !instance_exists(obj_enemy_hivemind) {
     instance_create(0, 0, obj_enemy_hivemind)
 }
+
+//FOR TESTING PURPOSES
+cansee = false
+
 //create light
 //set player_in_sight
 player_in_sight = false
@@ -663,6 +667,7 @@ var y2c = y + lengthdir_y(view_y2 + 150, dir + 37);
 //sight
 if enstate != scr_enemy_dead {
     if enstate != scr_enemy_frozen {
+        if cansee = true {
         if point_in_triangle(obj_player.x, obj_player.y, x, y, x1c, y1c, x2c, y2c) {
             // if player height is less than 24 pixels above enemy height
             if obj_player.height&lt;height + 24 {
@@ -685,7 +690,7 @@ if enstate != scr_enemy_dead {
             player_in_sight = false
         }
     }
-}
+}}
 
 //playerseen and player_in_sight
 
@@ -742,6 +747,13 @@ if temp = 50 {
     investar_y = y
     enstate = scr_enemy_investigate
     sus = true
+    if !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock, true, true) {
+       if collision_line(my_rifle.x, my_rifle.y, x + lengthdir_x(600, my_rifle.image_angle), y + lengthdir_y(600, my_rifle.image_angle), obj_player, false, true) {
+            with(obj_player) {
+                room_restart();
+            }
+        }
+    }
 }
 
 if temp &gt; 50 {
@@ -834,9 +846,7 @@ if spd &lt; 0 {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>shader_set(shdr_watercolour);
-draw_self();
-shader_reset();
+            <string>draw_self();
 
 ///view cone
 var x1 = x + lengthdir_x(view_x1, dir - 30);
@@ -882,6 +892,8 @@ draw_text(x, y - 32, string(alarm[10]))
 draw_text(x + 48, y, string(alarm[0]))
 
 draw_text(x, y - 32, string(temp))
+
+draw_line(my_rifle.x, my_rifle.y, x + lengthdir_x(600, my_rifle.image_angle), y + lengthdir_y(600, my_rifle.image_angle))
 </string>
           </argument>
         </arguments>

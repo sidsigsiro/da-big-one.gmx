@@ -126,12 +126,12 @@ if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock, true, true) 
                 if enemy != noone {
                     if temp = COOL {
                         if enemy.wet = true {
-                            stam -= 1
-                            enemy.temp -= 2
+                            stam -= 25
+                            enemy.temp -= 50
                         }
                     } if temp = HEAT {
-                        stam -= 1
-                        enemy.temp += 2
+                        stam -= 25
+                        enemy.temp += 50
                     }
                 }
                 

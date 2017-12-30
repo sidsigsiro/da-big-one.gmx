@@ -1035,8 +1035,8 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_setup</room>
-    <room>rooms\room26</room>
     <room>rooms\room27</room>
+    <room>rooms\room26</room>
     <room>rooms\room24</room>
     <room>rooms\room0</room>
     <room>rooms\room25</room>

@@ -54,11 +54,18 @@ depth = owner.depth - 1
 x = owner.x
 y = owner.y + 5
 //should only kick in on alert
-var gun_rotation = 0
 if owner.enstate = scr_enemy_sniper_chase {
-    gun_rotation = point_direction(x, y, obj_player.x, obj_player.y)
+    image_angle = point_direction(x, y, obj_player.x, obj_player.y)
+} else {
+    image_angle = owner.dir
 }
-image_angle = gun_rotation
+
+// flip image
+if image_angle &gt; 90 and image_angle &lt; 270 {
+    image_yscale = -1
+} else {
+    image_yscale = 1
+}
 </string>
           </argument>
         </arguments>
@@ -82,6 +89,8 @@ image_angle = gun_rotation
           <argument>
             <kind>1</kind>
             <string>draw_self();
+
+draw_text(x, y - 48, string(image_angle))
 </string>
           </argument>
         </arguments>
