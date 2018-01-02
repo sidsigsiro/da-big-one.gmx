@@ -190,6 +190,8 @@
     <sprite>sprites\spr_topofstair</sprite>
     <sprite>sprites\spr_tree</sprite>
     <sprite>sprites\spr_tree2</sprite>
+    <sprite>sprites\spr_tree3</sprite>
+    <sprite>sprites\spr_tree4</sprite>
     <sprite>sprites\spr_tree_mesh</sprite>
     <sprite>sprites\spr_tunnel</sprite>
     <sprite>sprites\spr_vault_floor1_side</sprite>
@@ -302,6 +304,7 @@
     <background>background\background0</background>
     <background>background\bg_autumn_grass_dirt</background>
     <background>background\bh_autumn_dirt_grass</background>
+    <background>background\bg_autumn_forest_master</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\path_glr_0</path>
@@ -818,7 +821,12 @@
       <object>objects\obj_stairs</object>
       <object>objects\obj_side_stairs</object>
       <object>objects\obj_tunnel</object>
-      <object>objects\obj_tree</object>
+      <objects name="TREES">
+        <object>objects\obj_tree</object>
+        <object>objects\obj_tree2</object>
+        <object>objects\obj_tree3</object>
+        <object>objects\obj_tree4</object>
+      </objects>
       <object>objects\obj_grass</object>
       <object>objects\obj_grass_bottom</object>
       <object>objects\obj_grass_top_left</object>
