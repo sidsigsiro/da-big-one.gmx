@@ -732,15 +732,11 @@ if place_meeting(x, y, obj_flash) {
 //frozen and water
 scr_get_wet();
 
-if temp = -50 {
+if temp = -1 {
     enstate = scr_enemy_frozen
 }
 
-if temp &lt; -50 {
-    temp = -50
-}
-
-if temp = 50 {
+if temp = 1 {
     instance_create(x, y, obj_caunode1)
     instance_create(x, y, obj_noise_large_high)
     investar_x = x
@@ -754,18 +750,7 @@ if temp = 50 {
             }
         }
     }
-}
-
-if temp &gt; 50 {
-    temp = 50
-}
-
-if temp &lt; 0 {
-    temp += 1
-}
-
-if temp &gt; 0 {
-    temp -= 1
+    temp = 0
 }
 
 //stop checking if enemy is dead
@@ -885,11 +870,11 @@ if enstate = scr_enemy_frozen or enstate = scr_enemy_stun {
 //draw social circle
 draw_circle(x, y, 30, true)
 
-draw_text(x - 32, y, string(alarm[8]))
+//draw_text(x - 32, y, string(alarm[8]))
 
 draw_text(x, y - 32, string(alarm[10]))
 
-draw_text(x + 48, y, string(alarm[0]))
+//draw_text(x + 48, y, string(alarm[0]))
 
 draw_text(x, y - 32, string(temp))
 

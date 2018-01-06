@@ -37,6 +37,9 @@ if item_left = 12 {
     wind_key1_held = item1_key_held
     wind_key1_pressed = item1_key_pressed
     wind_key1_released = item1_key_released
+    wind_key2_held = item2_key_held
+    wind_key2_pressed = item2_key_pressed
+    wind_key2_released = item2_key_released
     scr_wind_state();
     if !instance_exists(obj_wind_tar) {
     instance_create(obj_cursor.x, obj_cursor.y, obj_wind_tar)
@@ -45,6 +48,9 @@ if item_left = 12 {
     wind_key1_held = noone
     wind_key1_pressed = noone
     wind_key1_released = noone
+    wind_key2_held = noone
+    wind_key2_pressed = noone
+    wind_key2_released = noone
     if instance_exists(obj_wind_tar) {
         with(obj_wind_tar) {
             instance_destroy();

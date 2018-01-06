@@ -35,6 +35,7 @@ y1 = 0
 dir = 0
 armed = false
 from_chest = false
+height = 0
 </string>
           </argument>
         </arguments>
@@ -85,16 +86,13 @@ if armed = true {
             <kind>1</kind>
             <string>//step
 event_inherited();
+scr_set_floor();
 
 if temp &lt; 0 {
     temp = 0
 }
 
-if temp &gt; 0 {
-    temp -= 1
-}
-
-if temp &gt; 100 {
+if temp = 1 {
     armed = true
     instance_destroy()
 }

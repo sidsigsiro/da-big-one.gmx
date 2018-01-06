@@ -53,10 +53,6 @@ temp = false
             <kind>1</kind>
             <string>scr_get_input();
 
-if place_meeting(x, y, obj_water) {
-    wet = true
-}
-
 if phy_active = true {
     image_index = 0
 }
@@ -68,7 +64,7 @@ if phy_active = false {
 if collision_circle(x, y, 70, obj_player, false, true) {
     if use_key_pressed {
         instance_create(obj_player.x, obj_player.y, obj_noise_med)
-        if temp &lt; -9 {
+        if temp = -1 {
             instance_destroy();
         }
     }

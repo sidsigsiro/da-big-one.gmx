@@ -1,4 +1,4 @@
-///scr_temperature_state
+ ///scr_temperature_state
 
 if temp_key1 {
     temp = HEAT
@@ -67,10 +67,12 @@ if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock, true, true) 
                         }
                     }
                     
-                    // fire bomb
+                    // fire bomb 
                     if firebomb != noone {
-                        stam -= 1
-                        firebomb.temp += 3
+                        if firebomb != 1 {
+                            stam -= 1
+                            firebomb.temp = 1
+                        }
                     }
                 }
                 
@@ -89,36 +91,35 @@ if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock, true, true) 
                             instance_change(obj_evil_ice,true)
                         }
                     }
-                    
-                    // door
-                    if door != noone {
-                        stam -= 1
-                        if door.wet = true {
-                            door.temp -= 1
+                }
+                   
+                // door
+                if door != noone {
+                    if temp = COOL {
+                        if door.temp != -1 {
+                            stam -= 1
+                            door.temp = -1
                         }
                     }
                 }
-                    
+                
                 // barrel
                 if barrel != noone and barrel.image_index = 1 {
                     if temp = HEAT {
-                        stam -= 1
-                        barrel.temp += 3
-                    } else if temp = COOL {
-                        stam -= 1
-                        barrel.temp -= 2
+                        if barrel.temp != 1 {
+                            stam -= 1
+                            barrel.temp = 1
+                        }
                     }
                 }
                 
-                // ammo
+                // ammo 
                 if ammo != noone {
                     if temp = HEAT {
-                        stam -= 1
-                        ammo.temp += 2
-                    }
-                    if temp = COOL {
-                        stam -= 1
-                        ammo.temp -= 2
+                        if ammo.temp != 1 {
+                            stam -= 1
+                            ammo.temp += 1
+                        }
                     }
                 }
                 
@@ -126,25 +127,31 @@ if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock, true, true) 
                 if enemy != noone {
                     if temp = COOL {
                         if enemy.wet = true {
-                            stam -= 25
-                            enemy.temp -= 50
+                            if enemy.temp != -1 {
+                                stam -= 25
+                                enemy.temp = -1
+                            }
                         }
                     } if temp = HEAT {
-                        stam -= 25
-                        enemy.temp += 50
+                        if enemy.temp != 1 {
+                            stam -= 25
+                            enemy.temp = 1
+                        }
                     }
                 }
                 
                 // turret
                 if turret != noone {
                     if temp = COOL {
-                        if turret.wet = true {
+                        if turret.temp != -1 {
                             stam -= 1
-                            turret.temp -= 2
+                            turret.temp = -1
                         }
                     } if temp = HEAT {
-                        stam -= 1
-                        turret.temp += 2
+                        if temp != 1 {
+                            stam -= 1
+                            turret.temp = 1
+                        }
                     }
                 }
                 

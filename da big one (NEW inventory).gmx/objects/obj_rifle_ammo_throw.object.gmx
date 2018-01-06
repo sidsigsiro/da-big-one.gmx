@@ -152,7 +152,7 @@ scr_set_floor();
 //set_depth
 scr_set_depth();
 
-if temp = room_speed {
+if temp = 1 {
     instance_create(x, y, obj_caunode1)
     instance_create(x, y, obj_noise_large_high)
     instance_destroy();

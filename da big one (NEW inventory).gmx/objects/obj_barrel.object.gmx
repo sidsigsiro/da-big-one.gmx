@@ -65,24 +65,18 @@ velocity = 0 //falling velocity
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(x,y, obj_noise_large_high)
+            <string>/*
+instance_create(x,y, obj_noise_large_high)
 instance_create(x, y, obj_node_distraction)
 instance_create(x, y, obj_explosion)
-instance_create(x, y, obj_caunode1)
 if instance_exists(obj_player_ghost) {
     with(obj_player_ghost) {
         instance_destroy()
     }
 }
 instance_create(x, y, obj_player_ghost)
-with(obj_enemy) {
-    if (enstate = scr_enemy_patrol or enstate = scr_enemy_wait) or (enstate = scr_enemy_search_phase2 or enstate = scr_enemy_investigate) {
-        obj_enemy.enstate = scr_enemy_investigate
-        obj_enemy.investar = obj_player_ghost
-        obj_enemy.alarm[10] = room_speed*2
-    }
-}
 instance_create(x, y, obj_caunode1)
+*/
 </string>
           </argument>
         </arguments>
@@ -240,16 +234,17 @@ if obj_player.state = scr_move_state {
     }
 }
 
-if temp &gt; 200 {
-    alarm[0] = 1
+if temp = 1 {
+    if temp = 1 {
+    instance_create(x, y, obj_caunode1)
+    instance_create(x, y, obj_noise_large_high)
+    instance_destroy();
+    mp_grid_clear_rectangle(global.grid_floor1, x - 14, y - 19, x + 14, y + 19) 
+    }
 }
 
 if temp &lt; 0 {
     temp = 0
-}
-
-if temp &gt; 0 {
-    temp -= 1
 }
 
 scr_item_fall();

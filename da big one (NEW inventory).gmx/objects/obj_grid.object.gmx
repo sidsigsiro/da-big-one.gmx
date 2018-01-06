@@ -57,7 +57,6 @@ mp_grid_add_instances(global.grid_floor1, obj_barrel, true)
 mp_grid_add_instances(global.grid_floor2, obj_tree, true)
 mp_grid_add_instances(global.grid_floor2, obj_wall, true)
 mp_grid_add_instances(global.grid_floor2, obj_door, true)
-mp_grid_add_instances(global.grid_floor2, obj_barrel, true)
 </string>
           </argument>
         </arguments>

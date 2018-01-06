@@ -11,7 +11,7 @@ if alarm[6] = -1 {
 
 playerseen = false
 
-temp = -50
+temp = -1
 
 if alarm[6] = 0 {
     temp = 0

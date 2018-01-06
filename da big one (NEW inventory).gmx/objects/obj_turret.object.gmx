@@ -170,14 +170,8 @@ if collision_line(x, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(
 tarenemy = collision_line(x, y, x + lengthdir_x(laser_length, viewdir), y + lengthdir_y(laser_length, viewdir), obj_enemy, true, true)
 
 //control temp
-if temp &lt; -50 {
-    temp = -50
-}
-if temp &gt; 50 {
-    temp = 50
-}
 
-if temp &gt;= 50 {
+if temp = 1 {
     image_index = 1
     if tarplayer = true {
         if !collision_line(x ,y, obj_player.x, obj_player.y, obj_viewblock, true, true) {
@@ -187,10 +181,10 @@ if temp &gt;= 50 {
     with(tarenemy) {
         instance_destroy();
     }
+    temp = 0
 }
 
-if temp &lt;= (-50) {
-    my_focus.survey = false
+if temp = -1 {
     state = scr_turret_frozen
 } else {
     my_focus.survey = true
@@ -204,7 +198,7 @@ glr_light_set_rotation(my_light, viewdir)
 }
 
 if pushed = true {
-    scr_item_push()
+    scr_item_push();
 }
 
 if ori = UP {
@@ -249,7 +243,7 @@ var x2c = x + lengthdir_x(view_y1 + 150, viewdir + 37);
 var y2c = y + lengthdir_y(view_y2 + 150, viewdir + 37);
 
 //sight
-if state != scr_enemy_frozen {
+if state != scr_turret_frozen {
     if point_in_triangle(obj_player.x, obj_player.y, x, y, x1c, y1c, x2c, y2c) {
         // if player height is less than 24 pixels above enemy height
         if obj_player.height &lt; height + 24 {
@@ -320,6 +314,10 @@ viewdir = point_direction(x, y, my_focus.x, my_focus.y)
 
 if state = scr_enemy_frozen {
     image_blend = c_aqua
+}
+
+if temp &gt;= 50 {
+    image_blend = c_red
 }
 
 draw_text(x + 32, y, string(target))

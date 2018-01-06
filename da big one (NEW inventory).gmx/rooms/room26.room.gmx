@@ -826,41 +826,11 @@
     <instance objName="obj_water_down" x="512" y="544" name="inst_32B2511C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_up" x="544" y="560" name="inst_D9FEA643" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_up" x="656" y="576" name="inst_F7C28AE3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_down" x="416" y="608" name="inst_FCF780AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_down" x="400" y="608" name="inst_E5DF2F1A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_down" x="416" y="592" name="inst_D54CE737" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_down" x="400" y="592" name="inst_D218F14C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_down" x="400" y="576" name="inst_B22936D3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_down" x="416" y="576" name="inst_176E3FCC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_right" x="384" y="592" name="inst_9AA33179" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_down" x="416" y="624" name="inst_09C5ECAB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_down" x="400" y="624" name="inst_FE47EAF8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_down" x="416" y="640" name="inst_5BF95056" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_down" x="400" y="640" name="inst_97EDD674" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_down" x="416" y="656" name="inst_26B4F204" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_down" x="400" y="656" name="inst_65335A3B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_down" x="400" y="672" name="inst_FCB436E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_down" x="416" y="672" name="inst_7C4FAEF0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_down" x="416" y="688" name="inst_01DF5405" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_down" x="400" y="688" name="inst_02F0B982" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_down" x="416" y="704" name="inst_D2EACA38" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_down" x="400" y="704" name="inst_0BAD6021" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_down" x="416" y="720" name="inst_DE12C3EE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_down" x="400" y="720" name="inst_E4F6DB14" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_down" x="416" y="736" name="inst_73F61CAC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_down" x="400" y="736" name="inst_D87D2A89" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_down" x="416" y="752" name="inst_3EE233A5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_down" x="400" y="752" name="inst_A43AD76B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_down" x="416" y="768" name="inst_5C40BFCF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_down" x="400" y="768" name="inst_3FA3C249" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_down" x="416" y="784" name="inst_6DF59797" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_down" x="400" y="784" name="inst_0A976CEF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_down" x="416" y="800" name="inst_6542734B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_down" x="400" y="800" name="inst_3F2C8697" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_left" x="416" y="832" name="inst_1859F5D7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_left" x="400" y="832" name="inst_65858001" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_left" x="416" y="816" name="inst_45500626" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_left" x="400" y="816" name="inst_B94509CA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="16" y="752" name="inst_268B78C1" locked="0" code="breakable = true&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="32" y="752" name="inst_1BEF82A3" locked="0" code="breakable = true&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="32" y="736" name="inst_1836E64C" locked="0" code="breakable = true&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -879,12 +849,12 @@
     <instance objName="obj_viewnode6" x="240" y="284" name="inst_BEE74D17" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_crate" x="508" y="148" name="inst_004E7648" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_climb_floor1" x="508" y="148" name="inst_4B6F37EF" locked="0" code="" scaleX="0.5" scaleY="0.699999988079071" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player" x="382" y="908" name="inst_2198D2E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player" x="408" y="830" name="inst_2198D2E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_coin" x="88" y="220" name="inst_2DC93A83" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_chest" x="396" y="364" name="inst_3E418D15" locked="0" code="item2 = obj_coin&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_grass" x="808" y="336" name="inst_E31B04C9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_grass" x="836" y="328" name="inst_1AF110F7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_grass" x="828" y="356" name="inst_7595BF3C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_grass" x="468" y="714" name="inst_E31B04C9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_grass" x="480" y="712" name="inst_1AF110F7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_grass" x="444" y="712" name="inst_7595BF3C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="964" y="216" name="inst_4A470A49" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="952" y="236" name="inst_597EC581" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="948" y="208" name="inst_9AE3A7C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -899,13 +869,21 @@
     <instance objName="obj_pickup_bow" x="804" y="700" name="inst_0DE7BF48" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pickup_flare" x="760" y="684" name="inst_6851041B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pickup_flare" x="232" y="48" name="inst_7A71221E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_turret" x="756" y="748" name="inst_4C1F93A2" locked="0" code="//focustar&#xA;ori = LEFT&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_turret" x="756" y="748" name="inst_4C1F93A2" locked="0" code="//focustar&#xA;ori = LEFT" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_side_stairs" x="204" y="894" name="inst_6751A888" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_side_stairs" x="746" y="40" name="inst_8FA4A22F" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_enemy" x="644" y="698" name="inst_4A701D3D" locked="0" code="wait = false&#xA;squad = ALPHA&#xA;//patrol nodes&#xA;tars[1] = obj_node6&#xA;tars[2] = obj_node7&#xA;&#xA; &#xA;&#xA;caunexttar = obj_nodeA&#xA;cautar0 = obj_nodeA&#xA;cautar0_default = obj_nodeA&#xA;caunexttar_default = obj_nodeA&#xA;&#xA;class = RIFLE&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_node6" x="680" y="704" name="inst_5484A2A3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_node7" x="682" y="802" name="inst_501B8F11" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_nodeA" x="280" y="324" name="inst_1C28F62D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_blackpowder" x="214" y="754" name="inst_4EC4EBED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_blackpowder" x="222" y="754" name="inst_3629EA22" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_blackpowder" x="230" y="754" name="inst_530F94FD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_blackpowder" x="238" y="754" name="inst_E4D9FF54" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_pickup_firebomb" x="186" y="802" name="inst_3038C55D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_door" x="352" y="762" name="inst_F353704A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_barrel" x="498" y="790" name="inst_EACAB349" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rifle_ammo_throw" x="128" y="800" name="inst_D348CE8B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy" x="684" y="750" name="inst_9EB21C97" locked="0" code="squad = ALPHA&#xA;//patrol nodes&#xA;tars[1] = obj_node6&#xA;tars[2] = obj_node7 &#xA; &#xA;&#xA;caunexttar = obj_nodeA&#xA;cautar0 = obj_nodeA&#xA;cautar0_default = obj_nodeA&#xA;caunexttar_default = obj_nodeA&#xA;&#xA;class = RIFLE&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="" x="208" y="1216" w="16" h="16" xo="0" yo="0" id="10005805" name="inst_A7B092B2" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

@@ -96,7 +96,9 @@ if pushed = true {
 }
 
 if survey = true {
-    script_execute(state)
+    if state != noone {
+        script_execute(state)
+    }
 }
 </string>
           </argument>

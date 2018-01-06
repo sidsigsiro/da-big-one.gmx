@@ -12,6 +12,14 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\images</sprite>
+    <sprite>sprites\spr_water_right</sprite>
+    <sprite>sprites\spr_water_down_right</sprite>
+    <sprite>sprites\spr_water_down</sprite>
+    <sprite>sprites\spr_water_down_left</sprite>
+    <sprite>sprites\spr_water_left</sprite>
+    <sprite>sprites\spr_water_up_left</sprite>
+    <sprite>sprites\spr_water_up</sprite>
+    <sprite>sprites\spr_water_up_right</sprite>
     <sprites name="Glare">
       <sprites name="Icons">
         <sprite>sprites\glr_icon_camera</sprite>
@@ -815,13 +823,13 @@
       <object>objects\obj_bridge</object>
       <object>objects\obj_water_pipe</object>
       <object>objects\obj_water</object>
-      <object>objects\obj_water_up</object>
-      <object>objects\obj_water_up_left</object>
-      <object>objects\obj_water_left</object>
-      <object>objects\obj_water_down_left</object>
-      <object>objects\obj_water_down</object>
-      <object>objects\obj_water_down_right</object>
       <object>objects\obj_water_right</object>
+      <object>objects\obj_water_down_right</object>
+      <object>objects\obj_water_down</object>
+      <object>objects\obj_water_down_left</object>
+      <object>objects\obj_water_left</object>
+      <object>objects\obj_water_up_left</object>
+      <object>objects\obj_water_up</object>
       <object>objects\obj_water_up_right</object>
       <object>objects\obj_evil_water</object>
       <object>objects\obj_water_puddle</object>
@@ -1053,13 +1061,14 @@
     <object>objects\obj_turret</object>
     <object>objects\obj_campfire</object>
     <object>objects\obj_leaf</object>
+    <object>objects\obj_leaf_spawner</object>
     <object>objects\obj_player_hitbox</object>
     <object>objects\obj_test_grass</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_setup</room>
-    <room>rooms\room27</room>
     <room>rooms\room26</room>
+    <room>rooms\room27</room>
     <room>rooms\room24</room>
     <room>rooms\room0</room>
     <room>rooms\room25</room>

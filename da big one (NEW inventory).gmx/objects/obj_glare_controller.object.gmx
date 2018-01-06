@@ -47,7 +47,8 @@ if(os_type != os_android &amp;&amp; os_type != os_ios ){
     
     //glr_set_occlusion_intensity(1.5);//darker A.O.
     
-        col = merge_colour(c_white, c_dkgray, 0.2)
+        col_1 = merge_colour(c_white, c_dkgray, 0.8)
+        col = merge_colour(col_1, c_blue, 0.1)
     
         glr_set_ambient_color(col)
     room_goto_next();
