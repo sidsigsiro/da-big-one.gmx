@@ -41,6 +41,7 @@ state = noone
 dist = 200
 able_to_fall = true
 falling = false
+grabbed = false
 
 velocity = 0 //falling velocity
 </string>
@@ -197,6 +198,14 @@ if image_index = 1 {
     }
 }
 
+//get grabed
+if obj_player.state = scr_move_state {
+    if collision_circle(x, y, 20, obj_player, true, false) {
+        if use_key_pressed {
+            
+        }
+    }
+}
 
 if alarm[1] &gt; 0 {
     instance_create(x, y, obj_blackpowder)
@@ -205,10 +214,8 @@ if alarm[1] &gt; 0 {
 //Lighting black powder with spark
 var touching_powder = place_meeting(x, y, obj_lit_powder);
 if touching_powder {
-    if image_index = 1 {
-        lit = true;
-        alarm[0] = room_speed/20 //Wait one second before spreading and burning out
-    }
+    lit = true;
+    alarm[0] = room_speed/20 //Wait one second before spreading and burning out
 }
 ///check state
 if state != noone {
@@ -223,15 +230,6 @@ if place_meeting(x, y, obj_arrow) {
 
 if place_meeting(x, y, obj_explosion) {
     instance_destroy();
-}
-
-if obj_player.state = scr_move_state {
-    if collision_circle(x, y, 20, obj_player, true, false) {
-        if use_key {
-            image_index = 1
-            lit = false
-        }
-    }
 }
 
 if temp = 1 {

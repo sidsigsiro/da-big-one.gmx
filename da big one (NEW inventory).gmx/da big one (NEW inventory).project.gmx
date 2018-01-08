@@ -12,6 +12,7 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\images</sprite>
+    <sprite>sprites\spr_spirit_grab</sprite>
     <sprite>sprites\spr_water_right</sprite>
     <sprite>sprites\spr_water_down_right</sprite>
     <sprite>sprites\spr_water_down</sprite>
@@ -65,6 +66,7 @@
     <sprite>sprites\spr_shadow_small</sprite>
     <sprite>sprites\spr_grass</sprite>
     <sprite>sprites\spr_items</sprite>
+    <sprite>sprites\spr_spirit_items</sprite>
     <sprite>sprites\spr_inventory</sprite>
     <sprite>sprites\spr_inv_border</sprite>
     <sprite>sprites\spr_inv_border_equip</sprite>
@@ -673,6 +675,7 @@
     <script>scripts\scr_get_wet.gml</script>
     <script>scripts\scr_turret_frozen.gml</script>
     <script>scripts\scr_enemy_stun.gml</script>
+    <script>scripts\scr_grab_state.gml</script>
   </scripts>
   <shaders name="shaders">
     <shaders name="Glare">
@@ -879,6 +882,7 @@
     </objects>
     <objects name="ITEMS AND POWERS">
       <object>objects\obj_chest</object>
+      <object>objects\obj_spirit_grab</object>
       <object>objects\obj_snail</object>
       <object>objects\obj_pickup_any</object>
       <object>objects\obj_pickup_firebomb</object>
@@ -911,6 +915,7 @@
       <object>objects\obj_ice_right</object>
       <object>objects\obj_evil_ice</object>
       <objects name="INVENTORY">
+        <object>objects\obj_spirit_inv</object>
         <object>objects\obj_inventory</object>
         <object>objects\obj_invbutton</object>
         <object>objects\obj_inventory_item_mouse</object>
@@ -935,7 +940,7 @@
       <object>objects\obj_wind_grab</object>
       <object>objects\obj_display_manager</object>
       <object>objects\obj_explosion</object>
-      <object>objects\obj_flash</object>
+      <object>objects\obj_steam</object>
       <object>objects\obj_flare_spark</object>
       <object>objects\obj_view</object>
       <object>objects\obj_floor_1</object>
@@ -1067,6 +1072,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_setup</room>
+    <room>rooms\room28</room>
     <room>rooms\room26</room>
     <room>rooms\room27</room>
     <room>rooms\room24</room>

@@ -23,6 +23,7 @@ var enemy
 var turret
 var door
 var firebomb
+var puddle
 
 with obj_cursor {
     water = instance_place(obj_cursor.x, obj_cursor.y, obj_water)
@@ -36,6 +37,7 @@ with obj_cursor {
     turret = instance_place(obj_cursor.x, obj_cursor.y, obj_turret)
     door = instance_place(obj_cursor.x, obj_cursor.y, obj_door)
     firebomb = instance_place(obj_cursor.x, obj_cursor.y, obj_firebomb)
+    puddle = instance_place(obj_cursor.x, obj_cursor.y, obj_water_puddle)
 }
 
 if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock, true, true) {
@@ -56,6 +58,19 @@ if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock, true, true) 
                         with(evil_ice) {
                             mp_grid_add_rectangle(global.grid_floor1, x - 20, y - 20, x + 19, y + 20)
                             instance_change(obj_evil_water, true)
+                        }
+                    }
+                    
+                    if water != noone {
+                        stam -=1
+                        instance_create(water.x, water.y, obj_steam)
+                    }
+                    
+                    if puddle != noone {
+                        stam -= 1
+                        instance_create(puddle.x, puddle.y, obj_steam)
+                        with(puddle) {
+                            instance_destroy();
                         }
                     }
                     
@@ -104,7 +119,7 @@ if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock, true, true) 
                 }
                 
                 // barrel
-                if barrel != noone and barrel.image_index = 1 {
+                if barrel != noone {
                     if temp = HEAT {
                         if barrel.temp != 1 {
                             stam -= 1

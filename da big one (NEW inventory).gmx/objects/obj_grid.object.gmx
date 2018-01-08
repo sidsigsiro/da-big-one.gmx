@@ -44,7 +44,6 @@ global.grid_chase_floor2 = mp_grid_create(0, 0, hcells, vcells, cell_width, cell
 mp_grid_add_instances(global.grid_floor1, obj_wall, true)
 mp_grid_add_instances(global.grid_floor1, obj_block_side, true)
 mp_grid_add_instances(global.grid_floor1, obj_block_top, true)
-mp_grid_add_instances(global.grid_floor1, obj_door, true)
 mp_grid_add_instances(global.grid_floor1, obj_climb_floor2, true)
 mp_grid_add_instances(global.grid_floor1, obj_tree, true)
 mp_grid_add_instances(global.grid_floor1, obj_block_side, true)
@@ -56,7 +55,6 @@ mp_grid_add_instances(global.grid_floor1, obj_barrel, true)
 //add the walls for floor 2
 mp_grid_add_instances(global.grid_floor2, obj_tree, true)
 mp_grid_add_instances(global.grid_floor2, obj_wall, true)
-mp_grid_add_instances(global.grid_floor2, obj_door, true)
 </string>
           </argument>
         </arguments>

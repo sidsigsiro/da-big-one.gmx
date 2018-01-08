@@ -113,7 +113,10 @@ if face = DOWN {
     var itemy1 = y - 30
 }
 
-
+//spirit grab
+if grab_key_pressed {
+    state = scr_grab_state
+}
 
 //pickup snail
 itemtouch = instance_place(x, y, obj_snail)
@@ -383,7 +386,7 @@ if height < 24 {
 
 //vault
 if (yaxis > 0) and vault_key {
-    if place_meeting(phy_position_x, phy_position_y + 8, obj_climb_top_floor1) {
+    if place_meeting(phy_position_x, phy_position_y + 8, obj_climb_floor1) {
         phy_position_y += 40
     }
 }

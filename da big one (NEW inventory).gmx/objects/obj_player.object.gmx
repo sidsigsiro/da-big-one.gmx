@@ -28,6 +28,9 @@
             <string>///create player
 ///NOTE: USE RANDOMIZE(); OTHER WISE ALL RANDOM NUMBERS WILL BE THE SAME EVERYTIME YOU LOAD THE GAME
 
+//create spirit inventory
+instance_create(x, y, obj_spirit_inv)
+
 numb_of_mines = 0
 det_timer = 0
 barreltar = noone
@@ -126,7 +129,7 @@ falling_off_stairs = false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///alarm for arrow charge time
+            <string>///alarm for grab state time (and arrow charge)
 
 </string>
           </argument>

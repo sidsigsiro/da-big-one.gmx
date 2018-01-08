@@ -2,6 +2,16 @@ if enstate != scr_enemy_dead {
     draw_triangle_colour(x, y, x1, y1, x2, y2, c_black, c_black, c_black, true)
 }
 
+///barrel step event
+if obj_player.state = scr_move_state {
+    if collision_circle(x, y, 20, obj_player, true, false) {
+        if use_key {
+            image_index = 1
+            lit = false
+        }
+    }
+}
+
 ///obj_player step event
 if !place_meeting(x, y, obj_floor_dblock) {
     raised = false
