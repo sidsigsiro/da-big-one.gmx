@@ -50,6 +50,7 @@ mp_grid_add_instances(global.grid_floor1, obj_block_side, true)
 mp_grid_add_instances(global.grid_floor1, obj_block_top, true)
 mp_grid_add_instances(global.grid_floor1, obj_crate, true)
 mp_grid_add_instances(global.grid_floor1, obj_barrel, true)
+mp_grid_add_instances(global.grid_floor1, obj_wall_snail, true)
 
 
 //add the walls for floor 2

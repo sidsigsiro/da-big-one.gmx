@@ -26,9 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>//view cone coordinates
-if instance_exists(obj_glare_controller) {
-    my_light = glr_light_create(spr_glr_light_mask_4, 0, x, y, c_white, 1);
-}
+
+//set up time
+alarm[1] = room_speed
 image_speed = 0
 laser_length = 300
 view_x1 = 170
@@ -51,6 +51,8 @@ target = noone
 tarplayer = false
 tarenemy = noone
 ori = RIGHT
+player_in_sight = false
+my_light = noone
 
 //my_node
 my_node1 = instance_create(x, y, obj_turret_node)
@@ -107,6 +109,31 @@ glr_light_destroy(my_light)
           <argument>
             <kind>1</kind>
             <string>///frozen timer
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if instance_exists(obj_glare_controller) {
+    my_light = glr_light_create(spr_glr_light_mask_4, 0, x, y, c_white, 1);
+}
 </string>
           </argument>
         </arguments>
@@ -219,11 +246,12 @@ if temp = -1 {
 
 //set light position
 if instance_exists(obj_glare_controller) {
-glr_light_set_position(my_light, x, y);
-
-glr_light_set_rotation(my_light, viewdir)
+if my_light != noone {
+    glr_light_set_position(my_light, x, y);
+    
+    glr_light_set_rotation(my_light, viewdir)
+    }
 }
-
 if pushed = true {
     scr_item_push();
 }
@@ -270,27 +298,31 @@ var x2c = x + lengthdir_x(view_y1 + 150, viewdir + 37);
 var y2c = y + lengthdir_y(view_y2 + 150, viewdir + 37);
 
 //sight
-if state != scr_turret_frozen {
-    if point_in_triangle(obj_player.x, obj_player.y, x, y, x1c, y1c, x2c, y2c) {
-        // if player height is less than 24 pixels above enemy height
-        if obj_player.height &lt; height + 24 {
-            if !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock, false, false) {
-                if (obj_player.crouch = false or !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock_crouch, true, true)) {
-                    player_in_sight = true
-                    playerseen += 1
-                    if point_in_triangle(obj_player.x, obj_player.y, x, y, x1b, y1b, x2b, y2b) {
-                        playerseen += 1
-                        if point_in_triangle(obj_player.x, obj_player.y, x, y, x1, y1, x2, y2) {
-                            if !collision_line(x, y, obj_player.x, obj_player.y, obj_grass, true, true) {
-                                playerseen = 120
+if alarm[1] = -1 {
+    if state != scr_turret_frozen {
+        if point_in_triangle(obj_player.x, obj_player.y, x, y, x1c, y1c, x2c, y2c) {
+            // if player height is less than 24 pixels above enemy height
+            if obj_player.height &lt; height + 24 {
+                if !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock, false, false) {
+                    if !collision_line(x, y, obj_player.x, obj_player.y, obj_door, false, false) {
+                        if (obj_player.crouch = false or !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock_crouch, true, true)) {
+                            player_in_sight = true
+                            playerseen += 1
+                            if point_in_triangle(obj_player.x, obj_player.y, x, y, x1b, y1b, x2b, y2b) {
+                                playerseen += 1
+                                if point_in_triangle(obj_player.x, obj_player.y, x, y, x1, y1, x2, y2) {
+                                    if !collision_line(x, y, obj_player.x, obj_player.y, obj_grass, true, true) {
+                                        playerseen = 120
+                                    }
+                                }
                             }
                         }
                     }
                 }
             }
+        } else {
+            player_in_sight = false
         }
-    } else {
-        player_in_sight = false
     }
 }
 //playerseen and player_in_sight

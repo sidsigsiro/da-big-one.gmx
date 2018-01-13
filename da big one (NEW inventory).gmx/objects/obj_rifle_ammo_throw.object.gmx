@@ -87,7 +87,7 @@ temp = 0
           <argument>
             <kind>1</kind>
             <string>///step
-if pushed = false {
+/*if pushed = false {
     decelerate_x = phy_speed_x/(point_distance(phy_position_x, phy_position_y, stop_x, stop_y))
     decelerate_y = phy_speed_y/(point_distance(phy_position_x, phy_position_y, stop_x, stop_y))
     
@@ -123,7 +123,7 @@ if pushed = false {
             stopped = true
         }
     }
-} else if pushed = true {
+} else*/ if pushed = true {
     ///scr_item_push
     if !place_meeting(x, y, obj_ice) {
     len -= 0.05

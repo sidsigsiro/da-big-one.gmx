@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_viewblock_crouch</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -141,12 +141,12 @@ if place_meeting(x, y, obj_cursor) {
                 if obj_player.crouch = true {
                     if !collision_line(obj_player.x, obj_player.y, obj_cursor.x, obj_cursor.y, obj_viewblock_crouch, true, true) {
                         if image_index = 0 {
-                            obj_player.stam -= 1
+                            obj_player.stam -= 20
                                 temp = 1
                         }
                     }
                 } else if obj_player.crouch = false {
-                obj_player.stam -= 1
+                obj_player.stam -= 20
                     temp = 1
                 }
         }

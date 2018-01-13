@@ -3,6 +3,8 @@ if cautar = noone {
     cautar = cautar0
 }
 
+//reset sus
+sus = 0
 
 with(obj_enemy_captain) {
     enstate = scr_enemy_patrol

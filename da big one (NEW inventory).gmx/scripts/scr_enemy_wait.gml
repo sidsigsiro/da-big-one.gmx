@@ -14,3 +14,7 @@ if alarm[0] = 0 {
     //alarm[6] = 2
     enstate = scr_enemy_patrol
 }
+
+if place_meeting(x, y, obj_noise_all) {
+    sus += 1
+}

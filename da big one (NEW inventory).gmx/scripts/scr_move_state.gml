@@ -385,24 +385,18 @@ if height < 24 {
 
 
 //vault
-if (yaxis > 0) and vault_key {
+if (yaxis > 0) and vault_key_pressed {
     if place_meeting(phy_position_x, phy_position_y + 8, obj_climb_floor1) {
         phy_position_y += 40
-    }
-}
-if (xaxis < 0) and vault_key {
-    if place_meeting(phy_position_x - 8, phy_position_y, obj_climb_side_floor1) {
-        phy_position_x -= 40
-    }
-}
-if (xaxis > 0) and vault_key {
-    if place_meeting(phy_position_x + 8, phy_position_y, obj_climb_side_floor1) {
-        phy_position_x += 40
-    }
-}
-if (yaxis < 0) and vault_key {
-    if place_meeting(phy_position_x, phy_position_y - 8, obj_climb_top_floor1) {
+    } else if place_meeting(phy_position_x, phy_position_y - 8, obj_climb_floor1) {
         phy_position_y -= 40
+    }
+}
+if (xaxis > 0) and vault_key_pressed {
+    if place_meeting(phy_position_x, phy_position_y + 8, obj_climb_floor1) {
+        phy_position_x += 40
+    } if place_meeting(phy_position_x, phy_position_y - 8, obj_climb_floor1) {
+        phy_position_x -= 40
     }
 }
 

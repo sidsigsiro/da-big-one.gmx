@@ -58,30 +58,35 @@ snail = instance_place(x, y, obj_snail)
 if obj_spirit_inv.spirit_item = noone {
     if water {
         obj_spirit_inv.spirit_item = 1
+        obj_player.stam -= 20
     }
     if ammo {
         obj_spirit_inv.spirit_item = 0
         with(ammo) {
             instance_destroy();
         }
+        obj_player.stam -= 20
     }
     if snail {
         obj_spirit_inv.spirit_item = 2
         with(snail) {
             instance_destroy();
         }
+        obj_player.stam -= 20
     }
     if turret {
         obj_spirit_inv.spirit_item = 3
         with(turret) {
             instance_destroy();
         }
+        obj_player.stam -= 20
     }
     if barrel {
         obj_spirit_inv.spirit_item = 4
         with(barrel) {
             instance_destroy();
         }
+        obj_player.stam -= 20
     }
 } else if obj_spirit_inv.spirit_item = 0 {
     instance_create(x, y, obj_rifle_ammo_throw)
@@ -90,10 +95,14 @@ if obj_spirit_inv.spirit_item = noone {
     instance_create(x, y, obj_water)
     obj_spirit_inv.spirit_item = noone
 } else if obj_spirit_inv.spirit_item = 2 {
-    instance_create(x, y, obj_snail)
+    my_snail = instance_create(x, y, obj_snail)
+    with(my_snail) {
+        wild = false
+    }
     obj_spirit_inv.spirit_item = noone
 } else if obj_spirit_inv.spirit_item = 3 {
-    instance_create(x, y, obj_turret)
+    my_turret = instance_create(x, y, obj_turret)
+    my_turret.ori = obj_player.face
     obj_spirit_inv.spirit_item = noone
 } else if obj_spirit_inv.spirit_item = 4 {
     instance_create(x, y, obj_barrel)

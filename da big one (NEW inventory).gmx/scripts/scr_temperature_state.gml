@@ -41,137 +41,139 @@ with obj_cursor {
 }
 
 if !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock, true, true) {
-    if crouch = false or !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_crouch, true, true) {
-        if (height > 24 or !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_floor2, true, true)) {
-            if stam > 0 {
-                
-                if temp = HEAT {
-                    // ice
-                    if ice != noone {
-                        stam -= 1
-                        with(ice) {
-                            instance_change(obj_water,true)
-                        }
-                    }
-                    if evil_ice != noone {
-                        stam -= 1
-                        with(evil_ice) {
-                            mp_grid_add_rectangle(global.grid_floor1, x - 20, y - 20, x + 19, y + 20)
-                            instance_change(obj_evil_water, true)
-                        }
-                    }
+    if !collision_line(x, y, obj_player.x, obj_player.y, obj_door, false, false) {
+        if crouch = false or !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_crouch, true, true) {
+            if (height > 24 or !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_floor2, true, true)) {
+                if stam > 0 {
                     
-                    if water != noone {
-                        stam -=1
-                        instance_create(water.x, water.y, obj_steam)
-                    }
-                    
-                    if puddle != noone {
-                        stam -= 1
-                        instance_create(puddle.x, puddle.y, obj_steam)
-                        with(puddle) {
-                            instance_destroy();
-                        }
-                    }
-                    
-                    // black powder
-                    if black_powder != noone {
-                        stam -= 1
-                        with(black_powder) {
-                            instance_change(obj_lit_powder, true)
-                        }
-                    }
-                    
-                    // fire bomb 
-                    if firebomb != noone {
-                        if firebomb != 1 {
-                            stam -= 1
-                            firebomb.temp = 1
-                        }
-                    }
-                }
-                
-                if temp = COOL {
-                    //water
-                    if water != noone {
-                        stam -= 1
-                        with(water) { 
-                            instance_change(obj_ice,true)
-                        }
-                    }
-                    if evil_water != noone {
-                        stam -= 1
-                        with(evil_water) {
-                            mp_grid_clear_rectangle(global.grid_floor1, x - 20, y - 20, x + 19, y + 20)
-                            instance_change(obj_evil_ice,true)
-                        }
-                    }
-                }
-                   
-                // door
-                if door != noone {
-                    if temp = COOL {
-                        if door.temp != -1 {
-                            stam -= 1
-                            door.temp = -1
-                        }
-                    }
-                }
-                
-                // barrel
-                if barrel != noone {
                     if temp = HEAT {
-                        if barrel.temp != 1 {
-                            stam -= 1
-                            barrel.temp = 1
-                        }
-                    }
-                }
-                
-                // ammo 
-                if ammo != noone {
-                    if temp = HEAT {
-                        if ammo.temp != 1 {
-                            stam -= 1
-                            ammo.temp += 1
-                        }
-                    }
-                }
-                
-                // enemy
-                if enemy != noone {
-                    if temp = COOL {
-                        if enemy.wet = true {
-                            if enemy.temp != -1 {
-                                stam -= 25
-                                enemy.temp = -1
+                        // ice
+                        if ice != noone {
+                            stam -= 20
+                            with(ice) {
+                                instance_change(obj_water,true)
                             }
                         }
-                    } if temp = HEAT {
-                        if enemy.temp != 1 {
-                            stam -= 25
-                            enemy.temp = 1
+                        if evil_ice != noone {
+                            stam -= 20
+                            with(evil_ice) {
+                                mp_grid_add_rectangle(global.grid_floor1, x - 20, y - 20, x + 19, y + 20)
+                                instance_change(obj_evil_water, true)
+                            }
+                        }
+                        
+                        if water != noone {
+                            stam -= 20
+                            instance_create(water.x, water.y, obj_steam)
+                        }
+                        
+                        if puddle != noone {
+                            stam -= 20
+                            instance_create(puddle.x, puddle.y, obj_steam)
+                            with(puddle) {
+                                instance_destroy();
+                            }
+                        }
+                        
+                        // black powder
+                        if black_powder != noone {
+                            stam -= 20
+                            with(black_powder) {
+                                instance_change(obj_lit_powder, true)
+                            }
+                        }
+                        
+                        // fire bomb 
+                        if firebomb != noone {
+                            if firebomb != 1 {
+                                stam -= 20
+                                firebomb.temp = 1
+                            }
                         }
                     }
-                }
-                
-                // turret
-                if turret != noone {
+                    
                     if temp = COOL {
-                        if turret.temp != -1 {
-                            stam -= 1
-                            turret.temp = -1
+                        //water
+                        if water != noone {
+                            stam -= 20
+                            with(water) { 
+                                instance_change(obj_ice,true)
+                            }
                         }
-                    } if temp = HEAT {
-                        if temp != 1 {
+                        if evil_water != noone {
                             stam -= 1
-                            turret.temp = 1
+                            with(evil_water) {
+                                mp_grid_clear_rectangle(global.grid_floor1, x - 20, y - 20, x + 19, y + 20)
+                                instance_change(obj_evil_ice,true)
+                            }
                         }
                     }
+                       
+                    // door
+                    if door != noone {
+                        if temp = COOL {
+                            if door.temp != -1 {
+                                stam -= 20
+                                door.temp = -1
+                            }
+                        }
+                    }
+                    
+                    // barrel
+                    if barrel != noone {
+                        if temp = HEAT {
+                            if barrel.temp != 1 {
+                                stam -= 20
+                                barrel.temp = 1
+                            }
+                        }
+                    }
+                    
+                    // ammo 
+                    if ammo != noone {
+                        if temp = HEAT {
+                            if ammo.temp != 1 {
+                                stam -= 20
+                                ammo.temp += 1
+                            }
+                        }
+                    }
+                    
+                    // enemy
+                    if enemy != noone {
+                        if temp = COOL {
+                            if enemy.wet = true {
+                                if enemy.temp != -1 {
+                                    stam -= 20
+                                    enemy.temp = -1
+                                }
+                            }
+                        } if temp = HEAT {
+                            if enemy.temp != 1 {
+                                stam -= 20
+                                enemy.temp = 1
+                            }
+                        }
+                    }
+                    
+                    // turret
+                    if turret != noone {
+                        if temp = COOL {
+                            if turret.temp != -1 {
+                                stam -= 20
+                                turret.temp = -1
+                            }
+                        } if temp = HEAT {
+                            if temp != 1 {
+                                stam -= 20
+                                turret.temp = 1
+                            }
+                        }
+                    }
+                    
+                    //heat grass
+                    //check obj_grass step event
                 }
-                
-                //heat grass
-                //check obj_grass step event
             }
         }
     }

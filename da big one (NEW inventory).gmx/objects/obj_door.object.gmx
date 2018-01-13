@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_viewblock</parentName>
+  <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -29,6 +29,7 @@
 doorb = false
 wet = false
 temp = false
+circle_r = 14
 </string>
           </argument>
         </arguments>
@@ -61,9 +62,9 @@ if phy_active = false {
     image_index = 1
 }
 
-if collision_circle(x, y, 70, obj_player, false, true) {
+if collision_circle(x, y, circle_r, obj_player, false, true) {
     if use_key_pressed {
-        instance_create(obj_player.x, obj_player.y, obj_noise_med)
+        instance_create(x + lengthdir_x(20, point_direction(x, y, obj_player.x, obj_player.y)), y + lengthdir_y(20, point_direction(x, y, obj_player.x, obj_player.y)), obj_noise_small)
         if temp = -1 {
             instance_destroy();
         }
@@ -117,11 +118,13 @@ pulled = false
             <kind>1</kind>
             <string>draw_self();
 
-if wet = true {
+if temp = -1 {
     image_blend = c_blue
 }
 
 draw_text(x, y - 120, string(temp))
+
+draw_circle(x, y, circle_r, true)
 </string>
           </argument>
         </arguments>
@@ -141,8 +144,8 @@ draw_text(x, y - 120, string(temp))
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
     <point>0,0</point>
-    <point>64,0</point>
-    <point>64,64</point>
-    <point>0,64</point>
+    <point>16,0</point>
+    <point>16,80</point>
+    <point>0,80</point>
   </PhysicsShapePoints>
 </object>

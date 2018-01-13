@@ -120,6 +120,7 @@
     <sprite>sprites\spr_dblock_top</sprite>
     <sprite>sprites\spr_dirt</sprite>
     <sprite>sprites\spr_door</sprite>
+    <sprite>sprites\spr_door_hor</sprite>
     <sprite>sprites\spr_door_open</sprite>
     <sprite>sprites\spr_enblock_floor1_side</sprite>
     <sprite>sprites\spr_enblock_floor1_top</sprite>
@@ -369,6 +370,8 @@
       <script>scripts\scr_enemy_dead.gml</script>
       <script>scripts\scr_enemy_investigate.gml</script>
       <script>scripts\scr_enemy_investigate_cube.gml</script>
+      <script>scripts\scr_enemy_search_sus2.gml</script>
+      <script>scripts\scr_enemy_search_sus2_wait.gml</script>
       <script>scripts\scr_enemy_search_phase1.gml</script>
       <script>scripts\scr_enemy_search_phase2.gml</script>
       <script>scripts\scr_enemy_search_phase2_wait.gml</script>
@@ -840,6 +843,7 @@
       <object>objects\obj_button</object>
       <object>objects\obj_button_adv</object>
       <object>objects\obj_door</object>
+      <object>objects\obj_door_hor</object>
       <object>objects\obj_crate</object>
       <object>objects\obj_roof</object>
       <object>objects\obj_sign</object>
@@ -1073,8 +1077,8 @@
   <rooms name="rooms">
     <room>rooms\rm_setup</room>
     <room>rooms\room28</room>
-    <room>rooms\room26</room>
     <room>rooms\room27</room>
+    <room>rooms\room26</room>
     <room>rooms\room24</room>
     <room>rooms\room0</room>
     <room>rooms\room25</room>

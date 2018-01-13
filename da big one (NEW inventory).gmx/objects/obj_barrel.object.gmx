@@ -214,8 +214,7 @@ if alarm[1] &gt; 0 {
 //Lighting black powder with spark
 var touching_powder = place_meeting(x, y, obj_lit_powder);
 if touching_powder {
-    lit = true;
-    alarm[0] = room_speed/20 //Wait one second before spreading and burning out
+    temp = 1
 }
 ///check state
 if state != noone {
@@ -229,7 +228,7 @@ if place_meeting(x, y, obj_arrow) {
 }
 
 if place_meeting(x, y, obj_explosion) {
-    instance_destroy();
+    temp = 1
 }
 
 if temp = 1 {

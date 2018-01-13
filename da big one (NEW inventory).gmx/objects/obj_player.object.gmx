@@ -228,6 +228,20 @@ falling_off_stairs = false
             <string>///Move the player in the step event
 scr_get_input();
 
+//steal energy
+var enemy_energy = collision_circle(x, y, 32, obj_enemy, true, false)
+if enemy_energy {
+    if enemy_energy.has_energy = true {
+        if !collision_line(x, y, obj_enemy.x, obj_enemy.y, obj_viewblock, false, false) {
+            if crouch = false or !collision_line(x, y, obj_enemy.x, obj_enemy.y, obj_viewblock_crouch, true, true) {
+                stam += 20
+                enemy_energy.has_energy = false
+            }
+        }
+    }
+}
+    
+
 //create view if there isn't one
 if !instance_exists(obj_view) {
     instance_create(x, y, obj_view)
@@ -579,6 +593,9 @@ draw_text(x + 32, y + -32, string(stam))
 draw_text(x - 48, y - 48, "("+string(x)+", "+string(y)+")")
 
 draw_text(x + 32, y - 64, "height: " + string(height));
+
+//stam absorb circle
+draw_circle(x, y, 32, true)
 
 if falling_off_stairs = true {
     draw_text(x, y - 64, "falling")

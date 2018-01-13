@@ -26,6 +26,22 @@
           <argument>
             <kind>1</kind>
             <string>///bingus
+ori = noone
+x_ori = 0
+y_ori = 0
+
+if ori = LEFT {
+    x_ori = -20
+}
+if ori = RIGHT {
+    x_ori = 20
+}
+if ori = UP {
+    y_ori = -20
+}
+if ori = DOWN {
+    y_ori = 20
+}
 </string>
           </argument>
         </arguments>
@@ -48,7 +64,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>scr_get_input();
+
+if use_key_pressed {
+    if collision_circle(x, y, 16, obj_player, false, false) {
+        instance_create(x + (x_ori), y + (y_ori), obj_water_puddle) {
+        }
+    }
+}
+</string>
           </argument>
         </arguments>
       </action>

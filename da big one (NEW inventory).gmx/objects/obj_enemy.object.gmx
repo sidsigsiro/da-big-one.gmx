@@ -40,8 +40,11 @@ if instance_exists(obj_glare_controller) {
     my_light = glr_light_create(spr_glr_light_mask_4, 0, x, y, c_white, 1);
 }
 //create rifle
+has_energy = true
 my_rifle = instance_create(x, y + 5, obj_enemy_rifle)
 my_rifle.owner = self
+//level 2 sus cautar number
+cautars_searched = 0
 my_distract = noone //object guard is distracted by
 wait_time = room_speed*4 //frames waited at patrol points
 playerseen = 0
@@ -398,6 +401,13 @@ if enstate != scr_enemy_frozen {
             <string>//scr_get_input
 scr_get_input();
 
+//add sus for noise
+if place_meeting(x, y, obj_noise_all) {
+    if enstate = scr_enemy_patrol or enstate = scr_enemy_wait {
+        sus += 1
+    }
+}
+
 if look_ahead = true {
     my_focus.look_ahead = true
 } else if look_ahead = false {
@@ -416,19 +426,9 @@ if enstate != scr_enemy_dead {
                     if alarm[10] = -1 {
                         alarm[10] = room_speed*2
                     }
-                 }
+                }
                 enstate = scr_enemy_investigate
-            }
-            if place_meeting(x, y, obj_noise_arrow) {
-                sus = true
-            }
-            if place_meeting(x, y, obj_noise_large_high) {
-                sus = true
-            }
-            if place_meeting(x, y, obj_noise_cube) {
-                sus = true
-            }
-            
+            }   
         }
     }
 }
@@ -515,7 +515,7 @@ if enstate = scr_enemy_patrol or enstate = scr_enemy_wait {
 } else if enstate = scr_enemy_search_phase1 {
     my_focus.survey = true
     my_focus.state = scr_view_search_phase1
-} else if enstate = scr_enemy_search_phase2 or enstate = scr_enemy_search_phase2_wait {
+} else if (enstate = scr_enemy_search_phase2 or enstate = scr_enemy_search_phase2_wait) or (enstate = scr_enemy_search_sus2 or enstate = scr_enemy_search_sus2_wait) {
     if my_focus.move = true {
         my_focus.survey = false
         //get direction
@@ -676,14 +676,16 @@ if enstate != scr_enemy_dead {
             // if player height is less than 24 pixels above enemy height
             if obj_player.height&lt;height + 24 {
                 if !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock, false, false) {
-                    if (obj_player.crouch = false or !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock_crouch, true, true)) {
-                        player_in_sight = true
-                        playerseen += 1
-                        if point_in_triangle(obj_player.x, obj_player.y, x, y, x1b, y1b, x2b, y2b) {
+                    if !collision_line(x, y, obj_player.x, obj_player.y, obj_door, false, false) {
+                        if (obj_player.crouch = false or !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock_crouch, true, true)) {
+                            player_in_sight = true
                             playerseen += 1
-                            if point_in_triangle(obj_player.x, obj_player.y, x, y, x1, y1, x2, y2) {
-                                if !collision_line(x, y, obj_player.x, obj_player.y, obj_grass, true, true) {
-                                    playerseen = 120
+                            if point_in_triangle(obj_player.x, obj_player.y, x, y, x1b, y1b, x2b, y2b) {
+                                playerseen += 1
+                                if point_in_triangle(obj_player.x, obj_player.y, x, y, x1, y1, x2, y2) {
+                                    if !collision_line(x, y, obj_player.x, obj_player.y, obj_grass, true, true) {
+                                        playerseen = 120
+                                    }
                                 }
                             }
                         }
@@ -694,7 +696,8 @@ if enstate != scr_enemy_dead {
             player_in_sight = false
         }
     }
-}}
+}
+}
 
 //playerseen and player_in_sight
 
@@ -871,6 +874,10 @@ if enstate = scr_enemy_frozen or enstate = scr_enemy_stun {
         image_blend = c_blue
     } else image_blend = c_red
 
+if has_energy = false {
+    image_blend = c_orange
+}    
+
 //draw social circle
 draw_circle(x, y, 30, true)
 
@@ -880,7 +887,9 @@ draw_text(x, y - 32, string(alarm[10]))
 
 //draw_text(x + 48, y, string(alarm[0]))
 
-draw_text(x, y - 32, string(temp))
+//draw_text(x, y - 32, string(temp))
+draw_text(x + 32, y - 32, string(sus))
+draw_text(x + 32, y - 45, string(enstate))
 
 draw_line(my_rifle.x, my_rifle.y, x + lengthdir_x(600, my_rifle.image_angle), y + lengthdir_y(600, my_rifle.image_angle))
 </string>
