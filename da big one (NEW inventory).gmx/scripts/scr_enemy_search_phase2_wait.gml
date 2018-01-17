@@ -15,11 +15,6 @@ if squad = ALPHA {
 
 if ((place_meeting(x, y, cautar0)) and (caunexttar = cautar0)) or ((place_meeting(x, y, cautar)) and (caunexttar = cautar)) { 
     if instance_exists(cautar_uncleared) {
-        if caunexttar != cautar0 {
-            with(cautar) {
-                instance_change(cautar_cleared, true)
-            }
-        }
         cautar = instance_nearest(x, y, cautar_uncleared)
         caunexttar = cautar
     }

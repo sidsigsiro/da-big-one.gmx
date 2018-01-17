@@ -74,7 +74,12 @@
     <sprite>sprites\spr_blackpowder</sprite>
     <sprite>sprites\spr_wind_mine</sprite>
     <sprite>sprites\spr_crate</sprite>
+    <sprite>sprites\spr_crate3</sprite>
+    <sprite>sprites\spr_crate2</sprite>
+    <sprite>sprites\spr_wall2</sprite>
+    <sprite>sprites\spr_wall3</sprite>
     <sprite>sprites\spr_wall</sprite>
+    <sprite>sprites\spr_wall_snail</sprite>
     <sprite>sprites\spr_cursor</sprite>
     <sprite>sprites\spr_arrow</sprite>
     <sprite>sprites\spr_block</sprite>
@@ -279,7 +284,6 @@
       </sprites>
     </sprites>
     <sprite>sprites\sprite198</sprite>
-    <sprite>sprites\spr_wall_snail</sprite>
     <sprite>sprites\spr_door_next</sprite>
     <sprite>sprites\spr_rifle</sprite>
     <sprite>sprites\spr_turret</sprite>
@@ -679,6 +683,7 @@
     <script>scripts\scr_turret_frozen.gml</script>
     <script>scripts\scr_enemy_stun.gml</script>
     <script>scripts\scr_grab_state.gml</script>
+    <script>scripts\scr_enemy_distracted.gml</script>
   </scripts>
   <shaders name="shaders">
     <shaders name="Glare">
@@ -824,6 +829,8 @@
     </objects>
     <objects name="STRUCTURES">
       <object>objects\obj_wall</object>
+      <object>objects\obj_wall3</object>
+      <object>objects\obj_wall2</object>
       <object>objects\obj_wall_snail</object>
       <object>objects\obj_barrel</object>
       <object>objects\obj_bridge</object>
@@ -845,6 +852,8 @@
       <object>objects\obj_door</object>
       <object>objects\obj_door_hor</object>
       <object>objects\obj_crate</object>
+      <object>objects\obj_crate3</object>
+      <object>objects\obj_crate2</object>
       <object>objects\obj_roof</object>
       <object>objects\obj_sign</object>
       <object>objects\obj_stairs</object>

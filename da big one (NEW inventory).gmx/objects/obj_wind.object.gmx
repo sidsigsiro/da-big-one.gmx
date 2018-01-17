@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>///create alarm
 alarm[0] = room_speed*5
+obj_player.stam -= 20
 </string>
           </argument>
         </arguments>

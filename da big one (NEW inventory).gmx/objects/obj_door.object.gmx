@@ -64,7 +64,7 @@ if phy_active = false {
 
 if collision_circle(x, y, circle_r, obj_player, false, true) {
     if use_key_pressed {
-        instance_create(x + lengthdir_x(20, point_direction(x, y, obj_player.x, obj_player.y)), y + lengthdir_y(20, point_direction(x, y, obj_player.x, obj_player.y)), obj_noise_small)
+        instance_create(x + lengthdir_x(20, point_direction(x, y, obj_player.x, obj_player.y)), y + lengthdir_y(20, point_direction(x, y, obj_player.x, obj_player.y)), obj_noise_med)
         if temp = -1 {
             instance_destroy();
         }
@@ -145,7 +145,7 @@ draw_circle(x, y, circle_r, true)
   <PhysicsShapePoints>
     <point>0,0</point>
     <point>16,0</point>
-    <point>16,80</point>
-    <point>0,80</point>
+    <point>16,64</point>
+    <point>0,64</point>
   </PhysicsShapePoints>
 </object>

@@ -1,4 +1,19 @@
 ///scr_enemy_search_phase2
+//set cautar cleared
+if squad = ALPHA {
+    var cautar_uncleared = obj_caunode1
+    var cautar_cleared = obj_caunode2
+} else if squad = BETA {
+    var cautar_uncleared = obj_caunode3
+    var cautar_cleared = obj_caunode4
+}
+
+if caunexttar != cautar0 {
+    with(cautar) {
+        instance_change(cautar_cleared, true)
+    }
+}
+
 if cautar = noone {
     cautar = cautar0
 }

@@ -31,16 +31,16 @@ x_ori = 0
 y_ori = 0
 
 if ori = LEFT {
-    x_ori = -20
+    x_ori = -64
 }
 if ori = RIGHT {
-    x_ori = 20
+    x_ori = 64
 }
 if ori = UP {
-    y_ori = -20
+    y_ori = -64
 }
 if ori = DOWN {
-    y_ori = 20
+    y_ori = 64
 }
 </string>
           </argument>

@@ -40,6 +40,7 @@ if instance_exists(obj_glare_controller) {
     my_light = glr_light_create(spr_glr_light_mask_4, 0, x, y, c_white, 1);
 }
 //create rifle
+prevstate = scr_enemy_patrol
 has_energy = true
 my_rifle = instance_create(x, y + 5, obj_enemy_rifle)
 my_rifle.owner = self
@@ -140,6 +141,9 @@ classspd = 0
           <argument>
             <kind>1</kind>
             <string>///destroy
+with(my_rifle) {
+    instance_destroy();
+}
 with(my_focus) {
     instance_destroy();
 }
@@ -433,6 +437,10 @@ if enstate != scr_enemy_dead {
     }
 }
 
+if instance_place(x, y, obj_noise_large_high) {
+    sus = 3
+}
+
 //set focus state
 if enstate = scr_enemy_search_phase2 or enstate = scr_enemy_search_phase2_wait {
     if wait = false {
@@ -550,7 +558,7 @@ if (enstate = scr_enemy_patrol) or (enstate = scr_enemy_wait) {
     dir = point_direction(x, y, my_focus.x, my_focus.y)
 } else if enstate = scr_enemy_search_phase1 {
     dir = point_direction(x, y, my_focus.x, my_focus.y)
-} else if enstate = scr_enemy_search_phase2 or enstate = scr_enemy_search_phase2_wait {
+} else if (enstate = scr_enemy_search_phase2 or enstate = scr_enemy_search_phase2_wait) or (enstate = scr_enemy_search_sus2 or enstate = scr_enemy_search_sus2_wait) {
     dir = point_direction(x, y, my_focus.x, my_focus.y)
 } else if enstate = scr_enemy_investigate {
     dir = point_direction(x, y, my_focus.x, my_focus.y)
@@ -792,21 +800,6 @@ if class = PISTOL {
     classspd = 0.3
 } else if class = RIFLE {
     classspd = 0
-}
-
-//stamina stuff
-///stamina stuff
-if collision_circle(x, y, 20, obj_player, false, true) {
-    if !collision_line(x, y, obj_player.x, obj_player.y, obj_viewblock, false, false) {
-        if (obj_player.crouch = false or !collision_line(x, y, obj_cursor.x, obj_cursor.y, obj_viewblock_crouch, true, true)) {
-            if stam &gt; 0 {
-                stam -= 0.5
-                with(obj_player) {
-                    stam += 0.5
-                }
-            }
-        }
-    }
 }
 
 //calculate total speed

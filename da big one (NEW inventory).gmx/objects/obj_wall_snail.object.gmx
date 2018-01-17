@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_viewblock</parentName>
+  <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,24 +26,40 @@
           <argument>
             <kind>1</kind>
             <string>///create wall
+image_index = 1
+image_speed = 0
 //set height
 scr_set_floor();
 
 //set_depth
 scr_set_depth();
-if instance_exists(obj_glare_controller) {
-mesh = glr_mesh_create(x, y, false)
 
-glr_mesh_submesh_add_box_from_sprite(mesh, sprite_index, 0, 0);
 
-glr_mesh_set_scaling(mesh, image_xscale, image_yscale)
-
-glr_mesh_set_rotation(mesh, image_angle)
-
-glr_mesh_update(mesh);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if place_meeting(x, y, obj_explosion) {
+    instance_destroy();
 }
-
-
 </string>
           </argument>
         </arguments>

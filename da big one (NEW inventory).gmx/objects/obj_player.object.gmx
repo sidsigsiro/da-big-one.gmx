@@ -50,7 +50,8 @@ crouch = false
 floorval = 0
 height = 0
 depth = -y
-hp = 1;
+hp = 3;
+prev_hp = hp
 basespd = 2;
 spd = 2;
 hspd = 0;
@@ -228,13 +229,19 @@ falling_off_stairs = false
             <string>///Move the player in the step event
 scr_get_input();
 
+//make noise when hurt
+if prev_hp != hp {
+    instance_create(x, y, obj_noise_med)
+    prev_hp = hp
+}
+
 //steal energy
 var enemy_energy = collision_circle(x, y, 32, obj_enemy, true, false)
 if enemy_energy {
     if enemy_energy.has_energy = true {
         if !collision_line(x, y, obj_enemy.x, obj_enemy.y, obj_viewblock, false, false) {
             if crouch = false or !collision_line(x, y, obj_enemy.x, obj_enemy.y, obj_viewblock_crouch, true, true) {
-                stam += 20
+                stam += 50
                 enemy_energy.has_energy = false
             }
         }
@@ -322,13 +329,14 @@ if xaxis = 0 and yaxis = 0 {
 }
 
 //make footstep sounds
+/*
 if crouch = false and moving = true and alarm[2] = -1 {
     alarm[2] = room_speed/6
     if alarm[2] = room_speed/6 {
         instance_create(x, y, obj_noise_foot_step)
     }
 }
-
+*/
 //restart room
 if keyboard_check(ord('T')) {
     room_restart();

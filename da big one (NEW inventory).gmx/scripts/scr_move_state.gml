@@ -145,11 +145,6 @@ if snail_key1_pressed {
     }
 }
 
-//goto wind state
-if wind_key {
-    state = scr_wind_state
-}
-
 
 //slice barrel (found in obj_barrel step event)
 

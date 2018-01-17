@@ -9,6 +9,7 @@ if wind_key2_pressed and !wind_key1_held {
             mine1 = mine2
         }
         numb_of_mines -= 1
+    } else {
     }
 }
 

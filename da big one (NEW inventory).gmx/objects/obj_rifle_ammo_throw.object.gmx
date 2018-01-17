@@ -31,7 +31,6 @@ temp = 0
 spd = 40
 direction = point_direction(phy_position_x, phy_position_y, mouse_x, mouse_y)
 dir = direction
-physics_apply_impulse(x, y, lengthdir_x(spd, dir), lengthdir_y(spd, dir))
 image_speed = 0
 image_index = 3
 spawn_x = phy_position_x

@@ -235,6 +235,7 @@ if temp = 1 {
     with(tarenemy) {
         instance_destroy();
     }
+    instance_create(x, y, obj_noise_large)
     temp = 0
 }
 
