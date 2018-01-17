@@ -182,7 +182,8 @@
     <sprite>sprites\spr_noise_foot_step</sprite>
     <sprite>sprites\spr_noise_med</sprite>
     <sprite>sprites\spr_noise_med_high</sprite>
-    <sprite>sprites\spr_noise_large_high</sprite>
+    <sprite>sprites\spr_noise_large</sprite>
+    <sprite>sprites\spr_noise_friend</sprite>
     <sprite>sprites\spr_noise_med_low</sprite>
     <sprite>sprites\spr_noise_small</sprite>
     <sprite>sprites\spr_player</sprite>
@@ -380,6 +381,10 @@
       <script>scripts\scr_enemy_search_phase2.gml</script>
       <script>scripts\scr_enemy_search_phase2_wait.gml</script>
       <script>scripts\scr_enemy_frozen.gml</script>
+      <script>scripts\scr_enemy_distracted.gml</script>
+      <script>scripts\scr_enemy_wounded.gml</script>
+      <script>scripts\scr_enemy_reviver.gml</script>
+      <script>scripts\scr_enemy_revived.gml</script>
     </scripts>
     <scripts name="VIEW SCRIPTS">
       <script>scripts\scr_view_patrol.gml</script>
@@ -683,7 +688,7 @@
     <script>scripts\scr_turret_frozen.gml</script>
     <script>scripts\scr_enemy_stun.gml</script>
     <script>scripts\scr_grab_state.gml</script>
-    <script>scripts\scr_enemy_distracted.gml</script>
+    <script>scripts\scr_enemy_radio.gml</script>
   </scripts>
   <shaders name="shaders">
     <shaders name="Glare">
@@ -976,9 +981,9 @@
         <object>objects\obj_noise_cube</object>
         <object>objects\obj_noise_foot_step</object>
         <object>objects\obj_noise_large</object>
+        <object>objects\obj_noise_friend</object>
         <object>objects\obj_noise_small</object>
         <object>objects\obj_noise_med</object>
-        <object>objects\obj_noise_large_high</object>
         <object>objects\obj_noise_med_low</object>
       </objects>
       <object>objects\obj_player_ghost</object>

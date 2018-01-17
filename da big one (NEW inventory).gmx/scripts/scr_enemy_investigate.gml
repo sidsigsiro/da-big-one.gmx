@@ -38,6 +38,9 @@ if alarm[10] = -1 {
                         }
                     }
                     enstate = scr_enemy_chat
+                } else if otherinvest.enstate = scr_enemy_wounded {
+                    enstate = scr_enemy_reviver
+                    otherinvest.enstate = scr_enemy_revived
                 }
             }
             if point_distance(x, y, investar_x, investar_y) < 14 {
@@ -46,28 +49,16 @@ if alarm[10] = -1 {
                 }
                 if alarm[0] = -1 {
                 alarm[0] = room_speed*3
+                enstate = scr_enemy_radio
                 }
             } else {
                 alarm[0] = -1
+                enstate = scr_enemy_radio
             }
         }
     }
 } else {
     path_end()
-}
-
-if alarm[0] = 0 { 
-    if sus = 1 {
-        enstate = scr_enemy_patrol
-    } else if sus = 2 {
-        caunexttar = instance_nearest(x, y, obj_caunode1) 
-        cautar0 = caunexttar
-        enstate = scr_enemy_search_sus2
-    } else if sus = 3 {
-        with(obj_enemy) {
-            enstate = scr_enemy_search_phase2
-        }
-    }
 }
 
 //set chatter c

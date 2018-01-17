@@ -153,7 +153,7 @@ scr_set_depth();
 
 if temp = 1 {
     instance_create(x, y, obj_caunode1)
-    instance_create(x, y, obj_noise_large_high)
+    instance_create(x, y, obj_noise_large)
     instance_destroy();
 }
 

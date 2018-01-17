@@ -575,7 +575,7 @@ if bow_key1_released {
         if arrowtimer = room_speed*2 {
             instance_create(x, y, obj_arrow)
             instance_create(x, y, obj_caunode1)
-            instance_create(x, y, obj_noise_large_high)
+            instance_create(x, y, obj_noise_large)
             obj_inventory.rifle_ammo -= 1
             arrowtimer = 0
         } else {

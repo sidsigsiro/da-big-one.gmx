@@ -41,6 +41,7 @@ if instance_exists(obj_glare_controller) {
 }
 //create rifle
 prevstate = scr_enemy_patrol
+help_called = false
 has_energy = true
 my_rifle = instance_create(x, y + 5, obj_enemy_rifle)
 my_rifle.owner = self
@@ -418,28 +419,7 @@ if look_ahead = true {
     my_focus.look_ahead = false
 }
 
-//hear noise
-if enstate != scr_enemy_dead {
-    if enstate != scr_enemy_sniper_chase {
-        if enstate != scr_enemy_frozen {
-            var my_noise = instance_place(x, y, obj_noise_all)
-            if my_noise {
-                investar_x = my_noise.x
-                investar_y = my_noise.y
-                if enstate != scr_enemy_investigate {
-                    if alarm[10] = -1 {
-                        alarm[10] = room_speed*2
-                    }
-                }
-                enstate = scr_enemy_investigate
-            }   
-        }
-    }
-}
-
-if instance_place(x, y, obj_noise_large_high) {
-    sus = 3
-}
+// hear noise code in obj_noise_large_Create
 
 //set focus state
 if enstate = scr_enemy_search_phase2 or enstate = scr_enemy_search_phase2_wait {
@@ -753,7 +733,7 @@ if temp = -1 {
 
 if temp = 1 {
     instance_create(x, y, obj_caunode1)
-    instance_create(x, y, obj_noise_large_high)
+    instance_create(x, y, obj_noise_large)
     investar_x = x
     investar_y = y
     enstate = scr_enemy_investigate

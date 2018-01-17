@@ -67,7 +67,7 @@ velocity = 0 //falling velocity
           <argument>
             <kind>1</kind>
             <string>/*
-instance_create(x,y, obj_noise_large_high)
+instance_create(x,y, obj_noise_large)
 instance_create(x, y, obj_node_distraction)
 instance_create(x, y, obj_explosion)
 if instance_exists(obj_player_ghost) {
@@ -234,7 +234,7 @@ if place_meeting(x, y, obj_explosion) {
 if temp = 1 {
     if temp = 1 {
     instance_create(x, y, obj_caunode1)
-    instance_create(x, y, obj_noise_large_high)
+    instance_create(x, y, obj_noise_large)
     instance_create(x, y, obj_explosion)
     instance_destroy();
     mp_grid_clear_rectangle(global.grid_floor1, x - 14, y - 19, x + 14, y + 19) 

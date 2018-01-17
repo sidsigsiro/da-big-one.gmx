@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>///set alarm
 alarm[0] = 1
+
 </string>
           </argument>
         </arguments>

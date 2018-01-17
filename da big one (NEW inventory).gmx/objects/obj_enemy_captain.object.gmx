@@ -533,9 +533,9 @@ if enstate != scr_enemy_dead {
             alarm[10] = room_speed*2
             sus += 200
         }
-        if place_meeting(x, y, obj_noise_large_high) {
+        if place_meeting(x, y, obj_noise_large) {
             alarm[10] = room_speed*2
-            noise_distract = instance_place(x, y, obj_noise_large_high)
+            noise_distract = instance_place(x, y, obj_noise_large)
             investar = noise_distract.my_distract
             enstate = scr_enemy_investigate
         }
