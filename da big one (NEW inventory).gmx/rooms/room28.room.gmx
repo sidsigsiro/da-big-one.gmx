@@ -74,7 +74,7 @@
     <instance objName="obj_wall" x="744" y="1372" name="inst_8BE4F03D" locked="0" code="" scaleX="40" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="864" y="1672" name="inst_05DE6B6D" locked="0" code="" scaleX="33" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_barrel" x="784" y="1472" name="inst_294B1CF0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_node2" x="656" y="1600" name="inst_CE10D081" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_node2" x="628" y="1592" name="inst_CE10D081" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_node3" x="608" y="1424" name="inst_CF3B7FFA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_node4" x="1072" y="1408" name="inst_66E825EE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_node5" x="1064" y="1600" name="inst_22037B36" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -151,7 +151,7 @@
     <instance objName="obj_crate" x="880" y="1512" name="inst_1C5F64EC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_crate2" x="912" y="1496" name="inst_CD97FB2E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_crate2" x="944" y="1496" name="inst_720612C9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_enemy" x="592" y="1536" name="inst_F9F923E7" locked="0" code="squad = ALPHA&#xA;//patrol nodes&#xA;tars[1] = obj_node2&#xA;tars[2] = obj_node5&#xA;tars[3] = obj_node4&#xA;tars[4] = obj_node3&#xA;&#xA;caunexttar = obj_nodeB&#xA;cautar0 = obj_nodeB&#xA;cautar0_default = obj_nodeB&#xA;caunexttar_default = obj_nodeB&#xA;&#xA;//focustar&#xA;&#xA;class = RIFLE&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy" x="604" y="1480" name="inst_F9F923E7" locked="0" code="squad = ALPHA&#xA;//patrol nodes&#xA;tars[1] = obj_node2&#xA;tars[2] = obj_node5&#xA;tars[3] = obj_node4&#xA;tars[4] = obj_node3&#xA;&#xA;caunexttar = obj_nodeB&#xA;cautar0 = obj_nodeB&#xA;cautar0_default = obj_nodeB&#xA;caunexttar_default = obj_nodeB&#xA;&#xA;//focustar&#xA;&#xA;class = RIFLE&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_water_pipe" x="600" y="1380" name="inst_9E151AB3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="obj_water_pipe" x="536" y="1380" name="inst_D515C5C8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="obj_water_pipe" x="472" y="1380" name="inst_76DCA21F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
@@ -168,6 +168,8 @@
     <instance objName="obj_crate3" x="156" y="1852" name="inst_08EDD27E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_crate3" x="188" y="1852" name="inst_39C453E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_crate3" x="220" y="1852" name="inst_5FEA1F68" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_viewnode1" x="1212" y="1844" name="inst_9C985BB4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall" x="592" y="1560" name="inst_9BF03CD8" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="" x="208" y="1216" w="16" h="16" xo="0" yo="0" id="10005805" name="inst_A7B092B2" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

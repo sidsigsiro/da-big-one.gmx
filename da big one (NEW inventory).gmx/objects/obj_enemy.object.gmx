@@ -41,7 +41,7 @@ if instance_exists(obj_glare_controller) {
 }
 //create rifle
 prevstate = scr_enemy_patrol
-help_called = false
+next_state = noone
 has_energy = true
 my_rifle = instance_create(x, y + 5, obj_enemy_rifle)
 my_rifle.owner = self
@@ -408,7 +408,7 @@ scr_get_input();
 
 //add sus for noise
 if place_meeting(x, y, obj_noise_all) {
-    if enstate = scr_enemy_patrol or enstate = scr_enemy_wait {
+    if enstate != scr_enemy_sniper_chase or enstate != scr_enemy_frozen {
         sus += 1
     }
 }
@@ -862,7 +862,7 @@ draw_text(x, y - 32, string(alarm[10]))
 
 //draw_text(x, y - 32, string(temp))
 draw_text(x + 32, y - 32, string(sus))
-draw_text(x + 32, y - 45, string(enstate))
+draw_text(x + 32, y - 45, script_get_name(enstate))
 
 draw_line(my_rifle.x, my_rifle.y, x + lengthdir_x(600, my_rifle.image_angle), y + lengthdir_y(600, my_rifle.image_angle))
 </string>

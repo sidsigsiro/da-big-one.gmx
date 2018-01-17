@@ -689,6 +689,8 @@
     <script>scripts\scr_enemy_stun.gml</script>
     <script>scripts\scr_grab_state.gml</script>
     <script>scripts\scr_enemy_radio.gml</script>
+    <script>scripts\script277.gml</script>
+    <script>scripts\scr_enemy_look_nexttar.gml</script>
   </scripts>
   <shaders name="shaders">
     <shaders name="Glare">

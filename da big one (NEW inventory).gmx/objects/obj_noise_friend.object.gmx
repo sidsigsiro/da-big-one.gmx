@@ -48,10 +48,6 @@ with obj_enemy {
             }
         }
     }
-    
-    if instance_place(x, y, obj_noise_friend) {
-        sus = 3
-    }
 }
 
 
