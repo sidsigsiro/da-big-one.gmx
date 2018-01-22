@@ -179,7 +179,7 @@ if obj_player.temp = HEAT {
 } else if obj_player.temp = COOL {
     image_blend = c_blue
 } else if obj_player.temp = NEUTRAL {
-    image_blend = c_green
+    image_blend = c_white
 }
 </string>
           </argument>
