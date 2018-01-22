@@ -12,6 +12,12 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\images</sprite>
+    <sprite>sprites\spr_robin_hop</sprite>
+    <sprite>sprites\spr_robin_flight</sprite>
+    <sprite>sprites\spr_robin_peck</sprite>
+    <sprite>sprites\spr_laser_spawn</sprite>
+    <sprite>sprites\spr_laser_hor</sprite>
+    <sprite>sprites\spr_laser_vert</sprite>
     <sprite>sprites\spr_spirit_grab</sprite>
     <sprite>sprites\spr_water_right</sprite>
     <sprite>sprites\spr_water_down_right</sprite>
@@ -76,9 +82,11 @@
     <sprite>sprites\spr_crate</sprite>
     <sprite>sprites\spr_crate3</sprite>
     <sprite>sprites\spr_crate2</sprite>
-    <sprite>sprites\spr_wall2</sprite>
-    <sprite>sprites\spr_wall3</sprite>
+    <sprite>sprites\spr_wall5</sprite>
     <sprite>sprites\spr_wall</sprite>
+    <sprite>sprites\spr_wall2</sprite>
+    <sprite>sprites\spr_wall4</sprite>
+    <sprite>sprites\spr_wall3</sprite>
     <sprite>sprites\spr_wall_snail</sprite>
     <sprite>sprites\spr_cursor</sprite>
     <sprite>sprites\spr_arrow</sprite>
@@ -691,6 +699,12 @@
     <script>scripts\scr_enemy_radio.gml</script>
     <script>scripts\script277.gml</script>
     <script>scripts\scr_enemy_look_nexttar.gml</script>
+    <scripts name="BIRD STATES">
+      <script>scripts\scr_bird_peck.gml</script>
+      <script>scripts\scr_bird_hop.gml</script>
+      <script>scripts\scr_bird_fly.gml</script>
+      <script>scripts\scr_bird_idle.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shaders name="Glare">
@@ -836,8 +850,13 @@
     </objects>
     <objects name="STRUCTURES">
       <object>objects\obj_wall</object>
-      <object>objects\obj_wall3</object>
       <object>objects\obj_wall2</object>
+      <object>objects\obj_wall3</object>
+      <object>objects\obj_wall4</object>
+      <object>objects\obj_wall5</object>
+      <object>objects\obj_wall_tall</object>
+      <object>objects\obj_crate</object>
+      <object>objects\obj_crate3</object>
       <object>objects\obj_wall_snail</object>
       <object>objects\obj_barrel</object>
       <object>objects\obj_bridge</object>
@@ -858,9 +877,6 @@
       <object>objects\obj_button_adv</object>
       <object>objects\obj_door</object>
       <object>objects\obj_door_hor</object>
-      <object>objects\obj_crate</object>
-      <object>objects\obj_crate3</object>
-      <object>objects\obj_crate2</object>
       <object>objects\obj_roof</object>
       <object>objects\obj_sign</object>
       <object>objects\obj_stairs</object>
@@ -1089,11 +1105,13 @@
     <object>objects\obj_leaf_spawner</object>
     <object>objects\obj_player_hitbox</object>
     <object>objects\obj_test_grass</object>
+    <object>objects\obj_laser_spawn</object>
+    <object>objects\obj_robin</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_setup</room>
-    <room>rooms\room28</room>
     <room>rooms\room27</room>
+    <room>rooms\room28</room>
     <room>rooms\room26</room>
     <room>rooms\room24</room>
     <room>rooms\room0</room>

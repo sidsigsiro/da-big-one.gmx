@@ -32,6 +32,7 @@ water = 1
 snail = 2
 turret = 3
 barrel = 4
+crate = 5
 */
 
 var water
@@ -44,6 +45,7 @@ var enemy
 var turret
 var puddle
 var snail
+var crate
 
 water = instance_place(x, y, obj_water)
 evil_water = instance_place(x, y, obj_evil_water)
@@ -54,6 +56,7 @@ ammo = instance_place(x, y, obj_rifle_ammo_throw)
 turret = instance_place(x, y, obj_turret)
 puddle = instance_place(x, y, obj_water_puddle)
 snail = instance_place(x, y, obj_snail)
+crate = instance_place(x, y, obj_crate)
 
 if obj_spirit_inv.spirit_item = noone {
     if water {
@@ -88,6 +91,13 @@ if obj_spirit_inv.spirit_item = noone {
         }
         obj_player.stam -= 20
     }
+    if crate {
+        obj_spirit_inv.spirit_item = 5
+        with(crate) {
+            instance_destroy();
+        }
+        obj_player.stam -= 20
+    }
 } else if obj_spirit_inv.spirit_item = 0 {
     instance_create(x, y, obj_rifle_ammo_throw)
     obj_spirit_inv.spirit_item = noone
@@ -106,6 +116,9 @@ if obj_spirit_inv.spirit_item = noone {
     obj_spirit_inv.spirit_item = noone
 } else if obj_spirit_inv.spirit_item = 4 {
     instance_create(x, y, obj_barrel)
+    obj_spirit_inv.spirit_item = noone
+} else if obj_spirit_inv.spirit_item = 5 {
+    instance_create(x, y, obj_crate)
     obj_spirit_inv.spirit_item = noone
 }
             
