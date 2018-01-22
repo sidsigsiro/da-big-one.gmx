@@ -429,6 +429,25 @@ if enstate = scr_enemy_search_phase2 or enstate = scr_enemy_search_phase2_wait {
 }
 
 if enstate = scr_enemy_patrol or enstate = scr_enemy_wait {
+    /*
+    // focus code
+    --Survey
+        loop
+            focus.x = tars[tar_num].x
+            focus.y = tars[tar_num].y
+            wait 2 seconds
+            tar_num++
+            focus.x = tars[tar_num].x
+            focus.y = tars[tar_num].y
+    --Patrol
+        
+    --Chase
+            
+    //smooth looking function
+    lerp(focus_dir, new_dir, 0.1)
+        
+    */
+
     if wait = false {
             my_focus.survey = false
             //get direction

@@ -3,14 +3,14 @@
   <type>0</type>
   <xorig>83</xorig>
   <yorigin>706</yorigin>
-  <colkind>1</colkind>
+  <colkind>0</colkind>
   <coltolerance>0</coltolerance>
-  <sepmasks>0</sepmasks>
-  <bboxmode>0</bboxmode>
+  <sepmasks>-1</sepmasks>
+  <bboxmode>2</bboxmode>
   <bbox_left>0</bbox_left>
-  <bbox_right>163</bbox_right>
-  <bbox_top>90</bbox_top>
-  <bbox_bottom>776</bbox_bottom>
+  <bbox_right>152</bbox_right>
+  <bbox_top>700</bbox_top>
+  <bbox_bottom>736</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
