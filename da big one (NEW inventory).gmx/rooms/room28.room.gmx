@@ -78,7 +78,7 @@
     <instance objName="obj_node3" x="608" y="1424" name="inst_CF3B7FFA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_node4" x="1072" y="1408" name="inst_66E825EE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_node5" x="1064" y="1600" name="inst_22037B36" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_climb_floor1" x="1172" y="972" name="inst_52FC8CDD" locked="0" code="" scaleX="2.30952382087708" scaleY="0.52999997138977" colour="4294967295" rotation="0"/>
+    <instance objName="obj_climb_floor1" x="1172" y="972" name="inst_52FC8CDD" locked="0" code="" scaleX="2.30952382087708" scaleY="0.529999971389771" colour="4294967295" rotation="0"/>
     <instance objName="obj_node6" x="333" y="1740" name="inst_F5AC704A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_node7" x="52" y="1740" name="inst_F688C025" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_node8" x="72" y="1927" name="inst_E00B6615" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

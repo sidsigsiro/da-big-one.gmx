@@ -39,7 +39,7 @@ if ori = LEFT {
 if ori = UP {
     image_index = 3
 }
-laser_len = 0
+
 </string>
           </argument>
         </arguments>
@@ -98,20 +98,12 @@ if ori = LEFT {
     direction = point_direction(x, y, x, y - 3)
 }
 
-for(var i = 0; i &lt; max_length; i++) {
-    var lx = x + lengthdir_x(i, direction);
-    var ly = y + lengthdir_y(i, direction);
+var lx = x + lengthdir_x(max_length, direction)
+var ly = y + lengthdir_y(max_length, direction)
 
-    if(collision_point(lx, ly, obj_wall, false, true)){
-        break;
-    }
-    if(collision_point(lx, ly, obj_player, false, true)){
-        break;
-    }
+var point = scr_collision_line_point(x, y, lx, ly, obj_player, false, true)
 
-}
-
-draw_line_colour(x,y,lx,ly, c_red, c_purple);
+draw_line_colour(x, y, point[1], point[2], c_red, c_purple);
 
 </string>
           </argument>

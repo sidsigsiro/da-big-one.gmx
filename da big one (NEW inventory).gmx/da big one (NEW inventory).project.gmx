@@ -705,6 +705,7 @@
       <script>scripts\scr_bird_fly.gml</script>
       <script>scripts\scr_bird_idle.gml</script>
     </scripts>
+    <script>scripts\scr_collision_line_point.gml</script>
   </scripts>
   <shaders name="shaders">
     <shaders name="Glare">
@@ -1110,8 +1111,8 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_setup</room>
-    <room>rooms\room27</room>
     <room>rooms\room28</room>
+    <room>rooms\room27</room>
     <room>rooms\room26</room>
     <room>rooms\room24</room>
     <room>rooms\room0</room>
