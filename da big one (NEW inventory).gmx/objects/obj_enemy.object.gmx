@@ -37,7 +37,7 @@ cansee = true
 //set player_in_sight
 player_in_sight = false
 if instance_exists(obj_glare_controller) {
-    my_light = glr_light_create(spr_glr_light_mask_4, 0, x, y, c_white, 1);
+    my_light = glr_light_create(spr_glr_light_mask_yellow, 0, x, y, c_white, 1);
 }
 //create rifle
 prevstate = scr_enemy_patrol
@@ -573,9 +573,9 @@ if (enstate = scr_enemy_patrol) or (enstate = scr_enemy_wait) {
 
 //set light position
 if instance_exists(obj_glare_controller) {
-glr_light_set_position(my_light, x, y);
-
-glr_light_set_rotation(my_light, dir)
+    glr_light_set_position(my_light, x, y);
+    
+    glr_light_set_rotation(my_light, dir)
 }
 
 scr_get_face();

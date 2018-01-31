@@ -51,6 +51,9 @@
         <sprite>sprites\spr_glr_light_mask_point_hd</sprite>
         <sprite>sprites\spr_glr_light_mask_spot</sprite>
         <sprite>sprites\spr_glr_light_test</sprite>
+        <sprite>sprites\spr_glr_light_mask_weird</sprite>
+        <sprite>sprites\spr_glr_light_mask_yellow</sprite>
+        <sprite>sprites\spr_glr_light_mask_yellow_side</sprite>
       </sprites>
     </sprites>
     <sprite>sprites\_________________</sprite>
